@@ -1,4 +1,3 @@
-#!/usr/bin/python
 # -*- coding:utf-8 -*-
 
 # Copyright (C) 2020 Inspur Inc. All Rights Reserved.
@@ -14,7 +13,7 @@ module: del_user
 version_added: "0.1.0"
 author:
     - WangBaoshan (@ISIB-group)
-short_description: Delete user. 
+short_description: Delete user.
 description:
    - Delete user on Inspur server.
 options:
