@@ -10,15 +10,15 @@ Basic management of the server based on restful interface
 
 ##### COMPONENT NAME
 <!--- Write the short name of the module, plugin, task or feature below -->
-- is_add_user.py -  Create user.
-- is_add_user_group.py - Create user group.
-- is_del_user.py - Delete user 
-- is_del_user_group.py - Delete user group
-- is_edit_pass_user.py - Change user password
-- is_edit_priv_user.py - Change user privilege
-- is_edit_user_group.py - Set user group
-- is_user_group_info.py -  Get user group information
-- is_user_info.py - Get user information
+- add_user.py -  Create user.
+- add_user_group.py - Create user group.
+- del_user.py - Delete user 
+- del_user_group.py - Delete user group
+- edit_pass_user.py - Change user password
+- edit_priv_user.py - Change user privilege
+- edit_user_group.py - Set user group
+- user_group_info.py -  Get user group information
+- user_info.py - Get user information
 ##### ADDITIONAL INFORMATION
 <!--- Include additional information to help people understand the change here -->
 Circumstance instruction:
@@ -38,7 +38,7 @@ Thes modules require the following to be installed on the Ansible server:
 ```paste below
 An example of static manifest for Inspur Server Manage is followed. The network functions is satisfied based on the assumed that Ansible moudle is available.
 
-[root@localhost ansible]# ansible localhost -m is_user_info -a 'host=100.2.126.128 username=admin password=admin'
+[root@localhost ansible]# ansible localhost -m user_info -a 'host=100.2.126.128 username=admin password=admin'
 localhost | SUCCESS => {
     "Message": [
         {
