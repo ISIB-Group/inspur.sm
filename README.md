@@ -1,58 +1,101 @@
-# collection_template
-You can build a new repository for an Ansible Collection using this template by following [Creating a repository from a template](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template). This README.md contains recommended headings for your collection README.md, with comments describing what each section should contain. Once you have created your collection repository, delete this paragraph and the title above it from your README.md.
+##### SUMMARY
+<!--- Describe the change below, including rationale and design decisions -->
+Inspur server supports ansible management device  --user management
+Basic management of the server based on restful interface
+<!--- HINT: Include "Fixes #nnn" if you are fixing an existing issue -->
 
-# Foo Collection
-<!-- Add CI and code coverage badges here. Samples included below. -->
-[![CI](https://github.com/ansible-collections/REPONAMEHERE/workflows/CI/badge.svg?event=push)](https://github.com/ansible-collections/REPONAMEHERE/actions) [![Codecov](https://img.shields.io/codecov/c/github/ansible-collections/REPONAMEHERE)](https://codecov.io/gh/ansible-collections/REPONAMEHERE)
+##### ISSUE TYPE
+<!--- Pick one below and delete the rest -->
+- New Module Pull Request
 
-<!-- Describe the collection and why a user would want to use it. What does the collection do? -->
+##### COMPONENT NAME
+<!--- Write the short name of the module, plugin, task or feature below -->
+- is_add_user.py -  Create user.
+- is_add_user_group.py - Create user group.
+- is_del_user.py - Delete user 
+- is_del_user_group.py - Delete user group
+- is_edit_pass_user.py - Change user password
+- is_edit_priv_user.py - Change user privilege
+- is_edit_user_group.py - Set user group
+- is_user_group_info.py -  Get user group information
+- is_user_info.py - Get user information
+##### ADDITIONAL INFORMATION
+<!--- Include additional information to help people understand the change here -->
+Circumstance instruction:
+Ansible module is suitable for ansible version 2.2
 
-## Tested with Ansible
+Main steps:
 
-<!-- List the versions of Ansible the collection has been tested with. Must match what is in galaxy.yml. -->
+Install suitable Ansible master
+Install inspur_sdk 
+<!--- A step-by-step reproduction of the problem is helpful if there is no related issue -->
+Thes modules require the following to be installed on the Ansible server:
 
-## External requirements
+* Python 2.7 or later
+* [Ansible](http://www.ansible.com) 2.2 or later
+* [Inspur support] inspur_sdk  - Copy inspur_sdk to ansible plugins
+<!--- Paste verbatim command output below, e.g. before and after your change -->
+```paste below
+An example of static manifest for Inspur Server Manage is followed. The network functions is satisfied based on the assumed that Ansible moudle is available.
 
-<!-- List any external resources the collection depends on, for example minimum versions of an OS, libraries, or utilities. Do not list other Ansible collections here. -->
+[root@localhost ansible]# ansible localhost -m is_user_info -a 'host=100.2.126.128 username=admin password=admin'
+localhost | SUCCESS => {
+    "Message": [
+        {
+            "User": [
+                {
+                    "Enable": "true", 
+                    "Locked": "false", 
+                    "Privilege": [
+                        "KVM", 
+                        "VMM"
+                    ], 
+                    "RoleId": "Administrator", 
+                    "UserId": 1, 
+                    "UserName": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER"
+                }, 
+                {
+                    "Enable": "true", 
+                    "Locked": "false", 
+                    "Privilege": [
+                        "KVM", 
+                        "VMM"
+                    ], 
+                    "RoleId": "Administrator", 
+                    "UserId": 2, 
+                    "UserName": "root"
+                }, 
+                {
+                    "Enable": "true", 
+                    "Locked": "false", 
+                    "Privilege": [], 
+                    "RoleId": "Commonuser", 
+                    "UserId": 3, 
+                    "UserName": "yuwenjie"
+                }, 
+                {
+                    "Enable": "true", 
+                    "Locked": "false", 
+                    "Privilege": [
+                        "KVM"
+                    ], 
+                    "RoleId": "Operator", 
+                    "UserId": 4, 
+                    "UserName": "wbs"
+                }
+            ]
+        }
+    ], 
+    "State": "Success", 
+    "changed": false, 
+    "proposed": {
+        "host": "100.2.126.128", 
+        "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+        "provider": null, 
+        "subcommand": "getuser", 
+        "username": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER"
+    }
+}
 
-### Supported connections
-<!-- Optional. If your collection supports only specific connection types (such as HTTPAPI, netconf, or others), list them here. -->
 
-## Included content
-
-<!-- Galaxy will eventually list the module docs within the UI, but until that is ready, you may need to either describe your plugins etc here, or point to an external docsite to cover that information. -->
-
-## Using this collection
-
-<!--Include some quick examples that cover the most common use cases for your collection content. -->
-
-See [Ansible Using collections](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html) for more details.
-
-## Contributing to this collection
-
-<!--Describe how the community can contribute to your collection. At a minimum, include how and where users can create issues to report problems or request features for this collection.  List contribution requirements, including preferred workflows and necessary testing, so you can benefit from community PRs. If you are following general Ansible contributor guidelines, you can link to - [Ansible Community Guide](https://docs.ansible.com/ansible/latest/community/index.html). -->
-
-
-## Release notes
-<!--Add a link to a changelog.md file or an external docsite to cover this information. -->
-
-## Roadmap
-
-<!-- Optional. Include the roadmap for this collection, and the proposed release/versioning strategy so users can anticipate the upgrade/update cycle. -->
-
-## More information
-
-<!-- List out where the user can find additional information, such as working group meeting times, slack/IRC channels, or documentation for the product this collection automates. At a minimum, link to: -->
-
-- [Ansible Collection overview](https://github.com/ansible-collections/overview)
-- [Ansible User guide](https://docs.ansible.com/ansible/latest/user_guide/index.html)
-- [Ansible Developer guide](https://docs.ansible.com/ansible/latest/dev_guide/index.html)
-- [Ansible Community code of conduct](https://docs.ansible.com/ansible/latest/community/code_of_conduct.html)
-
-## Licensing
-
-<!-- Include the appropriate license information here and a pointer to the full licensing details. If the collection contains modules migrated from the ansible/ansible repo, you must use the same license that existed in the ansible/ansible repo. See the GNU license example below. -->
-
-GNU General Public License v3.0 or later.
-
-See [LICENSE](https://www.gnu.org/licenses/gpl-3.0.txt) to see the full text.
+```
