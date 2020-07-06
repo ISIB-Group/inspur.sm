@@ -1,4 +1,3 @@
-#!/usr/bin/python
 # -*- coding:utf-8 -*-
 # Copyright (c), Inspur isib-group, 2020
 
