@@ -1,4 +1,5 @@
-# coding: utf-8 -*-
+#!/usr/bin/python
+# -*- coding:utf-8 -*-
 # Copyright (c), Inspur isib-group, 2020
 
 from __future__ import (absolute_import, division, print_function)

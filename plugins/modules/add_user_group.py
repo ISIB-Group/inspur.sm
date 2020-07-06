@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -*- coding:utf-8 -*-
 
 # Copyright(C) 2020 Inspur Inc. All Rights Reserved.
