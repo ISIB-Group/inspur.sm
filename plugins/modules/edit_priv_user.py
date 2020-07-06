@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -*- coding:utf-8 -*-
 
 # Copyright (C) 2020 Inspur Inc. All Rights Reserved.
@@ -35,7 +36,7 @@ options:
         elements: str
         required: true
 extends_documentation_fragment:
-    - community.general.ism
+    - inspur.sm.ism
 '''
 
 EXAMPLES = '''
@@ -75,7 +76,7 @@ changed:
 '''
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.community.general.plugins.module_utils.ism import (ism_argument_spec, get_connection)
+from ansible_collections.inspur.sm.plugins.module_utils.ism import (ism_argument_spec, get_connection)
 
 
 class User(object):

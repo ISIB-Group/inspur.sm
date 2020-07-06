@@ -1,11 +1,11 @@
-# coding: utf-8 -*-
+# -*- coding:utf-8 -*-
 # Copyright (c), Inspur isib-group, 2020
 
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 
 try:
-    from ansible_collections.community.general.plugins.module_utils.inspur_sdk import ism
+    from ansible_collections.inspur.sm.plugins.module_utils.inspur_sdk import ism
     ism_temp = True
 except ImportError:
     ism_temp = False
