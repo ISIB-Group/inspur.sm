@@ -23,7 +23,7 @@ options:
         required: true
         type: str
 extends_documentation_fragment:
-    - community.general.ism
+    - inspur.sm.ism
 '''
 
 EXAMPLES = '''

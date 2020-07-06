@@ -18,7 +18,7 @@ description:
    - Get user group information on Inspur server.
 options: {}
 extends_documentation_fragment:
-    - community.general.ism
+    - inspur.sm.ism
 '''
 
 EXAMPLES = '''
