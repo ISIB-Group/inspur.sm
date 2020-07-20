@@ -35,7 +35,7 @@ extends_documentation_fragment:
 
 EXAMPLES = '''
 - name: Set user group test
-    hosts: ism
+  hosts: ism
   collections:
     - isnpur.sm
   connection: local
