@@ -2,16 +2,16 @@
 # Copyright (c), Inspur isib-group, 2020
 
 from __future__ import (absolute_import, division, print_function)
+
 __metaclass__ = type
 
 try:
-    from ansible_collections.inspur.sm.plugins.module_utils.inspur_sdk import ism
+    import ism
     ism_temp = True
 except ImportError:
     ism_temp = False
 from ansible.module_utils.basic import env_fallback
 from ansible.module_utils.six import iteritems
-
 
 ism_provider_spec = {
     'host': dict(type='str'),
@@ -41,8 +41,8 @@ def load_params(module):
 def get_connection(module):
     """get_connection"""
     load_params(module)
-    dict_cpu = module.params
+    dict_param = module.params
     if not ism_temp:
         module.fail_json(msg='inspur_sdk must be installed to use this module')
-    result = ism.main(dict_cpu)
+    result = ism.main(dict_param)
     return result

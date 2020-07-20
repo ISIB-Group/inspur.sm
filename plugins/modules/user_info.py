@@ -25,6 +25,8 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: User test
   hosts: ism
+  collections:
+    - isnpur.sm
   connection: local
   gather_facts: no
   vars:
