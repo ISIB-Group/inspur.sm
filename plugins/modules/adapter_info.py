@@ -87,7 +87,6 @@ class Adapter(object):
             idx = 0
             sortedRes = collections.OrderedDict()
             if sysadapter_len > 0:
-                print("-" * 50)
                 nic = nic.get('NIC', [])
                 List = []
                 while idx < sysadapter_len:

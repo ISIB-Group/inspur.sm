@@ -80,7 +80,7 @@ EXAMPLES = '''
       ipv4_status: "enable"
       ipv4_dhcp_enable: "dhcp"
       provider: "{{ ism }}"
-      
+
   - name: "Set ipv4 information"
     edit_ipv4:
       interface_name: "eth0"

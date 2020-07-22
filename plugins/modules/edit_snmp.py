@@ -25,9 +25,11 @@ options:
         type: int
     snmp_status:
         description:
-            - NMP read/write status of customize,the input parameters are 'v1get', 'v1set', 'v2cget', 'v2cset', 'v3get', 'v3set',separated by commas,such as v1get,v1set,v2cget.
-        type: str
-    inspur:
+            - NMP read/write status of customize,
+            - the input parameters are 'v1get', 'v1set', 'v2cget', 'v2cset', 'v3get', 'v3set',separated by commas,such as v1get,v1set,v2cget.
+        type: list
+        elements: str
+    community:
         description:
             - Community of v1/v2c or v1get/v1set/v2cget/v2cset.
         type: str
@@ -78,7 +80,7 @@ EXAMPLES = '''
 
   - name: "Set snmp get/set"
     edit_snmp:
-      inspur: "test"
+      community: "test"
       v3username: "Inspur"
       provider: "{{ ism }}"
 
@@ -132,7 +134,7 @@ class SNMP(object):
 
 def main():
     argument_spec = dict(
-        version=dict(type='str', required=False, choices=[0, 1, 2, 3, 4]),
+        version=dict(type='int', required=False, choices=[0, 1, 2, 3, 4]),
         snmp_status=dict(type='list', elements='str', required=False),
         community=dict(type='str', required=False),
         v3username=dict(type='str', required=False),

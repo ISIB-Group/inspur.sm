@@ -25,12 +25,13 @@ options:
             - PAT is Product Asset Tag,BM is Board Mfg,BPN is Board Product Name,BS is Board Serial,
             - BP is Board Part Number.
         choices: ['CP', 'CS', 'PM', 'PPN', 'PS', 'PN', 'PV','PAT', 'BM', 'BPN', 'BS', 'BP']
-        type: str
         required: true
+        type: str
     value:
         description:
             - Set the value of attribute .
-        type: int
+        required: true
+        type: str
 extends_documentation_fragment:
     - inspur.sm.ism
 '''
@@ -106,7 +107,7 @@ class UID(object):
 
 def main():
     argument_spec = dict(
-        attribute=dict(type='str', required=True, choices=['CP', 'CS', 'PM', 'PPN', 'PS', 'PN', 'PV','PAT', 'BM', 'BPN', 'BS', 'BP']),
+        attribute=dict(type='str', required=True, choices=['CP', 'CS', 'PM', 'PPN', 'PS', 'PN', 'PV', 'PAT', 'BM', 'BPN', 'BS', 'BP']),
         value=dict(type='str', required=True),
     )
     argument_spec.update(ism_argument_spec)

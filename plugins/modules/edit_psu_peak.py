@@ -108,7 +108,7 @@ class Psu(object):
 def main():
     argument_spec = dict(
         status=dict(type='str', required=True, choices=['enable', 'disable']),
-        time=dict(type='int', required=True),
+        time=dict(type='int', required=False),
     )
     argument_spec.update(ism_argument_spec)
     psu_obj = Psu(argument_spec)

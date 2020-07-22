@@ -21,12 +21,15 @@ options:
     log_time:
         description:
             - Get logs after the specified date, time should be YYYY-MM-DDTHH:MM+HH:MM, like 2019-06-27T12:30+08:00.
+        type: str
     count:
         description:
             - Get the most recent log of a specified number.
+        type: int
     audit_file:
         description:
             - Store logs to a file.
+        type: str
 extends_documentation_fragment:
     - inspur.sm.ism
 '''

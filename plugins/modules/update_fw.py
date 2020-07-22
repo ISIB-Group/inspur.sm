@@ -21,6 +21,7 @@ options:
     url:
         description:
             - Firmware image url.
+        required: true
         type: str
     mode:
         description:
@@ -131,7 +132,7 @@ def main():
         mode=dict(type='str', default='Auto', choices=['Auto', 'Manual']),
         over_ride=dict(type='int', default=0, choices=[0, 1]),
         type=dict(type='str', required=False, choices=['BMC', 'BIOS']),
-        has_me=dict(type='int', default=1, choices=[0, 1]),
+        has_me=dict(type='int', default=0, choices=[0, 1]),
         dual_image=dict(type='str', default='dual', choices=['single', 'dual']),
     )
     argument_spec.update(ism_argument_spec)

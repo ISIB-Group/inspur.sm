@@ -22,7 +22,7 @@ options:
         description:
             - Boot device.
         choices: ['none', 'HDD', 'PXE', 'CD', 'BIOSSETUP']
-        typr: str
+        type: str
     effective:
         description:
             - Effective, once or continuous.

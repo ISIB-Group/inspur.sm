@@ -52,7 +52,8 @@ options:
         type: str
     primary_username:
         description:
-            - Primary SMTP server Username,lenth be 4 to 64 bits,must start with letters and cannot contain ','(comma) ':'(colon) ' '(space) ';'(semicolon) '\\'(backslash).
+            - Primary SMTP server Username,lenth be 4 to 64 bits,
+            - must start with letters and cannot contain ','(comma) ':'(colon) ' '(space) ';'(semicolon) '\\'(backslash).
         type: str
     primary_password:
         description:
@@ -83,7 +84,8 @@ options:
         type: str
     secondary_username:
         description:
-            - S.econdary SMTP server Username,lenth be 4 to 64 bits,must start with letters and cannot contain ','(comma) ':'(colon) ' '(space) ';'(semicolon) '\\'(backslash).
+            - S.econdary SMTP server Username,lenth be 4 to 64 bits,
+            - must start with letters and cannot contain ','(comma) ':'(colon) ' '(space) ';'(semicolon) '\\'(backslash).
         type: str
     secondary_password:
         description:

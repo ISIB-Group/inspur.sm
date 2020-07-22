@@ -31,7 +31,6 @@ options:
     host_name:
         description:
             - Host Name,Required when I(host_cfg=manual).
-        choices: ['enable', 'disable']
         type: str
     domain_manual:
         description:
@@ -108,7 +107,7 @@ EXAMPLES = '''
       dns_server2: "100.2.2.3"
       dns_server3: "100.2.2.4"
       provider: "{{ ism }}"
-      
+
   - name: "Set dns information"
     edit_dns:
       dns_status: "enable"

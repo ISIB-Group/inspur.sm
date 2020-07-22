@@ -23,7 +23,6 @@ options:
             - Log level.
         default: alert
         choices: ['alert', 'critical', 'error', 'notice', 'warning', 'debug', 'emergency', 'info', 'all']
-        required: true
         type: str
 extends_documentation_fragment:
     - inspur.sm.ism

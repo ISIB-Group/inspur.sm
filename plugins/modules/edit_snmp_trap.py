@@ -28,7 +28,7 @@ options:
             - Event Severity.
         choices: ['all', 'warning', 'critical']
         type: str
-    inspur:
+    community:
         description:
             - Community of v1/v2c.
         type: str
@@ -107,7 +107,7 @@ EXAMPLES = '''
     edit_snmp_trap:
       version: "2c"
       event_severity: "warning"
-      inspur: "test"
+      community: "test"
       system_name: "Inspur"
       provider: "{{ ism }}"
 

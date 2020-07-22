@@ -46,7 +46,7 @@ options:
         description:
             - The subnet prefix length for the IPv6 settings(0-128),Required when I(ipv6_dhcp_enable=static).
         type: int
-    ipv4_gateway:
+    ipv6_gateway:
         description:
             - If DHCP is disabled, specify a static Default Gateway to be configured for the selected interface,
             - Required when I(ipv6_dhcp_enable=static).
@@ -73,25 +73,25 @@ EXAMPLES = '''
   - name: "Set ipv6 information"
     edit_ipv6:
       interface_name: "eth0"
-      ipv4_status: "disable"
+      ipv6_status: "disable"
       provider: "{{ ism }}"
 
   - name: "Set ipv6 information"
     edit_ipv6:
       interface_name: "eth0"
-      ipv4_status: "enable"
-      ipv4_dhcp_enable: "dhcp"
+      ipv6_status: "enable"
+      ipv6_dhcp_enable: "dhcp"
       provider: "{{ ism }}"
-      
+
   - name: "Set ipv6 information"
     edit_ipv6:
       interface_name: "eth0"
-      ipv4_status: "enable"
-      ipv4_dhcp_enable: "static"
-      ipv4_address: "::ffff:100:2:36:10"
+      ipv6_status: "enable"
+      ipv6_dhcp_enable: "static"
+      ipv6_address: "::ffff:100:2:36:10"
       ipv6_index: 12
       ipv6_prefix: 16
-      ipv4_gateway: "::"
+      ipv6_gateway: "::"
       provider: "{{ ism }}"
 '''
 

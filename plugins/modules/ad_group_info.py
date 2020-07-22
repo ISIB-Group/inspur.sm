@@ -12,7 +12,7 @@ DOCUMENTATION = '''
 ---
 module: ad_group_info
 version_added: "0.1.0"
-author: 
+author:
     - WangBaoshan (@ISIB-group)
 short_description: Get active directory group information.
 description:

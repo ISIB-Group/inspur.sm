@@ -51,7 +51,7 @@ message:
 state:
     description: status after module execution
     returned: always
-    type: true
+    type: str
 changed:
     description: check to see if a change was made on the device
     returned: always

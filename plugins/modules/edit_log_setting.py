@@ -36,12 +36,12 @@ options:
         description:
             - Audit Log Status.
         choices: ['enable', 'disable']
-        type: int
+        type: str
     audit_type:
         description:
             - Audit log type.
         choices: ['local', 'remote', 'both']
-        type: int
+        type: str
     rotate_count:
         description:
             - Rotate Count, set when type is local, 0-delete old files, 1-bak old files.
@@ -84,7 +84,7 @@ EXAMPLES = '''
       status: "enable"
       type: "both"
       provider: "{{ ism }}"
-    
+
   - name: "Edit bmc audit log setting"
     edit_log_setting:
       audit_status: "enable"

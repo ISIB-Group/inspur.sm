@@ -54,7 +54,7 @@ EXAMPLES = '''
     edit_fan:
       mode: "Automatic"
       provider: "{{ ism }}"
-      
+
   - name: "Set fan information"
     edit_fan:
       mode: "Manual"

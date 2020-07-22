@@ -69,7 +69,6 @@ EXAMPLES = '''
       vlan_id: 2
       vlan_priority: 1
       provider: "{{ ism }}"
-      
 '''
 
 RETURN = '''

@@ -14,7 +14,7 @@ module: del_session
 version_added: "0.1.0"
 author:
     - WangBaoshan (@ISIB-group)
-short_description: Delete session. 
+short_description: Delete session.
 description:
    - Delete session on Inspur server.
 options:

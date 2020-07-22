@@ -63,7 +63,7 @@ EXAMPLES = '''
     edit_ldisk:
       info: "show"
       provider: "{{ ism }}"
-      
+
   - name: "Edit ldisk"
     edit_ldisk:
       ctrl_id: 0

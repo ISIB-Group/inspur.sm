@@ -40,7 +40,8 @@ options:
         type: int
     kvm_num_cd:
         description:
-            - Select the number of Remote KVM CD/DVD devices that support for virtual Media redirection, The max support number of html5 KVM is 2 and java KVM is 4.
+            - Select the number of Remote KVM CD/DVD devices that support for virtual Media redirection,
+            - The max support number of html5 KVM is 2 and java KVM is 4.
         choices: [0, 1, 2, 3, 4]
         type: int
     kvm_num_hd:
@@ -60,7 +61,7 @@ options:
         type: str
     power_save_mode:
         description:
-            - Check this option to enable Power Save Mode in BMC. 
+            - Check this option to enable Power Save Mode in BMC.
         choices: ['Enable', 'Disable']
         type: str
 extends_documentation_fragment:
@@ -144,15 +145,15 @@ class Instance(object):
 
 def main():
     argument_spec = dict(
-        num_fd=dict(type='int', required=False),
-        num_cd=dict(type='int', required=False),
-        num_hd=dict(type='int', required=False),
-        kvm_num_fd=dict(type='int', required=False),
-        kvm_num_cd=dict(type='int', required=False),
-        kvm_num_hd=dict(type='int', required=False),
-        sd_media=dict(type='str', required=False, choices=['on', 'off']),
-        secure_channel=dict(type='str', required=False, choices=['on', 'off']),
-        power_save_mode=dict(type='str', required=False, choices=['on', 'off']),
+        num_fd=dict(type='int', required=False, choices=[0, 1, 2, 3, 4]),
+        num_cd=dict(type='int', required=False, choices=[0, 1, 2, 3, 4]),
+        num_hd=dict(type='int', required=False, choices=[0, 1, 2, 3, 4]),
+        kvm_num_fd=dict(type='int', required=False, choices=[0, 1, 2, 3, 4]),
+        kvm_num_cd=dict(type='int', required=False, choices=[0, 1, 2, 3, 4]),
+        kvm_num_hd=dict(type='int', required=False, choices=[0, 1, 2, 3, 4]),
+        sd_media=dict(type='str', required=False, choices=['Enable', 'Disable']),
+        secure_channel=dict(type='str', required=False, choices=['Enable', 'Disable']),
+        power_save_mode=dict(type='str', required=False, choices=['Enable', 'Disable']),
     )
     argument_spec.update(ism_argument_spec)
     instance_obj = Instance(argument_spec)

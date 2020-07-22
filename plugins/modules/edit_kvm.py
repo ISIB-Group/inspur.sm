@@ -33,10 +33,10 @@ options:
     keyboard_language:
         description:
             - Select the Keyboard Language.
-            - AD is Auto Detect, DA is Danish, NL-BE is Dutch Belgium, NL-NL is Dutch Netherland, 
-            - GB is English UK ,US is English US, FI is Finnish, FR-BE is French Belgium, FR is French France, 
-            - DE is German Germany, DE-CH is German Switzerland, IT is Italian, JP is Japanese, 
-            - NO is Norwegian, PT is Portuguese, ES is Spanish, SV is Swedish, TR_F is Turkish F, TR_Q is Turkish Q
+            - AD is Auto Detect, DA is Danish, NL-BE is Dutch Belgium, NL-NL is Dutch Netherland,
+            - GB is English UK ,US is English US, FI is Finnish, FR-BE is French Belgium, FR is French France,
+            - DE is German Germany, DE-CH is German Switzerland, IT is Italian, JP is Japanese,
+            - NO is Norwegian, PT is Portuguese, ES is Spanish, SV is Swedish, TR_F is Turkish F, TR_Q is Turkish Q.
         choices: ['AD', 'DA', 'NL-BE', 'NL-NL', 'GB', 'US', 'FI', 'FR-BE', 'FR', 'DE', 'DE-CH', 'IT', 'JP', 'ON', 'PT', 'EC', 'SV', 'TR_F','TR_Q']
         type: str
     retry_count:

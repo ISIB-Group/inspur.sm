@@ -26,14 +26,14 @@ options:
         required: true
     state:
         description:
-            - Displays the current status of the service, either active or inactive state. 
+            - Displays the current status of the service, either active or inactive state.
             - Check this option to start the inactive service.
         choices: ['active', 'inactive']
         type: str
     interface:
         description:
-            - It shows the interface in which service is running. 
-            - The user can choose any one of the available interfaces. 
+            - It shows the interface in which service is running.
+            - The user can choose any one of the available interfaces.
         choices: ['eth0', 'eth1', 'both', 'bond0']
         type: str
     non_secure_port:
@@ -43,7 +43,7 @@ options:
         type: int
     secure_port:
         description:
-            - Used to configure secure port number for the service. 
+            - Used to configure secure port number for the service.
             - Port value ranges from 1 to 65535.
         type: int
     timeout:

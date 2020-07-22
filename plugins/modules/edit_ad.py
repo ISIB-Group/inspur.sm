@@ -19,14 +19,14 @@ description:
    - Set active directory information on Inspur server.
 options:
     enable:
-        description: 
+        description:
             - Active Directory Authentication Status.
         choices: ['enable', 'disable']
         type: str
     name:
         description:
             - Secret Username.
-        type: str            
+        type: str     
     code:
         description:
             - Secret Password.
