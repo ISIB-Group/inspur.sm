@@ -129,6 +129,8 @@ Examples
    
    - name: Edit user privilege test
      hosts: ism
+     collections:
+       - isnpur.sm
      connection: local
      gather_facts: no
      vars:

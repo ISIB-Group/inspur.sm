@@ -24,5 +24,24 @@ Notes
    * Module enhancements:
 
 Availability
-  * Galaxy
+  * GitHub
+
+Releases
+========
+
+Version 0.0.1
+--------------------
+
+Notes
+   * Update recommended
+   * New modules
+
+     * add modules
+
+   * Bug fixes
+   * Documentation updates
+   * New samples
+   * Module enhancements:
+
+Availability
   * GitHub
