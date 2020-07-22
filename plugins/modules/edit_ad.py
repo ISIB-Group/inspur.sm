@@ -26,7 +26,7 @@ options:
     name:
         description:
             - Secret Username.
-        type: str     
+        type: str
     code:
         description:
             - Secret Password.

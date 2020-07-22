@@ -149,7 +149,7 @@ def main():
         audit_type=dict(type='str', required=False, choices=['local', 'remote', 'both']),
         rotate_count=dict(type='int', required=False, choices=[0, 1]),
         server_addr=dict(type='str', required=False),
-        server_port=dict(type='str', required=False),
+        server_port=dict(type='int', required=False),
         protocol_type=dict(type='str', required=False, choices=['UDP', 'TCP']),
     )
     argument_spec.update(ism_argument_spec)

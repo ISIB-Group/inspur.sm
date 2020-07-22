@@ -50,6 +50,7 @@ options:
         description:
             - DNS Settings.
         choices: ['manual', 'auto']
+        type: str
     dns_iface:
         description:
             - DNS Interface,input like 'eth0', 'eth1', 'bond0',Required when I(dns_manual=auto).

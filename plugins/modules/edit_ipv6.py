@@ -23,6 +23,7 @@ options:
             - Set interface_name.
         choices: ['eth0', 'eth1', 'bond0']
         required: True
+        type: str
     ipv6_status:
         description:
             - Enable or disable IPV6.
