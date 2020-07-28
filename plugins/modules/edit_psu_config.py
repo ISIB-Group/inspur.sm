@@ -25,7 +25,7 @@ options:
         required: true
     switch:
         description:
--            - Power supply mode, active or standby.
+            - Power supply mode, active or standby.
         choices: ['active', 'standby', 'normal']
         type: str
         required: true
