@@ -44,7 +44,7 @@ EXAMPLES = '''
 - name: NCSI test
   hosts: ism
   collections:
-    - isnpur.sm
+    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -56,7 +56,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Set ncsi information"
-    ncsi_info:
+    edit_ncsi:
       mode: "manual"
       nic_type: "PCIE"
       interface_name: "eth0"

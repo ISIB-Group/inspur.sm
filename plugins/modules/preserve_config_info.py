@@ -10,23 +10,23 @@ __metaclass__ = type
 
 DOCUMENTATION = '''
 ---
-module: preserver_config_info
+module: preserve_config_info
 version_added: "0.1.0"
 author:
     - WangBaoshan (@ISIB-group)
-short_description: Get preserver config information.
+short_description: Get preserve config information.
 description:
-   - Get preserver config information on Inspur server.
+   - Get preserve config information on Inspur server.
 options: {}
 extends_documentation_fragment:
     - inspur.sm.ism
 '''
 
 EXAMPLES = '''
-- name: preserver test
+- name: preserve test
   hosts: ism
   collections:
-    - isnpur.sm
+    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -37,8 +37,8 @@ EXAMPLES = '''
 
   tasks:
 
-  - name: "Get preserver config information"
-    preserver_config_info:
+  - name: "Get preserve config information"
+    preserve_config_info:
       provider: "{{ ism }}"
 '''
 

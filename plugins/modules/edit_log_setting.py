@@ -30,7 +30,7 @@ options:
         type: str
     file_size:
         description:
-            - File Size,3-65535, set when type is local,default 30000.
+            - File Size(3-65535bytes), set when type is local(default 30000).
         type: int
     audit_status:
         description:
@@ -44,7 +44,7 @@ options:
         type: str
     rotate_count:
         description:
-            - Rotate Count, set when type is local, 0-delete old files, 1-bak old files.
+            - Rotate Count, set when type is local, 0-delete old files(default), 1-bak old files.
         choices: [0, 1]
         type: int
     server_addr:
@@ -53,7 +53,7 @@ options:
         type: str
     server_port:
         description:
-            - Server Port,0-65535, set when type is remote.
+            - Server Port(0-65535), set when type is remote.
         type: int
     protocol_type:
         description:
@@ -68,7 +68,7 @@ EXAMPLES = '''
 - name: Edit log setting test
   hosts: ism
   collections:
-    - isnpur.sm
+    - inspur.sm
   connection: local
   gather_facts: no
   vars:

@@ -25,7 +25,7 @@ options:
         type: str
     mode:
         description:
-            - active mode, Manual or Auto.
+            - (BMC)active mode, Manual or Auto(default).
         default: Auto
         choices: ['Auto', 'Manual']
         type: str
@@ -36,19 +36,19 @@ options:
         type: str
     over_ride:
         description:
-            - Reserve Configrations:0-reserve, 1-override.
+            - Reserve Configrations,0-reserve, 1-override.
         default: 0
         choices: [0, 1]
         type: int
     has_me:
         description:
-            - update me or not when update bios,0-no,1-yes.
-        default: 0
+            - (M5-BIOS)update me or not when update bios,only work in INTEL platform,0-no,1-yes.
+        default: 1
         choices: [0, 1]
         type: int
     dual_image:
         description:
-            - update dual image or not.
+            - (M5)update dual image(default) or not.
         default: dual
         choices: ['single', 'dual']
         type: str
@@ -60,7 +60,7 @@ EXAMPLES = '''
 - name: Update fw test
   hosts: ism
   collections:
-    - isnpur.sm
+    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -132,7 +132,7 @@ def main():
         mode=dict(type='str', default='Auto', choices=['Auto', 'Manual']),
         over_ride=dict(type='int', default=0, choices=[0, 1]),
         type=dict(type='str', required=False, choices=['BMC', 'BIOS']),
-        has_me=dict(type='int', default=0, choices=[0, 1]),
+        has_me=dict(type='int', default=1, choices=[0, 1]),
         dual_image=dict(type='str', default='dual', choices=['single', 'dual']),
     )
     argument_spec.update(ism_argument_spec)

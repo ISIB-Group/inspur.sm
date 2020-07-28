@@ -32,7 +32,7 @@ EXAMPLES = '''
 - name: Event log policy test
   hosts: ism
   collections:
-    - isnpur.sm
+    - inspur.sm
   connection: local
   gather_facts: no
   vars:
