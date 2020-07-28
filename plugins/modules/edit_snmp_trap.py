@@ -92,7 +92,7 @@ EXAMPLES = '''
 - name: Trap test
   hosts: ism
   collections:
-    - isnpur.sm
+    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -107,7 +107,7 @@ EXAMPLES = '''
     edit_snmp_trap:
       version: "2c"
       event_severity: "warning"
-      community: "test"
+      inspur: "test"
       system_name: "Inspur"
       provider: "{{ ism }}"
 

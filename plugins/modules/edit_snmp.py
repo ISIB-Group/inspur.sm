@@ -67,7 +67,7 @@ EXAMPLES = '''
 - name: Snmp test
   hosts: ism
   collections:
-    - isnpur.sm
+    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -80,7 +80,7 @@ EXAMPLES = '''
 
   - name: "Set snmp get/set"
     edit_snmp:
-      community: "test"
+      inspur: "test"
       v3username: "Inspur"
       provider: "{{ ism }}"
 

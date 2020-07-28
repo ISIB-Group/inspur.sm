@@ -14,7 +14,7 @@ module: del_user
 version_added: "0.1.0"
 author:
     - WangBaoshan (@ISIB-group)
-short_description: Delete user.
+short_description: Delete user. 
 description:
    - Delete user on Inspur server.
 options:
@@ -31,7 +31,7 @@ EXAMPLES = '''
 - name: Delete user test
   hosts: ism
   collections:
-    - isnpur.sm
+    - inspur.sm
   connection: local
   gather_facts: no
   vars:

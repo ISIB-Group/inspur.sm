@@ -26,7 +26,7 @@ EXAMPLES = '''
 - name: Clear BMC audit log test
   hosts: ism
   collections:
-    - isnpur.sm
+    - inspur.sm
   connection: local
   gather_facts: no
   vars:

@@ -40,7 +40,7 @@ EXAMPLES = '''
 - name: Fru test
   hosts: ism
   collections:
-    - isnpur.sm
+    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -107,7 +107,7 @@ class UID(object):
 
 def main():
     argument_spec = dict(
-        attribute=dict(type='str', required=True, choices=['CP', 'CS', 'PM', 'PPN', 'PS', 'PN', 'PV', 'PAT', 'BM', 'BPN', 'BS', 'BP']),
+        attribute=dict(type='str', required=True, choices=['CP', 'CS', 'PM', 'PPN', 'PS', 'PN', 'PV','PAT', 'BM', 'BPN', 'BS', 'BP']),
         value=dict(type='str', required=True),
     )
     argument_spec.update(ism_argument_spec)

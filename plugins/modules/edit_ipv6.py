@@ -60,7 +60,7 @@ EXAMPLES = '''
 - name: Ipv6 test
   hosts: ism
   collections:
-    - isnpur.sm
+    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -74,7 +74,7 @@ EXAMPLES = '''
   - name: "Set ipv6 information"
     edit_ipv6:
       interface_name: "eth0"
-      ipv6_status: "disable"
+      ipv4_status: "disable"
       provider: "{{ ism }}"
 
   - name: "Set ipv6 information"
