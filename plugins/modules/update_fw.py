@@ -25,7 +25,7 @@ options:
         type: str
     mode:
         description:
-            - (BMC)active mode: Manual or Auto(default).
+            - (BMC)active mode, Manual or Auto(default).
         default: Auto
         choices: ['Auto', 'Manual']
         type: str
@@ -36,14 +36,14 @@ options:
         type: str
     over_ride:
         description:
-            - Reserve Configrations:0-reserve(default), 1-override.
+            - Reserve Configrations,0-reserve, 1-override.
         default: 0
         choices: [0, 1]
         type: int
     has_me:
         description:
-            - (M5-BIOS)update me or not when update bios(only work in INTEL platform),0-no,1-yes(default).
-        default: 0
+            - (M5-BIOS)update me or not when update bios,only work in INTEL platform,0-no,1-yes.
+        default: 1
         choices: [0, 1]
         type: int
     dual_image:
