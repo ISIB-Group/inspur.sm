@@ -1,0 +1,67 @@
+- name: Info test
+  hosts: ism
+  collections:
+    - inspur.sm
+  connection: local
+  gather_facts: no
+  vars:
+    ism:
+      host: "{{ ansible_ssh_host }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+
+  tasks:
+
+  - name: "get fru information"
+    fru_info:
+      provider: "{{ ism }}"
+
+  - name: "get firmware version information"
+    fw_version_info:
+      provider: "{{ ism }}"
+
+  - name: "get cpu information"
+    cpu_info:
+      provider: "{{ ism }}"
+      
+  - name: "get memory information"
+    mem_info:
+      provider: "{{ ism }}"
+
+  - name: "get PCIE information"
+    pcie_info:
+      provider: "{{ ism }}"
+
+  - name: "get adapter information"
+    adapter_info:
+      provider: "{{ ism }}"
+
+  - name: "get backplane information"
+    backplane_info:
+      provider: "{{ ism }}"
+
+  - name: "get hard disk information"
+    hard_disk_info:
+      provider: "{{ ism }}"
+
+
+
+  - name: "get fan information"
+    fan_info:
+      provider: "{{ ism }}"
+
+  - name: "get psu information"
+    psu_info:
+      provider: "{{ ism }}"
+
+  - name: "get sensor information"
+    sensor_info:
+      provider: "{{ ism }}"
+
+  - name: "get temp information"
+    temp_info:
+      provider: "{{ ism }}"
+      
+  - name: "get volt information"
+    volt_info:
+      provider: "{{ ism }}"

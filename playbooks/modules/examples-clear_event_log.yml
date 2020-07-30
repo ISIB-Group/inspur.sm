@@ -1,0 +1,17 @@
+- name: clear event log test
+  hosts: ism
+  collections:
+    - inspur.sm
+  connection: local
+  gather_facts: no
+  vars:
+    ism:
+      host: "{{ ansible_ssh_host }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+
+  tasks:
+
+  - name: "clear event log"
+    clear_event_log:
+      provider: "{{ ism }}"

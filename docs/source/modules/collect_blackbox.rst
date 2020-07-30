@@ -110,7 +110,7 @@ Examples
    - name: Collect blackbox test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:
@@ -123,7 +123,7 @@ Examples
 
      - name: "Collect blackbox log"
        collect_blackbox:
-         file_url: "/home/wbs/"
+         file_url: "/home/wbs/wbs.log"
          provider: "{{ ism }}"
 
 

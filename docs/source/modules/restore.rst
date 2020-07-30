@@ -120,7 +120,7 @@ Examples
    - name: Backup test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:
@@ -133,6 +133,8 @@ Examples
 
      - name: "Restore server settings"
        restore:
+         bak_file: "/home/wbs/backfile"
+         item: "all"
          provider: "{{ ism }}"
 
 

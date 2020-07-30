@@ -1,0 +1,19 @@
+- name: edit user password test
+  hosts: ism
+  collections:
+    - inspur.sm
+  connection: local
+  gather_facts: no
+  vars:
+    ism:
+      host: "{{ ansible_ssh_host }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+
+  tasks:
+
+  - name: "change user password"
+    edit_pass_user:
+      uname: "wbs"
+      upass: "admin1"
+      provider: "{{ ism }}"

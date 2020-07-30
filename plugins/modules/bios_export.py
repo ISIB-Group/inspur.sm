@@ -44,7 +44,7 @@ EXAMPLES = '''
 
   - name: "Export bios config"
     bios_export:
-      file_url: "/home/wbs/bios.json"
+      file_url: "/home/wbs/bios.conf"
       provider: "{{ ism }}"
 '''
 

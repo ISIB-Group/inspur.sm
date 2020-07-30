@@ -120,7 +120,7 @@ Examples
    - name: Psu peak test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:
@@ -138,7 +138,7 @@ Examples
 
      - name: "Set psu peak information"
        edit_psu_peak:
-         status: "eanble"
+         status: "enable"
          time: 10
          provider: "{{ ism }}"
 

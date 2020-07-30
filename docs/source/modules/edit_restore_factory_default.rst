@@ -123,7 +123,7 @@ Examples
    - name: Restore default test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:
@@ -136,7 +136,7 @@ Examples
 
      - name: "Set restore default auto"
        edit_restore_factory_default:
-         setting: "all"
+         mode: "all"
          provider: "{{ ism }}"
 
      - name: "Set restore default manual"

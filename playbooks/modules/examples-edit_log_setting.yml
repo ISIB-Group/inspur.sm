@@ -1,0 +1,27 @@
+- name: edit log setting test
+  hosts: ism
+  collections:
+    - inspur.sm
+  connection: local
+  gather_facts: no
+  vars:
+    ism:
+      host: "{{ ansible_ssh_host }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+
+  tasks:
+
+  - name: "edit bmc system log setting"
+    edit_log_setting:
+      status: "enable"
+      type: "both"
+      provider: "{{ ism }}"
+    
+  - name: "edit bmc audit log setting"
+    edit_log_setting:
+      audit_status: "enable"
+      audit_type: "remote"
+      server_addr: "100.2.126.11"
+      server_port: "514"
+      provider: "{{ ism }}"

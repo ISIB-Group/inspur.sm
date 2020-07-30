@@ -139,7 +139,7 @@ Examples
    - name: Vlan test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:
@@ -163,7 +163,6 @@ Examples
          vlan_id: 2
          vlan_priority: 1
          provider: "{{ ism }}"
-         
 
 
 

@@ -1,0 +1,18 @@
+- name: power restore test
+  hosts: ism
+  collections:
+    - inspur.sm
+  connection: local
+  gather_facts: no
+  vars:
+    ism:
+      host: "{{ ansible_ssh_host }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+
+  tasks:
+
+  - name: "set power restore information"
+    edit_power_restore:
+      option: "on"
+      provider: "{{ ism }}"

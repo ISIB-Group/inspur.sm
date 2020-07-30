@@ -44,7 +44,7 @@ EXAMPLES = '''
 
   - name: "Collect blackbox log"
     collect_blackbox:
-      file_url: "/home/wbs/"
+      file_url: "/home/wbs/wbs.log"
       provider: "{{ ism }}"
 
 '''

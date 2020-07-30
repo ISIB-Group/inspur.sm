@@ -151,7 +151,7 @@ Examples
    - name: Edit pdisk test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:
@@ -166,7 +166,7 @@ Examples
        edit_pdisk:
          info: "show"
          provider: "{{ ism }}"
-         
+
      - name: "Edit pdisk"
        edit_pdisk:
          ctrl_id: 0

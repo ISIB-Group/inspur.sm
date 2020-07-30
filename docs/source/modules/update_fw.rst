@@ -28,7 +28,7 @@ Parameters
 
      
 dual_image
-  update dual image or not.
+  (M5)update dual image(default) or not.
 
 
   | **required**: False
@@ -39,11 +39,12 @@ dual_image
 
      
 has_me
-  update me or not when update bios,0-no,1-yes.
+  (M5-BIOS)update me or not when update bios,only work in INTEL platform,0-no,1-yes.
 
 
   | **required**: False
   | **type**: int
+  | **default**: 1
   | **choices**: 0, 1
 
 
@@ -58,7 +59,7 @@ host
 
      
 mode
-  active mode, Manual or Auto.
+  (BMC)active mode, Manual or Auto(default).
 
 
   | **required**: False
@@ -69,7 +70,7 @@ mode
 
      
 over_ride
-  Reserve Configrations:0-reserve, 1-override.
+  Reserve Configrations,0-reserve, 1-override.
 
 
   | **required**: False
@@ -138,7 +139,7 @@ url
   Firmware image url.
 
 
-  | **required**: False
+  | **required**: True
   | **type**: str
 
 
@@ -162,7 +163,7 @@ Examples
    - name: Update fw test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:
@@ -173,9 +174,15 @@ Examples
 
      tasks:
 
-     - name: "Update bmc"
+     - name: "update bios"
        update_fw:
-         url: "/home/wbs/"
+         url: "/home/wbs/SA5112M5_BIOS_4.1.8_Standard_20200117.bin"
+         type: "BIOS"
+         provider: "{{ ism }}"
+
+     - name: "update bmc"
+       update_fw:
+         url: "/home/wbs/SA5112M5_BMC_4.17.7_Standard_20200430"
          mode: "Auto"
          type: "BMC"
          dual_image: "dual"

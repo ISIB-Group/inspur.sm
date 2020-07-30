@@ -1,0 +1,28 @@
+- name: Restore default test
+  hosts: ism
+  collections:
+    - inspur.sm
+  connection: local
+  gather_facts: no
+  vars:
+    ism:
+      host: "{{ ansible_ssh_host }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+
+  tasks:
+
+  - name: "Set restore default auto"
+    edit_restore_factory_default:
+      setting: "all"
+      provider: "{{ ism }}"
+
+  - name: "Set restore default manual"
+    edit_restore_factory_default:
+      mode: "manual"
+      override:
+        - fru
+        - ntp
+        - network
+        - user
+      provider: "{{ ism }}"

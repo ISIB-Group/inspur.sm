@@ -92,13 +92,13 @@ provider
 
      
 role_id
-  User role id of edit user.
+  user group, default user group,'Administrator', 'Operator', 'Commonuser','OEM','NoAccess',
+
+  use command ``user_group_info`` can get all group information.
 
 
   | **required**: False
   | **type**: str
-  | **default**: NoAccess
-  | **choices**: Administrator, Operator, Commonuser, OEM, NoAccess
 
 
      
@@ -130,7 +130,7 @@ Examples
    - name: Edit user privilege test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:
@@ -145,7 +145,7 @@ Examples
        edit_priv_user:
          uname: "wbs"
          role_id: "Administrator"
-         priv: "KVM,SOL"
+         priv: "kvm,sol"
          provider: "{{ ism }}"
 
 

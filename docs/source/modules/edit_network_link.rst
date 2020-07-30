@@ -28,7 +28,9 @@ Parameters
 
      
 auto_nego
-  This option is enabled to allow the device to perform automatic configuration to achieve the best possible mode of operation(speed and duplex) over a link.
+  This option is enabled to allow the device to perform automatic configuration to
+
+  achieve the best possible mode of operation(speed and duplex) over a link.
 
 
   | **required**: False
@@ -145,7 +147,7 @@ Examples
    - name: link test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:

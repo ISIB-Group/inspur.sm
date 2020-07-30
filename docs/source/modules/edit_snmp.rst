@@ -50,8 +50,8 @@ auth_protocol
 
 
      
-host
-  Specifies the DNS host name or address for connecting to the remote device over the specified transport.  The value of host is used as the destination address for the transport.
+community
+  Community of v1/v2c or v1get/v1set/v2cget/v2cset.
 
 
   | **required**: False
@@ -59,8 +59,8 @@ host
 
 
      
-inspur
-  Community of v1/v2c or v1get/v1set/v2cget/v2cset.
+host
+  Specifies the DNS host name or address for connecting to the remote device over the specified transport.  The value of host is used as the destination address for the transport.
 
 
   | **required**: False
@@ -138,11 +138,13 @@ provider
 
      
 snmp_status
-  NMP read/write status of customize,the input parameters are 'v1get', 'v1set', 'v2cget', 'v2cset', 'v3get', 'v3set',separated by commas,such as v1get,v1set,v2cget.
+  NMP read/write status of customize,
+
+  the input parameters are 'v1get', 'v1set', 'v2cget', 'v2cset', 'v3get', 'v3set',separated by commas,such as v1get,v1set,v2cget.
 
 
   | **required**: False
-  | **type**: str
+  | **type**: list
 
 
      
@@ -184,7 +186,7 @@ Examples
    - name: Snmp test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:
@@ -197,7 +199,7 @@ Examples
 
      - name: "Set snmp get/set"
        edit_snmp:
-         inspur: "test"
+         community: "test"
          v3username: "Inspur"
          provider: "{{ ism }}"
 

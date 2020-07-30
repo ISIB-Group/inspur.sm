@@ -43,7 +43,7 @@ EXAMPLES = '''
 
   tasks:
 
-  - name: "Get power status information"
+  - name: "Set power status information"
     edit_power_status:
       state: "On"
       provider: "{{ ism }}"

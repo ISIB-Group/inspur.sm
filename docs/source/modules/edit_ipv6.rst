@@ -46,17 +46,6 @@ interface_name
 
 
      
-ipv4_gateway
-  If DHCP is disabled, specify a static Default Gateway to be configured for the selected interface,
-
-  Required when *ipv6_dhcp_enable=static*.
-
-
-  | **required**: False
-  | **type**: str
-
-
-     
 ipv6_address
   If DHCP is disabled, specify a static IPv6 address to be configured for the selected interface,
 
@@ -75,6 +64,17 @@ ipv6_dhcp_enable
   | **required**: False
   | **type**: str
   | **choices**: dhcp, static
+
+
+     
+ipv6_gateway
+  If DHCP is disabled, specify a static Default Gateway to be configured for the selected interface,
+
+  Required when *ipv6_dhcp_enable=static*.
+
+
+  | **required**: False
+  | **type**: str
 
 
      
@@ -171,7 +171,7 @@ Examples
    - name: Ipv6 test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:
@@ -185,25 +185,25 @@ Examples
      - name: "Set ipv6 information"
        edit_ipv6:
          interface_name: "eth0"
-         ipv4_status: "disable"
+         ipv6_status: "disable"
          provider: "{{ ism }}"
 
      - name: "Set ipv6 information"
        edit_ipv6:
          interface_name: "eth0"
-         ipv4_status: "enable"
-         ipv4_dhcp_enable: "dhcp"
+         ipv6_status: "enable"
+         ipv6_dhcp_enable: "dhcp"
          provider: "{{ ism }}"
-         
+
      - name: "Set ipv6 information"
        edit_ipv6:
          interface_name: "eth0"
-         ipv4_status: "enable"
-         ipv4_dhcp_enable: "static"
-         ipv4_address: "::ffff:100:2:36:10"
+         ipv6_status: "enable"
+         ipv6_dhcp_enable: "static"
+         ipv6_address: "::ffff:100:2:36:10"
          ipv6_index: 12
          ipv6_prefix: 16
-         ipv4_gateway: "::"
+         ipv6_gateway: "::"
          provider: "{{ ism }}"
 
 

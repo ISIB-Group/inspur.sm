@@ -1,0 +1,17 @@
+- name: bond test
+  hosts: ism
+  collections:
+    - inspur.sm
+  connection: local
+  gather_facts: no
+  vars:
+    ism:
+      host: "{{ ansible_ssh_host }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+
+  tasks:
+
+  - name: "Get network bond information"
+    network_bond_info:
+      provider: "{{ ism }}"

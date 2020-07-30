@@ -30,14 +30,15 @@ options:
         required: true
     role_id:
         description:
-            - User role id of new user.
-        default: NoAccess
-        choices: ['Administrator', 'Operator', 'Commonuser','OEM','NoAccess']
+            - user group, default user group,'Administrator', 'Operator', 'Commonuser','OEM','NoAccess',
+            - use command C(user_group_info) can get all group information.
         type: str
     priv:
         description:
             - User access, select one or more from None/KVM/VMM/SOL.
-        type: str
+        choices: ['kvm', 'vmm', 'sol', 'none']
+        type: list
+        elements: str
         required: true
 extends_documentation_fragment:
     - inspur.sm.ism
@@ -63,7 +64,7 @@ EXAMPLES = '''
       uname: "wbs"
       upass: "admin"
       role_id: "Administrator"
-      priv: "KVM,SOL"
+      priv: "kvm,sol"
       provider: "{{ ism }}"
 '''
 
@@ -117,8 +118,8 @@ def main():
     argument_spec = dict(
         uname=dict(type='str', required=True),
         upass=dict(type='str', required=True),
-        role_id=dict(type='str', default='NoAccess', choices=['Administrator', 'Operator', 'Commonuser', 'OEM', 'NoAccess']),
-        priv=dict(type='str', required=True),
+        role_id=dict(type='str', required=True),
+        priv=dict(type='list', elements='str', required=True, choices=['kvm', 'vmm', 'sol', 'none']),
     )
     argument_spec.update(ism_argument_spec)
     user_obj = User(argument_spec)

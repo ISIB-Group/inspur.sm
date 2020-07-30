@@ -123,7 +123,9 @@ primary_status
 
      
 primary_username
-  Primary SMTP server Username,lenth be 4 to 64 bits,must start with letters and cannot contain ','(comma) ':'(colon) ' '(space) ';'(semicolon) '\'(backslash).
+  Primary SMTP server Username,lenth be 4 to 64 bits,
+
+  must start with letters and cannot contain ','(comma) ':'(colon) ' '(space) ';'(semicolon) '\'(backslash).
 
 
   | **required**: False
@@ -227,7 +229,9 @@ secondary_status
 
      
 secondary_username
-  S.econdary SMTP server Username,lenth be 4 to 64 bits,must start with letters and cannot contain ','(comma) ':'(colon) ' '(space) ';'(semicolon) '\'(backslash).
+  S.econdary SMTP server Username,lenth be 4 to 64 bits,
+
+  must start with letters and cannot contain ','(comma) ':'(colon) ' '(space) ';'(semicolon) '\'(backslash).
 
 
   | **required**: False
@@ -254,7 +258,7 @@ Examples
    - name: Smtp test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:

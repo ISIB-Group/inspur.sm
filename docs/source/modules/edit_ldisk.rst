@@ -147,7 +147,7 @@ Examples
    - name: Edit ldisk test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:
@@ -162,7 +162,7 @@ Examples
        edit_ldisk:
          info: "show"
          provider: "{{ ism }}"
-         
+
      - name: "Edit ldisk"
        edit_ldisk:
          ctrl_id: 0

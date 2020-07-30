@@ -1,0 +1,33 @@
+- name: Preserve test
+  hosts: ism
+  collections:
+    - inspur.sm
+  connection: local
+  gather_facts: no
+  vars:
+    ism:
+      host: "{{ ansible_ssh_host }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+
+  tasks:
+
+  - name: "Set preserve all"
+    edit_preserve_config:
+      setting: "all"
+      provider: "{{ ism }}"
+
+  - name: "Set preserve none"
+    edit_preserve_config:
+      setting: "none"
+      provider: "{{ ism }}"
+
+  - name: "Set preserve manual"
+    edit_preserve_config:
+      setting: "manual"
+      override:
+        - "fru"
+        - "ntp"
+        - "network"
+        - "user"
+      provider: "{{ ism }}"

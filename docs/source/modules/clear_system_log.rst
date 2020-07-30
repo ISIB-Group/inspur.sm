@@ -40,7 +40,7 @@ level
   Log level.
 
 
-  | **required**: True
+  | **required**: False
   | **type**: str
   | **default**: alert
   | **choices**: alert, critical, error, notice, warning, debug, emergency, info, all
@@ -112,7 +112,7 @@ Examples
    - name: Clear BMC system log test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:

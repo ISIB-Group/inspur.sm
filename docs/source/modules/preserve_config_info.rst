@@ -1,11 +1,11 @@
 
-:github_url: https://github.com/ISIB-Group/ISM4A/tree/master/plugins/modules/preserver_config_info.py
+:github_url: https://github.com/ISIB-Group/ISM4A/tree/master/plugins/modules/preserve_config_info.py
 
-.. _preserver_config_info_module:
+.. _preserve_config_info_module:
 
 
-preserver_config_info -- Get preserver config information.
-==========================================================
+preserve_config_info -- Get preserve config information.
+========================================================
 
 
 
@@ -16,7 +16,7 @@ preserver_config_info -- Get preserver config information.
 
 Synopsis
 --------
-- Get preserver config information on Inspur server.
+- Get preserve config information on Inspur server.
 
 
 
@@ -98,10 +98,10 @@ Examples
 .. code-block:: yaml+jinja
 
    
-   - name: preserver test
+   - name: preserve test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:
@@ -112,8 +112,8 @@ Examples
 
      tasks:
 
-     - name: "Get preserver config information"
-       preserver_config_info:
+     - name: "Get preserve config information"
+       preserve_config_info:
          provider: "{{ ism }}"
 
 

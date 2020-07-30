@@ -1,0 +1,21 @@
+- name: add user test
+  hosts: ism
+  collections:
+    - inspur.sm
+  connection: local
+  gather_facts: no
+  vars:
+    ism:
+      host: "{{ ansible_ssh_host }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+
+  tasks:
+
+  - name: "add user"
+    add_user:
+      uname: "wbs"
+      upass: "admin"
+      role_id: "Administrator"
+      priv: "kvm,sol"
+      provider: "{{ ism }}"
