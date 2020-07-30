@@ -97,7 +97,7 @@ role_id
   use command ``user_group_info`` can get all group information.
 
 
-  | **required**: False
+  | **required**: True
   | **type**: str
 
 

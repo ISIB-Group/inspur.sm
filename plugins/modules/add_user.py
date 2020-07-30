@@ -33,6 +33,7 @@ options:
             - user group, default user group,'Administrator', 'Operator', 'Commonuser','OEM','NoAccess',
             - use command C(user_group_info) can get all group information.
         type: str
+        required: true
     priv:
         description:
             - User access, select one or more from None/KVM/VMM/SOL.
