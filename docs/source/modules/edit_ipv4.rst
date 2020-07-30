@@ -164,7 +164,7 @@ Examples
    - name: Ipv4 test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:
@@ -187,7 +187,7 @@ Examples
          ipv4_status: "enable"
          ipv4_dhcp_enable: "dhcp"
          provider: "{{ ism }}"
-         
+
      - name: "Set ipv4 information"
        edit_ipv4:
          interface_name: "eth0"

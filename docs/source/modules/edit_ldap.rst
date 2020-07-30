@@ -225,7 +225,7 @@ Examples
    - name: Ldap test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:
@@ -248,7 +248,7 @@ Examples
          address: "100.2.2.2"
          server_port: 389
          dn: "cn=manager,ou=login,dc=domain,dc=com"
-         code: "123456":
+         code: "123456"
          base: "cn=manager"
          attr: "uid"
          provider: "{{ ism }}"

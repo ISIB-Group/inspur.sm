@@ -32,7 +32,7 @@ audit_status
 
 
   | **required**: False
-  | **type**: int
+  | **type**: str
   | **choices**: enable, disable
 
 
@@ -42,13 +42,13 @@ audit_type
 
 
   | **required**: False
-  | **type**: int
+  | **type**: str
   | **choices**: local, remote, both
 
 
      
 file_size
-  File Size,3-65535, set when type is local,default 30000.
+  File Size(3-65535bytes), set when type is local(default 30000).
 
 
   | **required**: False
@@ -122,7 +122,7 @@ provider
 
      
 rotate_count
-  Rotate Count, set when type is local, 0-delete old files, 1-bak old files.
+  Rotate Count, set when type is local, 0-delete old files(default), 1-bak old files.
 
 
   | **required**: False
@@ -141,7 +141,7 @@ server_addr
 
      
 server_port
-  Server Port,0-65535, set when type is remote.
+  Server Port(0-65535), set when type is remote.
 
 
   | **required**: False
@@ -188,7 +188,7 @@ Examples
    - name: Edit log setting test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:
@@ -204,7 +204,7 @@ Examples
          status: "enable"
          type: "both"
          provider: "{{ ism }}"
-       
+
      - name: "Edit bmc audit log setting"
        edit_log_setting:
          audit_status: "enable"

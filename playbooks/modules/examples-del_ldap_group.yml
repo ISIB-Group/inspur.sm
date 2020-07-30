@@ -1,0 +1,18 @@
+- name: ldap group test
+  hosts: ism
+  collections:
+    - inspur.sm
+  connection: local
+  gather_facts: no
+  vars:
+    ism:
+      host: "{{ ansible_ssh_host }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+
+  tasks:
+
+  - name: "delete ldap group information"
+    del_ldap_group:
+      name: "inspur"
+      provider: "{{ ism }}"

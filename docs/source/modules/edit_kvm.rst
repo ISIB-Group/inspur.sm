@@ -55,7 +55,7 @@ keyboard_language
 
   DE is German Germany, DE-CH is German Switzerland, IT is Italian, JP is Japanese,
 
-  NO is Norwegian, PT is Portuguese, ES is Spanish, SV is Swedish, TR_F is Turkish F, TR_Q is Turkish Q
+  NO is Norwegian, PT is Portuguese, ES is Spanish, SV is Swedish, TR_F is Turkish F, TR_Q is Turkish Q.
 
 
   | **required**: False
@@ -181,7 +181,7 @@ Examples
    - name: KVM test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:

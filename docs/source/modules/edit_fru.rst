@@ -111,8 +111,8 @@ value
   Set the value of attribute .
 
 
-  | **required**: False
-  | **type**: int
+  | **required**: True
+  | **type**: str
 
 
 
@@ -126,7 +126,7 @@ Examples
    - name: Fru test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:

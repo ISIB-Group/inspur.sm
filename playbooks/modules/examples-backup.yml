@@ -1,0 +1,19 @@
+- name: backup test
+  hosts: ism
+  collections:
+    - inspur.sm
+  connection: local
+  gather_facts: no
+  vars:
+    ism:
+      host: "{{ ansible_ssh_host }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+
+  tasks:
+
+  - name: " backup server settings"
+    backup:
+      bak_file: "/home/wbs/"
+      item: "all"
+      provider: "{{ ism }}"

@@ -148,7 +148,6 @@ host_name
 
   | **required**: False
   | **type**: str
-  | **choices**: enable, disable
 
 
      
@@ -217,7 +216,7 @@ Examples
    - name: DNS test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:
@@ -245,7 +244,7 @@ Examples
          dns_server2: "100.2.2.3"
          dns_server3: "100.2.2.4"
          provider: "{{ ism }}"
-         
+
      - name: "Set dns information"
        edit_dns:
          dns_status: "enable"

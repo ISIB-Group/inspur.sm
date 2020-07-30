@@ -48,6 +48,15 @@ auth_protocol
 
 
      
+community
+  Community of v1/v2c.
+
+
+  | **required**: False
+  | **type**: str
+
+
+     
 contact
   Set contact, can set NULL.
 
@@ -78,15 +87,6 @@ event_severity
      
 host
   Specifies the DNS host name or address for connecting to the remote device over the specified transport.  The value of host is used as the destination address for the transport.
-
-
-  | **required**: False
-  | **type**: str
-
-
-     
-inspur
-  Community of v1/v2c.
 
 
   | **required**: False
@@ -244,7 +244,7 @@ Examples
    - name: Trap test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:
@@ -271,7 +271,7 @@ Examples
          engine_id: "1234567890"
          auth_protocol: "SHA"
          auth_password: "12345678"
-         priv_protocol: "MD5"
+         priv_protocol: "AES"
          priv_password: "123454678"
          trap_port: 162
          provider: "{{ ism }}"

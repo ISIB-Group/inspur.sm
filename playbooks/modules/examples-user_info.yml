@@ -1,0 +1,17 @@
+- name: user test
+  hosts: ism
+  collections:
+    - inspur.sm
+  connection: local
+  gather_facts: F
+  vars:
+    ism:
+      host: "{{ ansible_ssh_host }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+
+  tasks:
+
+  - name: get user information
+    user_info:
+      provider: "{{ ism }}"

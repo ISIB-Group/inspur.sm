@@ -101,7 +101,7 @@ Examples
    - name: Psu peak test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:
@@ -142,7 +142,7 @@ Return Values
         | status after module execution
       
         | **returned**: always
-        | **type**: True
+        | **type**: str
       
       
                               

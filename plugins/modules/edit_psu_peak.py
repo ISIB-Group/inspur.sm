@@ -54,7 +54,7 @@ EXAMPLES = '''
 
   - name: "Set psu peak information"
     edit_psu_peak:
-      status: "eanble"
+      status: "enable"
       time: 10
       provider: "{{ ism }}"
 '''

@@ -80,7 +80,7 @@ EXAMPLES = '''
 
   - name: "Set snmp get/set"
     edit_snmp:
-      inspur: "test"
+      community: "test"
       v3username: "Inspur"
       provider: "{{ ism }}"
 

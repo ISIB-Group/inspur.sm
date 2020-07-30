@@ -1,0 +1,23 @@
+- name: clear BMC system log test
+  hosts: ism
+  collections:
+    - inspur.sm
+  connection: local
+  gather_facts: no
+  vars:
+    ism:
+      host: "{{ ansible_ssh_host }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+
+  tasks:
+
+  - name: "clear BMC system log"
+    clear_system_log:
+      level: "alert"
+      provider: "{{ ism }}"
+
+  - name: "clear BMC system log"
+    clear_system_log:
+      level: "all"
+      provider: "{{ ism }}"

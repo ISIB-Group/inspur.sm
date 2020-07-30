@@ -50,6 +50,8 @@ EXAMPLES = '''
 
   - name: "Restore server settings"
     restore:
+      bak_file: "/home/wbs/backfile"
+      item: "all"
       provider: "{{ ism }}"
 '''
 

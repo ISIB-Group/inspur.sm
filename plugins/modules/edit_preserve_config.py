@@ -29,7 +29,7 @@ options:
             - Configuration items that need to be retained.
             - Required when I(setting=manual).
         choices: ['authentication', 'dcmi', 'fru', 'hostname', 'ipmi', 'kvm', 'network', 'ntp', 'pef',
-        'sdr', 'sel', 'smtp', 'snmp', 'sol', 'ssh', 'syslog', 'user']
+         'sdr', 'sel', 'smtp', 'snmp', 'sol', 'ssh', 'syslog', 'user']
         type: list
         elements: str
 extends_documentation_fragment:

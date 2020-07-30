@@ -74,6 +74,7 @@ EXAMPLES = '''
 
   - name: "Set ntp"
     edit_ntp:
+      auto_date: "disable"
       ntp_time: "20200609083600"
       provider: "{{ ism }}"
 

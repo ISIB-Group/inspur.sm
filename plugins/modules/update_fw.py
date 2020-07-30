@@ -71,9 +71,15 @@ EXAMPLES = '''
 
   tasks:
 
-  - name: "Update bmc"
+  - name: "update bios"
     update_fw:
-      url: "/home/wbs/"
+      url: "/home/wbs/SA5112M5_BIOS_4.1.8_Standard_20200117.bin"
+      type: "BIOS"
+      provider: "{{ ism }}"
+
+  - name: "update bmc"
+    update_fw:
+      url: "/home/wbs/SA5112M5_BMC_4.17.7_Standard_20200430"
       mode: "Auto"
       type: "BMC"
       dual_image: "dual"

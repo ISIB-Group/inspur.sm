@@ -37,7 +37,9 @@ host
 
      
 kvm_num_cd
-  Select the number of Remote KVM CD/DVD devices that support for virtual Media redirection, The max support number of html5 KVM is 2 and java KVM is 4.
+  Select the number of Remote KVM CD/DVD devices that support for virtual Media redirection,
+
+  The max support number of html5 KVM is 2 and java KVM is 4.
 
 
   | **required**: False
@@ -191,7 +193,7 @@ Examples
    - name: Media instance test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:

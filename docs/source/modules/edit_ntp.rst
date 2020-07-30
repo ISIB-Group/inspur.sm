@@ -165,7 +165,7 @@ Examples
    - name: NTP test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:
@@ -184,6 +184,7 @@ Examples
 
      - name: "Set ntp"
        edit_ntp:
+         auto_date: "disable"
          ntp_time: "20200609083600"
          provider: "{{ ism }}"
 

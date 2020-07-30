@@ -41,7 +41,7 @@ count
 
 
   | **required**: False
-  | **type**: str
+  | **type**: int
 
 
      
@@ -128,7 +128,7 @@ Examples
    - name: Bmc audit log test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:

@@ -45,3 +45,20 @@ Notes
 
 Availability
   * GitHub
+
+Version 0.0.1
+--------------------
+
+Notes
+   * Update recommended
+   * New modules
+
+     * add playbooks
+
+   * Bug fixes
+   * Documentation updates
+   * New samples
+   * Module enhancements:
+
+Availability
+  * GitHub

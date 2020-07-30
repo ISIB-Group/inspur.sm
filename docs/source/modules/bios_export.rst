@@ -110,7 +110,7 @@ Examples
    - name: Bios test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:
@@ -123,7 +123,7 @@ Examples
 
      - name: "Export bios config"
        bios_export:
-         file_url: "/home/wbs/bios.json"
+         file_url: "/home/wbs/bios.conf"
          provider: "{{ ism }}"
 
 

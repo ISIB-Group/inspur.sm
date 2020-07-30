@@ -111,7 +111,7 @@ Examples
    - name: Power status test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:
@@ -122,7 +122,7 @@ Examples
 
      tasks:
 
-     - name: "Get power status information"
+     - name: "Set power status information"
        edit_power_status:
          state: "On"
          provider: "{{ ism }}"

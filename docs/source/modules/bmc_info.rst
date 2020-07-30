@@ -101,7 +101,7 @@ Examples
    - name: Bmc info test
      hosts: ism
      collections:
-       - isnpur.sm
+       - inspur.sm
      connection: local
      gather_facts: no
      vars:

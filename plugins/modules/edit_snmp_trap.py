@@ -119,7 +119,7 @@ EXAMPLES = '''
       engine_id: "1234567890"
       auth_protocol: "SHA"
       auth_password: "12345678"
-      priv_protocol: "MD5"
+      priv_protocol: "AES"
       priv_password: "123454678"
       trap_port: 162
       provider: "{{ ism }}"

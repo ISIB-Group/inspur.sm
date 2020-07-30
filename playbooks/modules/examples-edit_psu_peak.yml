@@ -1,0 +1,24 @@
+- name: psu peak test
+  hosts: ism
+  collections:
+    - inspur.sm
+  connection: local
+  gather_facts: no
+  vars:
+    ism:
+      host: "{{ ansible_ssh_host }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+
+  tasks:
+
+  - name: "set psu peak information"
+    edit_psu_peak:
+      status: "disable"
+      provider: "{{ ism }}"
+
+  - name: "set psu peak information"
+    edit_psu_peak:
+      status: "enable"
+      time: 10
+      provider: "{{ ism }}"

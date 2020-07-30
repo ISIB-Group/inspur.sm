@@ -1,0 +1,17 @@
+- name: bmc log setting test
+  hosts: ism
+  collections:
+    - inspur.sm
+  connection: local
+  gather_facts: no
+  vars:
+    ism:
+      host: "{{ ansible_ssh_host }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+
+  tasks:
+
+  - name: "get bmc log setting information"
+    log_setting_info:
+      provider: "{{ ism }}"
