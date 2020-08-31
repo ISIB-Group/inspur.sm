@@ -2,6 +2,7 @@ ancestor: null
 releases:
   1.0.0:
     changes:
-      Create new versions, including all new modules
-      Generate module related documentation
-      Sample PlayBook to add functionality
+      Create new versions, including all new modules.
+      Generate module related documentation.
+      Sample PlayBook to add functionality.
+      Modify the generated.rST file style.
