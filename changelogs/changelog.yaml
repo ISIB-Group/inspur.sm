@@ -2,7 +2,7 @@ ancestor: null
 releases:
   1.0.2:
     changes:
-      release_summary: Modify the generated.rST file style.
+      release_summary: Modify the generated.RST file style.
     fragments:
     - 1.0.2.yaml
     release_date: '2020-08-31'
