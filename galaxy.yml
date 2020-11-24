@@ -9,7 +9,7 @@ namespace: inspur
 name: sm
 
 # The version of the collection. Must be compatible with semantic versioning
-version: 1.0.2
+version: 1.0.3
 
 # The path to the Markdown (.md) readme file. This path is relative to the root of the collection
 readme: README.md
@@ -45,13 +45,13 @@ tags: [inspur, sm, server, manager, ism]
 dependencies: {}
 
 # The URL of the originating SCM repository
-repository: http://example.com/repository
+repository: https://github.com/ISIB-Group/ISM4A
 
 # The URL to any online docs
-documentation: http://docs.example.com
+documentation: https://isib-group.github.io/inspur.sm/index.html
 
 # The URL to the homepage of the collection/project
-homepage: http://example.com
+homepage: https://github.com/ISIB-Group/ISM4A
 
 # The URL to the collection issue tracker
 issues: https://github.com/ISIB-Group/ISM4A/issues
