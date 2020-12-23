@@ -39,13 +39,13 @@ collections:
 - name: inspur.sm
 ```
 
-See [Ansible Using collections](https://isib-group.github.io/inspur.sm/index.html) for more details.
+See [Ansible Using collections](https://isib-group.github.io/inspur.sm-docs/index.html) for more details.
 
 ## Contributing to this collection
 
 If you want to develop new content for this collection or improve what is already here, the easiest way to work on the collection is to clone it into one of the configured [`COLLECTIONS_PATH`](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#collections-paths), and work on it there.
 
-You can find more information in the [developer guide for collections](https://docs.ansible.com/ansible/devel/dev_guide/developing_collections.html#contributing-to-collections), and in the [Ansible inspur.sm Guide](https://isib-group.github.io/inspur.sm/index.html).
+You can find more information in the [developer guide for collections](https://docs.ansible.com/ansible/devel/dev_guide/developing_collections.html#contributing-to-collections), and in the [Ansible inspur.sm Guide](https://isib-group.github.io/inspur.sm-docs/index.html).
 
 ### Running tests
 
@@ -67,7 +67,7 @@ Basic instructions without release branches:
 
 ## Release notes
 
-See the [changelog](https://github.com/ISIB-Group/ISM4A/blob/master/CHANGELOG.rst).
+See the [changelog](https://github.com/ISIB-Group/inspur.sm/blob/main/CHANGELOG.rst).
 
 ## Roadmap
 
