@@ -45,16 +45,16 @@ tags: [inspur, sm, server, manager, ism]
 dependencies: {}
 
 # The URL of the originating SCM repository
-repository: https://github.com/ISIB-Group/ISM4A
+repository: https://github.com/ISIB-Group/inspur.sm
 
 # The URL to any online docs
 documentation: https://isib-group.github.io/inspur.sm/index.html
 
 # The URL to the homepage of the collection/project
-homepage: https://github.com/ISIB-Group/ISM4A
+homepage: https://github.com/ISIB-Group/inspur.sm
 
 # The URL to the collection issue tracker
-issues: https://github.com/ISIB-Group/ISM4A/issues
+issues: https://github.com/ISIB-Group/inspur.sm/issues
 
 # Ignore files and directories matching the following patterns
 build_ignore:
