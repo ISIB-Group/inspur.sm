@@ -4,12 +4,12 @@ This repo contains the `inspur.sm` Ansible Collection. Inspur server supports an
 
 ## Tested with Ansible
 
-Tested with the current Ansible 2.9 and 2.10 releases and the current development version of Ansible. Ansible versions before 2.9.10 are not supported.
+Tested with the current Ansible 2.10 releases and the current development version of Ansible. Ansible versions before 2.9.10 are not supported.
 
 ## External requirements
 
 Circumstance instruction:
-Ansible module is suitable for ansible version 2.9 2.10
+Ansible module is suitable for ansible version 2.10
 
 Main steps:
 
@@ -19,7 +19,7 @@ Install inspur_sm_sdk
 Thes modules require the following to be installed on the Ansible server:
 
 * Python 3.7 or later
-* [Ansible](http://www.ansible.com) 2.9 or later
+* [Ansible](http://www.ansible.com) 2.10 or later
 * [Inspur support] inspur_sm_sdk
 
 ## Included content
