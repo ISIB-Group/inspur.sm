@@ -7,8 +7,7 @@ jobs:
     name: Sanity (${{ matrix.ansible }})
     strategy:
       matrix:
-        ansible:
-        - stable-2.9        
+        ansible:    
         - stable-2.10
         - devel
         python-version:
