@@ -84,7 +84,7 @@ class Adapter(object):
             nic = nic_result['Message'][0]
             sysadapter_len = nic.get('Maximum', 0)
             idx = 0
-            sortedRes = collections.OrderedDict()
+            sortedRes = OrderedDict()
             if sysadapter_len > 0:
                 nic = nic.get('NIC', [])
                 List = []
