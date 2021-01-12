@@ -65,6 +65,11 @@ Basic instructions without release branches:
 3. Make sure `CHANGELOG.rst` and `changelogs/changelog.yaml` are added to git, and the deleted fragments have been removed.
 4. Tag the commit with `<version>`. Push changes and tag to the main repository.
 
+### Code of Conduct
+This collection follows the Ansible project's
+[Code of Conduct](https://docs.ansible.com/ansible/devel/community/code_of_conduct.html).
+Please read and familiarize yourself with this document.
+
 ## Release notes
 
 See the [changelog](https://github.com/ISIB-Group/inspur.sm/blob/main/CHANGELOG.rst).

@@ -45,7 +45,7 @@ options:
     auth_password:
         description:
             - Set auth password of V3 trap or v3get/v3set,
-            - Password is a string of 8 to 16 alpha-numeric characters,
+            - Password is a string of 8 to 16 alpha-numeric characters.
             - Required when I(auth_protocol) is either C(SHA) or C(MD5).
         type: str
     priv_protocol:
@@ -56,7 +56,7 @@ options:
     priv_password:
         description:
             - Set privacy password of V3 trap or v3get/v3set,
-            - password is a string of 8 to 16 alpha-numeric characters,
+            - password is a string of 8 to 16 alpha-numeric characters.
             - Required when I(priv_protocol) is either C(DES) or C(AES).
         type: str
 extends_documentation_fragment:
@@ -66,8 +66,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Snmp test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -79,7 +77,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Set snmp get/set"
-    edit_snmp:
+    inspur.sm.edit_snmp:
       community: "test"
       v3username: "Inspur"
       provider: "{{ ism }}"

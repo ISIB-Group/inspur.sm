@@ -260,8 +260,6 @@ Examples
     
     - name: Vlan test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -273,13 +271,13 @@ Examples
       tasks:
 
       - name: "Set vlan information"
-        edit_vlan:
+        inspur.sm.edit_vlan:
           interface_name: "eth0"
           vlan_status: "disable"
           provider: "{{ ism }}"
 
       - name: "Set vlan information"
-        edit_vlan:
+        inspur.sm.edit_vlan:
           interface_name: "eth0"
           vlan_status: "enable"
           vlan_id: 2

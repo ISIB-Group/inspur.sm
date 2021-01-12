@@ -191,8 +191,6 @@ Examples
     
     - name: Disk backplane test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get backplane information"
-        backplane_info:
+        inspur.sm.backplane_info:
           provider: "{{ ism }}"
 
 

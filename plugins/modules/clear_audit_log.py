@@ -25,8 +25,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Clear BMC audit log test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -38,7 +36,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Clear BMC audit log "
-    clear_audit_log:
+    inspur.sm.clear_audit_log:
       provider: "{{ ism }}"
 '''
 

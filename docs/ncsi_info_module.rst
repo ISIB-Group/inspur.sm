@@ -191,8 +191,6 @@ Examples
     
     - name: NCSI test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get ncsi information"
-        ncsi_info:
+        inspur.sm.ncsi_info:
           provider: "{{ ism }}"
 
 

@@ -206,8 +206,6 @@ Examples
     
     - name: Ad group test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -219,7 +217,7 @@ Examples
       tasks:
 
       - name: "Delete active directory group information"
-        del_ad_group:
+        inspur.sm.del_ad_group:
           name: "inspur"
           provider: "{{ ism }}"
 

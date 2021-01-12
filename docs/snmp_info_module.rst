@@ -191,8 +191,6 @@ Examples
     
     - name: Snmp test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get snmp get/set information"
-        snmp_info:
+        inspur.sm.snmp_info:
           provider: "{{ ism }}"
 
 

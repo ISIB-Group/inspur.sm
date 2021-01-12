@@ -110,7 +110,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>If DHCP is disabled, specify a static IPv6 address to be configured for the selected interface,</div>
+                                            <div>If DHCP is disabled, specify a static IPv6 address to be configured for the selected interface.</div>
                                             <div>Required when <em>ipv6_dhcp_enable=static</em>.</div>
                                                         </td>
             </tr>
@@ -145,7 +145,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>If DHCP is disabled, specify a static Default Gateway to be configured for the selected interface,</div>
+                                            <div>If DHCP is disabled, specify a static Default Gateway to be configured for the selected interface.</div>
                                             <div>Required when <em>ipv6_dhcp_enable=static</em>.</div>
                                                         </td>
             </tr>
@@ -161,7 +161,8 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Ipv6 index(0-15),Required when <em>ipv6_dhcp_enable=static</em>.</div>
+                                            <div>Ipv6 index(0-15).</div>
+                                            <div>Required when <em>ipv6_dhcp_enable=static</em>.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -176,7 +177,8 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>The subnet prefix length for the IPv6 settings(0-128),Required when <em>ipv6_dhcp_enable=static</em>.</div>
+                                            <div>The subnet prefix length for the IPv6 settings(0-128).</div>
+                                            <div>Required when <em>ipv6_dhcp_enable=static</em>.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -311,8 +313,6 @@ Examples
     
     - name: Ipv6 test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -324,20 +324,20 @@ Examples
       tasks:
 
       - name: "Set ipv6 information"
-        edit_ipv6:
+        inspur.sm.edit_ipv6:
           interface_name: "eth0"
           ipv6_status: "disable"
           provider: "{{ ism }}"
 
       - name: "Set ipv6 information"
-        edit_ipv6:
+        inspur.sm.edit_ipv6:
           interface_name: "eth0"
           ipv6_status: "enable"
           ipv6_dhcp_enable: "dhcp"
           provider: "{{ ism }}"
 
       - name: "Set ipv6 information"
-        edit_ipv6:
+        inspur.sm.edit_ipv6:
           interface_name: "eth0"
           ipv6_status: "enable"
           ipv6_dhcp_enable: "static"

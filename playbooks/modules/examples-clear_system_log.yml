@@ -1,7 +1,5 @@
 - name: clear BMC system log test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:

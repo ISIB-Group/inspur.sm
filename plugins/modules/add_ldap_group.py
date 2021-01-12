@@ -53,8 +53,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Ldap group test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -66,7 +64,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Add ldap group information"
-    add_ldap_group.py:
+    inspur.sm.add_ldap_group.py:
       name: "wbs"
       base: "cn=manager"
       pri: "administrator"

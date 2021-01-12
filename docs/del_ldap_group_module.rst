@@ -206,8 +206,6 @@ Examples
     
     - name: Ldap group test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -219,7 +217,7 @@ Examples
       tasks:
 
       - name: "Delete ldap group information"
-        del_ldap_group:
+        inspur.sm.del_ldap_group:
           name: "inspur"
           provider: "{{ ism }}"
 

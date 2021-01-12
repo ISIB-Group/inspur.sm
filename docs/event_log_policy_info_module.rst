@@ -191,8 +191,6 @@ Examples
     
     - name: Event log policy test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get event log policy information"
-        event_log_policy_info:
+        inspur.sm.event_log_policy_info:
           provider: "{{ ism }}"
 
 

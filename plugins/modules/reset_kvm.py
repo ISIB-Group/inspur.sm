@@ -25,8 +25,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Reset kvm test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -38,7 +36,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Reset kvm"
-    reset_kvm:
+    inspur.sm.reset_kvm:
       provider: "{{ ism }}"
 '''
 

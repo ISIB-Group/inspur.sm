@@ -25,8 +25,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Psu peak test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -38,7 +36,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Get psu peak information"
-    psu_peak_info:
+    inspur.sm.psu_peak_info:
       provider: "{{ ism }}"
 '''
 

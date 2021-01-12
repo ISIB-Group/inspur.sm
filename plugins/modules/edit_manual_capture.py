@@ -31,8 +31,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Screen test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -44,7 +42,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Set manual capture screen"
-    edit_manual_capture:
+    inspur.sm.edit_manual_capture:
       type: "capture"
       provider: "{{ ism }}"
 '''

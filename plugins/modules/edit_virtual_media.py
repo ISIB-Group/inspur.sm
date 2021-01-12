@@ -78,8 +78,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Media test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -91,12 +89,12 @@ EXAMPLES = '''
   tasks:
 
   - name: "Set local media"
-    edit_virtual_media:
+    inspur.sm.edit_virtual_media:
       local_media_support: "Enable"
       provider: "{{ ism }}"
 
   - name: "Set remote media"
-    edit_virtual_media:
+    inspur.sm.edit_virtual_media:
       remote_media_support: "Enable"
       mount_type: 0
       same_settings: 0

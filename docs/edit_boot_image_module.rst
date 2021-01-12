@@ -214,8 +214,6 @@ Examples
     
     - name: Boot image test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -227,7 +225,7 @@ Examples
       tasks:
 
       - name: "Set bmc boot image"
-        edit_boot_image:
+        inspur.sm.edit_boot_image:
           image: 2
           provider: "{{ ism }}"
 

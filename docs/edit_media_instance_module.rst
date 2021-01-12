@@ -381,8 +381,6 @@ Examples
     
     - name: Media instance test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -394,7 +392,7 @@ Examples
       tasks:
 
       - name: "Set media instance"
-        edit_media_instance:
+        inspur.sm.edit_media_instance:
           num_fd: 1
           num_cd: 1
           num_hd: 1

@@ -191,8 +191,6 @@ Examples
     
     - name: Psu peak test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get psu peak information"
-        psu_peak_info:
+        inspur.sm.psu_peak_info:
           provider: "{{ ism }}"
 
 

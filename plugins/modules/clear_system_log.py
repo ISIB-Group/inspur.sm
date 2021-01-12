@@ -31,8 +31,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Clear BMC system log test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -44,12 +42,12 @@ EXAMPLES = '''
   tasks:
 
   - name: "Clear BMC system log"
-    clear_system_log:
+    inspur.sm.clear_system_log:
       level: "alert"
       provider: "{{ ism }}"
 
   - name: "Clear BMC system log"
-    clear_system_log:
+    inspur.sm.clear_system_log:
       level: "all"
       provider: "{{ ism }}"
 '''

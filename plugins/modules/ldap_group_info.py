@@ -25,8 +25,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Ldap group test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -38,7 +36,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Get ldap group information"
-    ldap_group_info:
+    inspur.sm.ldap_group_info:
       provider: "{{ ism }}"
 '''
 

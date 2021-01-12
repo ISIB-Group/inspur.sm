@@ -237,8 +237,6 @@ Examples
     
     - name: Bios test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -250,13 +248,13 @@ Examples
       tasks:
 
       - name: "Set bios setup"
-        edit_bios:
+        inspur.sm.edit_bios:
           attribute: "VMX"
           value: "Disable"
           provider: "{{ ism }}"
 
       - name: "Set bios setup"
-        edit_bios:
+        inspur.sm.edit_bios:
           attribute: "VMX"
           value: "Enable"
           provider: "{{ ism }}"

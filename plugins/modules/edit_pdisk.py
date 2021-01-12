@@ -25,11 +25,13 @@ options:
         type: str
     ctrl_id:
         description:
-            - Raid controller ID,Required when I(Info=None).
+            - Raid controller ID.
+            - Required when I(Info=None).
         type: int
     device_id:
         description:
-            - physical drive id,Required when I(Info=None).
+            - physical drive id.
+            - Required when I(Info=None).
         type: int
     option:
         description:
@@ -38,7 +40,7 @@ options:
             - OFF is offline,FAIL is Failed,RBD is Rebuild,
             - ON is Online,JB is JBOD,ES is Drive Erase stop,
             - EM is Drive Erase Simple,EN is Drive Erase Normal,
-            - ET is Drive Erase Through,LOC is Locate,STL is Stop Locate,
+            - ET is Drive Erase Through,LOC is Locate,STL is Stop Locate.
             - Required when I(Info=None).
         choices: ['UG', 'UB', 'OFF', 'FAIL', 'RBD', 'ON', 'JB', 'ES', 'EM', 'EN', 'ET', 'LOC', 'STL']
         type: str
@@ -49,8 +51,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Edit pdisk test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -62,12 +62,12 @@ EXAMPLES = '''
   tasks:
 
   - name: "Show pdisk information"
-    edit_pdisk:
+    inspur.sm.edit_pdisk:
       info: "show"
       provider: "{{ ism }}"
 
   - name: "Edit pdisk"
-    edit_pdisk:
+    inspur.sm.edit_pdisk:
       ctrl_id: 0
       device_id: 1
       option: "LOC"

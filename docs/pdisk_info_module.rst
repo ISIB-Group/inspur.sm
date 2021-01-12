@@ -191,8 +191,6 @@ Examples
     
     - name: Pdisk test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get physical disks information"
-        pdisk_info:
+        inspur.sm.pdisk_info:
           provider: "{{ ism }}"
 
 

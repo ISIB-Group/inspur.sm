@@ -31,8 +31,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Event log policy test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -44,7 +42,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Set event log policy"
-    edit_event_log_policy:
+    inspur.sm.edit_event_log_policy:
       policy: "Linear"
       provider: "{{ ism }}"
 '''

@@ -191,8 +191,6 @@ Examples
     
     - name: DNS test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get dns information"
-        dns_info:
+        inspur.sm.dns_info:
           provider: "{{ ism }}"
 
 

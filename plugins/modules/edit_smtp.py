@@ -57,7 +57,7 @@ options:
         type: str
     primary_password:
         description:
-            - Primary SMTP server Password,lenth be 4 to 64 bits,cannot contain ' '(space),
+            - Primary SMTP server Password,lenth be 4 to 64 bits,cannot contain ' '(space).
             - Required when I(primary_auth=enable).
         type: str
     secondary_status:
@@ -84,12 +84,12 @@ options:
         type: str
     secondary_username:
         description:
-            - S.econdary SMTP server Username,lenth be 4 to 64 bits,
+            - Secondary SMTP server Username,lenth be 4 to 64 bits,
             - must start with letters and cannot contain ','(comma) ':'(colon) ' '(space) ';'(semicolon) '\\'(backslash).
         type: str
     secondary_password:
         description:
-            - Secondary SMTP server Password,lenth be 4 to 64 bits,cannot contain ' '(space),
+            - Secondary SMTP server Password,lenth be 4 to 64 bits,cannot contain ' '(space).
             - Required when I(secondary_auth=enable).
         type: str
 extends_documentation_fragment:
@@ -99,8 +99,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Smtp test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -112,7 +110,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Set smtp information"
-    edit_smtp:
+    inspur.sm.edit_smtp:
       interface: "eth0"
       email: "inspur@Inspur.com"
       primary_status: "enable"
@@ -122,7 +120,7 @@ EXAMPLES = '''
       provider: "{{ ism }}"
 
   - name: "Set smtp information"
-    edit_smtp:
+    inspur.sm.edit_smtp:
       interface: "eth0"
       email: "inspur@Inspur.com"
       primary_status: "enable"

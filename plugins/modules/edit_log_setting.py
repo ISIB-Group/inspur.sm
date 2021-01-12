@@ -67,8 +67,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Edit log setting test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -80,13 +78,13 @@ EXAMPLES = '''
   tasks:
 
   - name: "Edit bmc system log setting"
-    edit_log_setting:
+    inspur.sm.edit_log_setting:
       status: "enable"
       type: "both"
       provider: "{{ ism }}"
 
   - name: "Edit bmc audit log setting"
-    edit_log_setting:
+    inspur.sm.edit_log_setting:
       audit_status: "enable"
       audit_type: "remote"
       server_addr: "100.2.126.11"

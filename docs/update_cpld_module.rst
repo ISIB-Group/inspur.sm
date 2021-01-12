@@ -242,8 +242,6 @@ Examples
     
     - name: CPLD test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -255,7 +253,7 @@ Examples
       tasks:
 
       - name: "Get cpld list"
-        update_cpld:
+        inspur.sm.update_cpld:
           list: True
           provider: "{{ ism }}"
 

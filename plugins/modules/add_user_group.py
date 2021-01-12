@@ -36,8 +36,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Add user group test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -49,7 +47,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Add user group"
-    add_user_group:
+    inspur.sm.add_user_group:
       name: "test"
       pri: "administrator"
       provider: "{{ ism }}"

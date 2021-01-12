@@ -240,8 +240,6 @@ Examples
     
     - name: Fan test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -253,12 +251,12 @@ Examples
       tasks:
 
       - name: "Set fan information"
-        edit_fan:
+        inspur.sm.edit_fan:
           mode: "Automatic"
           provider: "{{ ism }}"
 
       - name: "Set fan information"
-        edit_fan:
+        inspur.sm.edit_fan:
           mode: "Manual"
           id: 1
           fan_speed: 80

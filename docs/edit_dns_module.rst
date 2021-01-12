@@ -75,7 +75,8 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>DNS Interface,input like &#x27;eth0&#x27;, &#x27;eth1&#x27;, &#x27;bond0&#x27;,Required when <em>dns_manual=auto</em>.</div>
+                                            <div>DNS Interface,input like &#x27;eth0&#x27;, &#x27;eth1&#x27;, &#x27;bond0&#x27;.</div>
+                                            <div>Required when <em>dns_manual=auto</em>.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -113,7 +114,8 @@ Parameters
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
-                                            <div>IP Priority,Required when <em>dns_manual=auto</em>.</div>
+                                            <div>IP Priority.</div>
+                                            <div>Required when <em>dns_manual=auto</em>.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -128,7 +130,8 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>DNS Server1 ipv4 or ipv6 address,Required when <em>dns_manual=manual</em>.</div>
+                                            <div>DNS Server1 IPv4 or IPv6 address.</div>
+                                            <div>Required when <em>dns_manual=manual</em>.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -143,7 +146,8 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>DNS Server2 ipv4 or ipv6 address,Required when <em>dns_manual=manual</em>.</div>
+                                            <div>DNS Server2 IPv4 or IPv6 address.</div>
+                                            <div>Required when <em>dns_manual=manual</em>.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -158,7 +162,8 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>DNS Server3 ipv4 or ipv6 address,Required when <em>dns_manual=manual</em>.</div>
+                                            <div>DNS Server3 IPv4 or IPv6 address.</div>
+                                            <div>Required when <em>dns_manual=manual</em>.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -192,7 +197,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Network Interface,input like &#x27;eth0_v4&#x27;, &#x27;eth0_v6&#x27;, &#x27;eth1_v4&#x27;, &#x27;eth1_v6&#x27;, &#x27;bond0_v4&#x27;, &#x27;bond0_v6&#x27;,</div>
+                                            <div>Network Interface,input like &#x27;eth0_v4&#x27;, &#x27;eth0_v6&#x27;, &#x27;eth1_v4&#x27;, &#x27;eth1_v6&#x27;, &#x27;bond0_v4&#x27;, &#x27;bond0_v6&#x27;.</div>
                                             <div>Required when <em>domain_manual=auto</em>.</div>
                                                         </td>
             </tr>
@@ -227,7 +232,8 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Domain Name, Required when <em>domain_manual=manual</em>.</div>
+                                            <div>Domain Name.</div>
+                                            <div>Required when <em>domain_manual=manual</em>.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -276,7 +282,8 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Host Name,Required when <em>host_cfg=manual</em>.</div>
+                                            <div>Host Name.</div>
+                                            <div>Required when <em>host_cfg=manual</em>.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -392,8 +399,6 @@ Examples
     
     - name: DNS test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -405,12 +410,12 @@ Examples
       tasks:
 
       - name: "Set dns information"
-        edit_dns:
+        inspur.sm.edit_dns:
           dns_status: "disable"
           provider: "{{ ism }}"
 
       - name: "Set dns information"
-        edit_dns:
+        inspur.sm.edit_dns:
           dns_status: "enable"
           host_cfg: "manual"
           host_name: "123456789"
@@ -423,7 +428,7 @@ Examples
           provider: "{{ ism }}"
 
       - name: "Set dns information"
-        edit_dns:
+        inspur.sm.edit_dns:
           dns_status: "enable"
           host_cfg: "manual"
           host_name: "123456789"

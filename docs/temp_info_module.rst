@@ -191,8 +191,6 @@ Examples
     
     - name: Temp test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get temp information"
-        temp_info:
+        inspur.sm.temp_info:
           provider: "{{ ism }}"
 
 

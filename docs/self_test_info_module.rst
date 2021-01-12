@@ -191,8 +191,6 @@ Examples
     
     - name: self test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get self test information"
-        self_test_info:
+        inspur.sm.self_test_info:
           provider: "{{ ism }}"
 
 

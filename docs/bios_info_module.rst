@@ -191,8 +191,6 @@ Examples
     
     - name: Bios test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get bios setup"
-        bios_info:
+        inspur.sm.bios_info:
           provider: "{{ ism }}"
 
 

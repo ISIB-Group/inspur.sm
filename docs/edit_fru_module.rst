@@ -90,7 +90,7 @@ Parameters
                                                                             </td>
                                                                 <td>
                                             <div>Attribute,CP is Chassis Part Number,CS is Chassis Serial,PM is Product Manufacturer,</div>
-                                            <div>PPN is Product Part Number,PS is Product Serial,PN is Product Name,PV is Product Version，</div>
+                                            <div>PPN is Product Part Number,PS is Product Serial,PN is Product Name,PV is Product Version,</div>
                                             <div>PAT is Product Asset Tag,BM is Board Mfg,BPN is Board Product Name,BS is Board Serial,</div>
                                             <div>BP is Board Part Number.</div>
                                                         </td>
@@ -216,7 +216,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Set the value of attribute .</div>
+                                            <div>Set the value of attribute.</div>
                                                         </td>
             </tr>
                         </table>
@@ -238,8 +238,6 @@ Examples
     
     - name: Fru test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -251,7 +249,7 @@ Examples
       tasks:
 
       - name: "Set Fru"
-        edit_fru:
+        inspur.sm.edit_fru:
           attribute: "CP"
           value: "Inspur"
           provider: "{{ ism }}"

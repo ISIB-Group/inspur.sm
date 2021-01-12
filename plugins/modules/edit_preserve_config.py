@@ -39,8 +39,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Preserve test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -52,7 +50,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Set preserve all"
-    edit_preserve_config:
+    inspur.sm.edit_preserve_config:
       setting: "all"
       provider: "{{ ism }}"
 

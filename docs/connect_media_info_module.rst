@@ -191,8 +191,6 @@ Examples
     
     - name: Connect media test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get remote images redirection information"
-        connect_media_info:
+        inspur.sm.connect_media_info:
           provider: "{{ ism }}"
 
 

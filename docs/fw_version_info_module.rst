@@ -191,8 +191,6 @@ Examples
     
     - name: Firmware version test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get firmware version information"
-        fw_version_info:
+        inspur.sm.fw_version_info:
           provider: "{{ ism }}"
 
 

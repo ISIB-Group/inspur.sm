@@ -36,17 +36,17 @@ options:
         type: str
     ipv4_address:
         description:
-            - If DHCP is disabled, specify a static IPv4 address to be configured for the selected interface,
+            - If DHCP is disabled, specify a static IPv4 address to be configured for the selected interface.
             - Required when I(ipv4_dhcp_enable=static).
         type: str
     ipv4_subnet:
         description:
-            - If DHCP is disabled, specify a static Subnet Mask to be configured for the selected interface,
+            - If DHCP is disabled, specify a static Subnet Mask to be configured for the selected interface.
             - Required when I(ipv4_dhcp_enable=static).
         type: str
     ipv4_gateway:
         description:
-            - If DHCP is disabled, specify a static Default Gateway to be configured for the selected interface,
+            - If DHCP is disabled, specify a static Default Gateway to be configured for the selected interface.
             - Required when I(ipv4_dhcp_enable=static).
         type: str
 extends_documentation_fragment:
@@ -56,8 +56,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Ipv4 test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -69,20 +67,20 @@ EXAMPLES = '''
   tasks:
 
   - name: "Set ipv4 information"
-    edit_ipv4:
+    inspur.sm.edit_ipv4:
       interface_name: "eth0"
       ipv4_status: "disable"
       provider: "{{ ism }}"
 
   - name: "Set ipv4 information"
-    edit_ipv4:
+    inspur.sm.edit_ipv4:
       interface_name: "eth0"
       ipv4_status: "enable"
       ipv4_dhcp_enable: "dhcp"
       provider: "{{ ism }}"
 
   - name: "Set ipv4 information"
-    edit_ipv4:
+    inspur.sm.edit_ipv4:
       interface_name: "eth0"
       ipv4_status: "enable"
       ipv4_dhcp_enable: "static"

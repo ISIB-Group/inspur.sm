@@ -48,8 +48,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Add user test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -61,7 +59,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Add user"
-    add_user:
+    inspur.sm.add_user:
       uname: "wbs"
       upass: "admin"
       role_id: "Administrator"

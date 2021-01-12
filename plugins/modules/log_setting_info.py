@@ -25,8 +25,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Bmc log setting test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -38,7 +36,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Get bmc log setting information"
-    log_setting_info:
+    inspur.sm.log_setting_info:
       provider: "{{ ism }}"
 '''
 

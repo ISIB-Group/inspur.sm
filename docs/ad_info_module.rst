@@ -191,8 +191,6 @@ Examples
     
     - name: Ad test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get active directory information"
-        ad_info:
+        inspur.sm.ad_info:
           provider: "{{ ism }}"
 
 

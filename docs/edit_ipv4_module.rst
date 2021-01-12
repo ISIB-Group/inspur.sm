@@ -110,7 +110,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>If DHCP is disabled, specify a static IPv4 address to be configured for the selected interface,</div>
+                                            <div>If DHCP is disabled, specify a static IPv4 address to be configured for the selected interface.</div>
                                             <div>Required when <em>ipv4_dhcp_enable=static</em>.</div>
                                                         </td>
             </tr>
@@ -145,7 +145,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>If DHCP is disabled, specify a static Default Gateway to be configured for the selected interface,</div>
+                                            <div>If DHCP is disabled, specify a static Default Gateway to be configured for the selected interface.</div>
                                             <div>Required when <em>ipv4_dhcp_enable=static</em>.</div>
                                                         </td>
             </tr>
@@ -180,7 +180,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>If DHCP is disabled, specify a static Subnet Mask to be configured for the selected interface,</div>
+                                            <div>If DHCP is disabled, specify a static Subnet Mask to be configured for the selected interface.</div>
                                             <div>Required when <em>ipv4_dhcp_enable=static</em>.</div>
                                                         </td>
             </tr>
@@ -297,8 +297,6 @@ Examples
     
     - name: Ipv4 test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -310,20 +308,20 @@ Examples
       tasks:
 
       - name: "Set ipv4 information"
-        edit_ipv4:
+        inspur.sm.edit_ipv4:
           interface_name: "eth0"
           ipv4_status: "disable"
           provider: "{{ ism }}"
 
       - name: "Set ipv4 information"
-        edit_ipv4:
+        inspur.sm.edit_ipv4:
           interface_name: "eth0"
           ipv4_status: "enable"
           ipv4_dhcp_enable: "dhcp"
           provider: "{{ ism }}"
 
       - name: "Set ipv4 information"
-        edit_ipv4:
+        inspur.sm.edit_ipv4:
           interface_name: "eth0"
           ipv4_status: "enable"
           ipv4_dhcp_enable: "static"

@@ -30,7 +30,8 @@ options:
         type: str
     host_name:
         description:
-            - Host Name,Required when I(host_cfg=manual).
+            - Host Name.
+            - Required when I(host_cfg=manual).
         type: str
     domain_manual:
         description:
@@ -39,12 +40,13 @@ options:
         type: str
     domain_iface:
         description:
-            - Network Interface,input like 'eth0_v4', 'eth0_v6', 'eth1_v4', 'eth1_v6', 'bond0_v4', 'bond0_v6',
+            - Network Interface,input like 'eth0_v4', 'eth0_v6', 'eth1_v4', 'eth1_v6', 'bond0_v4', 'bond0_v6'.
             - Required when I(domain_manual=auto).
         type: str
     domain_name:
         description:
-            - Domain Name, Required when I(domain_manual=manual).
+            - Domain Name.
+            - Required when I(domain_manual=manual).
         type: str
     dns_manual:
         description:
@@ -53,24 +55,29 @@ options:
         type: str
     dns_iface:
         description:
-            - DNS Interface,input like 'eth0', 'eth1', 'bond0',Required when I(dns_manual=auto).
+            - DNS Interface,input like 'eth0', 'eth1', 'bond0'.
+            - Required when I(dns_manual=auto).
         type: str
     dns_priority:
         description:
-            - IP Priority,Required when I(dns_manual=auto).
+            - IP Priority.
+            - Required when I(dns_manual=auto).
         choices: ['4', '6']
         type: str
     dns_server1:
         description:
-            - DNS Server1 ipv4 or ipv6 address,Required when I(dns_manual=manual).
+            - DNS Server1 IPv4 or IPv6 address.
+            - Required when I(dns_manual=manual).
         type: str
     dns_server2:
         description:
-            - DNS Server2 ipv4 or ipv6 address,Required when I(dns_manual=manual).
+            - DNS Server2 IPv4 or IPv6 address.
+            - Required when I(dns_manual=manual).
         type: str
     dns_server3:
         description:
-            - DNS Server3 ipv4 or ipv6 address,Required when I(dns_manual=manual).
+            - DNS Server3 IPv4 or IPv6 address.
+            - Required when I(dns_manual=manual).
         type: str
 extends_documentation_fragment:
     - inspur.sm.ism
@@ -79,8 +86,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: DNS test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -92,12 +97,12 @@ EXAMPLES = '''
   tasks:
 
   - name: "Set dns information"
-    edit_dns:
+    inspur.sm.edit_dns:
       dns_status: "disable"
       provider: "{{ ism }}"
 
   - name: "Set dns information"
-    edit_dns:
+    inspur.sm.edit_dns:
       dns_status: "enable"
       host_cfg: "manual"
       host_name: "123456789"
@@ -110,7 +115,7 @@ EXAMPLES = '''
       provider: "{{ ism }}"
 
   - name: "Set dns information"
-    edit_dns:
+    inspur.sm.edit_dns:
       dns_status: "enable"
       host_cfg: "manual"
       host_name: "123456789"

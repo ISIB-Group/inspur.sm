@@ -281,8 +281,6 @@ Examples
     
     - name: Ad group test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -294,7 +292,7 @@ Examples
       tasks:
 
       - name: "Add active directory group information"
-        add_ad_group:
+        inspur.sm.add_ad_group:
           name: "wbs"
           domain: "inspur.com"
           pri: "administrator"

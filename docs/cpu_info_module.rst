@@ -191,8 +191,6 @@ Examples
     
     - name: CPU test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get cpu information"
-        cpu_info:
+        inspur.sm.cpu_info:
           provider: "{{ ism }}"
 
 

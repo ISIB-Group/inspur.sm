@@ -236,8 +236,6 @@ Examples
     
     - name: Event log info test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -249,17 +247,17 @@ Examples
       tasks:
 
       - name: "Get event log information"
-        event_log_info:
+        inspur.sm.event_log_info:
           log_time: "2020-06-01T12:30+08:00"
           provider: "{{ ism }}"
 
       - name: "Get event log information"
-        event_log_info:
+        inspur.sm.event_log_info:
           count: 30
           provider: "{{ ism }}"
 
       - name: "Get event log information"
-        event_log_info:
+        inspur.sm.event_log_info:
           event_file: "/home/wbs/wbs.log"
           provider: "{{ ism }}"
 

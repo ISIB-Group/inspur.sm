@@ -191,8 +191,6 @@ Examples
     
     - name: Bmc log setting test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get bmc log setting information"
-        log_setting_info:
+        inspur.sm.log_setting_info:
           provider: "{{ ism }}"
 
 

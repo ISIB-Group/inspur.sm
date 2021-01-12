@@ -249,8 +249,6 @@ Examples
     
     - name: bond test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -262,7 +260,7 @@ Examples
       tasks:
 
       - name: "Set network bond"
-        edit_network_bond:
+        inspur.sm.edit_network_bond:
           bond: "enable"
           interface: "dedicated"
           auto_config: "enable"

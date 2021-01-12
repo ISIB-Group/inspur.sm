@@ -25,8 +25,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Firmware version test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -38,7 +36,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Get firmware version information"
-    fw_version_info:
+    inspur.sm.fw_version_info:
       provider: "{{ ism }}"
 '''
 

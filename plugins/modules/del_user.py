@@ -30,8 +30,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Delete user test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -43,7 +41,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Delete user"
-    del_user:
+    inspur.sm.del_user:
       uname: "wbs"
       provider: "{{ ism }}"
 '''

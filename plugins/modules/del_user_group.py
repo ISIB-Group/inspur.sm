@@ -30,8 +30,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Delete user group test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -43,7 +41,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Delete user group"
-    del_user_group:
+    inspur.sm.del_user_group:
       name: "test"
       provider: "{{ ism }}"
 '''

@@ -191,8 +191,6 @@ Examples
     
     - name: Volt test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get volt information"
-        volt_info:
+        inspur.sm.volt_info:
           provider: "{{ ism }}"
 
 

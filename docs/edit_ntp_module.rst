@@ -300,8 +300,6 @@ Examples
     
     - name: NTP test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -313,19 +311,19 @@ Examples
       tasks:
 
       - name: "Set ntp"
-        edit_ntp:
+        inspur.sm.edit_ntp:
           auto_date: "enable"
           server2: "time.nist.gov"
           provider: "{{ ism }}"
 
       - name: "Set ntp"
-        edit_ntp:
+        inspur.sm.edit_ntp:
           auto_date: "disable"
           ntp_time: "20200609083600"
           provider: "{{ ism }}"
 
       - name: "set ntp"
-        edit_ntp:
+        inspur.sm.edit_ntp:
           time_zone: 8
           provider: "{{ ism }}"
 

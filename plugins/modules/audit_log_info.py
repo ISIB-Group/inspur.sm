@@ -37,8 +37,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Bmc audit log test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -50,17 +48,17 @@ EXAMPLES = '''
   tasks:
 
   - name: "Get bmc audit log information"
-    audit_log_info:
+    inspur.sm.audit_log_info:
       log_time: "2020-06-01T12:30+08:00"
       provider: "{{ ism }}"
 
   - name: "Get bmc audit log information"
-    audit_log_info:
+    inspur.sm.audit_log_info:
       count: 30
       provider: "{{ ism }}"
 
   - name: "Get bmc audit log information"
-    audit_log_info:
+    inspur.sm.audit_log_info:
       audit_file: "/home/wbs/wbs.log"
       provider: "{{ ism }}"
 '''

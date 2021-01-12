@@ -191,8 +191,6 @@ Examples
     
     - name: Session test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get session information"
-        session_info:
+        inspur.sm.session_info:
           provider: "{{ ism }}"
 
 

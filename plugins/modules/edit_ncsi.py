@@ -43,8 +43,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: NCSI test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -56,7 +54,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Set ncsi information"
-    edit_ncsi:
+    inspur.sm.edit_ncsi:
       mode: "manual"
       nic_type: "PCIE"
       interface_name: "eth0"

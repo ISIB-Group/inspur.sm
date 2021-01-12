@@ -286,8 +286,6 @@ Examples
     
     - name: Alert policy test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -299,7 +297,7 @@ Examples
       tasks:
 
       - name: "Set alert policy"
-        edit_alert_policy:
+        inspur.sm.edit_alert_policy:
           id: 1
           status: "enable"
           type: "snmp"
@@ -308,7 +306,7 @@ Examples
           provider: "{{ ism }}"
 
       - name: "Set alert policy"
-        edit_alert_policy:
+        inspur.sm.edit_alert_policy:
           id: 1
           status: "disable"
           provider: "{{ ism }}"

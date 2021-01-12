@@ -228,8 +228,6 @@ Examples
     
     - name: Add user group test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -241,7 +239,7 @@ Examples
       tasks:
 
       - name: "Add user group"
-        add_user_group:
+        inspur.sm.add_user_group:
           name: "test"
           pri: "administrator"
           provider: "{{ ism }}"

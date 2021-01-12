@@ -35,8 +35,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Edit user password test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -48,7 +46,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Change user password"
-    edit_pass_user:
+    inspur.sm.edit_pass_user:
       uname: "wbs"
       upass: "admin1"
       provider: "{{ ism }}"

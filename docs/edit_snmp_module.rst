@@ -76,7 +76,7 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Set auth password of V3 trap or v3get/v3set,</div>
-                                            <div>Password is a string of 8 to 16 alpha-numeric characters,</div>
+                                            <div>Password is a string of 8 to 16 alpha-numeric characters.</div>
                                             <div>Required when <em>auth_protocol</em> is either <code>SHA</code> or <code>MD5</code>.</div>
                                                         </td>
             </tr>
@@ -158,7 +158,7 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Set privacy password of V3 trap or v3get/v3set,</div>
-                                            <div>password is a string of 8 to 16 alpha-numeric characters,</div>
+                                            <div>password is a string of 8 to 16 alpha-numeric characters.</div>
                                             <div>Required when <em>priv_protocol</em> is either <code>DES</code> or <code>AES</code>.</div>
                                                         </td>
             </tr>
@@ -333,8 +333,6 @@ Examples
     
     - name: Snmp test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -346,7 +344,7 @@ Examples
       tasks:
 
       - name: "Set snmp get/set"
-        edit_snmp:
+        inspur.sm.edit_snmp:
           community: "test"
           v3username: "Inspur"
           provider: "{{ ism }}"

@@ -75,7 +75,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Set auth password of V3 trap, password is a string of 8 to 16 alpha-numeric characters,</div>
+                                            <div>Set auth password of V3 trap, password is a string of 8 to 16 alpha-numeric characters.</div>
                                             <div>Required when <em>auth_protocol</em> is either <code>SHA</code> or <code>MD5</code>.</div>
                                                         </td>
             </tr>
@@ -236,7 +236,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Set privacy password of V3 trap, password is a string of 8 to 16 alpha-numeric characters,</div>
+                                            <div>Set privacy password of V3 trap, password is a string of 8 to 16 alpha-numeric characters.</div>
                                             <div>Required when <em>priv_protocol</em> is either <code>DES</code> or <code>AES</code>.</div>
                                                         </td>
             </tr>
@@ -438,8 +438,6 @@ Examples
     
     - name: Trap test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -451,7 +449,7 @@ Examples
       tasks:
 
       - name: "Set snmp trap v2c"
-        edit_snmp_trap:
+        inspur.sm.edit_snmp_trap:
           version: "2c"
           event_severity: "warning"
           inspur: "test"
@@ -459,7 +457,7 @@ Examples
           provider: "{{ ism }}"
 
       - name: "Set snmp trap v3"
-        edit_snmp_trap:
+        inspur.sm.edit_snmp_trap:
           version: "3"
           event_severity: "all"
           v3username: "Inspur"

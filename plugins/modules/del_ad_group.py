@@ -30,8 +30,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Ad group test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -43,7 +41,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Delete active directory group information"
-    del_ad_group:
+    inspur.sm.del_ad_group:
       name: "inspur"
       provider: "{{ ism }}"
 '''
