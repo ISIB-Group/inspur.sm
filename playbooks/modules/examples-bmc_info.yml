@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get BMC information"
-    bmc_info:
+    inspur.sm.bmc_info:
       provider: "{{ ism }}"

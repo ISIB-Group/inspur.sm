@@ -11,20 +11,20 @@
   tasks:
 
   - name: "set ipv4 information"
-    edit_ipv4:
+    inspur.sm.edit_ipv4:
       interface_name: "eth0"
       ipv4_status: "disable"
       provider: "{{ ism }}"
 
   - name: "set ipv4 information"
-    edit_ipv4:
+    inspur.sm.edit_ipv4:
       interface_name: "eth0"
       ipv4_status: "enable"
       ipv4_dhcp_enable: "dhcp"
       provider: "{{ ism }}"
       
   - name: "set ipv4 information"
-    edit_ipv4:
+    inspur.sm.edit_ipv4:
       interface_name: "eth0"
       ipv4_status: "enable"
       ipv4_dhcp_enable: "static"

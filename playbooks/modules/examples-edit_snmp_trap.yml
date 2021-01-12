@@ -11,7 +11,7 @@
   tasks:
 
   - name: "set snmp trap v2c"
-    edit_snmp_trap:
+    inspur.sm.edit_snmp_trap:
       version: "2c"
       event_severity: "warning"
       community: "test"
@@ -19,7 +19,7 @@
       provider: "{{ ism }}"
 
   - name: "set snmp trap v3"
-    edit_snmp_trap:
+    inspur.sm.edit_snmp_trap:
       version: "3"
       event_severity: "all"
       v3username: "Inspur"

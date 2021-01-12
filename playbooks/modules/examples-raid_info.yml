@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get raid information"
-    raid_info:
+    inspur.sm.raid_info:
       provider: "{{ ism }}"

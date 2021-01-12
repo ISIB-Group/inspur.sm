@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get user group information"
-    user_group_info:
+    inspur.sm.user_group_info:
       provider: "{{ ism }}"

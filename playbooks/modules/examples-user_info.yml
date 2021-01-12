@@ -11,5 +11,5 @@
   tasks:
 
   - name: get user information
-    user_info:
+    inspur.sm.user_info:
       provider: "{{ ism }}"

@@ -11,7 +11,7 @@
   tasks:
 
   - name: "set smtp information"
-    edit_smtp:
+    inspur.sm.edit_smtp:
       interface: "eth0"
       email: "inspur@Inspur.com"
       primary_status: "enable"
@@ -21,7 +21,7 @@
       provider: "{{ ism }}"
 
   - name: "set smtp information"
-    edit_smtp:
+    inspur.sm.edit_smtp:
       interface: "eth0"
       email: "inspur@Inspur.com"
       primary_status: "enable"

@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get snmp get/set information"
-    snmp_info:
+    inspur.sm.snmp_info:
       provider: "{{ ism }}"

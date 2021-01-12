@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get logical disks information"
-    ldisk_info:
+    inspur.sm.ldisk_info:
       provider: "{{ ism }}"

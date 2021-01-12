@@ -11,7 +11,7 @@
   tasks:
 
   - name: "set snmp get/set"
-    edit_snmp:
+    inspur.sm.edit_snmp:
       community: "test"
       v3username: "Inspur"
       provider: "{{ ism }}"

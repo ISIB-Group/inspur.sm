@@ -11,12 +11,12 @@
   tasks:
 
   - name: "set dns information"
-    edit_dns:
+    inspur.sm.edit_dns:
       dns_status: "disable"
       provider: "{{ ism }}"
 
   - name: "set dns information"
-    edit_dns:
+    inspur.sm.edit_dns:
       dns_status: "enable"
       host_cfg: "manual"
       host_name: "123456789"

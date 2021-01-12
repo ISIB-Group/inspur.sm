@@ -11,12 +11,12 @@
   tasks:
 
   - name: "Set restore default auto"
-    edit_restore_factory_default:
+    inspur.sm.edit_restore_factory_default:
       setting: "all"
       provider: "{{ ism }}"
 
   - name: "Set restore default manual"
-    edit_restore_factory_default:
+    inspur.sm.edit_restore_factory_default:
       mode: "manual"
       override:
         - fru

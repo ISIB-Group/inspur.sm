@@ -11,7 +11,7 @@
   tasks:
 
   - name: "add user"
-    add_user:
+    inspur.sm.add_user:
       uname: "wbs"
       upass: "admin"
       role_id: "Administrator"

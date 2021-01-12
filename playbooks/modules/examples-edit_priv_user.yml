@@ -11,7 +11,7 @@
   tasks:
 
   - name: "change user privilege"
-    edit_priv_user:
+    inspur.sm.edit_priv_user:
       uname: "wbs"
       role_id: "Administrator"
       priv: "kvm,sol"

@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get backplane information"
-    backplane_info:
+    inspur.sm.backplane_info:
       provider: "{{ ism }}"

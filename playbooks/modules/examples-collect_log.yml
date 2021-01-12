@@ -11,6 +11,6 @@
   tasks:
 
   - name: "Collect logs"
-    collect_log:
+    inspur.sm.collect_log:
       file_url: "/home/wbs/test.tar"
       provider: "{{ ism }}"

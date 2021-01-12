@@ -11,5 +11,5 @@
   tasks:
 
   - name: "reset kvm"
-    reset_kvm:
+    inspur.sm.reset_kvm:
       provider: "{{ ism }}"

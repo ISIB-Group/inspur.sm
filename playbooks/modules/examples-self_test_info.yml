@@ -11,5 +11,5 @@
   tasks:
 
   - name: "Get self test information"
-    self_test_info:
+    inspur.sm.self_test_info:
       provider: "{{ ism }}"

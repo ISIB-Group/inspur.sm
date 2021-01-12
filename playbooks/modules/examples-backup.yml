@@ -11,7 +11,7 @@
   tasks:
 
   - name: " backup server settings"
-    backup:
+    inspur.sm.backup:
       bak_file: "/home/wbs/"
       item: "all"
       provider: "{{ ism }}"

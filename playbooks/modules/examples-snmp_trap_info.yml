@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get snmp trap information"
-    snmp_trap_info:
+    inspur.sm.snmp_trap_info:
       provider: "{{ ism }}"

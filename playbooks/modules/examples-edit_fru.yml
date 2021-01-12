@@ -11,7 +11,7 @@
   tasks:
 
   - name: "Set Fru"
-    edit_fru:
+    inspur.sm.edit_fru:
       attribute: "CP"
       value: "Inspur"
       provider: "{{ ism }}"

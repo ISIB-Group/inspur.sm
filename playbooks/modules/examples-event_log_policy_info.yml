@@ -11,5 +11,5 @@
   tasks:
 
   - name: "Get event log policy information"
-    event_log_policy_info:
+    inspur.sm.event_log_policy_info:
       provider: "{{ ism }}"

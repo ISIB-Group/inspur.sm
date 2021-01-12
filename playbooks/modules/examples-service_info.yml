@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get service information"
-    service_info:
+    inspur.sm.service_info:
       provider: "{{ ism }}"

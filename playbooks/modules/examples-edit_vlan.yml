@@ -11,13 +11,13 @@
   tasks:
 
   - name: "set vlan information"
-    edit_vlan:
+    inspur.sm.edit_vlan:
       interface_name: "eth0"
       vlan_status: "disable"
       provider: "{{ ism }}"
 
   - name: "set vlan information"
-    edit_vlan:
+    inspur.sm.edit_vlan:
       interface_name: "eth0"
       vlan_status: "enable"
       vlan_id: 2

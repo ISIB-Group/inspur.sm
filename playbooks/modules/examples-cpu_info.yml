@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get cpu information"
-    cpu_info:
+    inspur.sm.cpu_info:
       provider: "{{ ism }}"

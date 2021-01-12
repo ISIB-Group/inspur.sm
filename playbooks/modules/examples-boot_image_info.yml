@@ -11,5 +11,5 @@
   tasks:
 
   - name: "Get bmc boot image information"
-    boot_image_info:
+    inspur.sm.boot_image_info:
       provider: "{{ ism }}"

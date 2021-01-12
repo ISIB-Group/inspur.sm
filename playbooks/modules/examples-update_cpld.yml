@@ -11,12 +11,12 @@
   tasks:
 
   - name: "Get cpld list"
-    update_cpld:
+    inspur.sm.update_cpld:
       list: True
       provider: "{{ ism }}"
 
   - name: "Update cpld"
-    update_cpld:
+    inspur.sm.update_cpld:
       id: 1
       file_url: "home/wbs/raw.bin"
       provider: "{{ ism }}"

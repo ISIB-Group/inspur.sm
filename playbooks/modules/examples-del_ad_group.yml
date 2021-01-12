@@ -11,6 +11,6 @@
   tasks:
 
   - name: "delete active directory group information"
-    del_ad_group:
+    inspur.sm.del_ad_group:
       name: "inspur"
       provider: "{{ ism }}"

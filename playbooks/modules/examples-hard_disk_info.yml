@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get hard disk information"
-    hard_disk_info:
+    inspur.sm.hard_disk_info:
       provider: "{{ ism }}"

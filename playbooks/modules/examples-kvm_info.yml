@@ -11,5 +11,5 @@
   tasks:
 
   - name: "Get KVM information"
-    kvm_info:
+    inspur.sm.kvm_info:
       provider: "{{ ism }}"

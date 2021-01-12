@@ -11,5 +11,5 @@
   tasks:
 
   - name: "Get auto capture screen information"
-    auto_capture_info:
+    inspur.sm.auto_capture_info:
       provider: "{{ ism }}"

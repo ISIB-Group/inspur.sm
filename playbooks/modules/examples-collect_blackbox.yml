@@ -11,6 +11,6 @@
   tasks:
 
   - name: "collect blackbox log"
-    collect_blackbox:
+    inspur.sm.collect_blackbox:
       file_url: "/home/wbs/wbs.log"
       provider: "{{ ism }}"

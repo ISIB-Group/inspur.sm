@@ -11,5 +11,5 @@
   tasks:
 
   - name: "Get threshold information"
-    threshold_info:
+    inspur.sm.threshold_info:
       provider: "{{ ism }}"

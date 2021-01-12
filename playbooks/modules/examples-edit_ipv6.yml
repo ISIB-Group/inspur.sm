@@ -11,20 +11,20 @@
   tasks:
 
   - name: "set ipv6 information"
-    edit_ipv6:
+    inspur.sm.edit_ipv6:
       interface_name: "eth0"
       ipv6_status: "disable"
       provider: "{{ ism }}"
 
   - name: "set ipv6 information"
-    edit_ipv6:
+    inspur.sm.edit_ipv6:
       interface_name: "eth0"
       ipv6_status: "enable"
       ipv6_dhcp_enable: "dhcp"
       provider: "{{ ism }}"
       
   - name: "set ipv6 information"
-    edit_ipv6:
+    inspur.sm.edit_ipv6:
       interface_name: "eth0"
       ipv6_status: "enable"
       ipv6_dhcp_enable: "static"

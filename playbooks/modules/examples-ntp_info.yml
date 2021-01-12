@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get ntp information"
-    ntp_info:
+    inspur.sm.ntp_info:
       provider: "{{ ism }}"

@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get bios setup"
-    bios_info:
+    inspur.sm.bios_info:
       provider: "{{ ism }}"

@@ -11,7 +11,7 @@
   tasks:
 
   - name: "add active directory group information"
-    add_ad_group:
+    inspur.sm.add_ad_group:
       name: "wbs"
       domain: "inspur.com"
       pri: "administrator"

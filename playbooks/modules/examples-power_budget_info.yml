@@ -11,5 +11,5 @@
   tasks:
 
   - name: "Get power budget information"
-    power_budget_info:
+    inspur.sm.power_budget_info:
       provider: "{{ ism }}"

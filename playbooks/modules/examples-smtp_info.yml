@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get smtp information"
-    smtp_info:
+    inspur.sm.smtp_info:
       provider: "{{ ism }}"

@@ -11,12 +11,12 @@
   tasks:
 
   - name: "set fan information"
-    edit_fan:
+    inspur.sm.edit_fan:
       mode: "Automatic"
       provider: "{{ ism }}"
       
   - name: "set fan information"
-    edit_fan:
+    inspur.sm.edit_fan:
       mode: "Manual"
       id: 1
       fan_speed: 80

@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get psu config information"
-    psu_config_info:
+    inspur.sm.psu_config_info:
       provider: "{{ ism }}"

@@ -11,5 +11,5 @@
   tasks:
 
   - name: "Get Virtual Media Instance information"
-    media_instance_info:
+    inspur.sm.media_instance_info:
       provider: "{{ ism }}"

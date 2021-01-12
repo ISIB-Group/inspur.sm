@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get bios boot option"
-    boot_option_info:
+    inspur.sm.boot_option_info:
       provider: "{{ ism }}"

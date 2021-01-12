@@ -11,12 +11,12 @@
   tasks:
 
   - name: "set ldap information"
-    edit_ldap:
+    inspur.sm.edit_ldap:
       enable: "disable"
       provider: "{{ ism }}"
 
   - name: "set ldap information"
-    edit_ldap:
+    inspur.sm.edit_ldap:
       enable: "enable"
       encry: "SSL"
       address: "100.2.2.2"
