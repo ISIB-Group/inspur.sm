@@ -11,6 +11,6 @@
   tasks:
 
   - name: "delete user group"
-    del_user_group:
+    inspur.sm.del_user_group:
       name: "test"
       provider: "{{ ism }}"

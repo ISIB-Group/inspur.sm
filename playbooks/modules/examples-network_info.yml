@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get network information"
-    network_info:
+    inspur.sm.network_info:
       provider: "{{ ism }}"

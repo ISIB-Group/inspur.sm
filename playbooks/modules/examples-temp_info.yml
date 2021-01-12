@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get temp information"
-    temp_info:
+    inspur.sm.temp_info:
       provider: "{{ ism }}"

@@ -11,5 +11,5 @@
   tasks:
 
   - name: "Get power consumption information"
-    power_consumption_info:
+    inspur.sm.power_consumption_info:
       provider: "{{ ism }}"

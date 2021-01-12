@@ -11,6 +11,6 @@
   tasks:
 
   - name: "set power restore information"
-    edit_power_restore:
+    inspur.sm.edit_power_restore:
       option: "on"
       provider: "{{ ism }}"

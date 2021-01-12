@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get dns information"
-    dns_info:
+    inspur.sm.dns_info:
       provider: "{{ ism }}"

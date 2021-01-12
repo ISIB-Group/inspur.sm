@@ -11,12 +11,12 @@
   tasks:
 
   - name: "set active directory information"
-    edit_ad:
+    inspur.sm.edit_ad:
       enable: "disable"
       provider: "{{ ism }}"
 
   - name: "set active directory information"
-    edit_ad:
+    inspur.sm.edit_ad:
       enable: "enable"
       name: "inspur"
       code: "123456"

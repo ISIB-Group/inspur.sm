@@ -11,5 +11,5 @@
   tasks:
 
   - name: "set ncsi information"
-    ncsi_info:
+    inspur.sm.ncsi_info:
       provider: "{{ ism }}"

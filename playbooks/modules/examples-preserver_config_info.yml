@@ -11,5 +11,5 @@
   tasks:
 
   - name: "Get preserver config information"
-    preserver_config_info:
+    inspur.sm.preserver_config_info:
       provider: "{{ ism }}"

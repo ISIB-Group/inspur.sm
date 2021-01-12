@@ -11,5 +11,5 @@
   tasks:
 
   - name: "reset bmc"
-    reset_bmc:
+    inspur.sm.reset_bmc:
       provider: "{{ ism }}"

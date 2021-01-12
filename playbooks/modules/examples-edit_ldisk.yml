@@ -11,12 +11,12 @@
   tasks:
 
   - name: "show ldisk information"
-    edit_ldisk:
+    inspur.sm.edit_ldisk:
       info: "show"
       provider: "{{ ism }}"
       
   - name: "edit ldisk"
-    edit_ldisk:
+    inspur.sm.edit_ldisk:
       ctrl_id: 0
       ldisk_id: 1
       option: "LOC"

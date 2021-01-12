@@ -11,6 +11,6 @@
   tasks:
 
   - name: "export bios config"
-    bios_export:
+    inspur.sm.bios_export:
       file_url: "/home/wbs/bios.json"
       provider: "{{ ism }}"

@@ -11,7 +11,7 @@
   tasks:
 
   - name: "set bios boot option"
-    edit_boot_option:
+    inspur.sm.edit_boot_option:
       device: "PXE"
       effective: "Once"
       mode: "Legacy"

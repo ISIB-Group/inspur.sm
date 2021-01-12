@@ -11,5 +11,5 @@
   tasks:
 
   - name: "clear BMC audit log "
-    clear_audit_log:
+    inspur.sm.clear_audit_log:
       provider: "{{ ism }}"

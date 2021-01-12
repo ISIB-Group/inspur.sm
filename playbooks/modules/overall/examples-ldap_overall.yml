@@ -11,11 +11,11 @@
   tasks:
 
   - name: "get ldap information"
-    ldap_info:
+    inspur.sm.ldap_info:
       provider: "{{ ism }}"
 
   - name: "set ldap information"
-    edit_ldap:
+    inspur.sm.edit_ldap:
       enable: "enable"
       encry: "SSL"
       address: "100.2.2.2"
@@ -27,15 +27,15 @@
       provider: "{{ ism }}"
 
   - name: "get ldap information"
-    ldap_info:
+    inspur.sm.ldap_info:
       provider: "{{ ism }}"
 
   - name: "get ldap group information"
-    ldap_group_info:
+    inspur.sm.ldap_group_info:
       provider: "{{ ism }}"
 
   - name: "add ldap group information"
-    add_ldap_group:
+    inspur.sm.add_ldap_group:
       name: "wbs"
       base: "cn=manager"
       pri: "administrator"
@@ -44,11 +44,11 @@
       provider: "{{ ism }}"
 
   - name: "get ldap group information"
-    ldap_group_info:
+    inspur.sm.ldap_group_info:
       provider: "{{ ism }}"
 
   - name: "edit ldap group information"
-    edit_ldap_group:
+    inspur.sm.edit_ldap_group:
       id: "1"
       name: "Inspur"
       base: "cn=manager"
@@ -58,24 +58,24 @@
       provider: "{{ ism }}"
 
   - name: "get ldap group information"
-    ldap_group_info:
+    inspur.sm.ldap_group_info:
       provider: "{{ ism }}"
 
 
   - name: "delete ldap group information"
-    del_ldap_group:
+    inspur.sm.del_ldap_group:
       name: "Inspur"
       provider: "{{ ism }}"
 
   - name: "get ldap group information"
-    ldap_group_info:
+    inspur.sm.ldap_group_info:
       provider: "{{ ism }}"
       
   - name: "set ldap information"
-    edit_ldap:
+    inspur.sm.edit_ldap:
       enable: "disable"
       provider: "{{ ism }}"
 
   - name: "get ldap information"
-    ldap_info:
+    inspur.sm.ldap_info:
       provider: "{{ ism }}"

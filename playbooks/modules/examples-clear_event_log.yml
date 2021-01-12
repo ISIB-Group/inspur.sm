@@ -11,5 +11,5 @@
   tasks:
 
   - name: "clear event log"
-    clear_event_log:
+    inspur.sm.clear_event_log:
       provider: "{{ ism }}"

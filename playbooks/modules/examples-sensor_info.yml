@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get sensor information"
-    sensor_info:
+    inspur.sm.sensor_info:
       provider: "{{ ism }}"

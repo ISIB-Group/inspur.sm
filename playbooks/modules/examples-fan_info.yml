@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get fan information"
-    fan_info:
+    inspur.sm.fan_info:
       provider: "{{ ism }}"

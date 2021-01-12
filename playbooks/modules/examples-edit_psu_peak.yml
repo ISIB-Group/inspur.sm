@@ -11,12 +11,12 @@
   tasks:
 
   - name: "set psu peak information"
-    edit_psu_peak:
+    inspur.sm.edit_psu_peak:
       status: "disable"
       provider: "{{ ism }}"
 
   - name: "set psu peak information"
-    edit_psu_peak:
+    inspur.sm.edit_psu_peak:
       status: "enable"
       time: 10
       provider: "{{ ism }}"

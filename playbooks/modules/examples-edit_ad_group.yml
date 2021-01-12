@@ -11,7 +11,7 @@
   tasks:
 
   - name: "edit active directory group information"
-    edit_ad_group:
+    inspur.sm.edit_ad_group:
       id: "1"
       name: "wbs"
       domain: "inspur.com"

@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get adapter information"
-    adapter_info:
+    inspur.sm.adapter_info:
       provider: "{{ ism }}"

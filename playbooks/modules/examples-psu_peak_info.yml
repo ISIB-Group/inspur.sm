@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get psu peak information"
-    psu_peak_info:
+    inspur.sm.psu_peak_info:
       provider: "{{ ism }}"

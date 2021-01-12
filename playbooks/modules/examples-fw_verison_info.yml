@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get firmware version information"
-    fw_version_info:
+    inspur.sm.fw_version_info:
       provider: "{{ ism }}"

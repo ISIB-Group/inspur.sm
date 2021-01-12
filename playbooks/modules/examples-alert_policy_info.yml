@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get alert policy"
-    alert_policy_info:
+    inspur.sm.alert_policy_info:
       provider: "{{ ism }}"

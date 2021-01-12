@@ -11,5 +11,5 @@
   tasks:
 
   - name: "Get remote images redirection information"
-    connect_media_info:
+    inspur.sm.connect_media_info:
       provider: "{{ ism }}"

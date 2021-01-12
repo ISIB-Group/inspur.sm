@@ -11,7 +11,7 @@
   tasks:
 
   - name: "edit ldap group information"
-    edit_ldap_group:
+    inspur.sm.edit_ldap_group:
       id: "1"
       name: "wbs"
       base: "cn=manager"

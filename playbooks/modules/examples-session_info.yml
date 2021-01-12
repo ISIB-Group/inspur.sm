@@ -11,5 +11,5 @@
   tasks:
 
   - name: "Get session information"
-    session_info:
+    inspur.sm.session_info:
       provider: "{{ ism }}"

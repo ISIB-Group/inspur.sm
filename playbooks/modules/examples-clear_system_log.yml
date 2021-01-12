@@ -11,11 +11,11 @@
   tasks:
 
   - name: "clear BMC system log"
-    clear_system_log:
+    inspur.sm.clear_system_log:
       level: "alert"
       provider: "{{ ism }}"
 
   - name: "clear BMC system log"
-    clear_system_log:
+    inspur.sm.clear_system_log:
       level: "all"
       provider: "{{ ism }}"

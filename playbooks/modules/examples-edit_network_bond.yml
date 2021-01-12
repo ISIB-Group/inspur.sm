@@ -11,7 +11,7 @@
   tasks:
 
   - name: "Set network bond"
-    edit_network_bond:
+    inspur.sm.edit_network_bond:
       bond: "enable"
       interface: "dedicated"
       auto_config: "enable"

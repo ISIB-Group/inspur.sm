@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get volt information"
-    volt_info:
+    inspur.sm.volt_info:
       provider: "{{ ism }}"

@@ -11,12 +11,12 @@
   tasks:
 
   - name: "Show pdisk information"
-    edit_pdisk:
+    inspur.sm.edit_pdisk:
       info: "show"
       provider: "{{ ism }}"
 
   - name: "Edit pdisk"
-    edit_pdisk:
+    inspur.sm.edit_pdisk:
       ctrl_id: 0
       device_id: 1
       option: "LOC"

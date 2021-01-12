@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get fru information"
-    fru_info:
+    inspur.sm.fru_info:
       provider: "{{ ism }}"

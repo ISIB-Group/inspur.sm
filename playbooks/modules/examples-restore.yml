@@ -11,5 +11,5 @@
   tasks:
 
   - name: " restore server settings"
-    restore:
+    inspur.sm.restore:
       provider: "{{ ism }}"

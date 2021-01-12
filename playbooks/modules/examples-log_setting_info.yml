@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get bmc log setting information"
-    log_setting_info:
+    inspur.sm.log_setting_info:
       provider: "{{ ism }}"

@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get ldap information"
-    ldap_info:
+    inspur.sm.ldap_info:
       provider: "{{ ism }}"

@@ -11,7 +11,7 @@
   tasks:
 
   - name: "change user password"
-    edit_pass_user:
+    inspur.sm.edit_pass_user:
       uname: "wbs"
       upass: "admin1"
       provider: "{{ ism }}"

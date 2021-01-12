@@ -11,5 +11,5 @@
   tasks:
 
   - name: "Get network bond information"
-    network_bond_info:
+    inspur.sm.network_bond_info:
       provider: "{{ ism }}"

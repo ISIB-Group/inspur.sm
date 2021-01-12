@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get power status information"
-    power_status_info:
+    inspur.sm.power_status_info:
       provider: "{{ ism }}"

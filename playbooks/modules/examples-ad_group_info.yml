@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get active directory group information"
-    ad_group_info:
+    inspur.sm.ad_group_info:
       provider: "{{ ism }}"

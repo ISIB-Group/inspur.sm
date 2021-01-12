@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get physical disks information"
-    pdisk_info:
+    inspur.sm.pdisk_info:
       provider: "{{ ism }}"

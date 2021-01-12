@@ -11,7 +11,7 @@
   tasks:
   
   - name: "set active directory information"
-    edit_ad:
+    inspur.sm.edit_ad:
       enable: "enable"
       name: "inspur"
       code: "123456"
@@ -23,15 +23,15 @@
       provider: "{{ ism }}"
 
   - name: "get active directory information"
-    ad_info:
+    inspur.sm.ad_info:
       provider: "{{ ism }}"
 
   - name: "get active directory group information"
-    ad_group_info:
+    inspur.sm.ad_group_info:
       provider: "{{ ism }}"
       
   - name: "add active directory group information"
-    add_ad_group:
+    inspur.sm.add_ad_group:
       name: "wbs"
       domain: "inspur.com"
       pri: "administrator"
@@ -40,11 +40,11 @@
       provider: "{{ ism }}"
 
   - name: "get active directory group information"
-    ad_group_info:
+    inspur.sm.ad_group_info:
       provider: "{{ ism }}"
       
   - name: "edit active directory group information"
-    edit_ad_group:
+    inspur.sm.edit_ad_group:
       id: "1"
       name: "Inspur"
       domain: "www.inspur.com"
@@ -54,24 +54,24 @@
       provider: "{{ ism }}"
       
   - name: "get active directory group information"
-    ad_group_info:
+    inspur.sm.ad_group_info:
       provider: "{{ ism }}"
 
   - name: "delete active directory group information"
-    del_ad_group:
+    inspur.sm.del_ad_group:
       name: "Inspur"
       provider: "{{ ism }}"
       
   - name: "get active directory group information"
-    ad_group_info:
+    inspur.sm.ad_group_info:
       provider: "{{ ism }}"
 
 
   - name: "set active directory information"
-    edit_ad:
+    inspur.sm.edit_ad:
       enable: "disable"
       provider: "{{ ism }}"
 
   - name: "get active directory information"
-    ad_info:
+    inspur.sm.ad_info:
       provider: "{{ ism }}"

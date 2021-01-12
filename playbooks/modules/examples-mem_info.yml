@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get memory information"
-    mem_info:
+    inspur.sm.mem_info:
       provider: "{{ ism }}"

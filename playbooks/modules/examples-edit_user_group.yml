@@ -11,7 +11,7 @@
   tasks:
 
   - name: "set user group"
-    edit_user_group:
+    inspur.sm.edit_user_group:
       name: "test"
       pri: "administrator"
       provider: "{{ ism }}"

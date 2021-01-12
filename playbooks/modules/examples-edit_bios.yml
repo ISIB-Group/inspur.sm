@@ -11,13 +11,13 @@
   tasks:
 
   - name: "set bios setup"
-    edit_bios:
+    inspur.sm.edit_bios:
       attribute: "VMX"
       value: "Disable"
       provider: "{{ ism }}"
 
   - name: "set bios setup"
-    edit_bios:
+    inspur.sm.edit_bios:
       attribute: "VMX"
       value: "Enable"
       provider: "{{ ism }}"

@@ -11,6 +11,6 @@
   tasks:
 
   - name: "delete ldap group information"
-    del_ldap_group:
+    inspur.sm.del_ldap_group:
       name: "inspur"
       provider: "{{ ism }}"

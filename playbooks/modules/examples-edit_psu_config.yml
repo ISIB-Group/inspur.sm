@@ -11,7 +11,7 @@
   tasks:
 
   - name: "set psu config information"
-    edit_psu_config:
+    inspur.sm.edit_psu_config:
       id: 1
       switch: "active"
       provider: "{{ ism }}"

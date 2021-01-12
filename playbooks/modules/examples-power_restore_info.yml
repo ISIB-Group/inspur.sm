@@ -11,5 +11,5 @@
   tasks:
 
   - name: "get power restore information"
-    power_restore_info:
+    inspur.sm.power_restore_info:
       provider: "{{ ism }}"

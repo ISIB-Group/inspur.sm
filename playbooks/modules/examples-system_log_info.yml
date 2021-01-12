@@ -11,17 +11,17 @@
   tasks:
 
   - name: "get bmc system log information"
-    system_log_info:
+    inspur.sm.system_log_info:
       level: "alert"
       log_time: "2020-06-01T12:30+08:00"
       provider: "{{ ism }}"
 
   - name: "get bmc system log information"
-    system_log_info:
+    inspur.sm.system_log_info:
       count: 30
       provider: "{{ ism }}"
 
   - name: "get bmc system log information"
-    system_log_info:
+    inspur.sm.system_log_info:
       system_file: "/home/wbs/wbs.log"
       provider: "{{ ism }}"
