@@ -59,7 +59,7 @@ changed:
 
 from ansible.module_utils.basic import AnsibleModule
 from ansible_collections.inspur.sm.plugins.module_utils.ism import (ism_argument_spec, get_connection)
-import collections
+from collections import OrderedDict
 
 
 class Adapter(object):
@@ -85,7 +85,7 @@ class Adapter(object):
             nic = nic_result['Message'][0]
             sysadapter_len = nic.get('Maximum', 0)
             idx = 0
-            sortedRes = collections.OrderedDict()
+            sortedRes = OrderedDict()
             if sysadapter_len > 0:
                 nic = nic.get('NIC', [])
                 List = []
