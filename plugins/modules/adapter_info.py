@@ -59,7 +59,6 @@ changed:
 
 from ansible.module_utils.basic import AnsibleModule
 from ansible_collections.inspur.sm.plugins.module_utils.ism import (ism_argument_spec, get_connection)
-import collections
 
 
 class Adapter(object):

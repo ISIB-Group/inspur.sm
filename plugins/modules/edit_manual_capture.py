@@ -66,7 +66,6 @@ changed:
 
 from ansible.module_utils.basic import AnsibleModule
 from ansible_collections.inspur.sm.plugins.module_utils.ism import (ism_argument_spec, get_connection)
-import collections
 
 
 class Screen(object):
@@ -74,7 +73,7 @@ class Screen(object):
         self.spec = argument_spec
         self.module = None
         self.init_module()
-        self.results = collections.OrderedDict()
+        self.results = dict()
 
     def init_module(self):
         """Init module object"""
