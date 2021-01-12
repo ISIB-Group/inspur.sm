@@ -191,8 +191,6 @@ Examples
     
     - name: Raid test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get raid information"
-        raid_info:
+        inspur.sm.raid_info:
           provider: "{{ ism }}"
 
 

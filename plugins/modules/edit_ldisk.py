@@ -25,18 +25,20 @@ options:
         type: str
     ctrl_id:
         description:
-            - Raid controller ID,Required when I(Info=None).
+            - Raid controller ID.
+            - Required when I(Info=None).
         type: int
     ldisk_id:
         description:
-            - Logical disk ID,Required when I(Info=None).
+            - Logical disk ID.
+            - Required when I(Info=None).
         type: int
     option:
         description:
             - Set operation options fo logical disk,
             - LOC is Locate Logical Drive,STL is Stop Locate LogicalDrive,
             - FI is Fast Initialization,SFI is Slow/Full Initialization,
-            - SI is Stop Initialization,DEL is Delete LogicalDrive,
+            - SI is Stop Initialization,DEL is Delete LogicalDrive.
             - Required when I(Info=None).
         choices: ['LOC', 'STL', 'FI', 'SFI', 'SI', 'DEL']
         type: str
@@ -47,8 +49,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Edit ldisk test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -60,12 +60,12 @@ EXAMPLES = '''
   tasks:
 
   - name: "Show ldisk information"
-    edit_ldisk:
+    inspur.sm.edit_ldisk:
       info: "show"
       provider: "{{ ism }}"
 
   - name: "Edit ldisk"
-    edit_ldisk:
+    inspur.sm.edit_ldisk:
       ctrl_id: 0
       ldisk_id: 1
       option: "LOC"

@@ -206,8 +206,6 @@ Examples
     
     - name: Delete session test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -219,7 +217,7 @@ Examples
       tasks:
 
       - name: "Delete session"
-        del_session:
+        inspur.sm.del_session:
           sid: "223"
           provider: "{{ ism }}"
 

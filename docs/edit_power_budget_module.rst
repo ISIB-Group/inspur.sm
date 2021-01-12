@@ -495,8 +495,6 @@ Examples
     
     - name: Power budget test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -508,12 +506,12 @@ Examples
       tasks:
 
       - name: "Get power budget range"
-        edit_power_budget:
+        inspur.sm.edit_power_budget:
           range: True
           provider: "{{ ism }}"
 
       - name: "add power budget"
-        edit_power_budget:
+        inspur.sm.edit_power_budget:
           action: "add"
           id: 1
           watts: 1500
@@ -526,19 +524,19 @@ Examples
           provider: "{{ ism }}"
 
       - name: "Set power budget status to open"
-        edit_power_budget:
+        inspur.sm.edit_power_budget:
           action: "open"
           id: 1
           provider: "{{ ism }}"
 
       - name: "Set power budget status to close"
-        edit_power_budget:
+        inspur.sm.edit_power_budget:
           action: "close"
           id: 1
           provider: "{{ ism }}"
 
       - name: "Delete power budget"
-        edit_power_budget:
+        inspur.sm.edit_power_budget:
           action: "delete"
           id: 1
           provider: "{{ ism }}"

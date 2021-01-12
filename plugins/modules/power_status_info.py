@@ -25,8 +25,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Power status test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -38,7 +36,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Get power status information"
-    power_status_info:
+    inspur.sm.power_status_info:
       provider: "{{ ism }}"
 '''
 

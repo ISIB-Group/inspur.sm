@@ -191,8 +191,6 @@ Examples
     
     - name: Fan test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get fan information"
-        fan_info:
+        inspur.sm.fan_info:
           provider: "{{ ism }}"
 
 

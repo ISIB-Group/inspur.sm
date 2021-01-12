@@ -191,8 +191,6 @@ Examples
     
     - name: Power restore test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get power restore information"
-        power_restore_info:
+        inspur.sm.power_restore_info:
           provider: "{{ ism }}"
 
 

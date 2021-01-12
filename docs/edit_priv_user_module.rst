@@ -237,8 +237,6 @@ Examples
     
     - name: Edit user privilege test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -250,7 +248,7 @@ Examples
       tasks:
 
       - name: "Change user privilege"
-        edit_priv_user:
+        inspur.sm.edit_priv_user:
           uname: "wbs"
           role_id: "Administrator"
           priv: "kvm,sol"

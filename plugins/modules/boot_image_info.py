@@ -25,8 +25,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Boot image test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -38,7 +36,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Get bmc boot image information"
-    boot_image_info:
+    inspur.sm.boot_image_info:
       provider: "{{ ism }}"
 '''
 

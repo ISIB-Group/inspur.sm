@@ -64,8 +64,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: KVM test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -77,7 +75,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Set KVM"
-    edit_kvm:
+    inspur.sm.edit_kvm:
       kvm_encryption: "enable"
       media_attach: "auto"
       keyboard_language: "AD"

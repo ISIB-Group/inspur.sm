@@ -127,7 +127,8 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>CA certificate file path,Required when <em>encry=StartTLS</em>.</div>
+                                            <div>CA certificate file path.</div>
+                                            <div>Required when <em>encry=StartTLS</em>.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -142,7 +143,8 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Certificate file path,Required when <em>encry=StartTLS</em>.</div>
+                                            <div>Certificate file path.</div>
+                                            <div>Required when <em>encry=StartTLS</em>.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -161,7 +163,8 @@ Parameters
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
-                                            <div>Common name type,Required when <em>encry=StartTLS</em>.</div>
+                                            <div>Common name type.</div>
+                                            <div>Required when <em>encry=StartTLS</em>.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -278,7 +281,8 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Private Key file path,Required when <em>encry=StartTLS</em>.</div>
+                                            <div>Private Key file path.</div>
+                                            <div>Required when <em>encry=StartTLS</em>.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -394,8 +398,6 @@ Examples
     
     - name: Ldap test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -407,12 +409,12 @@ Examples
       tasks:
 
       - name: "Set ldap information"
-        edit_ldap:
+        inspur.sm.edit_ldap:
           enable: "disable"
           provider: "{{ ism }}"
 
       - name: "Set ldap information"
-        edit_ldap:
+        inspur.sm.edit_ldap:
           enable: "enable"
           encry: "SSL"
           address: "100.2.2.2"

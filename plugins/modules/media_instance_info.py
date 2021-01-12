@@ -25,8 +25,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Media instance test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -38,7 +36,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Get Virtual Media Instance information"
-    media_instance_info:
+    inspur.sm.media_instance_info:
       provider: "{{ ism }}"
 '''
 

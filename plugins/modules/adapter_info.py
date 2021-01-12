@@ -25,8 +25,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Adapter test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -38,7 +36,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Get adapter information"
-    adapter_info:
+    inspur.sm.adapter_info:
       provider: "{{ ism }}"
 '''
 

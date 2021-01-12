@@ -59,8 +59,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Update fw test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -72,13 +70,13 @@ EXAMPLES = '''
   tasks:
 
   - name: "update bios"
-    update_fw:
+    inspur.sm.update_fw:
       url: "/home/wbs/SA5112M5_BIOS_4.1.8_Standard_20200117.bin"
       type: "BIOS"
       provider: "{{ ism }}"
 
   - name: "update bmc"
-    update_fw:
+    inspur.sm.update_fw:
       url: "/home/wbs/SA5112M5_BMC_4.17.7_Standard_20200430"
       mode: "Auto"
       type: "BMC"

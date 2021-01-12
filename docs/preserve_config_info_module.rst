@@ -191,8 +191,6 @@ Examples
     
     - name: preserve test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get preserve config information"
-        preserve_config_info:
+        inspur.sm.preserve_config_info:
           provider: "{{ ism }}"
 
 

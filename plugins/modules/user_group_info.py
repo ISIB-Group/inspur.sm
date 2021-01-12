@@ -25,8 +25,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: User group test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -38,7 +36,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Get user group information"
-    user_group_info:
+    inspur.sm.user_group_info:
       provider: "{{ ism }}"
 '''
 

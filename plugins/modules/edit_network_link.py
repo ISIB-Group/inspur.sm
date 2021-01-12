@@ -49,8 +49,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: link test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -62,13 +60,13 @@ EXAMPLES = '''
   tasks:
 
   - name: "Set network link"
-    edit_network_link:
+    inspur.sm.edit_network_link:
       interface: "dedicated"
       auto_nego: "enable"
       provider: "{{ ism }}"
 
   - name: "Set network link"
-    edit_network_link:
+    inspur.sm.edit_network_link:
       interface: "dedicated"
       auto_nego: "disable"
       link_speed: 100

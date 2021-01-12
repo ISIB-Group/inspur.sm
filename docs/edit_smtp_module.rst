@@ -189,7 +189,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Primary SMTP server Password,lenth be 4 to 64 bits,cannot contain &#x27; &#x27;(space),</div>
+                                            <div>Primary SMTP server Password,lenth be 4 to 64 bits,cannot contain &#x27; &#x27;(space).</div>
                                             <div>Required when <em>primary_auth=enable</em>.</div>
                                                         </td>
             </tr>
@@ -368,7 +368,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Secondary SMTP server Password,lenth be 4 to 64 bits,cannot contain &#x27; &#x27;(space),</div>
+                                            <div>Secondary SMTP server Password,lenth be 4 to 64 bits,cannot contain &#x27; &#x27;(space).</div>
                                             <div>Required when <em>secondary_auth=enable</em>.</div>
                                                         </td>
             </tr>
@@ -418,7 +418,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>S.econdary SMTP server Username,lenth be 4 to 64 bits,</div>
+                                            <div>Secondary SMTP server Username,lenth be 4 to 64 bits,</div>
                                             <div>must start with letters and cannot contain &#x27;,&#x27;(comma) &#x27;:&#x27;(colon) &#x27; &#x27;(space) &#x27;;&#x27;(semicolon) &#x27;\&#x27;(backslash).</div>
                                                         </td>
             </tr>
@@ -456,8 +456,6 @@ Examples
     
     - name: Smtp test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -469,7 +467,7 @@ Examples
       tasks:
 
       - name: "Set smtp information"
-        edit_smtp:
+        inspur.sm.edit_smtp:
           interface: "eth0"
           email: "inspur@Inspur.com"
           primary_status: "enable"
@@ -479,7 +477,7 @@ Examples
           provider: "{{ ism }}"
 
       - name: "Set smtp information"
-        edit_smtp:
+        inspur.sm.edit_smtp:
           interface: "eth0"
           email: "inspur@Inspur.com"
           primary_status: "enable"

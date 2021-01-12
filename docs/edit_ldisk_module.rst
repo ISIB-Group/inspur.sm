@@ -75,7 +75,8 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Raid controller ID,Required when <em>Info=None</em>.</div>
+                                            <div>Raid controller ID.</div>
+                                            <div>Required when <em>Info=None</em>.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -123,7 +124,8 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Logical disk ID,Required when <em>Info=None</em>.</div>
+                                            <div>Logical disk ID.</div>
+                                            <div>Required when <em>Info=None</em>.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -149,7 +151,7 @@ Parameters
                                             <div>Set operation options fo logical disk,</div>
                                             <div>LOC is Locate Logical Drive,STL is Stop Locate LogicalDrive,</div>
                                             <div>FI is Fast Initialization,SFI is Slow/Full Initialization,</div>
-                                            <div>SI is Stop Initialization,DEL is Delete LogicalDrive,</div>
+                                            <div>SI is Stop Initialization,DEL is Delete LogicalDrive.</div>
                                             <div>Required when <em>Info=None</em>.</div>
                                                         </td>
             </tr>
@@ -266,8 +268,6 @@ Examples
     
     - name: Edit ldisk test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -279,12 +279,12 @@ Examples
       tasks:
 
       - name: "Show ldisk information"
-        edit_ldisk:
+        inspur.sm.edit_ldisk:
           info: "show"
           provider: "{{ ism }}"
 
       - name: "Edit ldisk"
-        edit_ldisk:
+        inspur.sm.edit_ldisk:
           ctrl_id: 0
           ldisk_id: 1
           option: "LOC"

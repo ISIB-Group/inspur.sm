@@ -36,8 +36,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Backup test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -49,7 +47,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Backup server settings"
-    backup:
+    inspur.sm.backup:
       bak_file: "/home/wbs/"
       item: "all"
       provider: "{{ ism }}"

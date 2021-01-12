@@ -4,12 +4,12 @@ This repo contains the `inspur.sm` Ansible Collection. Inspur server supports an
 
 ## Tested with Ansible
 
-Tested with the current Ansible 2.9 and 2.10 releases and the current development version of Ansible. Ansible versions before 2.9.10 are not supported.
+Tested with the current Ansible 2.10 releases and the current development version of Ansible. Ansible versions before 2.9.10 are not supported.
 
 ## External requirements
 
 Circumstance instruction:
-Ansible module is suitable for ansible version 2.9 2.10
+Ansible module is suitable for ansible version 2.10
 
 Main steps:
 
@@ -19,7 +19,7 @@ Install inspur_sm_sdk
 Thes modules require the following to be installed on the Ansible server:
 
 * Python 3.7 or later
-* [Ansible](http://www.ansible.com) 2.9 or later
+* [Ansible](http://www.ansible.com) 2.10 or later
 * [Inspur support] inspur_sm_sdk
 
 ## Included content
@@ -64,6 +64,11 @@ Basic instructions without release branches:
 2. Run `antsibull-changelog release --collection-flatmap yes`
 3. Make sure `CHANGELOG.rst` and `changelogs/changelog.yaml` are added to git, and the deleted fragments have been removed.
 4. Tag the commit with `<version>`. Push changes and tag to the main repository.
+
+### Code of Conduct
+This collection follows the Ansible project's
+[Code of Conduct](https://docs.ansible.com/ansible/devel/community/code_of_conduct.html).
+Please read and familiarize yourself with this document.
 
 ## Release notes
 

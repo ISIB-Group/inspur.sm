@@ -25,8 +25,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: NCSI test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -38,7 +36,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Get ncsi information"
-    ncsi_info:
+    inspur.sm.ncsi_info:
       provider: "{{ ism }}"
 '''
 

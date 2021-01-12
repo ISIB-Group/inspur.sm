@@ -191,8 +191,6 @@ Examples
     
     - name: Server test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get server status information"
-        server_info:
+        inspur.sm.server_info:
           provider: "{{ ism }}"
 
 

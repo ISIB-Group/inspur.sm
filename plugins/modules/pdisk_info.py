@@ -25,8 +25,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Pdisk test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -38,7 +36,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Get physical disks information"
-    pdisk_info:
+    inspur.sm.pdisk_info:
       provider: "{{ ism }}"
 '''
 

@@ -40,8 +40,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Boot test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -53,7 +51,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Set bios boot option"
-    edit_boot_option:
+    inspur.sm.edit_boot_option:
       device: "PXE"
       effective: "Once"
       mode: "Legacy"

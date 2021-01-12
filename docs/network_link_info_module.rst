@@ -191,8 +191,6 @@ Examples
     
     - name: link test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get network link information"
-        network_link_info:
+        inspur.sm.network_link_info:
           provider: "{{ ism }}"
 
 

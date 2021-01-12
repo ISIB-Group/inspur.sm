@@ -191,8 +191,6 @@ Examples
     
     - name: Clear event log test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Clear event log"
-        clear_event_log:
+        inspur.sm.clear_event_log:
           provider: "{{ ism }}"
 
 

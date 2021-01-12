@@ -30,8 +30,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Bios test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -43,7 +41,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Import bios config"
-    bios_import:
+    inspur.sm.bios_import:
       file_url: "/home/wbs/bios.conf"
       provider: "{{ ism }}"
 '''

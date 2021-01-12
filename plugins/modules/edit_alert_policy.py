@@ -52,8 +52,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Alert policy test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -65,7 +63,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Set alert policy"
-    edit_alert_policy:
+    inspur.sm.edit_alert_policy:
       id: 1
       status: "enable"
       type: "snmp"
@@ -74,7 +72,7 @@ EXAMPLES = '''
       provider: "{{ ism }}"
 
   - name: "Set alert policy"
-    edit_alert_policy:
+    inspur.sm.edit_alert_policy:
       id: 1
       status: "disable"
       provider: "{{ ism }}"

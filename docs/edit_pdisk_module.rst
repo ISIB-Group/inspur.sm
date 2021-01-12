@@ -75,7 +75,8 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Raid controller ID,Required when <em>Info=None</em>.</div>
+                                            <div>Raid controller ID.</div>
+                                            <div>Required when <em>Info=None</em>.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -90,7 +91,8 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>physical drive id,Required when <em>Info=None</em>.</div>
+                                            <div>physical drive id.</div>
+                                            <div>Required when <em>Info=None</em>.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -158,7 +160,7 @@ Parameters
                                             <div>OFF is offline,FAIL is Failed,RBD is Rebuild,</div>
                                             <div>ON is Online,JB is JBOD,ES is Drive Erase stop,</div>
                                             <div>EM is Drive Erase Simple,EN is Drive Erase Normal,</div>
-                                            <div>ET is Drive Erase Through,LOC is Locate,STL is Stop Locate,</div>
+                                            <div>ET is Drive Erase Through,LOC is Locate,STL is Stop Locate.</div>
                                             <div>Required when <em>Info=None</em>.</div>
                                                         </td>
             </tr>
@@ -275,8 +277,6 @@ Examples
     
     - name: Edit pdisk test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -288,12 +288,12 @@ Examples
       tasks:
 
       - name: "Show pdisk information"
-        edit_pdisk:
+        inspur.sm.edit_pdisk:
           info: "show"
           provider: "{{ ism }}"
 
       - name: "Edit pdisk"
-        edit_pdisk:
+        inspur.sm.edit_pdisk:
           ctrl_id: 0
           device_id: 1
           option: "LOC"

@@ -54,8 +54,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Ad group test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -67,7 +65,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Edit active directory group information"
-    edit_ad_group:
+    inspur.sm.edit_ad_group:
       id: "1"
       name: "wbs"
       domain: "inspur.com"

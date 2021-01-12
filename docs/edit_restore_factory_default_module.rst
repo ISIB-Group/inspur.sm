@@ -245,8 +245,6 @@ Examples
     
     - name: Restore default test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -258,12 +256,12 @@ Examples
       tasks:
 
       - name: "Set restore default auto"
-        edit_restore_factory_default:
+        inspur.sm.edit_restore_factory_default:
           mode: "all"
           provider: "{{ ism }}"
 
       - name: "Set restore default manual"
-        edit_restore_factory_default:
+        inspur.sm.edit_restore_factory_default:
           mode: "manual"
           override:
             - fru

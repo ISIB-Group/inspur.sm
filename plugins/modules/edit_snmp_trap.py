@@ -47,7 +47,7 @@ options:
         type: str
     auth_password:
         description:
-            - Set auth password of V3 trap, password is a string of 8 to 16 alpha-numeric characters,
+            - Set auth password of V3 trap, password is a string of 8 to 16 alpha-numeric characters.
             - Required when I(auth_protocol) is either C(SHA) or C(MD5).
         type: str
     priv_protocol:
@@ -57,7 +57,7 @@ options:
         type: str
     priv_password:
         description:
-            - Set privacy password of V3 trap, password is a string of 8 to 16 alpha-numeric characters,
+            - Set privacy password of V3 trap, password is a string of 8 to 16 alpha-numeric characters.
             - Required when I(priv_protocol) is either C(DES) or C(AES).
         type: str
     system_name:
@@ -91,8 +91,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Trap test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -104,7 +102,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Set snmp trap v2c"
-    edit_snmp_trap:
+    inspur.sm.edit_snmp_trap:
       version: "2c"
       event_severity: "warning"
       inspur: "test"
@@ -112,7 +110,7 @@ EXAMPLES = '''
       provider: "{{ ism }}"
 
   - name: "Set snmp trap v3"
-    edit_snmp_trap:
+    inspur.sm.edit_snmp_trap:
       version: "3"
       event_severity: "all"
       v3username: "Inspur"

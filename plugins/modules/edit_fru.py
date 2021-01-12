@@ -21,7 +21,7 @@ options:
     attribute:
         description:
             - Attribute,CP is Chassis Part Number,CS is Chassis Serial,PM is Product Manufacturer,
-            - PPN is Product Part Number,PS is Product Serial,PN is Product Name,PV is Product Version，
+            - PPN is Product Part Number,PS is Product Serial,PN is Product Name,PV is Product Version,
             - PAT is Product Asset Tag,BM is Board Mfg,BPN is Board Product Name,BS is Board Serial,
             - BP is Board Part Number.
         choices: ['CP', 'CS', 'PM', 'PPN', 'PS', 'PN', 'PV','PAT', 'BM', 'BPN', 'BS', 'BP']
@@ -29,7 +29,7 @@ options:
         type: str
     value:
         description:
-            - Set the value of attribute .
+            - Set the value of attribute.
         required: true
         type: str
 extends_documentation_fragment:
@@ -39,8 +39,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Fru test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -52,7 +50,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Set Fru"
-    edit_fru:
+    inspur.sm.edit_fru:
       attribute: "CP"
       value: "Inspur"
       provider: "{{ ism }}"

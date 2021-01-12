@@ -310,8 +310,6 @@ Examples
     
     - name: Edit service test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -323,7 +321,7 @@ Examples
       tasks:
 
       - name: "Edit kvm"
-        edit_service:
+        inspur.sm.edit_service:
           service_name: "kvm"
           state: "active"
           timeout: "1200"

@@ -191,8 +191,6 @@ Examples
     
     - name: Alert test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get alert policy"
-        alert_policy_info:
+        inspur.sm.alert_policy_info:
           provider: "{{ ism }}"
 
 

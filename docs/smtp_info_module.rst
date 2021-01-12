@@ -191,8 +191,6 @@ Examples
     
     - name: Smtp test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get smtp information"
-        smtp_info:
+        inspur.sm.smtp_info:
           provider: "{{ ism }}"
 
 

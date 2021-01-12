@@ -29,51 +29,61 @@ options:
         type: int
     level:
         description:
-            - RAID Level, 0 - RAID0, 1 - RAID1, 5 - RAID5, 6 - RAID6, 10 - RAID10,Required when I(Info=None).
+            - RAID Level, 0 - RAID0, 1 - RAID1, 5 - RAID5, 6 - RAID6, 10 - RAID10.
+            - Required when I(Info=None).
         choices: [0, 1, 5, 6, 10]
         type: int
     size:
         description:
-            - Strip Size, 1 - 64k, 2 - 128k, 3 - 256k, 4 - 512k, 5 - 1024k,Required when I(Info=None).
+            - Strip Size, 1 - 64k, 2 - 128k, 3 - 256k, 4 - 512k, 5 - 1024k.
+            - Required when I(Info=None).
         choices: [1, 2, 3, 4, 5]
         type: int
     access:
         description:
-            - Access Policy, 1 - Read Write, 2 - Read Only, 3 - Blocked,Required when I(Info=None).
+            - Access Policy, 1 - Read Write, 2 - Read Only, 3 - Blocked.
+            - Required when I(Info=None).
         choices: [1, 2, 3]
         type: int
     r:
         description:
-            - Read Policy, 1 - Read Ahead, 2 - No Read Ahead,Required when I(Info=None).
+            - Read Policy, 1 - Read Ahead, 2 - No Read Ahead.
+            - Required when I(Info=None).
         choices: [1, 2]
         type: int
     w:
         description:
-            - Write Policy, 1 - Write Throgh, 2 - Write Back, 3 - Write caching ok if bad BBU,Required when I(Info=None).
+            - Write Policy, 1 - Write Throgh, 2 - Write Back, 3 - Write caching ok if bad BBU.
+            - Required when I(Info=None).
         choices: [1, 2, 3]
         type: int
     io:
         description:
-            - IO Policy, 1 - Direct IO, 2 - Cached IO,Required when I(Info=None).
+            - IO Policy, 1 - Direct IO, 2 - Cached IO.
+            - Required when I(Info=None).
         choices: [1, 2]
         type: int
     cache:
         description:
-            - Drive Cache, 1 - Unchanged, 2 - Enabled,3 - Disabled,Required when I(Info=None).
+            - Drive Cache, 1 - Unchanged, 2 - Enabled,3 - Disabled.
+            - Required when I(Info=None).
         choices: [1, 2, 3]
         type: int
     init:
         description:
-            - Init State, 1 - No Init, 2 - Quick Init, 3 - Full Init,Required when I(Info=None).
+            - Init State, 1 - No Init, 2 - Quick Init, 3 - Full Init.
+            - Required when I(Info=None).
         choices: [1, 2, 3]
         type: int
     select:
         description:
-            - Select Size, from 1 to 100,Required when I(Info=None).
+            - Select Size, from 1 to 100.
+            - Required when I(Info=None).
         type: int
     slot:
         description:
-            - Slot Num,input multiple slotNumber like 0,1,2...,Required when I(Info=None).
+            - Slot Num,input multiple slotNumber like 0,1,2....
+            - Required when I(Info=None).
         type: list
         elements: int
 extends_documentation_fragment:
@@ -83,8 +93,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Add ldisk test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -96,12 +104,12 @@ EXAMPLES = '''
   tasks:
 
   - name: "Show pdisk information"
-    add_ldisk:
+    inspur.sm.add_ldisk:
       info: "show"
       provider: "{{ ism }}"
 
   - name: "Add ldisk"
-    add_ldisk:
+    inspur.sm.add_ldisk:
       ctrl_id: 0
       level: 1
       size: 1

@@ -191,8 +191,6 @@ Examples
     
     - name: Psu config test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get psu config information"
-        psu_config_info:
+        inspur.sm.psu_config_info:
           provider: "{{ ism }}"
 
 

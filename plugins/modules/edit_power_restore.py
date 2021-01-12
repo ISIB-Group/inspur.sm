@@ -31,8 +31,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Power restore test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -44,7 +42,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Set power restore information"
-    edit_power_restore:
+    inspur.sm.edit_power_restore:
       option: "on"
       provider: "{{ ism }}"
 '''

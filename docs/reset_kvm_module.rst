@@ -191,8 +191,6 @@ Examples
     
     - name: Reset kvm test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Reset kvm"
-        reset_kvm:
+        inspur.sm.reset_kvm:
           provider: "{{ ism }}"
 
 

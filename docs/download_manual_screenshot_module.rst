@@ -206,8 +206,6 @@ Examples
     
     - name: Screen test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -219,7 +217,7 @@ Examples
       tasks:
 
       - name: "Download manual screenshots"
-        download_manual_screenshot:
+        inspur.sm.download_manual_screenshot:
           file_url: "/home/wbs/screen"
           provider: "{{ ism }}"
 

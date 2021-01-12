@@ -25,8 +25,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Power consumption test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -38,7 +36,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Get power consumption information"
-    power_consumption_info:
+    inspur.sm.power_consumption_info:
       provider: "{{ ism }}"
 '''
 

@@ -191,8 +191,6 @@ Examples
     
     - name: Trap test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get snmp trap information"
-        snmp_trap_info:
+        inspur.sm.snmp_trap_info:
           provider: "{{ ism }}"
 
 

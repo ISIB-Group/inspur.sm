@@ -191,8 +191,6 @@ Examples
     
     - name: Screen test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get auto capture screen information"
-        auto_capture_info:
+        inspur.sm.auto_capture_info:
           provider: "{{ ism }}"
 
 

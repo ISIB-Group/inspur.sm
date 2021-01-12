@@ -245,8 +245,6 @@ Examples
     
     - name: Connect media test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -258,7 +256,7 @@ Examples
       tasks:
 
       - name: "Set remote image redirection"
-        edit_connect_media:
+        inspur.sm.edit_connect_media:
           image_type: "CD"
           op_type: "start"
           image_name: "aa.iso"

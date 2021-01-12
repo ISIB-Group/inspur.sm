@@ -191,8 +191,6 @@ Examples
     
     - name: Ldisk test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get logical disks information"
-        ldisk_info:
+        inspur.sm.ldisk_info:
           provider: "{{ ism }}"
 
 

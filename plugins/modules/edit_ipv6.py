@@ -36,20 +36,22 @@ options:
         type: str
     ipv6_address:
         description:
-            - If DHCP is disabled, specify a static IPv6 address to be configured for the selected interface,
+            - If DHCP is disabled, specify a static IPv6 address to be configured for the selected interface.
             - Required when I(ipv6_dhcp_enable=static).
         type: str
     ipv6_index:
         description:
-            - Ipv6 index(0-15),Required when I(ipv6_dhcp_enable=static).
+            - Ipv6 index(0-15).
+            - Required when I(ipv6_dhcp_enable=static).
         type: int
     ipv6_prefix:
         description:
-            - The subnet prefix length for the IPv6 settings(0-128),Required when I(ipv6_dhcp_enable=static).
+            - The subnet prefix length for the IPv6 settings(0-128).
+            - Required when I(ipv6_dhcp_enable=static).
         type: int
     ipv6_gateway:
         description:
-            - If DHCP is disabled, specify a static Default Gateway to be configured for the selected interface,
+            - If DHCP is disabled, specify a static Default Gateway to be configured for the selected interface.
             - Required when I(ipv6_dhcp_enable=static).
         type: str
 extends_documentation_fragment:
@@ -59,8 +61,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Ipv6 test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -72,20 +72,20 @@ EXAMPLES = '''
   tasks:
 
   - name: "Set ipv6 information"
-    edit_ipv6:
+    inspur.sm.edit_ipv6:
       interface_name: "eth0"
       ipv6_status: "disable"
       provider: "{{ ism }}"
 
   - name: "Set ipv6 information"
-    edit_ipv6:
+    inspur.sm.edit_ipv6:
       interface_name: "eth0"
       ipv6_status: "enable"
       ipv6_dhcp_enable: "dhcp"
       provider: "{{ ism }}"
 
   - name: "Set ipv6 information"
-    edit_ipv6:
+    inspur.sm.edit_ipv6:
       interface_name: "eth0"
       ipv6_status: "enable"
       ipv6_dhcp_enable: "static"

@@ -36,8 +36,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Psu config test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -49,7 +47,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Set psu config information"
-    edit_psu_config:
+    inspur.sm.edit_psu_config:
       id: 1
       switch: "active"
       provider: "{{ ism }}"

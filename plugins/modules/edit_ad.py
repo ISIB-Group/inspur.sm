@@ -58,8 +58,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Ad test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -71,12 +69,12 @@ EXAMPLES = '''
   tasks:
 
   - name: "Set active directory information"
-    edit_ad:
+    inspur.sm.edit_ad:
       enable: "disable"
       provider: "{{ ism }}"
 
   - name: "Set active directory information"
-    edit_ad:
+    inspur.sm.edit_ad:
       enable: "enable"
       name: "inspur"
       code: "123456"

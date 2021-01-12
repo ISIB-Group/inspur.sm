@@ -61,20 +61,24 @@ options:
         type: str
     cn:
         description:
-            - Common name type,Required when I(encry=StartTLS).
+            - Common name type.
+            - Required when I(encry=StartTLS).
         choices: ['ip', 'fqdn']
         type: str
     ca:
         description:
-            - CA certificate file path,Required when I(encry=StartTLS).
+            - CA certificate file path.
+            - Required when I(encry=StartTLS).
         type: str
     ce:
         description:
-            - Certificate file path,Required when I(encry=StartTLS).
+            - Certificate file path.
+            - Required when I(encry=StartTLS).
         type: str
     pk:
         description:
-            - Private Key file path,Required when I(encry=StartTLS).
+            - Private Key file path.
+            - Required when I(encry=StartTLS).
         type: str
 extends_documentation_fragment:
     - inspur.sm.ism
@@ -83,8 +87,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Ldap test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -96,12 +98,12 @@ EXAMPLES = '''
   tasks:
 
   - name: "Set ldap information"
-    edit_ldap:
+    inspur.sm.edit_ldap:
       enable: "disable"
       provider: "{{ ism }}"
 
   - name: "Set ldap information"
-    edit_ldap:
+    inspur.sm.edit_ldap:
       enable: "enable"
       encry: "SSL"
       address: "100.2.2.2"

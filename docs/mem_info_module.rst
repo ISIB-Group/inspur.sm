@@ -191,8 +191,6 @@ Examples
     
     - name: Memory test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get memory information"
-        mem_info:
+        inspur.sm.mem_info:
           provider: "{{ ism }}"
 
 

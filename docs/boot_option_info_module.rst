@@ -191,8 +191,6 @@ Examples
     
     - name: Boot test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get bios boot option"
-        boot_option_info:
+        inspur.sm.boot_option_info:
           provider: "{{ ism }}"
 
 

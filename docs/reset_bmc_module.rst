@@ -191,8 +191,6 @@ Examples
     
     - name: Reset bmc test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Reset bmc"
-        reset_bmc:
+        inspur.sm.reset_bmc:
           provider: "{{ ism }}"
 
 

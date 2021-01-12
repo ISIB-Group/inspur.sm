@@ -30,8 +30,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Collect test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -43,7 +41,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Collect logs"
-    collect_log:
+    inspur.sm.collect_log:
       file_url: "/home/wbs/test.tar"
       provider: "{{ ism }}"
 '''

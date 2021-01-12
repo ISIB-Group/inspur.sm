@@ -225,8 +225,6 @@ Examples
     
     - name: UID test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -238,13 +236,13 @@ Examples
       tasks:
 
       - name: "Set uid"
-        edit_uid:
+        inspur.sm.edit_uid:
           led: "on"
           time: 10
           provider: "{{ ism }}"
 
       - name: "Set uid"
-        edit_uid:
+        inspur.sm.edit_uid:
           led: "off"
           provider: "{{ ism }}"
 

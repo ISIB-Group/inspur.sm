@@ -25,8 +25,6 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Connect media test
   hosts: ism
-  collections:
-    - inspur.sm
   connection: local
   gather_facts: no
   vars:
@@ -38,7 +36,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Get remote images redirection information"
-    connect_media_info:
+    inspur.sm.connect_media_info:
       provider: "{{ ism }}"
 '''
 

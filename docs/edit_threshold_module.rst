@@ -296,8 +296,6 @@ Examples
     
     - name: Threshold test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -309,7 +307,7 @@ Examples
       tasks:
 
       - name: "Set threshold information"
-        edit_threshold:
+        inspur.sm.edit_threshold:
           name: "GPU1_Temp"
           uc: 94
           unc: 92

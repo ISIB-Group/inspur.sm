@@ -206,8 +206,6 @@ Examples
     
     - name: Collect blackbox test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -219,7 +217,7 @@ Examples
       tasks:
 
       - name: "Collect blackbox log"
-        collect_blackbox:
+        inspur.sm.collect_blackbox:
           file_url: "/home/wbs/wbs.log"
           provider: "{{ ism }}"
 

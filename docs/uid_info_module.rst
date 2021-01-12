@@ -191,8 +191,6 @@ Examples
     
     - name: UID test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get UID information"
-        uid_info:
+        inspur.sm.uid_info:
           provider: "{{ ism }}"
 
 

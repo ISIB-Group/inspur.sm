@@ -191,8 +191,6 @@ Examples
     
     - name: Adapter test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get adapter information"
-        adapter_info:
+        inspur.sm.adapter_info:
           provider: "{{ ism }}"
 
 

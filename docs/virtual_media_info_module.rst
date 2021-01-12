@@ -191,8 +191,6 @@ Examples
     
     - name: Media test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get Virtual Media information"
-        virtual_media_info:
+        inspur.sm.virtual_media_info:
           provider: "{{ ism }}"
 
 

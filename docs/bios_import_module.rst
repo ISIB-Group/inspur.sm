@@ -206,8 +206,6 @@ Examples
     
     - name: Bios test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -219,7 +217,7 @@ Examples
       tasks:
 
       - name: "Import bios config"
-        bios_import:
+        inspur.sm.bios_import:
           file_url: "/home/wbs/bios.conf"
           provider: "{{ ism }}"
 

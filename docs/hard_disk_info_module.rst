@@ -191,8 +191,6 @@ Examples
     
     - name: Hard disk test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -204,7 +202,7 @@ Examples
       tasks:
 
       - name: "Get hard disk information"
-        hard_disk_info:
+        inspur.sm.hard_disk_info:
           provider: "{{ ism }}"
 
 

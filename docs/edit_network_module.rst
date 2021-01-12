@@ -230,8 +230,6 @@ Examples
     
     - name: Network test
       hosts: ism
-      collections:
-        - inspur.sm
       connection: local
       gather_facts: no
       vars:
@@ -243,7 +241,7 @@ Examples
       tasks:
 
       - name: "Set network information"
-        edit_network:
+        inspur.sm.edit_network:
           interface_name: "eth0"
           lan_enable: "enable"
           provider: "{{ ism }}"
