@@ -7,9 +7,13 @@ jobs:
     name: Sanity (${{ matrix.ansible }})
     strategy:
       matrix:
-        ansible:
+        ansible:    
         - stable-2.10
         - devel
+        python-version:
+        - 2.7
+        - 3.6
+        - 3.8
     runs-on: ubuntu-latest
     steps:
 
@@ -18,13 +22,13 @@ jobs:
         with:
           path: ansible_collections/inspur/sm
 
-      - name: Set up Python 3.6
+      - name: Set up Python (${{ matrix.python-version }})
         uses: actions/setup-python@v1
         with:
-          python-version: 3.6
+          python-version: ${{ matrix.python-version }}
 
       - name: Install ansible-base (${{ matrix.ansible }})
         run: pip install https://github.com/ansible/ansible/archive/${{ matrix.ansible }}.tar.gz --disable-pip-version-check
 
       - name: Run sanity tests
-        run: ansible-test sanity --docker -v --color --python 3.6
+        run: ansible-test sanity --docker -v --color --python ${{ matrix.python-version }}
