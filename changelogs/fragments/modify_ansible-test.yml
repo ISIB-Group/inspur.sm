@@ -1,0 +1,2 @@
+minor_changes:
+- Modify the ansible-test.yml file to Remove the Python Version from the Run sanity tests.
