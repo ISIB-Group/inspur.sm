@@ -25,7 +25,8 @@ options:
         type: str
     ctrl_id:
         description:
-            - Raid controller ID,Required when I(Info=None).
+            - Raid controller ID.
+            - Required when I(Info=None).
         type: int
     level:
         description:

@@ -45,7 +45,8 @@ options:
         type: str
     code:
         description:
-            - Password,Required when I(enable=enable).
+            - Password.
+            - Required when I(enable=enable).
         type: str
     base:
         description:
