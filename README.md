@@ -4,7 +4,7 @@ This repo contains the `inspur.sm` Ansible Collection. Inspur server supports an
 
 ## Tested with Ansible
 
-Tested with the current Ansible 2.10 releases and the current development version of Ansible. Ansible versions before 2.9.10 are not supported.
+Tested with the current Ansible 2.10 releases and the current development version of Ansible. Ansible versions before 2.10.0 are not supported.
 
 ## External requirements
 
