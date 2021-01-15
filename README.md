@@ -71,6 +71,11 @@ See the [changelog](https://github.com/ISIB-Group/inspur.sm/blob/main/CHANGELOG.
 
 ## Roadmap
 
+See [this issue](https://github.com/ISIB-Group/inspur.sm/issues/27) for information on releasing, versioning and deprecation.
+
+In general, we plan to release a major version every year, and minor versions every three months. Major versions can contain breaking changes, while minor versions only contain new features and bugfixes.
+
+
 ## More information
 
 - [Ansible Collection overview](https://github.com/ansible-collections/overview)
