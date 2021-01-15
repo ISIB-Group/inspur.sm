@@ -20,11 +20,13 @@ description:
 options:
     attribute:
         description:
-            - BIOS setup option,Required when I(file_url=None).
+            - BIOS setup option.
+            - Required when I(file_url=None).
         type: str
     value:
         description:
-            - BIOS setup option value,Required when I(file_url=None).
+            - BIOS setup option value.
+            - Required when I(file_url=None).
         type: str
     file_url:
         description:
