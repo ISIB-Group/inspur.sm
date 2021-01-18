@@ -41,14 +41,14 @@ def load_params(module):
 def get_connection(module):
     """get_connection"""
     load_params(module)
-    result = dict()
-    if module.check_mode:
-        result['changed'] = True
-        result['state'] = 'Success'
-        result['message'] = module.params['subcommand']
-    else:
-        dict_param = module.params
-        if not ism_temp:
-            module.fail_json(msg='inspur_sdk must be installed to use this module')
-        result = ism.main(dict_param)
+    # result = dict()
+    # if module.check_mode:
+    #     result['changed'] = True
+    #     result['state'] = 'Success'
+    #     result['message'] = module.params['subcommand']
+    # else:
+    dict_param = module.params
+    if not ism_temp:
+        module.fail_json(msg='inspur_sdk must be installed to use this module')
+    result = ism.main(dict_param)
     return result
