@@ -1,0 +1,2 @@
+minor_changes:
+ - Modify the value of supports_check_mode in the module to False.

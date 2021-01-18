@@ -82,7 +82,7 @@ class Psu(object):
     def init_module(self):
         """Init module object"""
         self.module = AnsibleModule(
-            argument_spec=self.spec, supports_check_mode=True)
+            argument_spec=self.spec, supports_check_mode=False)
 
     def run_command(self):
         self.module.params['subcommand'] = 'setpsuconfig'
