@@ -13,10 +13,10 @@ Ansible module is suitable for ansible version 2.10
 
 Main steps:
 
-Install suitable Ansible master
+Install Ansible 2.10
 Install inspur_sm_sdk 
 <!--- A step-by-step reproduction of the problem is helpful if there is no related issue -->
-Thes modules require the following to be installed on the Ansible server:
+Thes modules require the following to be installed on the control node:
 
 * Python 3.7 or later
 * [Ansible](http://www.ansible.com) 2.10 or later
