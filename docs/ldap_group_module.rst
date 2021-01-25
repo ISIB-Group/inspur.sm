@@ -28,7 +28,7 @@ inspur.sm.ldap_group -- Manage ldap group information.
 
 .. version_added
 
-.. versionadded:: 1.0.3 of inspur.sm
+.. versionadded:: 1.0.0 of inspur.sm
 
 .. contents::
    :local:
