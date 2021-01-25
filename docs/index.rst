@@ -14,6 +14,7 @@ These are the plugins in the inspur.sm collection
 Module Plugins
 --------------
 
+* :ref:`ad_group <ansible_collections.inspur.sm.ad_group_module>` -- Manage active directory group information.
 * :ref:`ad_group_info <ansible_collections.inspur.sm.ad_group_info_module>` -- Get active directory group information.
 * :ref:`ad_info <ansible_collections.inspur.sm.ad_info_module>` -- Get active directory information.
 * :ref:`adapter_info <ansible_collections.inspur.sm.adapter_info_module>` -- Get adapter information.
@@ -100,6 +101,7 @@ Module Plugins
 * :ref:`fw_version_info <ansible_collections.inspur.sm.fw_version_info_module>` -- Get firmware version information.
 * :ref:`hard_disk_info <ansible_collections.inspur.sm.hard_disk_info_module>` -- Get hard disk information.
 * :ref:`kvm_info <ansible_collections.inspur.sm.kvm_info_module>` -- Get KVM information.
+* :ref:`ldap_group <ansible_collections.inspur.sm.ldap_group_module>` -- Manage ldap group information.
 * :ref:`ldap_group_info <ansible_collections.inspur.sm.ldap_group_info_module>` -- Get ldap group information.
 * :ref:`ldap_info <ansible_collections.inspur.sm.ldap_info_module>` -- Get ldap information.
 * :ref:`ldisk_info <ansible_collections.inspur.sm.ldisk_info_module>` -- Get logical disks information.
@@ -139,6 +141,8 @@ Module Plugins
 * :ref:`uid_info <ansible_collections.inspur.sm.uid_info_module>` -- Get UID information.
 * :ref:`update_cpld <ansible_collections.inspur.sm.update_cpld_module>` -- Update CPLD.
 * :ref:`update_fw <ansible_collections.inspur.sm.update_fw_module>` -- Update firmware.
+* :ref:`user <ansible_collections.inspur.sm.user_module>` -- Manage user.
+* :ref:`user_group <ansible_collections.inspur.sm.user_group_module>` -- Manage user group.
 * :ref:`user_group_info <ansible_collections.inspur.sm.user_group_info_module>` -- Get user group information.
 * :ref:`user_info <ansible_collections.inspur.sm.user_info_module>` -- Get user information.
 * :ref:`virtual_media_info <ansible_collections.inspur.sm.virtual_media_info_module>` -- Get Virtual Media information.

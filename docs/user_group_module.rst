@@ -4,7 +4,7 @@
 
 .. Anchors
 
-.. _ansible_collections.inspur.sm.edit_bios_module:
+.. _ansible_collections.inspur.sm.user_group_module:
 
 .. Anchors: short name for ansible.builtin
 
@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_bios -- Set BIOS setup attributes.
-+++++++++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.user_group -- Manage user group.
+++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -24,11 +24,11 @@ inspur.sm.edit_bios -- Set BIOS setup attributes.
 
     To install it use: :code:`ansible-galaxy collection install inspur.sm`.
 
-    To use it in a playbook, specify: :code:`inspur.sm.edit_bios`.
+    To use it in a playbook, specify: :code:`inspur.sm.user_group`.
 
 .. version_added
 
-.. versionadded:: 0.1.0 of inspur.sm
+.. versionadded:: 1.0.0 of inspur.sm
 
 .. contents::
    :local:
@@ -42,7 +42,7 @@ Synopsis
 
 .. Description
 
-- Set BIOS setup attributes on Inspur server.
+- Manage user group on Inspur server.
 
 .. Aliases
 
@@ -65,38 +65,6 @@ Parameters
         </tr>
                     <tr>
                                                                 <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-attribute"></div>
-                    <b>attribute</b>
-                    <a class="ansibleOptionLink" href="#parameter-attribute" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>BIOS setup option.</div>
-                                            <div>Required when <em>file_url=None</em>.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-file_url"></div>
-                    <b>file_url</b>
-                    <a class="ansibleOptionLink" href="#parameter-file_url" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>BIOS option file.attribute must be used with value,</div>
-                                            <div>Mutually exclusive with fileurl format,&quot;/directory/filename&quot;.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-host"></div>
                     <b>host</b>
                     <a class="ansibleOptionLink" href="#parameter-host" title="Permalink to this option"></a>
@@ -112,6 +80,21 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-name"></div>
+                    <b>name</b>
+                    <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                 / <span style="color: red">required</span>                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Group name.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-password"></div>
                     <b>password</b>
                     <a class="ansibleOptionLink" href="#parameter-password" title="Permalink to this option"></a>
@@ -123,6 +106,29 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Specifies the password to use to authenticate the connection to the remote device. If the value is not specified in the task, the value of environment variable <code>ANSIBLE_NET_PASSWORD</code> will be used instead.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-pri"></div>
+                    <b>pri</b>
+                    <a class="ansibleOptionLink" href="#parameter-pri" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>administrator</li>
+                                                                                                                                                                                                <li>operator</li>
+                                                                                                                                                                                                <li>user</li>
+                                                                                                                                                                                                <li>oem</li>
+                                                                                                                                                                                                <li>none</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Group privilege.</div>
+                                            <div>Required when <em>state=present</em>.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -191,6 +197,25 @@ Parameters
                     
                                 <tr>
                                                                 <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-state"></div>
+                    <b>state</b>
+                    <a class="ansibleOptionLink" href="#parameter-state" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
+                                                                                                                                                                                                <li>absent</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Whether the user group should exist or not, taking action if the state is different from what is stated.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-username"></div>
                     <b>username</b>
                     <a class="ansibleOptionLink" href="#parameter-username" title="Permalink to this option"></a>
@@ -202,22 +227,6 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Configures the username to use to authenticate the connection to the remote device. If the value is not specified in the task, the value of environment variable <code>ANSIBLE_NET_USERNAME</code> will be used instead.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-value"></div>
-                    <b>value</b>
-                    <a class="ansibleOptionLink" href="#parameter-value" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>BIOS setup option value.</div>
-                                            <div>Required when <em>file_url=None</em>.</div>
                                                         </td>
             </tr>
                         </table>
@@ -237,7 +246,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Bios test
+    - name: User group test
       hosts: ism
       connection: local
       gather_facts: no
@@ -249,16 +258,24 @@ Examples
 
       tasks:
 
-      - name: "Set bios setup"
-        inspur.sm.edit_bios:
-          attribute: "VMX"
-          value: "Disable"
+      - name: "Add user group"
+        inspur.sm.user_group:
+          state: "present"
+          name: "test"
+          pri: "administrator"
           provider: "{{ ism }}"
 
-      - name: "Set bios setup"
-        inspur.sm.edit_bios:
-          attribute: "VMX"
-          value: "Enable"
+      - name: "Set user group"
+        inspur.sm.user_group:
+          state: "present"
+          name: "test"
+          pri: "user"
+          provider: "{{ ism }}"
+
+      - name: "Delete user group"
+        inspur.sm.user_group:
+          state: "absent"
+          name: "test"
           provider: "{{ ism }}"
 
 

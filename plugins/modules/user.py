@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
-# Copyright (C) 2020 Inspur Inc. All Rights Reserved.
+# Copyright(C) 2020 Inspur Inc. All Rights Reserved.
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import (absolute_import, division, print_function)
@@ -10,38 +10,46 @@ __metaclass__ = type
 
 DOCUMENTATION = '''
 ---
-module: edit_priv_user
-version_added: "0.1.0"
+module: user
+version_added: "1.0.0"
 author:
     - WangBaoshan (@ISIB-group)
-short_description: Change user privilege.
+short_description: Manage user.
 description:
-   - Change user privilege on Inspur server.
+   - Manage user on Inspur server.
 options:
+    state:
+        description:
+            - Whether the user should exist or not, taking action if the state is different from what is stated.
+        choices: ['present', 'absent']
+        default: present
+        type: str
     uname:
         description:
             - User name.
         type: str
         required: true
+    upass:
+        description:
+            - User password.
+        type: str
     role_id:
         description:
             - user group, default user group,'Administrator', 'Operator', 'Commonuser','OEM','NoAccess',
             - use command C(user_group_info) can get all group information.
         type: str
-        required: true
     priv:
         description:
             - User access, select one or more from None/KVM/VMM/SOL.
         choices: ['kvm', 'vmm', 'sol', 'none']
         type: list
         elements: str
-        required: true
 extends_documentation_fragment:
     - inspur.sm.ism
 '''
 
 EXAMPLES = '''
-- name: Edit user privilege test
+- name: User test
   hosts: ism
   connection: local
   gather_facts: no
@@ -53,10 +61,21 @@ EXAMPLES = '''
 
   tasks:
 
-  - name: "Change user privilege"
-    inspur.sm.edit_priv_user:
+  - name: "Add user"
+    inspur.sm.add_user:
+      state: "present"
       uname: "wbs"
+      upass: "admin"
       role_id: "Administrator"
+      priv: "kvm,sol"
+      provider: "{{ ism }}"
+
+  - name: "Set user"
+    inspur.sm.add_user:
+      state: "present"
+      uname: "wbs"
+      upass: "12345678"
+      role_id: "user"
       priv: "kvm,sol"
       provider: "{{ ism }}"
 '''
@@ -94,8 +113,10 @@ class User(object):
             argument_spec=self.spec, supports_check_mode=False)
 
     def run_command(self):
-        self.module.params['subcommand'] = 'setpriv'
+        self.module.params['subcommand'] = 'edituser'
         self.results = get_connection(self.module)
+        if self.results['State'] == 'Success':
+            self.results['changed'] = True
 
     def show_result(self):
         """Show result"""
@@ -109,9 +130,11 @@ class User(object):
 
 def main():
     argument_spec = dict(
+        state=dict(type='str', choices=['present', 'absent'], default='present'),
         uname=dict(type='str', required=True),
-        role_id=dict(type='str', required=True),
-        priv=dict(type='list', elements='str', required=True, choices=['kvm', 'vmm', 'sol', 'none']),
+        upass=dict(type='str', required=False),
+        role_id=dict(type='str', required=False),
+        priv=dict(type='list', elements='str', required=False, choices=['kvm', 'vmm', 'sol', 'none']),
     )
     argument_spec.update(ism_argument_spec)
     user_obj = User(argument_spec)

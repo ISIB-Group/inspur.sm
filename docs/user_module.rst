@@ -4,7 +4,7 @@
 
 .. Anchors
 
-.. _ansible_collections.inspur.sm.edit_bios_module:
+.. _ansible_collections.inspur.sm.user_module:
 
 .. Anchors: short name for ansible.builtin
 
@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_bios -- Set BIOS setup attributes.
-+++++++++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.user -- Manage user.
+++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -24,11 +24,11 @@ inspur.sm.edit_bios -- Set BIOS setup attributes.
 
     To install it use: :code:`ansible-galaxy collection install inspur.sm`.
 
-    To use it in a playbook, specify: :code:`inspur.sm.edit_bios`.
+    To use it in a playbook, specify: :code:`inspur.sm.user`.
 
 .. version_added
 
-.. versionadded:: 0.1.0 of inspur.sm
+.. versionadded:: 1.0.0 of inspur.sm
 
 .. contents::
    :local:
@@ -42,7 +42,7 @@ Synopsis
 
 .. Description
 
-- Set BIOS setup attributes on Inspur server.
+- Manage user on Inspur server.
 
 .. Aliases
 
@@ -64,38 +64,6 @@ Parameters
                         <th width="100%">Comments</th>
         </tr>
                     <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-attribute"></div>
-                    <b>attribute</b>
-                    <a class="ansibleOptionLink" href="#parameter-attribute" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>BIOS setup option.</div>
-                                            <div>Required when <em>file_url=None</em>.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-file_url"></div>
-                    <b>file_url</b>
-                    <a class="ansibleOptionLink" href="#parameter-file_url" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>BIOS option file.attribute must be used with value,</div>
-                                            <div>Mutually exclusive with fileurl format,&quot;/directory/filename&quot;.</div>
-                                                        </td>
-            </tr>
-                                <tr>
                                                                 <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-host"></div>
                     <b>host</b>
@@ -123,6 +91,27 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Specifies the password to use to authenticate the connection to the remote device. If the value is not specified in the task, the value of environment variable <code>ANSIBLE_NET_PASSWORD</code> will be used instead.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-priv"></div>
+                    <b>priv</b>
+                    <a class="ansibleOptionLink" href="#parameter-priv" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">list</span>
+                         / <span style="color: purple">elements=string</span>                                            </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>kvm</li>
+                                                                                                                                                                                                <li>vmm</li>
+                                                                                                                                                                                                <li>sol</li>
+                                                                                                                                                                                                <li>none</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>User access, select one or more from None/KVM/VMM/SOL.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -191,6 +180,71 @@ Parameters
                     
                                 <tr>
                                                                 <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-role_id"></div>
+                    <b>role_id</b>
+                    <a class="ansibleOptionLink" href="#parameter-role_id" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>user group, default user group,&#x27;Administrator&#x27;, &#x27;Operator&#x27;, &#x27;Commonuser&#x27;,&#x27;OEM&#x27;,&#x27;NoAccess&#x27;,</div>
+                                            <div>use command <code>user_group_info</code> can get all group information.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-state"></div>
+                    <b>state</b>
+                    <a class="ansibleOptionLink" href="#parameter-state" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
+                                                                                                                                                                                                <li>absent</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Whether the user should exist or not, taking action if the state is different from what is stated.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-uname"></div>
+                    <b>uname</b>
+                    <a class="ansibleOptionLink" href="#parameter-uname" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                 / <span style="color: red">required</span>                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>User name.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-upass"></div>
+                    <b>upass</b>
+                    <a class="ansibleOptionLink" href="#parameter-upass" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>User password.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-username"></div>
                     <b>username</b>
                     <a class="ansibleOptionLink" href="#parameter-username" title="Permalink to this option"></a>
@@ -202,22 +256,6 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Configures the username to use to authenticate the connection to the remote device. If the value is not specified in the task, the value of environment variable <code>ANSIBLE_NET_USERNAME</code> will be used instead.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-value"></div>
-                    <b>value</b>
-                    <a class="ansibleOptionLink" href="#parameter-value" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>BIOS setup option value.</div>
-                                            <div>Required when <em>file_url=None</em>.</div>
                                                         </td>
             </tr>
                         </table>
@@ -237,7 +275,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Bios test
+    - name: User test
       hosts: ism
       connection: local
       gather_facts: no
@@ -249,16 +287,22 @@ Examples
 
       tasks:
 
-      - name: "Set bios setup"
-        inspur.sm.edit_bios:
-          attribute: "VMX"
-          value: "Disable"
+      - name: "Add user"
+        inspur.sm.add_user:
+          state: "present"
+          uname: "wbs"
+          upass: "admin"
+          role_id: "Administrator"
+          priv: "kvm,sol"
           provider: "{{ ism }}"
 
-      - name: "Set bios setup"
-        inspur.sm.edit_bios:
-          attribute: "VMX"
-          value: "Enable"
+      - name: "Set user"
+        inspur.sm.add_user:
+          state: "present"
+          uname: "wbs"
+          upass: "12345678"
+          role_id: "user"
+          priv: "kvm,sol"
           provider: "{{ ism }}"
 
 

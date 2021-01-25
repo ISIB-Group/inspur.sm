@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
-# Copyright (C) 2020 Inspur Inc. All Rights Reserved.
+# Copyright(C) 2020 Inspur Inc. All Rights Reserved.
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import (absolute_import, division, print_function)
@@ -10,38 +10,37 @@ __metaclass__ = type
 
 DOCUMENTATION = '''
 ---
-module: edit_priv_user
-version_added: "0.1.0"
+module: user_group
+version_added: "1.0.0"
 author:
     - WangBaoshan (@ISIB-group)
-short_description: Change user privilege.
+short_description: Manage user group.
 description:
-   - Change user privilege on Inspur server.
+   - Manage user group on Inspur server.
 options:
-    uname:
+    state:
         description:
-            - User name.
+            - Whether the user group should exist or not, taking action if the state is different from what is stated.
+        choices: ['present', 'absent']
+        default: present
         type: str
-        required: true
-    role_id:
+    name:
         description:
-            - user group, default user group,'Administrator', 'Operator', 'Commonuser','OEM','NoAccess',
-            - use command C(user_group_info) can get all group information.
+            - Group name.
+        required: true
         type: str
-        required: true
-    priv:
+    pri:
         description:
-            - User access, select one or more from None/KVM/VMM/SOL.
-        choices: ['kvm', 'vmm', 'sol', 'none']
-        type: list
-        elements: str
-        required: true
+            - Group privilege.
+            - Required when I(state=present).
+        choices: ['administrator', 'operator', 'user', 'oem', 'none']
+        type: str
 extends_documentation_fragment:
     - inspur.sm.ism
 '''
 
 EXAMPLES = '''
-- name: Edit user privilege test
+- name: User group test
   hosts: ism
   connection: local
   gather_facts: no
@@ -53,11 +52,24 @@ EXAMPLES = '''
 
   tasks:
 
-  - name: "Change user privilege"
-    inspur.sm.edit_priv_user:
-      uname: "wbs"
-      role_id: "Administrator"
-      priv: "kvm,sol"
+  - name: "Add user group"
+    inspur.sm.user_group:
+      state: "present"
+      name: "test"
+      pri: "administrator"
+      provider: "{{ ism }}"
+
+  - name: "Set user group"
+    inspur.sm.user_group:
+      state: "present"
+      name: "test"
+      pri: "user"
+      provider: "{{ ism }}"
+
+  - name: "Delete user group"
+    inspur.sm.user_group:
+      state: "absent"
+      name: "test"
       provider: "{{ ism }}"
 '''
 
@@ -76,11 +88,11 @@ changed:
     type: bool
 '''
 
-from ansible.module_utils.basic import AnsibleModule
 from ansible_collections.inspur.sm.plugins.module_utils.ism import (ism_argument_spec, get_connection)
+from ansible.module_utils.basic import AnsibleModule
 
 
-class User(object):
+class UserGroup(object):
     def __init__(self, argument_spec):
         self.spec = argument_spec
         self.module = None
@@ -94,8 +106,10 @@ class User(object):
             argument_spec=self.spec, supports_check_mode=False)
 
     def run_command(self):
-        self.module.params['subcommand'] = 'setpriv'
+        self.module.params['subcommand'] = 'editusergroup'
         self.results = get_connection(self.module)
+        if self.results['State'] == 'Success':
+            self.results['changed'] = True
 
     def show_result(self):
         """Show result"""
@@ -109,13 +123,13 @@ class User(object):
 
 def main():
     argument_spec = dict(
-        uname=dict(type='str', required=True),
-        role_id=dict(type='str', required=True),
-        priv=dict(type='list', elements='str', required=True, choices=['kvm', 'vmm', 'sol', 'none']),
+        state=dict(type='str', choices=['present', 'absent'], default='present'),
+        name=dict(type='str', required=True),
+        pri=dict(type='str', required=False, choices=['administrator', 'operator', 'user', 'oem', 'none']),
     )
     argument_spec.update(ism_argument_spec)
-    user_obj = User(argument_spec)
-    user_obj.work()
+    usergroup_obj = UserGroup(argument_spec)
+    usergroup_obj.work()
 
 
 if __name__ == '__main__':

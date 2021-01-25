@@ -4,7 +4,7 @@
 
 .. Anchors
 
-.. _ansible_collections.inspur.sm.edit_ldap_module:
+.. _ansible_collections.inspur.sm.ldap_group_module:
 
 .. Anchors: short name for ansible.builtin
 
@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_ldap -- Set ldap information.
-++++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.ldap_group -- Manage ldap group information.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -24,11 +24,11 @@ inspur.sm.edit_ldap -- Set ldap information.
 
     To install it use: :code:`ansible-galaxy collection install inspur.sm`.
 
-    To use it in a playbook, specify: :code:`inspur.sm.edit_ldap`.
+    To use it in a playbook, specify: :code:`inspur.sm.ldap_group`.
 
 .. version_added
 
-.. versionadded:: 0.1.0 of inspur.sm
+.. versionadded:: 1.0.0 of inspur.sm
 
 .. contents::
    :local:
@@ -42,7 +42,7 @@ Synopsis
 
 .. Description
 
-- Set ldap information on Inspur server.
+- Manage ldap group information on Inspur server.
 
 .. Aliases
 
@@ -65,40 +65,6 @@ Parameters
         </tr>
                     <tr>
                                                                 <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-address"></div>
-                    <b>address</b>
-                    <a class="ansibleOptionLink" href="#parameter-address" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Server Address.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-attr"></div>
-                    <b>attr</b>
-                    <a class="ansibleOptionLink" href="#parameter-attr" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>cn</li>
-                                                                                                                                                                                                <li>uid</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Attribute of User Login.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-base"></div>
                     <b>base</b>
                     <a class="ansibleOptionLink" href="#parameter-base" title="Permalink to this option"></a>
@@ -109,135 +75,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Search Base,</div>
-                                            <div>Search base is a string of 4 to 64 alpha-numeric characters;</div>
-                                            <div>It must start with an alphabetical character;</div>
-                                            <div>Special Symbols like dot(.), comma(,), hyphen(-), underscore(_), equal-to(=) are allowed.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-ca"></div>
-                    <b>ca</b>
-                    <a class="ansibleOptionLink" href="#parameter-ca" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>CA certificate file path.</div>
-                                            <div>Required when <em>encry=StartTLS</em>.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-ce"></div>
-                    <b>ce</b>
-                    <a class="ansibleOptionLink" href="#parameter-ce" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Certificate file path.</div>
-                                            <div>Required when <em>encry=StartTLS</em>.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-cn"></div>
-                    <b>cn</b>
-                    <a class="ansibleOptionLink" href="#parameter-cn" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>ip</li>
-                                                                                                                                                                                                <li>fqdn</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Common name type.</div>
-                                            <div>Required when <em>encry=StartTLS</em>.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-code"></div>
-                    <b>code</b>
-                    <a class="ansibleOptionLink" href="#parameter-code" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Password.</div>
-                                            <div>Required when <em>enable=enable</em>.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-dn"></div>
-                    <b>dn</b>
-                    <a class="ansibleOptionLink" href="#parameter-dn" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Bind DN.</div>
-                                            <div>Bind DN is a string of 4 to 64 alpha-numeric characters;</div>
-                                            <div>It must start with an alphabetical character;</div>
-                                            <div>Special Symbols like dot(.), comma(,), hyphen(-), underscore(_), equal-to(=) are allowed.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-enable"></div>
-                    <b>enable</b>
-                    <a class="ansibleOptionLink" href="#parameter-enable" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>enable</li>
-                                                                                                                                                                                                <li>disable</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>LDAP/E-Directory Authentication Status.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-encry"></div>
-                    <b>encry</b>
-                    <a class="ansibleOptionLink" href="#parameter-encry" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>SSL</li>
-                                                                                                                                                                                                <li>StartTLS</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Encryption Type.</div>
+                                            <div>Search Base.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -257,6 +95,40 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-kvm"></div>
+                    <b>kvm</b>
+                    <a class="ansibleOptionLink" href="#parameter-kvm" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Kvm privilege.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-name"></div>
+                    <b>name</b>
+                    <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                 / <span style="color: red">required</span>                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Group name.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-password"></div>
                     <b>password</b>
                     <a class="ansibleOptionLink" href="#parameter-password" title="Permalink to this option"></a>
@@ -272,18 +144,24 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-pk"></div>
-                    <b>pk</b>
-                    <a class="ansibleOptionLink" href="#parameter-pk" title="Permalink to this option"></a>
+                    <div class="ansibleOptionAnchor" id="parameter-pri"></div>
+                    <b>pri</b>
+                    <a class="ansibleOptionLink" href="#parameter-pri" title="Permalink to this option"></a>
                     <div style="font-size: small">
                         <span style="color: purple">string</span>
                                                                     </div>
                                                         </td>
                                 <td>
-                                                                                                                                                            </td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>administrator</li>
+                                                                                                                                                                                                <li>user</li>
+                                                                                                                                                                                                <li>operator</li>
+                                                                                                                                                                                                <li>oem</li>
+                                                                                                                                                                                                <li>none</li>
+                                                                                    </ul>
+                                                                            </td>
                                                                 <td>
-                                            <div>Private Key file path.</div>
-                                            <div>Required when <em>encry=StartTLS</em>.</div>
+                                            <div>Group privilege.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -352,17 +230,21 @@ Parameters
                     
                                 <tr>
                                                                 <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-server_port"></div>
-                    <b>server_port</b>
-                    <a class="ansibleOptionLink" href="#parameter-server_port" title="Permalink to this option"></a>
+                    <div class="ansibleOptionAnchor" id="parameter-state"></div>
+                    <b>state</b>
+                    <a class="ansibleOptionLink" href="#parameter-state" title="Permalink to this option"></a>
                     <div style="font-size: small">
-                        <span style="color: purple">integer</span>
+                        <span style="color: purple">string</span>
                                                                     </div>
                                                         </td>
                                 <td>
-                                                                                                                                                            </td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
+                                                                                                                                                                                                <li>absent</li>
+                                                                                    </ul>
+                                                                            </td>
                                                                 <td>
-                                            <div>Server Port.</div>
+                                            <div>Whether the ldap group should exist or not, taking action if the state is different from what is stated.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -378,6 +260,25 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Configures the username to use to authenticate the connection to the remote device. If the value is not specified in the task, the value of environment variable <code>ANSIBLE_NET_USERNAME</code> will be used instead.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-vm"></div>
+                    <b>vm</b>
+                    <a class="ansibleOptionLink" href="#parameter-vm" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Vmedia privilege.</div>
                                                         </td>
             </tr>
                         </table>
@@ -397,7 +298,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Ldap test
+    - name: Ldap group test
       hosts: ism
       connection: local
       gather_facts: no
@@ -409,21 +310,28 @@ Examples
 
       tasks:
 
-      - name: "Set ldap information"
-        inspur.sm.edit_ldap:
-          enable: "disable"
+      - name: "Add ldap group information"
+        inspur.sm.ldap_group:
+          state: "present"
+          name: "wbs"
+          base: "cn=manager"
+          pri: "administrator"
+          kvm: "enable"
+          vm: "disable"
           provider: "{{ ism }}"
 
-      - name: "Set ldap information"
-        inspur.sm.edit_ldap:
-          enable: "enable"
-          encry: "SSL"
-          address: "100.2.2.2"
-          server_port: 389
-          dn: "cn=manager,ou=login,dc=domain,dc=com"
-          code: "123456"
-          base: "cn=manager"
-          attr: "uid"
+      - name: "Set ldap group information"
+        inspur.sm.ldap_group:
+          state: "present"
+          name: "wbs"
+          pri: "user"
+          kvm: "disable"
+          provider: "{{ ism }}"
+
+      - name: "Delete ldap group information"
+        inspur.sm.ldap_group:
+          state: "absent"
+          name: "wbs"
           provider: "{{ ism }}"
 
 
