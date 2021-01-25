@@ -111,7 +111,7 @@ def main():
     argument_spec = dict(
         uname=dict(type='str', required=True),
         role_id=dict(type='str', required=True),
-        priv=dict(type='list', elements='str', required=True),
+        priv=dict(type='list', elements='str', required=True, choices=['kvm', 'vmm', 'sol', 'none']),
     )
     argument_spec.update(ism_argument_spec)
     user_obj = User(argument_spec)

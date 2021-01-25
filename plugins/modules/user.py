@@ -21,10 +21,9 @@ options:
     state:
         description:
             - Whether the user should exist or not, taking action if the state is different from what is stated.
-        choices: [ "present", "absent" ]
+        choices: ['present', 'absent']
         default: present
         type: str
-        required: true
     uname:
         description:
             - User name.
@@ -131,7 +130,7 @@ class User(object):
 
 def main():
     argument_spec = dict(
-        state=dict(type='str', required=True, choices=['present', 'absent'], default='present'),
+        state=dict(type='str', choices=['present', 'absent'], default='present'),
         uname=dict(type='str', required=True),
         upass=dict(type='str', required=False),
         role_id=dict(type='str', required=False),
