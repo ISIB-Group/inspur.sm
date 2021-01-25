@@ -64,7 +64,7 @@ EXAMPLES = '''
   tasks:
 
   - name: "Add ldap group information"
-    inspur.sm.add_ldap_group.py:
+    inspur.sm.add_ldap_group:
       name: "wbs"
       base: "cn=manager"
       pri: "administrator"

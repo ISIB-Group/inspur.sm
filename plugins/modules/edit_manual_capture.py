@@ -82,6 +82,8 @@ class Screen(object):
     def run_command(self):
         self.module.params['subcommand'] = 'screenmanual'
         self.results = get_connection(self.module)
+        if self.results['State'] == 'Success':
+            self.results['changed'] = True
 
     def show_result(self):
         """Show result"""
