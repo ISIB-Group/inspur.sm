@@ -117,7 +117,8 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Raid controller ID,Required when <em>Info=None</em>.</div>
+                                            <div>Raid controller ID.</div>
+                                            <div>Required when <em>Info=None</em>.</div>
                                                         </td>
             </tr>
                                 <tr>

@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
-# Copyright (C) 2020 Inspur Inc. All Rights Reserved.
+# Copyright(C) 2020 Inspur Inc. All Rights Reserved.
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import (absolute_import, division, print_function)
@@ -10,46 +10,37 @@ __metaclass__ = type
 
 DOCUMENTATION = '''
 ---
-module: edit_pdisk
-version_added: "0.1.0"
+module: user_group
+version_added: "1.0.3"
 author:
     - WangBaoshan (@ISIB-group)
-short_description: Set physical disk.
+short_description: Manage user group.
 description:
-   - Set physical disk on Inspur server.
+   - Manage user group on Inspur server.
 options:
-    info:
+    state:
         description:
-            - Show controller and pdisk info.
-        choices: ['show']
+            - Whether the user group should exist or not, taking action if the state is different from what is stated.
+        choices: [ "present", "absent" ]
+        default: present
         type: str
-    ctrl_id:
+    name:
         description:
-            - Raid controller ID.
-            - Required when I(Info=None).
-        type: int
-    device_id:
+            - Group name.
+        required: true
+        type: str
+    pri:
         description:
-            - physical drive id.
-            - Required when I(Info=None).
-        type: int
-    option:
-        description:
-            - Set operation options fo physical disk,
-            - UG is Unconfigured Good,UB is Unconfigured Bad,
-            - OFF is offline,FAIL is Failed,RBD is Rebuild,
-            - ON is Online,JB is JBOD,ES is Drive Erase stop,
-            - EM is Drive Erase Simple,EN is Drive Erase Normal,
-            - ET is Drive Erase Through,LOC is Locate,STL is Stop Locate.
-            - Required when I(Info=None).
-        choices: ['UG', 'UB', 'OFF', 'FAIL', 'RBD', 'ON', 'JB', 'ES', 'EM', 'EN', 'ET', 'LOC', 'STL']
+            - Group privilege.
+            - Required when I(state=present).
+        choices: ['administrator', 'operator', 'user', 'oem', 'none']
         type: str
 extends_documentation_fragment:
     - inspur.sm.ism
 '''
 
 EXAMPLES = '''
-- name: Edit pdisk test
+- name: User group test
   hosts: ism
   connection: local
   gather_facts: no
@@ -61,16 +52,24 @@ EXAMPLES = '''
 
   tasks:
 
-  - name: "Show pdisk information"
-    inspur.sm.edit_pdisk:
-      info: "show"
+  - name: "Add user group"
+    inspur.sm.user_group:
+      state: "present"
+      name: "test"
+      pri: "administrator"
       provider: "{{ ism }}"
 
-  - name: "Edit pdisk"
-    inspur.sm.edit_pdisk:
-      ctrl_id: 0
-      device_id: 1
-      option: "LOC"
+  - name: "Set user group"
+    inspur.sm.user_group:
+      state: "present"
+      name: "test"
+      pri: "user"
+      provider: "{{ ism }}"
+
+  - name: "Delete user group"
+    inspur.sm.user_group:
+      state: "absent"
+      name: "test"
       provider: "{{ ism }}"
 '''
 
@@ -89,11 +88,11 @@ changed:
     type: bool
 '''
 
-from ansible.module_utils.basic import AnsibleModule
 from ansible_collections.inspur.sm.plugins.module_utils.ism import (ism_argument_spec, get_connection)
+from ansible.module_utils.basic import AnsibleModule
 
 
-class Disk(object):
+class UserGroup(object):
     def __init__(self, argument_spec):
         self.spec = argument_spec
         self.module = None
@@ -107,7 +106,7 @@ class Disk(object):
             argument_spec=self.spec, supports_check_mode=False)
 
     def run_command(self):
-        self.module.params['subcommand'] = 'setpdisk'
+        self.module.params['subcommand'] = 'editusergroup'
         self.results = get_connection(self.module)
         if self.results['State'] == 'Success':
             self.results['changed'] = True
@@ -124,14 +123,13 @@ class Disk(object):
 
 def main():
     argument_spec = dict(
-        info=dict(type='str', required=False, choices=['show']),
-        ctrl_id=dict(type='int', required=False),
-        device_id=dict(type='int', required=False),
-        option=dict(type='str', required=False, choices=['UG', 'UB', 'OFF', 'FAIL', 'RBD', 'ON', 'JB', 'ES', 'EM', 'EN', 'ET', 'LOC', 'STL']),
+        state=dict(type='str', required=True, choices=['present', 'absent']),
+        name=dict(type='str', required=True),
+        pri=dict(type='str', required=False, choices=['administrator', 'operator', 'user', 'oem', 'none']),
     )
     argument_spec.update(ism_argument_spec)
-    disk_obj = Disk(argument_spec)
-    disk_obj.work()
+    usergroup_obj = UserGroup(argument_spec)
+    usergroup_obj.work()
 
 
 if __name__ == '__main__':

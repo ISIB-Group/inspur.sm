@@ -32,6 +32,7 @@ options:
     priv:
         description:
             - User access, select one or more from None/KVM/VMM/SOL.
+        choices: ['kvm', 'vmm', 'sol', 'none']
         type: list
         elements: str
         required: true

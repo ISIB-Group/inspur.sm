@@ -87,6 +87,8 @@ class SystemLog(object):
     def run_command(self):
         self.module.params['subcommand'] = 'clearsystemlog'
         self.results = get_connection(self.module)
+        if self.results['State'] == 'Success':
+            self.results['changed'] = True
 
     def show_result(self):
         """Show result"""
