@@ -24,6 +24,7 @@ options:
         choices: [ "present", "absent" ]
         default: present
         type: str
+        required: true
     name:
         description:
             - Group name.

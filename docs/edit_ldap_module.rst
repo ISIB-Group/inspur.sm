@@ -179,7 +179,8 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Password,Required when <em>enable=enable</em>.</div>
+                                            <div>Password.</div>
+                                            <div>Required when <em>enable=enable</em>.</div>
                                                         </td>
             </tr>
                                 <tr>

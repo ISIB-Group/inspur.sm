@@ -103,7 +103,13 @@ Parameters
                          / <span style="color: purple">elements=string</span>                         / <span style="color: red">required</span>                    </div>
                                                         </td>
                                 <td>
-                                                                                                                                                            </td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>kvm</li>
+                                                                                                                                                                                                <li>vmm</li>
+                                                                                                                                                                                                <li>sol</li>
+                                                                                                                                                                                                <li>none</li>
+                                                                                    </ul>
+                                                                            </td>
                                                                 <td>
                                             <div>User access, select one or more from None/KVM/VMM/SOL.</div>
                                                         </td>

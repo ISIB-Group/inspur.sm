@@ -75,7 +75,8 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>BIOS setup option,Required when <em>file_url=None</em>.</div>
+                                            <div>BIOS setup option.</div>
+                                            <div>Required when <em>file_url=None</em>.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -215,7 +216,8 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>BIOS setup option value,Required when <em>file_url=None</em>.</div>
+                                            <div>BIOS setup option value.</div>
+                                            <div>Required when <em>file_url=None</em>.</div>
                                                         </td>
             </tr>
                         </table>
