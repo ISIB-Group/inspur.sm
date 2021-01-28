@@ -1,0 +1,3 @@
+bugfixes:
+  - Update version_added field in ad_group, ldap_group, user, and user_group
+    modules to match the collection version they were first introduced in.
