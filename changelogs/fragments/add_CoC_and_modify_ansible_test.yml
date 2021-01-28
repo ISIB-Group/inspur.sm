@@ -1,4 +1,0 @@
-minor_changes:
- - Add CODE_OF_CONDUCT.md file.
- - Modify ansible_test.yml to add push trigger rule.
- - Modify the description of Ansible in README.md.

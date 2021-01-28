@@ -1,2 +1,0 @@
-minor_changes:
- - Modify the module_utils/ism.py file to add check mode processing.

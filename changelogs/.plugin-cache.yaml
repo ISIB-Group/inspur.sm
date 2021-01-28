@@ -8,6 +8,11 @@ plugins:
   inventory: {}
   lookup: {}
   module:
+    ad_group:
+      description: Manage active directory group information.
+      name: ad_group
+      namespace: ''
+      version_added: 1.0.0
     ad_group_info:
       description: Get active directory group information.
       name: ad_group_info
@@ -438,6 +443,11 @@ plugins:
       name: kvm_info
       namespace: ''
       version_added: 0.1.0
+    ldap_group:
+      description: Manage ldap group information.
+      name: ldap_group
+      namespace: ''
+      version_added: 1.0.0
     ldap_group_info:
       description: Get ldap group information.
       name: ldap_group_info
@@ -633,6 +643,16 @@ plugins:
       name: update_fw
       namespace: ''
       version_added: 0.1.0
+    user:
+      description: Manage user.
+      name: user
+      namespace: ''
+      version_added: 1.0.0
+    user_group:
+      description: Manage user group.
+      name: user_group
+      namespace: ''
+      version_added: 1.0.0
     user_group_info:
       description: Get user group information.
       name: user_group_info
@@ -657,4 +677,4 @@ plugins:
   shell: {}
   strategy: {}
   vars: {}
-version: 1.0.2
+version: 1.1.0
