@@ -5,6 +5,19 @@ Inspur.sm Release Notes
 .. contents:: Topics
 
 
+v1.1.1
+======
+
+Minor Changes
+-------------
+
+- Modified version information to 1.1.1 in galaxy.yml.
+
+Bugfixes
+--------
+
+- Update version_added field in ad_group, ldap_group, user, and user_group modules to match the collection version they were first introduced in.
+
 v1.1.0
 ======
 

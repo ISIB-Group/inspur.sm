@@ -56,3 +56,14 @@ releases:
     - modify_readme_and_ansible-test.yml
     - playbooks.yml
     release_date: '2021-01-28'
+  1.1.1:
+    changes:
+      bugfixes:
+      - Update version_added field in ad_group, ldap_group, user, and user_group modules
+        to match the collection version they were first introduced in.
+      minor_changes:
+      - Modified version information to 1.1.1 in galaxy.yml.
+    fragments:
+    - 35-fix-version-added-fields-for-new-modules-in-1-1-0.yaml
+    - galaxy.yaml
+    release_date: '2021-01-29'
