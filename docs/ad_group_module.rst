@@ -28,7 +28,7 @@ inspur.sm.ad_group -- Manage active directory group information.
 
 .. version_added
 
-.. versionadded:: 1.0.0 of inspur.sm
+.. versionadded:: 1.1.0 of inspur.sm
 
 .. contents::
    :local:
