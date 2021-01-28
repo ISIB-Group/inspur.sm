@@ -1,5 +1,0 @@
-minor_changes:
-- Add a meta/runtime.yml file.
-- Add the code of conduct to the README.md file.
-- Documentation, examples, and return use FQCNs to M(..).
-- Regenerate the.rst file.

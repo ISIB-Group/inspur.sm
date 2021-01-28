@@ -1,3 +1,0 @@
-minor_changes:
- - Modify the README.md file to change the supported Anible version to 2.10.0
- - Modify ansibled-test. yml file, add timing execution script, run environment only keep Python 3.8 version.

@@ -1,3 +1,0 @@
-minor_changes:
- - Modify the state of chenged in the module when the operation changes.
- - Modify inspur_sm_sdk in README.md to inspursmsdk.
