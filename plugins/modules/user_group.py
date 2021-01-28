@@ -11,7 +11,7 @@ __metaclass__ = type
 DOCUMENTATION = '''
 ---
 module: user_group
-version_added: "1.0.0"
+version_added: "1.1.0"
 author:
     - WangBaoshan (@ISIB-group)
 short_description: Manage user group.
