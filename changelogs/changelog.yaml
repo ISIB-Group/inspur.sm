@@ -67,3 +67,11 @@ releases:
     - 35-fix-version-added-fields-for-new-modules-in-1-1-0.yaml
     - galaxy.yaml
     release_date: '2021-01-29'
+  1.1.2:
+    changes:
+      bugfixes:
+      - Update 'supports_check_mode=False' to 'supports_check_mode=True' for all modules
+        ending in '_info'.
+    fragments:
+    - fix-module_info-parameter.yaml
+    release_date: '2021-01-29'

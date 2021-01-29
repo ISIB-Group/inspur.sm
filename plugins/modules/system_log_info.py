@@ -100,7 +100,7 @@ class SystemLog(object):
         """Init module object"""
 
         self.module = AnsibleModule(
-            argument_spec=self.spec, supports_check_mode=False)
+            argument_spec=self.spec, supports_check_mode=True)
 
     def run_command(self):
         self.module.params['subcommand'] = 'getsystemlog'
