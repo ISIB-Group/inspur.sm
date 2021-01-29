@@ -5,6 +5,14 @@ Inspur.sm Release Notes
 .. contents:: Topics
 
 
+v1.1.2
+======
+
+Bugfixes
+--------
+
+- Update 'supports_check_mode=False' to 'supports_check_mode=True' for all modules ending in '_info'.
+
 v1.1.1
 ======
 
