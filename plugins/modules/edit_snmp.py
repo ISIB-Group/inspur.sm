@@ -66,6 +66,7 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Snmp test
   hosts: ism
+  no_log: true
   connection: local
   gather_facts: no
   vars:

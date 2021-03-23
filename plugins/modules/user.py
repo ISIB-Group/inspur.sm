@@ -51,6 +51,7 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: User test
   hosts: ism
+  no_log: true
   connection: local
   gather_facts: no
   vars:

@@ -1,0 +1,3 @@
+---
+bugfixes:
+  - Add the no_log=true attribute to some modules.

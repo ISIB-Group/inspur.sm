@@ -99,6 +99,7 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Smtp test
   hosts: ism
+  no_log: true
   connection: local
   gather_facts: no
   vars:

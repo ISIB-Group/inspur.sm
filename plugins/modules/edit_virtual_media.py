@@ -78,6 +78,7 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Media test
   hosts: ism
+  no_log: true
   connection: local
   gather_facts: no
   vars:
