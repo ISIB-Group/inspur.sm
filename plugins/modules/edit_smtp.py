@@ -129,7 +129,7 @@ EXAMPLES = '''
       primary_name: "inspur"
       primary_auth: "enable"
       primary_username: "test"
-      primary_password: "123456"
+      primary_password: my_password
       provider: "{{ ism }}"
 '''
 
@@ -191,14 +191,14 @@ def main():
         primary_port=dict(type='int', required=False),
         primary_auth=dict(type='str', required=False, choices=['enable', 'disable']),
         primary_username=dict(type='str', required=False),
-        primary_password=dict(type='str', required=False),
+        primary_password=dict(type='str', required=False, no_log=True),
         secondary_status=dict(type='str', required=False, choices=['enable', 'disable']),
         secondary_ip=dict(type='str', required=False),
         secondary_name=dict(type='str', required=False),
         secondary_port=dict(type='int', required=False),
         secondary_auth=dict(type='str', required=False, choices=['enable', 'disable']),
         secondary_username=dict(type='str', required=False),
-        secondary_password=dict(type='str', required=False),
+        secondary_password=dict(type='str', required=False, no_log=True),
 
     )
     argument_spec.update(ism_argument_spec)

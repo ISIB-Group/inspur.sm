@@ -133,7 +133,7 @@ def main():
     argument_spec = dict(
         state=dict(type='str', choices=['present', 'absent'], default='present'),
         uname=dict(type='str', required=True),
-        upass=dict(type='str', required=False),
+        upass=dict(type='str', required=False, no_log=True),
         role_id=dict(type='str', required=False),
         priv=dict(type='list', elements='str', required=False, choices=['kvm', 'vmm', 'sol', 'none']),
     )
