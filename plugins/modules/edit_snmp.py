@@ -66,6 +66,7 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Snmp test
   hosts: ism
+  no_log: true
   connection: local
   gather_facts: no
   vars:
@@ -139,9 +140,9 @@ def main():
         community=dict(type='str', required=False),
         v3username=dict(type='str', required=False),
         auth_protocol=dict(type='str', required=False, choices=['NONE', 'SHA', 'MD5']),
-        auth_password=dict(type='str', required=False),
+        auth_password=dict(type='str', required=False, no_log=True),
         priv_protocol=dict(type='str', required=False, choices=['NONE', 'DES', 'AES']),
-        priv_password=dict(type='str', required=False),
+        priv_password=dict(type='str', required=False, no_log=True),
     )
     argument_spec.update(ism_argument_spec)
     snmp_obj = SNMP(argument_spec)

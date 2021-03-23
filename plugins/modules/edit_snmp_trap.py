@@ -91,6 +91,7 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Trap test
   hosts: ism
+  no_log: true
   connection: local
   gather_facts: no
   vars:
@@ -179,9 +180,9 @@ def main():
         v3username=dict(type='str', required=False),
         engine_id=dict(type='str', required=False),
         auth_protocol=dict(type='str', required=False, choices=['NONE', 'SHA', 'MD5']),
-        auth_password=dict(type='str', required=False),
+        auth_password=dict(type='str', required=False, no_log=True),
         priv_protocol=dict(type='str', required=False, choices=['NONE', 'DES', 'AES']),
-        priv_password=dict(type='str', required=False),
+        priv_password=dict(type='str', required=False, no_log=True),
         system_name=dict(type='str', required=False),
         system_id=dict(type='str', required=False),
         location=dict(type='str', required=False),

@@ -35,6 +35,7 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Edit user password test
   hosts: ism
+  no_log: true
   connection: local
   gather_facts: no
   vars:
@@ -48,7 +49,7 @@ EXAMPLES = '''
   - name: "Change user password"
     inspur.sm.edit_pass_user:
       uname: "wbs"
-      upass: "admin1"
+      upass: my_password
       provider: "{{ ism }}"
 '''
 
@@ -103,7 +104,7 @@ class User(object):
 def main():
     argument_spec = dict(
         uname=dict(type='str', required=True),
-        upass=dict(type='str', required=True),
+        upass=dict(type='str', required=True, no_log=True),
     )
     argument_spec.update(ism_argument_spec)
     user_obj = User(argument_spec)

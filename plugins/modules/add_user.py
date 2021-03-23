@@ -48,6 +48,7 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Add user test
   hosts: ism
+  no_log: true
   connection: local
   gather_facts: no
   vars:
@@ -61,7 +62,7 @@ EXAMPLES = '''
   - name: "Add user"
     inspur.sm.add_user:
       uname: "wbs"
-      upass: "admin"
+      upass: my_password
       role_id: "Administrator"
       priv: "kvm,sol"
       provider: "{{ ism }}"
@@ -118,7 +119,7 @@ class User(object):
 def main():
     argument_spec = dict(
         uname=dict(type='str', required=True),
-        upass=dict(type='str', required=True),
+        upass=dict(type='str', required=True, no_log=True),
         role_id=dict(type='str', required=True),
         priv=dict(type='list', elements='str', required=True, choices=['kvm', 'vmm', 'sol', 'none']),
     )

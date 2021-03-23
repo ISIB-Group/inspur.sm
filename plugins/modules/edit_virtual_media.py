@@ -78,6 +78,7 @@ extends_documentation_fragment:
 EXAMPLES = '''
 - name: Media test
   hosts: ism
+  no_log: true
   connection: local
   gather_facts: no
   vars:
@@ -165,7 +166,7 @@ def main():
         remote_share_type=dict(type='str', required=False, choices=['nfs', 'cifs']),
         remote_domain_name=dict(type='str', required=False),
         remote_user_name=dict(type='str', required=False),
-        remote_password=dict(type='str', required=False),
+        remote_password=dict(type='str', required=False, no_log=True),
     )
     argument_spec.update(ism_argument_spec)
     media_obj = Media(argument_spec)
