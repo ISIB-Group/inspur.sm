@@ -75,3 +75,12 @@ releases:
     fragments:
     - fix-module_info-parameter.yaml
     release_date: '2021-01-29'
+  1.1.3:
+    changes:
+      bugfixes:
+      - Add ansible 2.11 test.
+      - Add the no_log=true attribute to some modules.
+    fragments:
+    - add_ansible2.11_test.yml
+    - add_no_log.yml
+    release_date: '2021-04-22'

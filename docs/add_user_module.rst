@@ -258,6 +258,7 @@ Examples
     
     - name: Add user test
       hosts: ism
+      no_log: true
       connection: local
       gather_facts: no
       vars:
@@ -271,7 +272,7 @@ Examples
       - name: "Add user"
         inspur.sm.add_user:
           uname: "wbs"
-          upass: "admin"
+          upass: my_password
           role_id: "Administrator"
           priv: "kvm,sol"
           provider: "{{ ism }}"

@@ -221,6 +221,7 @@ Examples
     
     - name: Edit user password test
       hosts: ism
+      no_log: true
       connection: local
       gather_facts: no
       vars:
@@ -234,7 +235,7 @@ Examples
       - name: "Change user password"
         inspur.sm.edit_pass_user:
           uname: "wbs"
-          upass: "admin1"
+          upass: my_password
           provider: "{{ ism }}"
 
 
