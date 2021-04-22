@@ -235,7 +235,7 @@ Examples
       - name: "Change user password"
         inspur.sm.edit_pass_user:
           uname: "wbs"
-          upass: "admin1"
+          upass: my_password
           provider: "{{ ism }}"
 
 
