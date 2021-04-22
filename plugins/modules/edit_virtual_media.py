@@ -166,7 +166,7 @@ def main():
         remote_share_type=dict(type='str', required=False, choices=['nfs', 'cifs']),
         remote_domain_name=dict(type='str', required=False),
         remote_user_name=dict(type='str', required=False),
-        remote_password=dict(type='str', required=False, no_log=True),
+        remote_password=dict(type='str', required=False),
     )
     argument_spec.update(ism_argument_spec)
     media_obj = Media(argument_spec)

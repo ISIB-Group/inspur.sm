@@ -456,6 +456,7 @@ Examples
     
     - name: Smtp test
       hosts: ism
+      no_log: true
       connection: local
       gather_facts: no
       vars:

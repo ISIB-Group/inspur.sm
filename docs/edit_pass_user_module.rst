@@ -221,6 +221,7 @@ Examples
     
     - name: Edit user password test
       hosts: ism
+      no_log: true
       connection: local
       gather_facts: no
       vars:

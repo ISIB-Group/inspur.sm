@@ -5,6 +5,15 @@ Inspur.sm Release Notes
 .. contents:: Topics
 
 
+v1.1.3
+======
+
+Bugfixes
+--------
+
+- Add ansible 2.11 test.
+- Add the no_log=true attribute to some modules.
+
 v1.1.2
 ======
 
