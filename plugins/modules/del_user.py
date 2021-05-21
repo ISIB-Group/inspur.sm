@@ -18,7 +18,7 @@ short_description: Delete user.
 description:
    - Delete user on Inspur server.
 deprecated:
-   removed_in: 2.2.0
+   removed_in: 3.0.0
    why: Merge functions into the M(inspur.sm.user) module.
    alternative: Use M(inspur.sm.user) instead.
    removed_from_collection: inspur.sm

@@ -28,7 +28,7 @@ inspur.sm.gpu_info -- Get GPU information.
 
 .. version_added
 
-.. versionadded:: 1.1.4 of inspur.sm
+.. versionadded:: 1.2.0 of inspur.sm
 
 .. contents::
    :local:

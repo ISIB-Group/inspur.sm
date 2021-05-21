@@ -11,7 +11,7 @@ __metaclass__ = type
 DOCUMENTATION = '''
 ---
 module: edit_smtp_dest
-version_added: "1.1.4"
+version_added: "1.2.0"
 author:
     - WangBaoshan (@ISIB-group)
 short_description: Set SMTP information.

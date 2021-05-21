@@ -38,7 +38,7 @@ inspur.sm.del_ldap_group -- Delete ldap group information.
 
 DEPRECATED
 ----------
-:Removed in: version 2.2.0
+:Removed in: version 3.0.0
 :Why: Merge functions into the :ref:`inspur.sm.ldap_group <ansible_collections.inspur.sm.ldap_group_module>` module.
 :Alternative: Use :ref:`inspur.sm.ldap_group <ansible_collections.inspur.sm.ldap_group_module>` instead.
 
@@ -301,7 +301,7 @@ Status
 
 .. Deprecated note
 
-- This module will be removed in version 2.2.0.
+- This module will be removed in version 3.0.0.
   *[deprecated]*
 - For more information see `DEPRECATED`_.
 

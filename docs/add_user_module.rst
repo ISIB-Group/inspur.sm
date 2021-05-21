@@ -38,7 +38,7 @@ inspur.sm.add_user -- Create user.
 
 DEPRECATED
 ----------
-:Removed in: version 2.2.0
+:Removed in: version 3.0.0
 :Why: Merge functions into the :ref:`inspur.sm.user <ansible_collections.inspur.sm.user_module>` module.
 :Alternative: Use :ref:`inspur.sm.user <ansible_collections.inspur.sm.user_module>` instead.
 
@@ -357,7 +357,7 @@ Status
 
 .. Deprecated note
 
-- This module will be removed in version 2.2.0.
+- This module will be removed in version 3.0.0.
   *[deprecated]*
 - For more information see `DEPRECATED`_.
 

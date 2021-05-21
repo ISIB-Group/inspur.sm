@@ -18,7 +18,7 @@ short_description: Set user group.
 description:
    - Set user group on Inspur server.
 deprecated:
-   removed_in: 2.2.0
+   removed_in: 3.0.0
    why: Merge functions into the M(inspur.sm.user_group) module.
    alternative: Use M(inspur.sm.user_group) instead.
    removed_from_collection: inspur.sm

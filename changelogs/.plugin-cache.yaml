@@ -377,12 +377,12 @@ plugins:
       description: Set SMTP information.
       name: edit_smtp_com
       namespace: ''
-      version_added: 1.1.4
+      version_added: 1.2.0
     edit_smtp_dest:
       description: Set SMTP information.
       name: edit_smtp_dest
       namespace: ''
-      version_added: 1.1.4
+      version_added: 1.2.0
     edit_snmp:
       description: Set snmp.
       name: edit_snmp
@@ -447,7 +447,7 @@ plugins:
       description: Get GPU information.
       name: gpu_info
       namespace: ''
-      version_added: 1.1.4
+      version_added: 1.2.0
     hard_disk_info:
       description: Get hard disk information.
       name: hard_disk_info
