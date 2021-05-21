@@ -373,6 +373,16 @@ plugins:
       name: edit_smtp
       namespace: ''
       version_added: 0.1.0
+    edit_smtp_com:
+      description: Set SMTP information.
+      name: edit_smtp_com
+      namespace: ''
+      version_added: 1.2.0
+    edit_smtp_dest:
+      description: Set SMTP information.
+      name: edit_smtp_dest
+      namespace: ''
+      version_added: 1.2.0
     edit_snmp:
       description: Set snmp.
       name: edit_snmp
@@ -433,6 +443,11 @@ plugins:
       name: fw_version_info
       namespace: ''
       version_added: 0.1.0
+    gpu_info:
+      description: Get GPU information.
+      name: gpu_info
+      namespace: ''
+      version_added: 1.2.0
     hard_disk_info:
       description: Get hard disk information.
       name: hard_disk_info
@@ -677,4 +692,4 @@ plugins:
   shell: {}
   strategy: {}
   vars: {}
-version: 1.1.3
+version: 1.2.0

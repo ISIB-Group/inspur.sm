@@ -4,7 +4,7 @@
 
 .. Anchors
 
-.. _ansible_collections.inspur.sm.edit_ldap_group_module:
+.. _ansible_collections.inspur.sm.gpu_info_module:
 
 .. Anchors: short name for ansible.builtin
 
@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_ldap_group -- Set ldap group information.
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.gpu_info -- Get GPU information.
+++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -24,11 +24,11 @@ inspur.sm.edit_ldap_group -- Set ldap group information.
 
     To install it use: :code:`ansible-galaxy collection install inspur.sm`.
 
-    To use it in a playbook, specify: :code:`inspur.sm.edit_ldap_group`.
+    To use it in a playbook, specify: :code:`inspur.sm.gpu_info`.
 
 .. version_added
 
-.. versionadded:: 0.1.0 of inspur.sm
+.. versionadded:: 1.2.0 of inspur.sm
 
 .. contents::
    :local:
@@ -36,18 +36,14 @@ inspur.sm.edit_ldap_group -- Set ldap group information.
 
 .. Deprecated
 
-DEPRECATED
-----------
-:Removed in: version 3.0.0
-:Why: Merge functions into the :ref:`inspur.sm.ldap_group <ansible_collections.inspur.sm.ldap_group_module>` module.
-:Alternative: Use :ref:`inspur.sm.ldap_group <ansible_collections.inspur.sm.ldap_group_module>` instead.
 
 Synopsis
 --------
 
 .. Description
 
-- Set ldap group information on Inspur server.
+- Get GPU information on Inspur server.
+- Only the M6 models support this feature.
 
 .. Aliases
 
@@ -70,24 +66,6 @@ Parameters
         </tr>
                     <tr>
                                                                 <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-base"></div>
-                    <b>base</b>
-                    <a class="ansibleOptionLink" href="#parameter-base" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Search Base</div>
-                                            <div>Search base is a string of 4 to 64 alpha-numeric characters;</div>
-                                            <div>It must start with an alphabetical character;</div>
-                                            <div>Special Symbols like dot(.), comma(,), hyphen(-), underscore(_), equal-to(=) are allowed.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-host"></div>
                     <b>host</b>
                     <a class="ansibleOptionLink" href="#parameter-host" title="Permalink to this option"></a>
@@ -103,62 +81,6 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-id"></div>
-                    <b>id</b>
-                    <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                 / <span style="color: red">required</span>                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>1</li>
-                                                                                                                                                                                                <li>2</li>
-                                                                                                                                                                                                <li>3</li>
-                                                                                                                                                                                                <li>4</li>
-                                                                                                                                                                                                <li>5</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Group id.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-kvm"></div>
-                    <b>kvm</b>
-                    <a class="ansibleOptionLink" href="#parameter-kvm" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>enable</li>
-                                                                                                                                                                                                <li>disable</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Kvm privilege.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-name"></div>
-                    <b>name</b>
-                    <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Group name.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-password"></div>
                     <b>password</b>
                     <a class="ansibleOptionLink" href="#parameter-password" title="Permalink to this option"></a>
@@ -170,28 +92,6 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Specifies the password to use to authenticate the connection to the remote device. If the value is not specified in the task, the value of environment variable <code>ANSIBLE_NET_PASSWORD</code> will be used instead.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-pri"></div>
-                    <b>pri</b>
-                    <a class="ansibleOptionLink" href="#parameter-pri" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>administrator</li>
-                                                                                                                                                                                                <li>user</li>
-                                                                                                                                                                                                <li>operator</li>
-                                                                                                                                                                                                <li>oem</li>
-                                                                                                                                                                                                <li>none</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Group privilege.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -273,25 +173,6 @@ Parameters
                                             <div>Configures the username to use to authenticate the connection to the remote device. If the value is not specified in the task, the value of environment variable <code>ANSIBLE_NET_USERNAME</code> will be used instead.</div>
                                                         </td>
             </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-vm"></div>
-                    <b>vm</b>
-                    <a class="ansibleOptionLink" href="#parameter-vm" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>enable</li>
-                                                                                                                                                                                                <li>disable</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Vmedia privilege.</div>
-                                                        </td>
-            </tr>
                         </table>
     <br/>
 
@@ -309,7 +190,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Ldap group test
+    - name: GPU test
       hosts: ism
       connection: local
       gather_facts: no
@@ -321,14 +202,8 @@ Examples
 
       tasks:
 
-      - name: "Edit ldap group information"
-        inspur.sm.edit_ldap_group:
-          id: "1"
-          name: "wbs"
-          base: "cn=manager"
-          pri: "administrator"
-          kvm: "enable"
-          vm: "disable"
+      - name: "Get gpu information"
+        inspur.sm.gpu_info:
           provider: "{{ ism }}"
 
 
@@ -400,15 +275,6 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
     <br/><br/>
 
 ..  Status (Presently only deprecated)
-
-Status
-------
-
-.. Deprecated note
-
-- This module will be removed in version 3.0.0.
-  *[deprecated]*
-- For more information see `DEPRECATED`_.
 
 
 .. Authors

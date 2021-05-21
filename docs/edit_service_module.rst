@@ -98,6 +98,7 @@ Parameters
                                                                 <td>
                                             <div>It shows the interface in which service is running.</div>
                                             <div>The user can choose any one of the available interfaces.</div>
+                                            <div>Only the M5 model supports this parameter.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -231,10 +232,13 @@ Parameters
                                                                                                                                                                                                 <li>telnet</li>
                                                                                                                                                                                                 <li>solssh</li>
                                                                                                                                                                                                 <li>snmp</li>
+                                                                                                                                                                                                <li>vnc</li>
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
                                             <div>Displays service name of the selected slot(readonly).</div>
+                                            <div>The <em>vnc</em> option is not supported in M5.</div>
+                                            <div>The <em>fd-media/telnet/snmp</em> option is not supported in M6.</div>
                                                         </td>
             </tr>
                                 <tr>

@@ -21,6 +21,7 @@ options:
     local_media_support:
         description:
             - To enable or disable Local Media Support,check or uncheck the checkbox respectively.
+            - Only the M5 model supports this parameter.
         choices: ['Enable', 'Disable']
         type: str
     remote_media_support:
@@ -30,18 +31,19 @@ options:
         type: str
     mount_type:
         description:
-            - mount type, 0 is CD,1 is FD,2 is HD.
-        choices: [0, 1, 2]
-        type: int
+            - Virtual mount type.
+            - The I(FD) option is not supported in M6.
+        choices: ['CD', 'FD', 'HD']
+        type: str
     same_settings:
         description:
-            - same settings with CD,0 is No,1 is Yes.
+            - Same settings with CD,0 is No,1 is Yes.
             - Required when I(mount_type=0).
         choices: [0, 1]
         type: int
     mount:
         description:
-            - whether to mount virtual media.
+            - Whether to mount virtual media.
         choices: ['Enable', 'Disable']
         type: str
     remote_server_address:
@@ -158,7 +160,7 @@ def main():
     argument_spec = dict(
         local_media_support=dict(type='str', required=False, choices=['Enable', 'Disable']),
         remote_media_support=dict(type='str', required=False, choices=['Enable', 'Disable']),
-        mount_type=dict(type='int', required=False, choices=[0, 1, 2]),
+        mount_type=dict(type='str', required=False, choices=['CD', 'FD', 'HD']),
         same_settings=dict(type='int', required=False, choices=[0, 1]),
         mount=dict(type='str', required=False, choices=['Enable', 'Disable']),
         remote_server_address=dict(type='str', required=False),

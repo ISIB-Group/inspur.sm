@@ -99,6 +99,22 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-max_variety"></div>
+                    <b>max_variety</b>
+                    <a class="ansibleOptionLink" href="#parameter-max_variety" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">integer</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>NTP Maximum jump time(minute),max variety(1-60).</div>
+                                            <div>Only the M6 model supports this parameter.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-ntp_time"></div>
                     <b>ntp_time</b>
                     <a class="ansibleOptionLink" href="#parameter-ntp_time" title="Permalink to this option"></a>
@@ -110,6 +126,7 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>NTP time(YYYYmmddHHMMSS).</div>
+                                            <div>Only the M5 model supports this parameter.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -238,6 +255,51 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-server4"></div>
+                    <b>server4</b>
+                    <a class="ansibleOptionLink" href="#parameter-server4" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>NTP Server1(ipv4 or ipv6 or domain name), set when auto_dateis enable.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-server5"></div>
+                    <b>server5</b>
+                    <a class="ansibleOptionLink" href="#parameter-server5" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>NTP Server2(ipv4 or ipv6 or domain name), set when auto_date is enable.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-server6"></div>
+                    <b>server6</b>
+                    <a class="ansibleOptionLink" href="#parameter-server6" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>NTP Server3(ipv4 or ipv6 or domain name), set when auto_date is enable.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-syn_cycle"></div>
                     <b>syn_cycle</b>
                     <a class="ansibleOptionLink" href="#parameter-syn_cycle" title="Permalink to this option"></a>
@@ -248,7 +310,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>NTP syn cycle(minute).</div>
+                                            <div>NTP syn cycle(minute),sync cycle(5-1440).</div>
                                                         </td>
             </tr>
                                 <tr>

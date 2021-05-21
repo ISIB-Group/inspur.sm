@@ -18,6 +18,12 @@ short_description: Set KVM.
 description:
    - Set KVM on Inspur server.
 options:
+    client_type:
+        description:
+            - Client Type.
+            - Only the M6 model supports this parameter.
+        choices: ['vnc', 'viewer']
+        type: str
     kvm_encryption:
         description:
             - Encrypt KVM packets.
@@ -55,6 +61,27 @@ options:
     automatic_off:
         description:
             - Automatically OFF Server Monitor, When KVM Launches.
+        choices: ['enable', 'disable']
+        type: str
+    non_secure:
+        description:
+            - Enable/disable Non Secure Connection Type.
+            - Only the M6 model supports this parameter.
+            - Required when I(client_type=vnc).
+        choices: ['enable', 'disable']
+        type: str
+    ssh_vnc:
+        description:
+            - Enable/disable VNC over SSH in BMC.
+            - Only the M6 model supports this parameter.
+            - Required when I(client_type=vnc).
+        choices: ['enable', 'disable']
+        type: str
+    stunnel_vnc:
+        description:
+            - Enable/disable VNC over Stunnel in BMC.
+            - Only the M6 model supports this parameter.
+            - Required when I(client_type=vnc).
         choices: ['enable', 'disable']
         type: str
 extends_documentation_fragment:
@@ -136,6 +163,7 @@ class KVM(object):
 
 def main():
     argument_spec = dict(
+        client_type=dict(type='str', required=False, choices=['vnc', 'viewer']),
         kvm_encryption=dict(type='str', required=False, choices=['enable', 'disable']),
         media_attach=dict(type='str', required=False, choices=['attach', 'auto']),
         keyboard_language=dict(type='str', required=False,
@@ -145,6 +173,9 @@ def main():
         retry_time_interval=dict(type='int', required=False),
         local_monitor_off=dict(type='str', required=False, choices=['enable', 'disable']),
         automatic_off=dict(type='str', required=False, choices=['enable', 'disable']),
+        non_secure=dict(type='str', required=False, choices=['enable', 'disable']),
+        ssh_vnc=dict(type='str', required=False, choices=['enable', 'disable']),
+        stunnel_vnc=dict(type='str', required=False, choices=['enable', 'disable']),
     )
     argument_spec.update(ism_argument_spec)
     kvm_obj = KVM(argument_spec)

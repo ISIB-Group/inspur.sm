@@ -289,7 +289,7 @@ Examples
       tasks:
 
       - name: "Add user"
-        inspur.sm.add_user:
+        inspur.sm.user:
           state: "present"
           uname: "wbs"
           upass: "admin"
@@ -298,7 +298,7 @@ Examples
           provider: "{{ ism }}"
 
       - name: "Set user"
-        inspur.sm.add_user:
+        inspur.sm.user:
           state: "present"
           uname: "wbs"
           upass: "12345678"

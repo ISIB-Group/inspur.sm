@@ -93,6 +93,7 @@ Parameters
                                                                 <td>
                                             <div>BIOS option file.attribute must be used with value,</div>
                                             <div>Mutually exclusive with fileurl format,&quot;/directory/filename&quot;.</div>
+                                            <div>Only the M5 model supports this parameter.</div>
                                                         </td>
             </tr>
                                 <tr>

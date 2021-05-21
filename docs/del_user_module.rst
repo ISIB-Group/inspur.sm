@@ -36,6 +36,11 @@ inspur.sm.del_user -- Delete user.
 
 .. Deprecated
 
+DEPRECATED
+----------
+:Removed in: version 3.0.0
+:Why: Merge functions into the :ref:`inspur.sm.user <ansible_collections.inspur.sm.user_module>` module.
+:Alternative: Use :ref:`inspur.sm.user <ansible_collections.inspur.sm.user_module>` instead.
 
 Synopsis
 --------
@@ -290,6 +295,15 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
     <br/><br/>
 
 ..  Status (Presently only deprecated)
+
+Status
+------
+
+.. Deprecated note
+
+- This module will be removed in version 3.0.0.
+  *[deprecated]*
+- For more information see `DEPRECATED`_.
 
 
 .. Authors

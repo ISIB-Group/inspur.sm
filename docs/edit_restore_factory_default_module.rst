@@ -89,7 +89,8 @@ Parameters
                                                         </td>
                                 <td>
                                                                                                                             <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>auto</li>
+                                                                                                                                                                <li>all</li>
+                                                                                                                                                                                                <li>none</li>
                                                                                                                                                                                                 <li>manual</li>
                                                                                     </ul>
                                                                             </td>

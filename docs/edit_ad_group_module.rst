@@ -36,6 +36,11 @@ inspur.sm.edit_ad_group -- Set active directory group information.
 
 .. Deprecated
 
+DEPRECATED
+----------
+:Removed in: version 3.0.0
+:Why: Merge functions into the :ref:`inspur.sm.ad_group <ansible_collections.inspur.sm.ad_group_module>` module.
+:Alternative: Use :ref:`inspur.sm.ad_group <ansible_collections.inspur.sm.ad_group_module>` instead.
 
 Synopsis
 --------
@@ -392,6 +397,15 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
     <br/><br/>
 
 ..  Status (Presently only deprecated)
+
+Status
+------
+
+.. Deprecated note
+
+- This module will be removed in version 3.0.0.
+  *[deprecated]*
+- For more information see `DEPRECATED`_.
 
 
 .. Authors

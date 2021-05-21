@@ -111,6 +111,7 @@ Parameters
                                                                             </td>
                                                                 <td>
                                             <div>Virtual media type.</div>
+                                            <div>Only the M5 model supports this parameter.</div>
                                                         </td>
             </tr>
                                 <tr>

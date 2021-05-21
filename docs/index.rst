@@ -87,6 +87,8 @@ Module Plugins
 * :ref:`edit_restore_factory_default <ansible_collections.inspur.sm.edit_restore_factory_default_module>` -- Set preserver config.
 * :ref:`edit_service <ansible_collections.inspur.sm.edit_service_module>` -- Set service settings.
 * :ref:`edit_smtp <ansible_collections.inspur.sm.edit_smtp_module>` -- Set SMTP information.
+* :ref:`edit_smtp_com <ansible_collections.inspur.sm.edit_smtp_com_module>` -- Set SMTP information.
+* :ref:`edit_smtp_dest <ansible_collections.inspur.sm.edit_smtp_dest_module>` -- Set SMTP information.
 * :ref:`edit_snmp <ansible_collections.inspur.sm.edit_snmp_module>` -- Set snmp.
 * :ref:`edit_snmp_trap <ansible_collections.inspur.sm.edit_snmp_trap_module>` -- Set snmp trap.
 * :ref:`edit_threshold <ansible_collections.inspur.sm.edit_threshold_module>` -- Set threshold information.
@@ -99,6 +101,7 @@ Module Plugins
 * :ref:`fan_info <ansible_collections.inspur.sm.fan_info_module>` -- Get fan information.
 * :ref:`fru_info <ansible_collections.inspur.sm.fru_info_module>` -- Get fru information.
 * :ref:`fw_version_info <ansible_collections.inspur.sm.fw_version_info_module>` -- Get firmware version information.
+* :ref:`gpu_info <ansible_collections.inspur.sm.gpu_info_module>` -- Get GPU information.
 * :ref:`hard_disk_info <ansible_collections.inspur.sm.hard_disk_info_module>` -- Get hard disk information.
 * :ref:`kvm_info <ansible_collections.inspur.sm.kvm_info_module>` -- Get KVM information.
 * :ref:`ldap_group <ansible_collections.inspur.sm.ldap_group_module>` -- Manage ldap group information.

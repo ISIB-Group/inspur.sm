@@ -43,12 +43,14 @@ options:
     has_me:
         description:
             - (M5-BIOS)update me or not when update bios,only work in INTEL platform,0-no,1-yes.
+            - Only the M5 model supports this parameter.
         default: 1
         choices: [0, 1]
         type: int
     dual_image:
         description:
             - (M5)update dual image(default) or not.
+            - Only the M5 model supports this parameter.
         default: dual
         choices: ['single', 'dual']
         type: str

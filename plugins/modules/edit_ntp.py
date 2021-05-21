@@ -26,6 +26,7 @@ options:
     ntp_time:
         description:
             - NTP time(YYYYmmddHHMMSS).
+            - Only the M5 model supports this parameter.
         type: str
     time_zone:
         description:
@@ -43,9 +44,26 @@ options:
         description:
             - NTP Server3(ipv4 or ipv6 or domain name), set when auto_date is enable.
         type: str
+    server4:
+        description:
+            - NTP Server1(ipv4 or ipv6 or domain name), set when auto_dateis enable.
+        type: str
+    server5:
+        description:
+            - NTP Server2(ipv4 or ipv6 or domain name), set when auto_date is enable.
+        type: str
+    server6:
+        description:
+            - NTP Server3(ipv4 or ipv6 or domain name), set when auto_date is enable.
+        type: str
     syn_cycle:
         description:
-            - NTP syn cycle(minute).
+            - NTP syn cycle(minute),sync cycle(5-1440).
+        type: int
+    max_variety:
+        description:
+            - NTP Maximum jump time(minute),max variety(1-60).
+            - Only the M6 model supports this parameter.
         type: int
 extends_documentation_fragment:
     - inspur.sm.ism
@@ -138,7 +156,11 @@ def main():
         server1=dict(type='str', required=False),
         server2=dict(type='str', required=False),
         server3=dict(type='str', required=False),
+        server4=dict(type='str', required=False),
+        server5=dict(type='str', required=False),
+        server6=dict(type='str', required=False),
         syn_cycle=dict(type='int', required=False),
+        max_variety=dict(type='int', required=False),
     )
     argument_spec.update(ism_argument_spec)
     ntp_obj = NTP(argument_spec)

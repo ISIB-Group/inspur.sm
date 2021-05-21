@@ -4,7 +4,7 @@
 
 .. Anchors
 
-.. _ansible_collections.inspur.sm.edit_snmp_trap_module:
+.. _ansible_collections.inspur.sm.edit_smtp_com_module:
 
 .. Anchors: short name for ansible.builtin
 
@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_snmp_trap -- Set snmp trap.
-++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.edit_smtp_com -- Set SMTP information.
+++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -24,11 +24,11 @@ inspur.sm.edit_snmp_trap -- Set snmp trap.
 
     To install it use: :code:`ansible-galaxy collection install inspur.sm`.
 
-    To use it in a playbook, specify: :code:`inspur.sm.edit_snmp_trap`.
+    To use it in a playbook, specify: :code:`inspur.sm.edit_smtp_com`.
 
 .. version_added
 
-.. versionadded:: 0.1.0 of inspur.sm
+.. versionadded:: 1.2.0 of inspur.sm
 
 .. contents::
    :local:
@@ -42,7 +42,8 @@ Synopsis
 
 .. Description
 
-- Set snmp trap on Inspur server.
+- Set SMTP com information on Inspur server.
+- Only the M6 models support this feature.
 
 .. Aliases
 
@@ -65,9 +66,9 @@ Parameters
         </tr>
                     <tr>
                                                                 <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-auth_password"></div>
-                    <b>auth_password</b>
-                    <a class="ansibleOptionLink" href="#parameter-auth_password" title="Permalink to this option"></a>
+                    <div class="ansibleOptionAnchor" id="parameter-asset_tag"></div>
+                    <b>asset_tag</b>
+                    <a class="ansibleOptionLink" href="#parameter-asset_tag" title="Permalink to this option"></a>
                     <div style="font-size: small">
                         <span style="color: purple">string</span>
                                                                     </div>
@@ -75,35 +76,14 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Set auth password of V3 trap, password is a string of 8 to 16 alpha-numeric characters.</div>
-                                            <div>Required when <em>auth_protocol</em> is either <code>SHA</code> or <code>MD5</code>.</div>
+                                            <div>product asset label,</div>
                                                         </td>
             </tr>
                                 <tr>
                                                                 <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-auth_protocol"></div>
-                    <b>auth_protocol</b>
-                    <a class="ansibleOptionLink" href="#parameter-auth_protocol" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>NONE</li>
-                                                                                                                                                                                                <li>SHA</li>
-                                                                                                                                                                                                <li>MD5</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Choose authentication.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-community"></div>
-                    <b>community</b>
-                    <a class="ansibleOptionLink" href="#parameter-community" title="Permalink to this option"></a>
+                    <div class="ansibleOptionAnchor" id="parameter-email"></div>
+                    <b>email</b>
+                    <a class="ansibleOptionLink" href="#parameter-email" title="Permalink to this option"></a>
                     <div style="font-size: small">
                         <span style="color: purple">string</span>
                                                                     </div>
@@ -111,14 +91,14 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Community of v1/v2c.</div>
+                                            <div>Sender email.</div>
                                                         </td>
             </tr>
                                 <tr>
                                                                 <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-contact"></div>
-                    <b>contact</b>
-                    <a class="ansibleOptionLink" href="#parameter-contact" title="Permalink to this option"></a>
+                    <div class="ansibleOptionAnchor" id="parameter-event_level"></div>
+                    <b>event_level</b>
+                    <a class="ansibleOptionLink" href="#parameter-event_level" title="Permalink to this option"></a>
                     <div style="font-size: small">
                         <span style="color: purple">string</span>
                                                                     </div>
@@ -126,43 +106,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Set contact, can set NULL.</div>
-                                            <div>Only the M5 model supports this parameter.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-engine_id"></div>
-                    <b>engine_id</b>
-                    <a class="ansibleOptionLink" href="#parameter-engine_id" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Set Engine ID of V3 trap, engine ID is a string of 10 to 48 hex characters, must even, can set NULL.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-event_severity"></div>
-                    <b>event_severity</b>
-                    <a class="ansibleOptionLink" href="#parameter-event_severity" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>all</li>
-                                                                                                                                                                                                <li>warning</li>
-                                                                                                                                                                                                <li>critical</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Event Severity.</div>
+                                            <div>Events above this level will be sent.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -182,30 +126,9 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-host_id"></div>
-                    <b>host_id</b>
-                    <a class="ansibleOptionLink" href="#parameter-host_id" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>HostName</li>
-                                                                                                                                                                                                <li>SerialNum</li>
-                                                                                                                                                                                                <li>AssertTag</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Host id.</div>
-                                            <div>Only the M6 model supports this parameter.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-location"></div>
-                    <b>location</b>
-                    <a class="ansibleOptionLink" href="#parameter-location" title="Permalink to this option"></a>
+                    <div class="ansibleOptionAnchor" id="parameter-host_name"></div>
+                    <b>host_name</b>
+                    <a class="ansibleOptionLink" href="#parameter-host_name" title="Permalink to this option"></a>
                     <div style="font-size: small">
                         <span style="color: purple">string</span>
                                                                     </div>
@@ -213,24 +136,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Set host Location, can set NULL.</div>
-                                            <div>Only the M5 model supports this parameter.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-os"></div>
-                    <b>os</b>
-                    <a class="ansibleOptionLink" href="#parameter-os" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Set host OS, can set NULL.</div>
-                                            <div>Only the M5 model supports this parameter.</div>
+                                            <div>Server name.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -246,42 +152,6 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Specifies the password to use to authenticate the connection to the remote device. If the value is not specified in the task, the value of environment variable <code>ANSIBLE_NET_PASSWORD</code> will be used instead.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-priv_password"></div>
-                    <b>priv_password</b>
-                    <a class="ansibleOptionLink" href="#parameter-priv_password" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Set privacy password of V3 trap, password is a string of 8 to 16 alpha-numeric characters.</div>
-                                            <div>Required when <em>priv_protocol</em> is either <code>DES</code> or <code>AES</code>.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-priv_protocol"></div>
-                    <b>priv_protocol</b>
-                    <a class="ansibleOptionLink" href="#parameter-priv_protocol" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>NONE</li>
-                                                                                                                                                                                                <li>DES</li>
-                                                                                                                                                                                                <li>AES</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Choose Privacy.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -350,9 +220,9 @@ Parameters
                     
                                 <tr>
                                                                 <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-system_id"></div>
-                    <b>system_id</b>
-                    <a class="ansibleOptionLink" href="#parameter-system_id" title="Permalink to this option"></a>
+                    <div class="ansibleOptionAnchor" id="parameter-serial_number"></div>
+                    <b>serial_number</b>
+                    <a class="ansibleOptionLink" href="#parameter-serial_number" title="Permalink to this option"></a>
                     <div style="font-size: small">
                         <span style="color: purple">string</span>
                                                                     </div>
@@ -360,15 +230,33 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Set system ID, can set NULL.</div>
-                                            <div>Only the M5 model supports this parameter.</div>
+                                            <div>Serial number.</div>
                                                         </td>
             </tr>
                                 <tr>
                                                                 <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-system_name"></div>
-                    <b>system_name</b>
-                    <a class="ansibleOptionLink" href="#parameter-system_name" title="Permalink to this option"></a>
+                    <div class="ansibleOptionAnchor" id="parameter-server_auth"></div>
+                    <b>server_auth</b>
+                    <a class="ansibleOptionLink" href="#parameter-server_auth" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>SMTP server authentication.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-server_ip"></div>
+                    <b>server_ip</b>
+                    <a class="ansibleOptionLink" href="#parameter-server_ip" title="Permalink to this option"></a>
                     <div style="font-size: small">
                         <span style="color: purple">string</span>
                                                                     </div>
@@ -376,15 +264,30 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Set system name, can set NULL.</div>
-                                            <div>Only the M5 model supports this parameter.</div>
+                                            <div>SMTP server IP.</div>
                                                         </td>
             </tr>
                                 <tr>
                                                                 <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-trap_port"></div>
-                    <b>trap_port</b>
-                    <a class="ansibleOptionLink" href="#parameter-trap_port" title="Permalink to this option"></a>
+                    <div class="ansibleOptionAnchor" id="parameter-server_password"></div>
+                    <b>server_password</b>
+                    <a class="ansibleOptionLink" href="#parameter-server_password" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>SMTP server Password,lenth be 4 to 64 bits,cannot contain &#x27; &#x27;(space).</div>
+                                            <div>Required when <em>server_auth=enable</em>.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-server_port"></div>
+                    <b>server_port</b>
+                    <a class="ansibleOptionLink" href="#parameter-server_port" title="Permalink to this option"></a>
                     <div style="font-size: small">
                         <span style="color: purple">integer</span>
                                                                     </div>
@@ -392,8 +295,113 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Set SNMP trap Port(1-65535).</div>
-                                            <div>Only the M5 model supports this parameter.</div>
+                                            <div>SMTP server port,The Identification for retry count configuration(1-65535).</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-server_secure_port"></div>
+                    <b>server_secure_port</b>
+                    <a class="ansibleOptionLink" href="#parameter-server_secure_port" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">integer</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>SMTP server sesure port,The Identification for retry count configuration(1-65535).</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-server_username"></div>
+                    <b>server_username</b>
+                    <a class="ansibleOptionLink" href="#parameter-server_username" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>SMTP server Username,lenth be 4 to 64 bits,</div>
+                                            <div>must start with letters and cannot contain &#x27;,&#x27;(comma) &#x27;:&#x27;(colon) &#x27; &#x27;(space) &#x27;;&#x27;(semicolon) &#x27;\&#x27;(backslash).</div>
+                                            <div>Required when <em>server_auth=enable</em>.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-ssl_tls_enable"></div>
+                    <b>ssl_tls_enable</b>
+                    <a class="ansibleOptionLink" href="#parameter-ssl_tls_enable" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>SMTP SSLTLS Enable.</div>
+                                            <div><em>ssl_tls_enable=disable</em>, when <em>star_tls_enable=enable</em>.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-star_tls_enable"></div>
+                    <b>star_tls_enable</b>
+                    <a class="ansibleOptionLink" href="#parameter-star_tls_enable" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>SMTP STARTTLS Enable.</div>
+                                            <div><em>star_tls_enable=disable</em>, when <em>ssl_tls_enable=enable</em>.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-status"></div>
+                    <b>status</b>
+                    <a class="ansibleOptionLink" href="#parameter-status" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                 / <span style="color: red">required</span>                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>SMTP Support.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-subject"></div>
+                    <b>subject</b>
+                    <a class="ansibleOptionLink" href="#parameter-subject" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Email theme.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -409,41 +417,6 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Configures the username to use to authenticate the connection to the remote device. If the value is not specified in the task, the value of environment variable <code>ANSIBLE_NET_USERNAME</code> will be used instead.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-v3username"></div>
-                    <b>v3username</b>
-                    <a class="ansibleOptionLink" href="#parameter-v3username" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Set user name of V3 trap.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-version"></div>
-                    <b>version</b>
-                    <a class="ansibleOptionLink" href="#parameter-version" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>1</li>
-                                                                                                                                                                                                <li>2c</li>
-                                                                                                                                                                                                <li>3</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>SNMP trap version.</div>
                                                         </td>
             </tr>
                         </table>
@@ -463,7 +436,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Trap test
+    - name: Smtp com test
       hosts: ism
       no_log: true
       connection: local
@@ -476,25 +449,19 @@ Examples
 
       tasks:
 
-      - name: "Set snmp trap v2c"
-        inspur.sm.edit_snmp_trap:
-          version: "2c"
-          event_severity: "warning"
-          inspur: "test"
-          system_name: "Inspur"
+      - name: "Set smtp com information"
+        inspur.sm.edit_smtp_com:
+          status: "disable"
           provider: "{{ ism }}"
 
-      - name: "Set snmp trap v3"
-        inspur.sm.edit_snmp_trap:
-          version: "3"
-          event_severity: "all"
-          v3username: "Inspur"
-          engine_id: "1234567890"
-          auth_protocol: "SHA"
-          auth_password: "12345678"
-          priv_protocol: "AES"
-          priv_password: "123454678"
-          trap_port: 162
+      - name: "Set smtp com information"
+        inspur.sm.edit_smtp_com:
+          status: "enable"
+          server_ip: "100.2.2.2"
+          email: "inspur@Inspur.com"
+          server_auth: "enable"
+          server_username: "admin"
+          server_password: "1234qwer!@#$"
           provider: "{{ ism }}"
 
 

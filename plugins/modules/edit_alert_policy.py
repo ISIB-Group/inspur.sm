@@ -21,7 +21,9 @@ options:
     id:
         description:
             - Alert id.
-        choices: [1, 2, 3]
+            - The values for M5 modules are 1,2,3.
+            - The values for M6 modules are 1,2,3,4.
+        choices: [1, 2, 3, 4]
         required: true
         type: int
     status:
@@ -32,6 +34,7 @@ options:
     type:
         description:
             - Alert Type.
+            - Only the M5 model supports this parameter.
         choices: ['snmp', 'email', 'snmpdomain']
         type: str
     destination:
@@ -43,8 +46,14 @@ options:
     channel:
         description:
             - LAN Channel.
+            - Only the M5 model supports this parameter.
         choices: ['shared', 'dedicated']
         type: str
+    trap_port:
+        description:
+            - SNMP trap port(1-65535).
+            - Only the M6 model supports this parameter.
+        type: int
 extends_documentation_fragment:
     - inspur.sm.ism
 '''
@@ -128,11 +137,12 @@ class SNMP(object):
 
 def main():
     argument_spec = dict(
-        id=dict(type='int', required=True, choices=[1, 2, 3]),
+        id=dict(type='int', required=True, choices=[1, 2, 3, 4]),
         status=dict(type='str', required=False, choices=['enable', 'disable']),
         type=dict(type='str', required=False, choices=['snmp', 'email', 'snmpdomain']),
         destination=dict(type='str', required=False),
         channel=dict(type='str', required=False, choices=['shared', 'dedicated']),
+        trap_port=dict(type='int', required=False),
     )
     argument_spec.update(ism_argument_spec)
     snmp_obj = SNMP(argument_spec)

@@ -32,6 +32,7 @@ options:
         description:
             - BIOS option file.attribute must be used with value,
             - Mutually exclusive with fileurl format,"/directory/filename".
+            - Only the M5 model supports this parameter.
         type: str
 extends_documentation_fragment:
     - inspur.sm.ism

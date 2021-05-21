@@ -21,6 +21,7 @@ options:
     list:
         description:
             - Get cpld list.
+            - Only the M5 model supports this parameter.
         choices: [True, False]
         default: False
         type: bool
@@ -28,6 +29,7 @@ options:
         description:
             - CPLD id.
             - Required when I(list=False).
+            - Only the M5 model supports this parameter.
         type: int
     file_url:
         description:

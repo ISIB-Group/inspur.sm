@@ -26,8 +26,8 @@ options:
     item:
         description:
             - select export item.
+            - Only the M5 model supports this parameter.
         choices: ['all', 'network', 'dns', 'service', 'ntp', 'smtp', 'snmptrap', 'ad', 'ldap', 'user','bios']
-        required: true
         type: str
 extends_documentation_fragment:
     - inspur.sm.ism
@@ -104,7 +104,7 @@ class Restore(object):
 def main():
     argument_spec = dict(
         bak_file=dict(type='str', required=True),
-        item=dict(type='str', required=True, choices=['all', 'network', 'dns', 'service', 'ntp', 'smtp', 'snmptrap', 'ad', 'ldap', 'user', 'bios']),
+        item=dict(type='str', required=False, choices=['all', 'network', 'dns', 'service', 'ntp', 'smtp', 'snmptrap', 'ad', 'ldap', 'user', 'bios']),
     )
     argument_spec.update(ism_argument_spec)
     restore_obj = Restore(argument_spec)
