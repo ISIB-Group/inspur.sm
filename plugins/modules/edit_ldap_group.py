@@ -19,7 +19,9 @@ description:
    - Set ldap group information on Inspur server.
 deprecated:
    removed_in: 2.2.0
+   why: Merge functions into the M(inspur.sm.ldap_group) module.
    alternative: Use M(inspur.sm.ldap_group) instead.
+   removed_from_collection: inspur.sm
 options:
     id:
         description:
