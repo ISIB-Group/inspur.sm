@@ -28,7 +28,6 @@ options:
             - select export item.
             - Only the M5 model supports this parameter.
         choices: ['all', 'network', 'dns', 'service', 'ntp', 'smtp', 'snmptrap', 'ad', 'ldap', 'user','bios']
-        required: true
         type: str
 extends_documentation_fragment:
     - inspur.sm.ism

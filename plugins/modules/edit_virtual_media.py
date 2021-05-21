@@ -160,7 +160,7 @@ def main():
     argument_spec = dict(
         local_media_support=dict(type='str', required=False, choices=['Enable', 'Disable']),
         remote_media_support=dict(type='str', required=False, choices=['Enable', 'Disable']),
-        mount_type=dict(type='int', required=False, choices=[0, 1, 2]),
+        mount_type=dict(type='str', required=False, choices=['CD', 'FD', 'HD']),
         same_settings=dict(type='int', required=False, choices=[0, 1]),
         mount=dict(type='str', required=False, choices=['Enable', 'Disable']),
         remote_server_address=dict(type='str', required=False),

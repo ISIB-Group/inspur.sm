@@ -11,15 +11,15 @@ __metaclass__ = type
 DOCUMENTATION = '''
 ---
 module: add_ad_group
+deprecated:
+   removed_in: 2.2.0
+   alternative: Use M(inspur.sm.ad_group) instead.
 version_added: "0.1.0"
 author:
     - WangBaoshan (@ISIB-group)
 short_description: Add active directory group information.
 description:
    - Add active directory group information on Inspur server.
-deprecated:
-   removed_in: 2.2.0
-   alternative: Use M(inspur.sm.ad_group) instead.
 options:
     name:
         description:

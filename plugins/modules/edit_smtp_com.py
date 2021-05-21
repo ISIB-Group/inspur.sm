@@ -59,13 +59,13 @@ options:
     ssl_tls_enable:
         description:
             - SMTP SSLTLS Enable.
-            - I(ssl_tls_enable=disable), when I(star_tls_enable=enable)
+            - I(ssl_tls_enable=disable), when I(star_tls_enable=enable).
         choices: ['enable', 'disable']
         type: str
     star_tls_enable:
         description:
             - SMTP STARTTLS Enable.
-            - I(star_tls_enable=disable), when I(ssl_tls_enable=enable)            
+            - I(star_tls_enable=disable), when I(ssl_tls_enable=enable).        
         choices: ['enable', 'disable']
         type: str
     subject:
@@ -118,7 +118,7 @@ EXAMPLES = '''
       email: "inspur@Inspur.com"
       server_auth: "enable"
       server_username: "admin"
-      server_password" "1234qwer!@#$"
+      server_password: "1234qwer!@#$"
       provider: "{{ ism }}"
 '''
 
@@ -178,9 +178,6 @@ def main():
         server_secure_port=dict(type='int', required=False),
         email=dict(type='str', required=False),
         server_auth=dict(type='str', required=False, choices=['enable', 'disable']),
-        primary_name=dict(type='str', required=False),
-        primary_port=dict(type='int', required=False),
-        primary_auth=dict(type='str', required=False, choices=['enable', 'disable']),
         server_username=dict(type='str', required=False),
         server_password=dict(type='str', required=False, no_log=True),
         ssl_tls_enable=dict(type='str', required=False, choices=['enable', 'disable']),

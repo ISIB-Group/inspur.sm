@@ -37,7 +37,7 @@ options:
             - Host id.
             - Only the M6 model supports this parameter.
         choices: ['HostName', 'SerialNum', 'AssertTag']
-        type: str        
+        type: str
     v3username:
         description:
             - Set user name of V3 trap.
