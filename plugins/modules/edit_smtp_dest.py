@@ -17,7 +17,7 @@ author:
 short_description: Set SMTP information.
 description:
    - Set SMTP dest information on Inspur server.
-   - Only the M6 models support this feature.  
+   - Only the M6 models support this feature.
 options:
     id:
         description:

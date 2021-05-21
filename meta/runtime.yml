@@ -1,1 +1,7 @@
 requires_ansible: '>=2.10'
+plugin_routing:
+    modules:
+        add_ad_group:
+            deprecation:
+                removal_version: 2.2.0
+                warning_text: Use inspur.sm.ad_group.
