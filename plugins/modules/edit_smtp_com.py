@@ -66,7 +66,7 @@ options:
     star_tls_enable:
         description:
             - SMTP STARTTLS Enable.
-            - I(star_tls_enable=disable), when I(ssl_tls_enable=enable).   
+            - I(star_tls_enable=disable), when I(ssl_tls_enable=enable).
         choices: ['enable', 'disable']
         type: str
     subject:

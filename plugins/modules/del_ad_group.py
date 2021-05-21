@@ -19,8 +19,9 @@ description:
    - Delete active directory group information on Inspur server.
 deprecated:
    removed_in: 2.2.0
-   why: Merge functions into the M(inspur.sm.ad_group) module.      
+   why: Merge functions into the M(inspur.sm.ad_group) module.
    alternative: Use M(inspur.sm.ad_group) instead.
+   removed_from_collection: inspur.sm
 options:
     name:
         description:
