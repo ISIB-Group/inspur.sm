@@ -43,6 +43,7 @@ Synopsis
 .. Description
 
 - Set SMTP information on Inspur server.
+- Only the M5 models support this feature.
 
 .. Aliases
 

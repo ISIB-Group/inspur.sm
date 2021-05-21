@@ -17,6 +17,9 @@ author:
 short_description: Set active directory group information.
 description:
    - Set active directory group information on Inspur server.
+deprecated:
+   removed_in: 2.2.0
+   alternative: Use M(inspur.sm.ad_group) instead.
 options:
     id:
         description:

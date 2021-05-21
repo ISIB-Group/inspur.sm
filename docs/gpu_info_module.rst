@@ -4,7 +4,7 @@
 
 .. Anchors
 
-.. _ansible_collections.inspur.sm.edit_restore_factory_default_module:
+.. _ansible_collections.inspur.sm.gpu_info_module:
 
 .. Anchors: short name for ansible.builtin
 
@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_restore_factory_default -- Set preserver config.
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.gpu_info -- Get GPU information.
+++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -24,11 +24,11 @@ inspur.sm.edit_restore_factory_default -- Set preserver config.
 
     To install it use: :code:`ansible-galaxy collection install inspur.sm`.
 
-    To use it in a playbook, specify: :code:`inspur.sm.edit_restore_factory_default`.
+    To use it in a playbook, specify: :code:`inspur.sm.gpu_info`.
 
 .. version_added
 
-.. versionadded:: 0.1.0 of inspur.sm
+.. versionadded:: 1.1.4 of inspur.sm
 
 .. contents::
    :local:
@@ -42,7 +42,8 @@ Synopsis
 
 .. Description
 
-- Set preserver config on Inspur server.
+- Get GPU information on Inspur server.
+- Only the M6 models support this feature.
 
 .. Aliases
 
@@ -76,61 +77,6 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Specifies the DNS host name or address for connecting to the remote device over the specified transport.  The value of host is used as the destination address for the transport.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-mode"></div>
-                    <b>mode</b>
-                    <a class="ansibleOptionLink" href="#parameter-mode" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                 / <span style="color: red">required</span>                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>all</li>
-                                                                                                                                                                                                <li>none</li>
-                                                                                                                                                                                                <li>manual</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Restore factory defaults mode.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-override"></div>
-                    <b>override</b>
-                    <a class="ansibleOptionLink" href="#parameter-override" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">list</span>
-                         / <span style="color: purple">elements=string</span>                                            </div>
-                                                        </td>
-                                <td>
-                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>authentication</li>
-                                                                                                                                                                                                <li>dcmi</li>
-                                                                                                                                                                                                <li>fru</li>
-                                                                                                                                                                                                <li>hostname</li>
-                                                                                                                                                                                                <li>ipmi</li>
-                                                                                                                                                                                                <li>kvm</li>
-                                                                                                                                                                                                <li>network</li>
-                                                                                                                                                                                                <li>ntp</li>
-                                                                                                                                                                                                <li>pef</li>
-                                                                                                                                                                                                <li>sdr</li>
-                                                                                                                                                                                                <li>sel</li>
-                                                                                                                                                                                                <li>smtp</li>
-                                                                                                                                                                                                <li>snmp</li>
-                                                                                                                                                                                                <li>sol</li>
-                                                                                                                                                                                                <li>ssh</li>
-                                                                                                                                                                                                <li>syslog</li>
-                                                                                                                                                                                                <li>user</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Configuration items that need to be retained.</div>
-                                            <div>Required when <em>mode=manual</em>.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -244,7 +190,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Restore default test
+    - name: GPU test
       hosts: ism
       connection: local
       gather_facts: no
@@ -256,19 +202,8 @@ Examples
 
       tasks:
 
-      - name: "Set restore default auto"
-        inspur.sm.edit_restore_factory_default:
-          mode: "all"
-          provider: "{{ ism }}"
-
-      - name: "Set restore default manual"
-        inspur.sm.edit_restore_factory_default:
-          mode: "manual"
-          override:
-            - fru
-            - ntp
-            - network
-            - user
+      - name: "Get gpu information"
+        inspur.sm.gpu_info:
           provider: "{{ ism }}"
 
 

@@ -119,6 +119,7 @@ Parameters
                                                                             </td>
                                                                 <td>
                                             <div>select export item.</div>
+                                            <div>Only the M5 model supports this parameter.</div>
                                                         </td>
             </tr>
                                 <tr>

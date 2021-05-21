@@ -17,6 +17,9 @@ author:
 short_description: Create user.
 description:
    - Create user on Inspur server.
+deprecated:
+   removed_in: 2.2.0
+   alternative: Use M(inspur.sm.user) instead.
 options:
     uname:
         description:

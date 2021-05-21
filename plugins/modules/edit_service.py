@@ -21,7 +21,9 @@ options:
     service_name:
         description:
             - Displays service name of the selected slot(readonly).
-        choices: ['web', 'kvm', 'cd-media', 'fd-media', 'hd-media', 'ssh', 'telnet', 'solssh', 'snmp']
+            - The I(vnc) option is not supported in M5.
+            - The I(fd-media/telnet/snmp) option is not supported in M6.
+        choices: ['web', 'kvm', 'cd-media', 'fd-media', 'hd-media', 'ssh', 'telnet', 'solssh', 'snmp', 'vnc']
         type: str
         required: true
     state:
@@ -34,6 +36,7 @@ options:
         description:
             - It shows the interface in which service is running.
             - The user can choose any one of the available interfaces.
+            - Only the M5 model supports this parameter.
         choices: ['eth0', 'eth1', 'both', 'bond0']
         type: str
     non_secure_port:
@@ -129,7 +132,7 @@ class Service(object):
 
 def main():
     argument_spec = dict(
-        service_name=dict(type='str', required=True, choices=['web', 'kvm', 'cd-media', 'fd-media', 'hd-media', 'ssh', 'telnet', 'solssh', 'snmp']),
+        service_name=dict(type='str', required=True, choices=['web', 'kvm', 'cd-media', 'fd-media', 'hd-media', 'ssh', 'telnet', 'solssh', 'snmp', 'vnc']),
         state=dict(type='str', required=False, choices=['active', 'inactive']),
         interface=dict(type='str', required=False, choices=['eth0', 'eth1', 'both', 'bond0']),
         non_secure_port=dict(type='int', required=False),

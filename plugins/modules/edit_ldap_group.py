@@ -17,6 +17,9 @@ author:
 short_description: Set ldap group information.
 description:
    - Set ldap group information on Inspur server.
+deprecated:
+   removed_in: 2.2.0
+   alternative: Use M(inspur.sm.ldap_group) instead.
 options:
     id:
         description:

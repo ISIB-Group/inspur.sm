@@ -17,6 +17,9 @@ author:
 short_description: Create user group.
 description:
    - Create user group on Inspur server.
+deprecated:
+   removed_in: 2.2.0
+   alternative: Use M(inspur.sm.user_group) instead.
 options:
     name:
         description:

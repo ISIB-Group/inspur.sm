@@ -108,6 +108,7 @@ Parameters
                                                                 <td>
                                             <div>CPLD id.</div>
                                             <div>Required when <em>list=False</em>.</div>
+                                            <div>Only the M5 model supports this parameter.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -127,6 +128,7 @@ Parameters
                                                                             </td>
                                                                 <td>
                                             <div>Get cpld list.</div>
+                                            <div>Only the M5 model supports this parameter.</div>
                                                         </td>
             </tr>
                                 <tr>

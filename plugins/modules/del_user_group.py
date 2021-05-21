@@ -17,6 +17,9 @@ author:
 short_description: Delete user group.
 description:
    - Delete user group on Inspur server.
+deprecated:
+   removed_in: 2.2.0
+   alternative: Use M(inspur.sm.user_group) instead.
 options:
     name:
         description:

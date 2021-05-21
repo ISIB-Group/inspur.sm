@@ -17,6 +17,9 @@ author:
 short_description: Delete ldap group information.
 description:
    - Delete ldap group information on Inspur server.
+deprecated:
+   removed_in: 2.2.0
+   alternative: Use M(inspur.sm.ldap_group) instead.
 options:
     name:
         description:

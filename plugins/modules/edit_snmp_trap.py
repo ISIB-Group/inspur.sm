@@ -32,6 +32,12 @@ options:
         description:
             - Community of v1/v2c.
         type: str
+    host_id:
+        description:
+            - Host id.
+            - Only the M6 model supports this parameter.
+        choices: ['HostName', 'SerialNum', 'AssertTag']
+        type: str        
     v3username:
         description:
             - Set user name of V3 trap.
@@ -63,26 +69,32 @@ options:
     system_name:
         description:
             - Set system name, can set NULL.
+            - Only the M5 model supports this parameter.
         type: str
     system_id:
         description:
             - Set system ID, can set NULL.
+            - Only the M5 model supports this parameter.
         type: str
     location:
         description:
             - Set host Location, can set NULL.
+            - Only the M5 model supports this parameter.
         type: str
     contact:
         description:
             - Set contact, can set NULL.
+            - Only the M5 model supports this parameter.
         type: str
     os:
         description:
             - Set host OS, can set NULL.
+            - Only the M5 model supports this parameter.
         type: str
     trap_port:
         description:
             - Set SNMP trap Port(1-65535).
+            - Only the M5 model supports this parameter.
         type: int
 extends_documentation_fragment:
     - inspur.sm.ism
@@ -177,6 +189,7 @@ def main():
         version=dict(type='str', required=False, choices=['1', '2c', '3']),
         event_severity=dict(type='str', required=False, choices=['all', 'warning', 'critical']),
         community=dict(type='str', required=False),
+        host_id=dict(type='str', required=False, choices=['HostName', 'SerialNum', 'AssertTag']),
         v3username=dict(type='str', required=False),
         engine_id=dict(type='str', required=False),
         auth_protocol=dict(type='str', required=False, choices=['NONE', 'SHA', 'MD5']),

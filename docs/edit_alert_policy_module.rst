@@ -80,6 +80,7 @@ Parameters
                                                                             </td>
                                                                 <td>
                                             <div>LAN Channel.</div>
+                                            <div>Only the M5 model supports this parameter.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -128,10 +129,13 @@ Parameters
                                                                                                                                                                 <li>1</li>
                                                                                                                                                                                                 <li>2</li>
                                                                                                                                                                                                 <li>3</li>
+                                                                                                                                                                                                <li>4</li>
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
                                             <div>Alert id.</div>
+                                            <div>The values for M5 modules are 1,2,3.</div>
+                                            <div>The values for M6 modules are 1,2,3,4.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -234,6 +238,22 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-trap_port"></div>
+                    <b>trap_port</b>
+                    <a class="ansibleOptionLink" href="#parameter-trap_port" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">integer</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>SNMP trap port(1-65535).</div>
+                                            <div>Only the M6 model supports this parameter.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-type"></div>
                     <b>type</b>
                     <a class="ansibleOptionLink" href="#parameter-type" title="Permalink to this option"></a>
@@ -250,6 +270,7 @@ Parameters
                                                                             </td>
                                                                 <td>
                                             <div>Alert Type.</div>
+                                            <div>Only the M5 model supports this parameter.</div>
                                                         </td>
             </tr>
                                 <tr>

@@ -21,7 +21,7 @@ options:
     mode:
         description:
             - Restore factory defaults mode.
-        choices: ['auto', 'manual']
+        choices: ['all', 'none', 'manual']
         type: str
         required: true
     override:
@@ -115,7 +115,7 @@ class Preserver(object):
 
 def main():
     argument_spec = dict(
-        mode=dict(type='str', required=True, choices=['auto', 'manual']),
+        mode=dict(type='str', required=True, choices=['all', 'none', 'manual']),
         override=dict(type='list', elements='str', required=False,
                       choices=['authentication', 'dcmi', 'fru', 'hostname', 'ipmi', 'kvm', 'network', 'ntp',
                                'pef', 'sdr', 'sel', 'smtp', 'snmp', 'sol', 'ssh', 'syslog', 'user']),

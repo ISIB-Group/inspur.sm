@@ -95,6 +95,7 @@ Parameters
                                                                             </td>
                                                                 <td>
                                             <div>To enable or disable Local Media Support,check or uncheck the checkbox respectively.</div>
+                                            <div>Only the M5 model supports this parameter.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -113,7 +114,7 @@ Parameters
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
-                                            <div>whether to mount virtual media.</div>
+                                            <div>Whether to mount virtual media.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -122,18 +123,19 @@ Parameters
                     <b>mount_type</b>
                     <a class="ansibleOptionLink" href="#parameter-mount_type" title="Permalink to this option"></a>
                     <div style="font-size: small">
-                        <span style="color: purple">integer</span>
+                        <span style="color: purple">string</span>
                                                                     </div>
                                                         </td>
                                 <td>
                                                                                                                             <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>0</li>
-                                                                                                                                                                                                <li>1</li>
-                                                                                                                                                                                                <li>2</li>
+                                                                                                                                                                <li>CD</li>
+                                                                                                                                                                                                <li>FD</li>
+                                                                                                                                                                                                <li>HD</li>
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
-                                            <div>mount type, 0 is CD,1 is FD,2 is HD.</div>
+                                            <div>Virtual mount type.</div>
+                                            <div>The <em>FD</em> option is not supported in M6.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -346,7 +348,7 @@ Parameters
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
-                                            <div>same settings with CD,0 is No,1 is Yes.</div>
+                                            <div>Same settings with CD,0 is No,1 is Yes.</div>
                                             <div>Required when <em>mount_type=0</em>.</div>
                                                         </td>
             </tr>

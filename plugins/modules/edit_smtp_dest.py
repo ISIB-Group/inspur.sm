@@ -10,35 +10,41 @@ __metaclass__ = type
 
 DOCUMENTATION = '''
 ---
-module: edit_pass_user
-version_added: "0.1.0"
+module: edit_smtp_dest
+version_added: "1.1.4"
 author:
     - WangBaoshan (@ISIB-group)
-short_description: Change user password.
+short_description: Set SMTP information.
 description:
-   - Change user password on Inspur server.
-deprecated:
-   removed_in: 2.2.0
-   alternative: Use M(inspur.sm.user) instead.
+   - Set SMTP dest information on Inspur server.
+   - Only the M6 models support this feature.   
 options:
-    uname:
+    id:
         description:
-            - User name.
-        type: str
+            - Email destination id.
+        choices: [1, 2, 3, 4]
+        type: int
         required: true
-    upass:
+    status:
         description:
-            - User password.
+            - Email enable.
+        choices: ['enable', 'disable']
         type: str
-        required: true
+    address:
+        description:
+            - Email address.
+        type: str
+    description:
+        description:
+            - Description information.
+        type: str
 extends_documentation_fragment:
     - inspur.sm.ism
 '''
 
 EXAMPLES = '''
-- name: Edit user password test
+- name: Smtp  dest test
   hosts: ism
-  no_log: true
   connection: local
   gather_facts: no
   vars:
@@ -49,10 +55,18 @@ EXAMPLES = '''
 
   tasks:
 
-  - name: "Change user password"
-    inspur.sm.edit_pass_user:
-      uname: "wbs"
-      upass: my_password
+  - name: "Set smtp dest information"
+    inspur.sm.edit_smtp_dest:
+      id: 1
+      status: "disable"
+      provider: "{{ ism }}"
+
+  - name: "Set smtp dest information"
+    inspur.sm.edit_smtp_dest:
+      id: 1
+      status: "enable"
+      address: "100.2.2.2"
+      description": "test"
       provider: "{{ ism }}"
 '''
 
@@ -75,7 +89,7 @@ from ansible.module_utils.basic import AnsibleModule
 from ansible_collections.inspur.sm.plugins.module_utils.ism import (ism_argument_spec, get_connection)
 
 
-class User(object):
+class SMTP(object):
     def __init__(self, argument_spec):
         self.spec = argument_spec
         self.module = None
@@ -89,7 +103,7 @@ class User(object):
             argument_spec=self.spec, supports_check_mode=False)
 
     def run_command(self):
-        self.module.params['subcommand'] = 'setpwd'
+        self.module.params['subcommand'] = 'setsmtpdest'
         self.results = get_connection(self.module)
         if self.results['State'] == 'Success':
             self.results['changed'] = True
@@ -106,12 +120,14 @@ class User(object):
 
 def main():
     argument_spec = dict(
-        uname=dict(type='str', required=True),
-        upass=dict(type='str', required=True, no_log=True),
+        id=dict(type='int', required=True, choices=[1, 2, 3, 4]),
+        status=dict(type='str', required=False, choices=['enable', 'disable']),
+        address=dict(type='str', required=False),
+        description=dict(type='str', required=False),
     )
     argument_spec.update(ism_argument_spec)
-    user_obj = User(argument_spec)
-    user_obj.work()
+    smtp_obj = SMTP(argument_spec)
+    smtp_obj.work()
 
 
 if __name__ == '__main__':

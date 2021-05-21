@@ -17,6 +17,7 @@ author:
 short_description: Set SMTP information.
 description:
    - Set SMTP information on Inspur server.
+   - Only the M5 models support this feature.
 options:
     interface:
         description:

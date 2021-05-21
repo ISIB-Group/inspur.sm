@@ -4,7 +4,7 @@
 
 .. Anchors
 
-.. _ansible_collections.inspur.sm.edit_restore_factory_default_module:
+.. _ansible_collections.inspur.sm.edit_smtp_dest_module:
 
 .. Anchors: short name for ansible.builtin
 
@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_restore_factory_default -- Set preserver config.
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.edit_smtp_dest -- Set SMTP information.
++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -24,11 +24,11 @@ inspur.sm.edit_restore_factory_default -- Set preserver config.
 
     To install it use: :code:`ansible-galaxy collection install inspur.sm`.
 
-    To use it in a playbook, specify: :code:`inspur.sm.edit_restore_factory_default`.
+    To use it in a playbook, specify: :code:`inspur.sm.edit_smtp_dest`.
 
 .. version_added
 
-.. versionadded:: 0.1.0 of inspur.sm
+.. versionadded:: 1.1.4 of inspur.sm
 
 .. contents::
    :local:
@@ -42,7 +42,8 @@ Synopsis
 
 .. Description
 
-- Set preserver config on Inspur server.
+- Set SMTP dest information on Inspur server.
+- Only the M6 models support this feature.
 
 .. Aliases
 
@@ -65,6 +66,36 @@ Parameters
         </tr>
                     <tr>
                                                                 <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-address"></div>
+                    <b>address</b>
+                    <a class="ansibleOptionLink" href="#parameter-address" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Email address.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-description"></div>
+                    <b>description</b>
+                    <a class="ansibleOptionLink" href="#parameter-description" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Description information.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-host"></div>
                     <b>host</b>
                     <a class="ansibleOptionLink" href="#parameter-host" title="Permalink to this option"></a>
@@ -80,57 +111,23 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-mode"></div>
-                    <b>mode</b>
-                    <a class="ansibleOptionLink" href="#parameter-mode" title="Permalink to this option"></a>
+                    <div class="ansibleOptionAnchor" id="parameter-id"></div>
+                    <b>id</b>
+                    <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
                     <div style="font-size: small">
-                        <span style="color: purple">string</span>
+                        <span style="color: purple">integer</span>
                                                  / <span style="color: red">required</span>                    </div>
                                                         </td>
                                 <td>
                                                                                                                             <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>all</li>
-                                                                                                                                                                                                <li>none</li>
-                                                                                                                                                                                                <li>manual</li>
+                                                                                                                                                                <li>1</li>
+                                                                                                                                                                                                <li>2</li>
+                                                                                                                                                                                                <li>3</li>
+                                                                                                                                                                                                <li>4</li>
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
-                                            <div>Restore factory defaults mode.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-override"></div>
-                    <b>override</b>
-                    <a class="ansibleOptionLink" href="#parameter-override" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">list</span>
-                         / <span style="color: purple">elements=string</span>                                            </div>
-                                                        </td>
-                                <td>
-                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>authentication</li>
-                                                                                                                                                                                                <li>dcmi</li>
-                                                                                                                                                                                                <li>fru</li>
-                                                                                                                                                                                                <li>hostname</li>
-                                                                                                                                                                                                <li>ipmi</li>
-                                                                                                                                                                                                <li>kvm</li>
-                                                                                                                                                                                                <li>network</li>
-                                                                                                                                                                                                <li>ntp</li>
-                                                                                                                                                                                                <li>pef</li>
-                                                                                                                                                                                                <li>sdr</li>
-                                                                                                                                                                                                <li>sel</li>
-                                                                                                                                                                                                <li>smtp</li>
-                                                                                                                                                                                                <li>snmp</li>
-                                                                                                                                                                                                <li>sol</li>
-                                                                                                                                                                                                <li>ssh</li>
-                                                                                                                                                                                                <li>syslog</li>
-                                                                                                                                                                                                <li>user</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Configuration items that need to be retained.</div>
-                                            <div>Required when <em>mode=manual</em>.</div>
+                                            <div>Email destination id.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -214,6 +211,25 @@ Parameters
                     
                                 <tr>
                                                                 <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-status"></div>
+                    <b>status</b>
+                    <a class="ansibleOptionLink" href="#parameter-status" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Email enable.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-username"></div>
                     <b>username</b>
                     <a class="ansibleOptionLink" href="#parameter-username" title="Permalink to this option"></a>
@@ -244,7 +260,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Restore default test
+    - name: Smtp  dest test
       hosts: ism
       connection: local
       gather_facts: no
@@ -256,19 +272,18 @@ Examples
 
       tasks:
 
-      - name: "Set restore default auto"
-        inspur.sm.edit_restore_factory_default:
-          mode: "all"
+      - name: "Set smtp dest information"
+        inspur.sm.edit_smtp_dest:
+          id: 1
+          status: "disable"
           provider: "{{ ism }}"
 
-      - name: "Set restore default manual"
-        inspur.sm.edit_restore_factory_default:
-          mode: "manual"
-          override:
-            - fru
-            - ntp
-            - network
-            - user
+      - name: "Set smtp dest information"
+        inspur.sm.edit_smtp_dest:
+          id: 1
+          status: "enable"
+          address: "100.2.2.2"
+          description": "test"
           provider: "{{ ism }}"
 
 

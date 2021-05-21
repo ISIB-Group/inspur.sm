@@ -21,6 +21,7 @@ options:
     image_type:
         description:
             - Virtual media type.
+            - Only the M5 model supports this parameter.
         choices: ['CD', 'FD', 'HD']
         type: str
         required: true

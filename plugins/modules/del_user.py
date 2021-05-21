@@ -17,6 +17,9 @@ author:
 short_description: Delete user.
 description:
    - Delete user on Inspur server.
+deprecated:
+   removed_in: 2.2.0
+   alternative: Use M(inspur.sm.user) instead.
 options:
     uname:
         description:

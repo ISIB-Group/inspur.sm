@@ -106,19 +106,25 @@ Parameters
                                                                                                                             <ul style="margin: 0; padding: 0"><b>Choices:</b>
                                                                                                                                                                 <li>all</li>
                                                                                                                                                                                                 <li>network</li>
-                                                                                                                                                                                                <li>dns</li>
                                                                                                                                                                                                 <li>service</li>
                                                                                                                                                                                                 <li>ntp</li>
-                                                                                                                                                                                                <li>smtp</li>
                                                                                                                                                                                                 <li>snmptrap</li>
+                                                                                                                                                                                                <li>dns</li>
+                                                                                                                                                                                                <li>smtp</li>
                                                                                                                                                                                                 <li>ad</li>
                                                                                                                                                                                                 <li>ldap</li>
                                                                                                                                                                                                 <li>user</li>
                                                                                                                                                                                                 <li>bios</li>
+                                                                                                                                                                                                <li>kvm</li>
+                                                                                                                                                                                                <li>ipmi</li>
+                                                                                                                                                                                                <li>authentication</li>
+                                                                                                                                                                                                <li>syslog</li>
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
                                             <div>Export item.</div>
+                                            <div>The values for M5 modules are &#x27;all&#x27;, &#x27;network&#x27;, &#x27;service&#x27;, &#x27;ntp&#x27;, &#x27;snmptrap&#x27;, &#x27;dns&#x27;, &#x27;smtp&#x27;, &#x27;ad&#x27;, &#x27;ldap&#x27;, &#x27;user&#x27;,&#x27;bios&#x27;.</div>
+                                            <div>The values for M6 modules are &#x27;all&#x27;, &#x27;network&#x27;, &#x27;service&#x27;, &#x27;ntp&#x27;, &#x27;snmptrap&#x27;,  &#x27;kvm&#x27;, &#x27;ipmi&#x27;, &#x27;authentication&#x27;, &#x27;syslog&#x27;.</div>
                                                         </td>
             </tr>
                                 <tr>

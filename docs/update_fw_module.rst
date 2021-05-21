@@ -80,6 +80,7 @@ Parameters
                                                                             </td>
                                                                 <td>
                                             <div>(M5)update dual image(default) or not.</div>
+                                            <div>Only the M5 model supports this parameter.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -100,6 +101,7 @@ Parameters
                                     </td>
                                                                 <td>
                                             <div>(M5-BIOS)update me or not when update bios,only work in INTEL platform,0-no,1-yes.</div>
+                                            <div>Only the M5 model supports this parameter.</div>
                                                         </td>
             </tr>
                                 <tr>

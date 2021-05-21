@@ -84,6 +84,26 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-client_type"></div>
+                    <b>client_type</b>
+                    <a class="ansibleOptionLink" href="#parameter-client_type" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>vnc</li>
+                                                                                                                                                                                                <li>viewer</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Client Type.</div>
+                                            <div>Only the M6 model supports this parameter.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-host"></div>
                     <b>host</b>
                     <a class="ansibleOptionLink" href="#parameter-host" title="Permalink to this option"></a>
@@ -198,6 +218,27 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-non_secure"></div>
+                    <b>non_secure</b>
+                    <a class="ansibleOptionLink" href="#parameter-non_secure" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Enable/disable Non Secure Connection Type.</div>
+                                            <div>Only the M6 model supports this parameter.</div>
+                                            <div>Required when <em>client_type=vnc</em>.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-password"></div>
                     <b>password</b>
                     <a class="ansibleOptionLink" href="#parameter-password" title="Permalink to this option"></a>
@@ -303,6 +344,48 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>The Identification for retry time interval configuration (5-30) seconds.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-ssh_vnc"></div>
+                    <b>ssh_vnc</b>
+                    <a class="ansibleOptionLink" href="#parameter-ssh_vnc" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Enable/disable VNC over SSH in BMC.</div>
+                                            <div>Only the M6 model supports this parameter.</div>
+                                            <div>Required when <em>client_type=vnc</em>.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-stunnel_vnc"></div>
+                    <b>stunnel_vnc</b>
+                    <a class="ansibleOptionLink" href="#parameter-stunnel_vnc" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Enable/disable VNC over Stunnel in BMC.</div>
+                                            <div>Only the M6 model supports this parameter.</div>
+                                            <div>Required when <em>client_type=vnc</em>.</div>
                                                         </td>
             </tr>
                                 <tr>
