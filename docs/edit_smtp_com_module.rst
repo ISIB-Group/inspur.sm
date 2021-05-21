@@ -347,7 +347,7 @@ Parameters
                                                                             </td>
                                                                 <td>
                                             <div>SMTP SSLTLS Enable.</div>
-                                            <div><em>ssl_tls_enable=disable</em>, when <em>star_tls_enable=enable</em></div>
+                                            <div><em>ssl_tls_enable=disable</em>, when <em>star_tls_enable=enable</em>.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -367,7 +367,7 @@ Parameters
                                                                             </td>
                                                                 <td>
                                             <div>SMTP STARTTLS Enable.</div>
-                                            <div><em>star_tls_enable=disable</em>, when <em>ssl_tls_enable=enable</em></div>
+                                            <div><em>star_tls_enable=disable</em>, when <em>ssl_tls_enable=enable</em>.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -377,7 +377,7 @@ Parameters
                     <a class="ansibleOptionLink" href="#parameter-status" title="Permalink to this option"></a>
                     <div style="font-size: small">
                         <span style="color: purple">string</span>
-                                                                    </div>
+                                                 / <span style="color: red">required</span>                    </div>
                                                         </td>
                                 <td>
                                                                                                                             <ul style="margin: 0; padding: 0"><b>Choices:</b>
@@ -461,7 +461,7 @@ Examples
           email: "inspur@Inspur.com"
           server_auth: "enable"
           server_username: "admin"
-          server_password" "1234qwer!@#$"
+          server_password: "1234qwer!@#$"
           provider: "{{ ism }}"
 
 
