@@ -44,6 +44,10 @@ options:
         choices: ['kvm', 'vmm', 'sol', 'none']
         type: list
         elements: str
+    email:
+        description:
+            - User email.
+        type: str
 extends_documentation_fragment:
     - inspur.sm.ism
 '''
@@ -69,6 +73,7 @@ EXAMPLES = '''
       upass: "admin"
       role_id: "Administrator"
       priv: "kvm,sol"
+      email: "wbs@inspur.com"
       provider: "{{ ism }}"
 
   - name: "Set user"
@@ -136,6 +141,7 @@ def main():
         upass=dict(type='str', required=False, no_log=True),
         role_id=dict(type='str', required=False),
         priv=dict(type='list', elements='str', required=False, choices=['kvm', 'vmm', 'sol', 'none']),
+        email=dict(type='str', required=False)
     )
     argument_spec.update(ism_argument_spec)
     user_obj = User(argument_spec)
