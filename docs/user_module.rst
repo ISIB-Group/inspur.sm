@@ -65,6 +65,21 @@ Parameters
         </tr>
                     <tr>
                                                                 <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-email"></div>
+                    <b>email</b>
+                    <a class="ansibleOptionLink" href="#parameter-email" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>User email.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-host"></div>
                     <b>host</b>
                     <a class="ansibleOptionLink" href="#parameter-host" title="Permalink to this option"></a>
@@ -295,6 +310,7 @@ Examples
           upass: "admin"
           role_id: "Administrator"
           priv: "kvm,sol"
+          email: "wbs@inspur.com"
           provider: "{{ ism }}"
 
       - name: "Set user"
