@@ -26,67 +26,78 @@ options:
     ctrl_id:
         description:
             - Raid controller ID.
-            - Required when I(Info=None).
+            - Required when I(Info=None) and controller type is LSI or PMC.
         type: int
     level:
         description:
             - RAID Level, 0 - RAID0, 1 - RAID1, 5 - RAID5, 6 - RAID6, 10 - RAID10.
-            - Required when I(Info=None).
+            - Required when I(Info=None) and controller type is LSI or PMC.
         choices: [0, 1, 5, 6, 10]
         type: int
     size:
         description:
             - Strip Size, 1 - 64k, 2 - 128k, 3 - 256k, 4 - 512k, 5 - 1024k.
-            - Required when I(Info=None).
+            - Required when I(Info=None) and controller type is LSI or PMC.
         choices: [1, 2, 3, 4, 5]
         type: int
     access:
         description:
             - Access Policy, 1 - Read Write, 2 - Read Only, 3 - Blocked.
-            - Required when I(Info=None).
+            - Required when I(Info=None) and controller type is LSI.
         choices: [1, 2, 3]
         type: int
     r:
         description:
             - Read Policy, 1 - Read Ahead, 2 - No Read Ahead.
-            - Required when I(Info=None).
+            - Required when I(Info=None) and controller type is LSI.
         choices: [1, 2]
         type: int
     w:
         description:
             - Write Policy, 1 - Write Throgh, 2 - Write Back, 3 - Write caching ok if bad BBU.
-            - Required when I(Info=None).
+            - Required when I(Info=None) and controller type is LSI.
         choices: [1, 2, 3]
         type: int
     io:
         description:
             - IO Policy, 1 - Direct IO, 2 - Cached IO.
-            - Required when I(Info=None).
+            - Required when I(Info=None) and controller type is LSI.
         choices: [1, 2]
         type: int
     cache:
         description:
             - Drive Cache, 1 - Unchanged, 2 - Enabled,3 - Disabled.
-            - Required when I(Info=None).
+            - Required when I(Info=None) and controller type is LSI.
         choices: [1, 2, 3]
         type: int
     init:
         description:
             - Init State, 1 - No Init, 2 - Quick Init, 3 - Full Init.
-            - Required when I(Info=None).
+            - Required when I(Info=None) and controller type is LSI.
         choices: [1, 2, 3]
         type: int
     select:
         description:
             - Select Size, from 1 to 100.
-            - Required when I(Info=None).
+            - Required when I(Info=None) and controller type is LSI.
         type: int
     slot:
         description:
             - Slot Num,input multiple slotNumber like 0,1,2....
-            - Required when I(Info=None).
+            - Required when I(Info=None) and controller type is LSI.
         type: list
         elements: int
+    accelerator:
+        description:
+            - Driver accelerator, 1 - 1h, 2 - 2h, 3 - 3h.
+            - Required when I(Info=None) and controller type is PMC.
+        choices: [1, 2, 3]
+        type: int
+    vname:
+        description:
+            - Virtual drive name.
+            - Required when I(Info=None) and controller type is PMC.
+        type: str
 extends_documentation_fragment:
     - inspur.sm.ism
 '''
@@ -122,6 +133,15 @@ EXAMPLES = '''
       init: 2
       select: 10
       slot: 0,1
+      provider: "{{ ism }}"
+      
+  - name: "Add PMC  ldisk"
+    inspur.sm.add_ldisk:
+      ctrl_id: 0
+      level: 1
+      size: 1
+      accelerator: 1
+      vname: "test"
       provider: "{{ ism }}"
 '''
 
@@ -187,6 +207,8 @@ def main():
         init=dict(type='int', required=False, choices=[1, 2, 3]),
         select=dict(type='int', required=False),
         slot=dict(type='list', elements='int', required=False),
+        accelerator=dict(type='int', required=False, choices=[1, 2, 3]),
+        vname=dict(type='str', required=False),
     )
     argument_spec.update(ism_argument_spec)
     disk_obj = Disk(argument_spec)
