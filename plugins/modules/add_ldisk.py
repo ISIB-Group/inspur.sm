@@ -134,7 +134,7 @@ EXAMPLES = '''
       select: 10
       slot: 0,1
       provider: "{{ ism }}"
-      
+
   - name: "Add PMC  ldisk"
     inspur.sm.add_ldisk:
       ctrl_id: 0
