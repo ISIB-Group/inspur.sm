@@ -43,7 +43,7 @@ options:
             - ET is Drive Erase Through,LOC is Locate,STL is Stop Locate,
             - HS is Hot spare.
             - Required when I(Info=None).
-            - Only the M5 model supports C(HS) Settings.            
+            - Only the M5 model supports C(HS) Settings.
         choices: ['UG', 'UB', 'OFF', 'FAIL', 'RBD', 'ON', 'JB', 'ES', 'EM', 'EN', 'ET', 'LOC', 'STL', 'HS']
         type: str
     action:
@@ -57,21 +57,21 @@ options:
         description:
             - IsRevertible while set physical drive hotspare.
             - Required when I(Info=None) and I(option=HS) and I(action=dedicate).
-            - Only the M5 model supports this parameter.            
+            - Only the M5 model supports this parameter.
         choices: ['yes', 'no']
         type: str
     encl:
         description:
             - IsEnclAffinity while set physical drive hotspare.
             - Required when I(Info=None) and I(option=HS) and I(action=dedicate).
-            - Only the M5 model supports this parameter.            
+            - Only the M5 model supports this parameter.
         choices: ['yes', 'no']
         type: str
     logical_drivers:
         description:
             - Logical Drivers while set physical drive hotspare, input multiple Logical Drivers index like 0,1,2.....
             - Required when I(Info=None) and I(option=HS) and I(action=dedicate).
-            - Only the M5 model supports this parameter.            
+            - Only the M5 model supports this parameter.
         type: list
         elements: int
 extends_documentation_fragment:
