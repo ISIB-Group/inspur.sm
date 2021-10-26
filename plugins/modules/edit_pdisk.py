@@ -40,10 +40,40 @@ options:
             - OFF is offline,FAIL is Failed,RBD is Rebuild,
             - ON is Online,JB is JBOD,ES is Drive Erase stop,
             - EM is Drive Erase Simple,EN is Drive Erase Normal,
-            - ET is Drive Erase Through,LOC is Locate,STL is Stop Locate.
+            - ET is Drive Erase Through,LOC is Locate,STL is Stop Locate,
+            - HS is Hot spare.
             - Required when I(Info=None).
-        choices: ['UG', 'UB', 'OFF', 'FAIL', 'RBD', 'ON', 'JB', 'ES', 'EM', 'EN', 'ET', 'LOC', 'STL']
+            - Only the M5 model supports C(HS) Settings.            
+        choices: ['UG', 'UB', 'OFF', 'FAIL', 'RBD', 'ON', 'JB', 'ES', 'EM', 'EN', 'ET', 'LOC', 'STL', 'HS']
         type: str
+    action:
+        description:
+            - Action while set physical drive hotspare.
+            - Required when I(Info=None) and I(option=HS).
+            - Only the M5 model supports this parameter.
+        choices: ['remove', 'global', 'dedicate']
+        type: str
+    revertible:
+        description:
+            - IsRevertible while set physical drive hotspare.
+            - Required when I(Info=None) and I(option=HS) and I(action=dedicate).
+            - Only the M5 model supports this parameter.            
+        choices: ['yes', 'no']
+        type: str
+    encl:
+        description:
+            - IsEnclAffinity while set physical drive hotspare.
+            - Required when I(Info=None) and I(option=HS) and I(action=dedicate).
+            - Only the M5 model supports this parameter.            
+        choices: ['yes', 'no']
+        type: str
+    logical_drivers:
+        description:
+            - Logical Drivers while set physical drive hotspare, input multiple Logical Drivers index like 0,1,2.....
+            - Required when I(Info=None) and I(option=HS) and I(action=dedicate).
+            - Only the M5 model supports this parameter.            
+        type: list
+        elements: int
 extends_documentation_fragment:
     - inspur.sm.ism
 '''
@@ -71,6 +101,17 @@ EXAMPLES = '''
       ctrl_id: 0
       device_id: 1
       option: "LOC"
+      provider: "{{ ism }}"
+
+  - name: "M5 Edit pdisk"
+    inspur.sm.edit_pdisk:
+      ctrl_id: 0
+      device_id: 1
+      option: "HS"
+      action: "dedicate"
+      revertible: "yes"
+      encl: "yes"
+      logical_drivers: 1
       provider: "{{ ism }}"
 '''
 
@@ -127,7 +168,11 @@ def main():
         info=dict(type='str', required=False, choices=['show']),
         ctrl_id=dict(type='int', required=False),
         device_id=dict(type='int', required=False),
-        option=dict(type='str', required=False, choices=['UG', 'UB', 'OFF', 'FAIL', 'RBD', 'ON', 'JB', 'ES', 'EM', 'EN', 'ET', 'LOC', 'STL']),
+        option=dict(type='str', required=False, choices=['UG', 'UB', 'OFF', 'FAIL', 'RBD', 'ON', 'JB', 'ES', 'EM', 'EN', 'ET', 'LOC', 'STL', 'HS']),
+        action=dict(type='str', required=False, choices=['remove', 'global', 'dedicate']),
+        revertible=dict(type='str', required=False, choices=['yes', 'no']),
+        encl=dict(type='str', required=False, choices=['yes', 'no']),
+        logical_drivers=dict(type='list', elements='int', required=False),
     )
     argument_spec.update(ism_argument_spec)
     disk_obj = Disk(argument_spec)
