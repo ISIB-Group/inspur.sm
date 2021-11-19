@@ -5,6 +5,22 @@ Inspur.sm Release Notes
 .. contents:: Topics
 
 
+v2.0.0
+======
+
+Minor Changes
+-------------
+
+- Add the onboard_disk_info module.
+- Modified logical disk Settings, added logical disk Settings for M6 PMC card.
+- Modify the edit_pdisk function to add new parameters.
+- The user module adds the mailbox field.
+
+New Modules
+-----------
+
+- inspur.sm.onboard_disk_info - Get onboard disks information.
+
 v1.2.0
 ======
 
