@@ -116,6 +116,7 @@ Module Plugins
 * :ref:`network_info <ansible_collections.inspur.sm.network_info_module>` -- Get network information.
 * :ref:`network_link_info <ansible_collections.inspur.sm.network_link_info_module>` -- Get network link information.
 * :ref:`ntp_info <ansible_collections.inspur.sm.ntp_info_module>` -- Get NTP information.
+* :ref:`onboard_disk_info <ansible_collections.inspur.sm.onboard_disk_info_module>` -- Get onboard disks information.
 * :ref:`pcie_info <ansible_collections.inspur.sm.pcie_info_module>` -- Get PCIE information.
 * :ref:`pdisk_info <ansible_collections.inspur.sm.pdisk_info_module>` -- Get physical disks information.
 * :ref:`power_budget_info <ansible_collections.inspur.sm.power_budget_info_module>` -- Get power budget information.

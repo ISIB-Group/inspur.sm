@@ -116,3 +116,20 @@ releases:
     fragments:
     - m6_compatible.yml
     release_date: '2021-05-19'
+  2.0.0:
+    changes:
+      minor_changes:
+      - Add the onboard_disk_info module.
+      - Modified logical disk Settings, added logical disk Settings for M6 PMC card.
+      - Modify the edit_pdisk function to add new parameters.
+      - The user module adds the mailbox field.
+    fragments:
+    - 46-add_user_email.yml
+    - 47-edit_creaete_ldisk.yml
+    - 48-edit_pdisk.yml
+    - 49-add_onboard_disk_info.yml
+    modules:
+    - description: Get onboard disks information.
+      name: onboard_disk_info
+      namespace: ''
+    release_date: '2021-11-18'

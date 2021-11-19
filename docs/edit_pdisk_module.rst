@@ -65,6 +65,28 @@ Parameters
         </tr>
                     <tr>
                                                                 <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-action"></div>
+                    <b>action</b>
+                    <a class="ansibleOptionLink" href="#parameter-action" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>remove</li>
+                                                                                                                                                                                                <li>global</li>
+                                                                                                                                                                                                <li>dedicate</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Action while set physical drive hotspare.</div>
+                                            <div>Required when <em>Info=None</em> and <em>option=HS</em>.</div>
+                                            <div>Only the M5 model supports this parameter.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-ctrl_id"></div>
                     <b>ctrl_id</b>
                     <a class="ansibleOptionLink" href="#parameter-ctrl_id" title="Permalink to this option"></a>
@@ -93,6 +115,27 @@ Parameters
                                                                 <td>
                                             <div>physical drive id.</div>
                                             <div>Required when <em>Info=None</em>.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-encl"></div>
+                    <b>encl</b>
+                    <a class="ansibleOptionLink" href="#parameter-encl" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>yes</li>
+                                                                                                                                                                                                <li>no</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>IsEnclAffinity while set physical drive hotspare.</div>
+                                            <div>Required when <em>Info=None</em> and <em>option=HS</em> and <em>action=dedicate</em>.</div>
+                                            <div>Only the M5 model supports this parameter.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -130,6 +173,23 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-logical_drivers"></div>
+                    <b>logical_drivers</b>
+                    <a class="ansibleOptionLink" href="#parameter-logical_drivers" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">list</span>
+                         / <span style="color: purple">elements=integer</span>                                            </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Logical Drivers while set physical drive hotspare, input multiple Logical Drivers index like 0,1,2.....</div>
+                                            <div>Required when <em>Info=None</em> and <em>option=HS</em> and <em>action=dedicate</em>.</div>
+                                            <div>Only the M5 model supports this parameter.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-option"></div>
                     <b>option</b>
                     <a class="ansibleOptionLink" href="#parameter-option" title="Permalink to this option"></a>
@@ -152,6 +212,7 @@ Parameters
                                                                                                                                                                                                 <li>ET</li>
                                                                                                                                                                                                 <li>LOC</li>
                                                                                                                                                                                                 <li>STL</li>
+                                                                                                                                                                                                <li>HS</li>
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
@@ -160,8 +221,10 @@ Parameters
                                             <div>OFF is offline,FAIL is Failed,RBD is Rebuild,</div>
                                             <div>ON is Online,JB is JBOD,ES is Drive Erase stop,</div>
                                             <div>EM is Drive Erase Simple,EN is Drive Erase Normal,</div>
-                                            <div>ET is Drive Erase Through,LOC is Locate,STL is Stop Locate.</div>
+                                            <div>ET is Drive Erase Through,LOC is Locate,STL is Stop Locate,</div>
+                                            <div>HS is Hot spare.</div>
                                             <div>Required when <em>Info=None</em>.</div>
+                                            <div>Only the M5 model supports <code>HS</code> Settings.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -245,6 +308,27 @@ Parameters
                     
                                 <tr>
                                                                 <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-revertible"></div>
+                    <b>revertible</b>
+                    <a class="ansibleOptionLink" href="#parameter-revertible" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>yes</li>
+                                                                                                                                                                                                <li>no</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>IsRevertible while set physical drive hotspare.</div>
+                                            <div>Required when <em>Info=None</em> and <em>option=HS</em> and <em>action=dedicate</em>.</div>
+                                            <div>Only the M5 model supports this parameter.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-username"></div>
                     <b>username</b>
                     <a class="ansibleOptionLink" href="#parameter-username" title="Permalink to this option"></a>
@@ -297,6 +381,17 @@ Examples
           ctrl_id: 0
           device_id: 1
           option: "LOC"
+          provider: "{{ ism }}"
+
+      - name: "M5 Edit pdisk"
+        inspur.sm.edit_pdisk:
+          ctrl_id: 0
+          device_id: 1
+          option: "HS"
+          action: "dedicate"
+          revertible: "yes"
+          encl: "yes"
+          logical_drivers: 1
           provider: "{{ ism }}"
 
 

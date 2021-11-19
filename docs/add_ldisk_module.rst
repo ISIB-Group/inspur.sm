@@ -65,6 +65,27 @@ Parameters
         </tr>
                     <tr>
                                                                 <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-accelerator"></div>
+                    <b>accelerator</b>
+                    <a class="ansibleOptionLink" href="#parameter-accelerator" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">integer</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>1</li>
+                                                                                                                                                                                                <li>2</li>
+                                                                                                                                                                                                <li>3</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Driver accelerator, 1 - 1h, 2 - 2h, 3 - 3h.</div>
+                                            <div>Required when <em>Info=None</em> and controller type is PMC.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-access"></div>
                     <b>access</b>
                     <a class="ansibleOptionLink" href="#parameter-access" title="Permalink to this option"></a>
@@ -81,7 +102,7 @@ Parameters
                                                                             </td>
                                                                 <td>
                                             <div>Access Policy, 1 - Read Write, 2 - Read Only, 3 - Blocked.</div>
-                                            <div>Required when <em>Info=None</em>.</div>
+                                            <div>Required when <em>Info=None</em> and controller type is LSI.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -102,7 +123,7 @@ Parameters
                                                                             </td>
                                                                 <td>
                                             <div>Drive Cache, 1 - Unchanged, 2 - Enabled,3 - Disabled.</div>
-                                            <div>Required when <em>Info=None</em>.</div>
+                                            <div>Required when <em>Info=None</em> and controller type is LSI.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -118,7 +139,7 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Raid controller ID.</div>
-                                            <div>Required when <em>Info=None</em>.</div>
+                                            <div>Required when <em>Info=None</em> and controller type is LSI or PMC.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -172,7 +193,7 @@ Parameters
                                                                             </td>
                                                                 <td>
                                             <div>Init State, 1 - No Init, 2 - Quick Init, 3 - Full Init.</div>
-                                            <div>Required when <em>Info=None</em>.</div>
+                                            <div>Required when <em>Info=None</em> and controller type is LSI.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -192,7 +213,7 @@ Parameters
                                                                             </td>
                                                                 <td>
                                             <div>IO Policy, 1 - Direct IO, 2 - Cached IO.</div>
-                                            <div>Required when <em>Info=None</em>.</div>
+                                            <div>Required when <em>Info=None</em> and controller type is LSI.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -215,7 +236,7 @@ Parameters
                                                                             </td>
                                                                 <td>
                                             <div>RAID Level, 0 - RAID0, 1 - RAID1, 5 - RAID5, 6 - RAID6, 10 - RAID10.</div>
-                                            <div>Required when <em>Info=None</em>.</div>
+                                            <div>Required when <em>Info=None</em> and controller type is LSI or PMC.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -314,7 +335,7 @@ Parameters
                                                                             </td>
                                                                 <td>
                                             <div>Read Policy, 1 - Read Ahead, 2 - No Read Ahead.</div>
-                                            <div>Required when <em>Info=None</em>.</div>
+                                            <div>Required when <em>Info=None</em> and controller type is LSI.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -330,7 +351,7 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Select Size, from 1 to 100.</div>
-                                            <div>Required when <em>Info=None</em>.</div>
+                                            <div>Required when <em>Info=None</em> and controller type is LSI.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -353,7 +374,7 @@ Parameters
                                                                             </td>
                                                                 <td>
                                             <div>Strip Size, 1 - 64k, 2 - 128k, 3 - 256k, 4 - 512k, 5 - 1024k.</div>
-                                            <div>Required when <em>Info=None</em>.</div>
+                                            <div>Required when <em>Info=None</em> and controller type is LSI or PMC.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -369,7 +390,7 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Slot Num,input multiple slotNumber like 0,1,2....</div>
-                                            <div>Required when <em>Info=None</em>.</div>
+                                            <div>Required when <em>Info=None</em> and controller type is LSI.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -385,6 +406,22 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Configures the username to use to authenticate the connection to the remote device. If the value is not specified in the task, the value of environment variable <code>ANSIBLE_NET_USERNAME</code> will be used instead.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-vname"></div>
+                    <b>vname</b>
+                    <a class="ansibleOptionLink" href="#parameter-vname" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Virtual drive name.</div>
+                                            <div>Required when <em>Info=None</em> and controller type is PMC.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -405,7 +442,7 @@ Parameters
                                                                             </td>
                                                                 <td>
                                             <div>Write Policy, 1 - Write Throgh, 2 - Write Back, 3 - Write caching ok if bad BBU.</div>
-                                            <div>Required when <em>Info=None</em>.</div>
+                                            <div>Required when <em>Info=None</em> and controller type is LSI.</div>
                                                         </td>
             </tr>
                         </table>
@@ -455,6 +492,15 @@ Examples
           init: 2
           select: 10
           slot: 0,1
+          provider: "{{ ism }}"
+
+      - name: "Add PMC  ldisk"
+        inspur.sm.add_ldisk:
+          ctrl_id: 0
+          level: 1
+          size: 1
+          accelerator: 1
+          vname: "test"
           provider: "{{ ism }}"
 
 
