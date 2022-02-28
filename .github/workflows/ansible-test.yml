@@ -15,6 +15,7 @@ jobs:
         ansible:    
         - stable-2.10
         - stable-2.11
+        - stable-2.12
         - devel
         python-version:
         - 3.8
