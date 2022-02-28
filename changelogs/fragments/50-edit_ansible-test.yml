@@ -1,0 +1,2 @@
+minor_changes:
+  - Modify ansible-test to add asnible 2.12 test.
