@@ -16,16 +16,24 @@ jobs:
         - stable-2.10
         - stable-2.11
         - stable-2.12
+        - stable-2.13
         - devel
         python-version:
-        - 3.8
+        - '3.8'
+        - '3.9'
+        - '3.10'
+        exclude:
+          - ansible: stable-2.10
+            python-version: '3.10'
+          - ansible: stable-2.11
+            python-version: '3.10'
     runs-on: ubuntu-latest
     steps:
 
       - name: Check out code
         uses: actions/checkout@v1
         with:
-          path: ansible_collections/inspur/sm
+          path: ansible_collections/inspur/ispim
 
       - name: Set up Python (${{ matrix.python-version }})
         uses: actions/setup-python@v1
