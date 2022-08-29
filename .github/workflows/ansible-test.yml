@@ -33,7 +33,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v1
         with:
-          path: ansible_collections/inspur/ispim
+          path: ansible_collections/inspur/sm
 
       - name: Set up Python (${{ matrix.python-version }})
         uses: actions/setup-python@v1
