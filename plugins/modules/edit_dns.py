@@ -79,6 +79,32 @@ options:
             - DNS Server3 IPv4 or IPv6 address.
             - Required when I(dns_manual=manual).
         type: str
+    register_status1:
+        description:
+            - BMC register status 1.
+            - Only the M6 model supports this parameter.
+        choices: ['enable', 'disable']
+        type: str
+    registration_method1:
+        description:
+            - Registration method 1.
+            - Only the M6 model supports this parameter.
+            - Required when I(register_status1=enable).
+        choices: ['nsupdate', 'dhcp', 'hostname']
+        type: str
+    register_status2:
+        description:
+            - BMC register status 2.
+            - Only the M6 model supports this parameter.
+        choices: ['enable', 'disable']
+        type: str
+    registration_method2:
+        description:
+            - Registration method 2.
+            - Only the M6 model supports this parameter.
+            - Required when I(register_status2=enable).
+        choices: ['nsupdate', 'dhcp', 'hostname']
+        type: str
 extends_documentation_fragment:
     - inspur.sm.ism
 '''
@@ -189,6 +215,10 @@ def main():
         dns_server1=dict(type='str', required=False),
         dns_server2=dict(type='str', required=False),
         dns_server3=dict(type='str', required=False),
+        register_status1=dict(type='str', required=False, choices=['enable', 'disable']),
+        registration_method1=dict(type='str', required=False, choices=['nsupdate', 'dhcp', 'hostname']),
+        register_status2=dict(type='str', required=False, choices=['enable', 'disable']),
+        registration_method2=dict(type='str', required=False, choices=['nsupdate', 'dhcp', 'hostname']),
     )
     argument_spec.update(ism_argument_spec)
     dns_obj = DNS(argument_spec)

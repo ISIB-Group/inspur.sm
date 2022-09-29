@@ -44,6 +44,7 @@ Synopsis
 
 - Set dns information on Inspur server.
 
+
 .. Aliases
 
 
@@ -365,6 +366,90 @@ Parameters
                                                         </td>
             </tr>
                     
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-register_status1"></div>
+                    <b>register_status1</b>
+                    <a class="ansibleOptionLink" href="#parameter-register_status1" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>BMC register status 1.</div>
+                                            <div>Only the M6 model supports this parameter.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-register_status2"></div>
+                    <b>register_status2</b>
+                    <a class="ansibleOptionLink" href="#parameter-register_status2" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>BMC register status 2.</div>
+                                            <div>Only the M6 model supports this parameter.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-registration_method1"></div>
+                    <b>registration_method1</b>
+                    <a class="ansibleOptionLink" href="#parameter-registration_method1" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>nsupdate</li>
+                                                                                                                                                                                                <li>dhcp</li>
+                                                                                                                                                                                                <li>hostname</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Registration method 1.</div>
+                                            <div>Only the M6 model supports this parameter.</div>
+                                            <div>Required when <em>register_status1=enable</em>.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-registration_method2"></div>
+                    <b>registration_method2</b>
+                    <a class="ansibleOptionLink" href="#parameter-registration_method2" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>nsupdate</li>
+                                                                                                                                                                                                <li>dhcp</li>
+                                                                                                                                                                                                <li>hostname</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Registration method 2.</div>
+                                            <div>Only the M6 model supports this parameter.</div>
+                                            <div>Required when <em>register_status2=enable</em>.</div>
+                                                        </td>
+            </tr>
                                 <tr>
                                                                 <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-username"></div>
