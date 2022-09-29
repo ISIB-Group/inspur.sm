@@ -133,3 +133,13 @@ releases:
       name: onboard_disk_info
       namespace: ''
     release_date: '2021-11-18'
+  2.2.0:
+    changes:
+      minor_changes:
+      - Edit_dns adds new field to M6 model.
+      - Modify ansible-test to add asnible 2.13,2.14 version.
+      - Modify the authors and tags fields in Galaxy.yml.
+      - Update the document.
+    fragments:
+    - 53-dns-changes.yml
+    release_date: '2022-09-29'
