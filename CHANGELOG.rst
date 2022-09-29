@@ -5,6 +5,17 @@ Inspur.sm Release Notes
 .. contents:: Topics
 
 
+v2.2.0
+======
+
+Minor Changes
+-------------
+
+- Edit_dns adds new field to M6 model.
+- Modify ansible-test to add asnible 2.13,2.14 version.
+- Modify the authors and tags fields in Galaxy.yml.
+- Update the document.
+
 v2.0.0
 ======
 
