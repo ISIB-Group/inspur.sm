@@ -17,6 +17,10 @@ author:
 short_description: Get BMC system log information.
 description:
    - Get BMC system log information on Inspur server.
+deprecated:
+   removed_in: 3.0.0
+   why: he Ansible collection M(inspur.sm) is deprecated. Use M(inspur.ispim) instead.
+   alternative: Use M(inspur.ispim.system_log_info) instead.
 options:
     level:
         description:

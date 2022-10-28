@@ -17,6 +17,10 @@ author:
 short_description: Download manual screenshots.
 description:
    - Download manual screenshots on Inspur server.
+deprecated:
+   removed_in: 3.0.0
+   why: he Ansible collection M(inspur.sm) is deprecated. Use M(inspur.ispim) instead.
+   alternative: Use M(inspur.ispim.download_manual_screenshot) instead.
 options:
     file_url:
         description:

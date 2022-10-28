@@ -17,6 +17,10 @@ author:
 short_description: Set power status information.
 description:
    - Set power status information on Inspur server.
+deprecated:
+   removed_in: 3.0.0
+   why: he Ansible collection M(inspur.sm) is deprecated. Use M(inspur.ispim) instead.
+   alternative: Use M(inspur.ispim.edit_power_status) instead.
 options:
     state:
         description:

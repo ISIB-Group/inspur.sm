@@ -17,6 +17,10 @@ author:
 short_description: Set virtual media.
 description:
    - Set virtual media on Inspur server.
+deprecated:
+   removed_in: 3.0.0
+   why: he Ansible collection M(inspur.sm) is deprecated. Use M(inspur.ispim) instead.
+   alternative: Use M(inspur.ispim.edit_virtual_media) instead.
 options:
     local_media_support:
         description:
@@ -44,6 +48,7 @@ options:
     mount:
         description:
             - Whether to mount virtual media.
+            - Only the M5 model supports this parameter.
         choices: ['Enable', 'Disable']
         type: str
     remote_server_address:
@@ -99,7 +104,7 @@ EXAMPLES = '''
   - name: "Set remote media"
     inspur.sm.edit_virtual_media:
       remote_media_support: "Enable"
-      mount_type: 0
+      mount_type: "CD"
       same_settings: 0
       mount: "Enable"
       remote_server_address: "100.2.28.203"

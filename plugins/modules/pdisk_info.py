@@ -17,6 +17,10 @@ author:
 short_description: Get physical disks information.
 description:
    - Get physical disks information on Inspur server.
+deprecated:
+   removed_in: 3.0.0
+   why: he Ansible collection M(inspur.sm) is deprecated. Use M(inspur.ispim) instead.
+   alternative: Use M(inspur.ispim.pdisk_info) instead.
 options: {}
 extends_documentation_fragment:
     - inspur.sm.ism

@@ -17,6 +17,10 @@ author:
 short_description: Set power budget information.
 description:
    - Set power budget information on Inspur server.
+deprecated:
+   removed_in: 3.0.0
+   why: he Ansible collection M(inspur.sm) is deprecated. Use M(inspur.ispim) instead.
+   alternative: Use M(inspur.ispim.edit_power_budget) instead.
 options:
     range:
         description:
@@ -24,6 +28,12 @@ options:
         choices: ['True', 'False']
         default: False
         type: bool
+    domain:
+        description:
+            - Domain id.
+            - Required when I(range=False).
+        choices: ['system', 'cpu']
+        type: str
     action:
         description:
             - Type to action.
@@ -211,6 +221,7 @@ class Power(object):
 def main():
     argument_spec = dict(
         range=dict(type='bool', default=False, choices=[True, False]),
+        domain=dict(type='str', required=False, choices=['system', 'cpu']),
         action=dict(type='str', required=False, choices=['add', 'delete', 'open', 'close']),
         id=dict(type='int', required=False, choices=[1, 2, 3, 4]),
         watts=dict(type='int', required=False),

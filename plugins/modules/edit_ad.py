@@ -17,10 +17,19 @@ author:
 short_description: Set active directory information.
 description:
    - Set active directory information on Inspur server.
+deprecated:
+   removed_in: 3.0.0
+   why: he Ansible collection M(inspur.sm) is deprecated. Use M(inspur.ispim) instead.
+   alternative: Use M(inspur.ispim.edit_ad) instead.
 options:
     enable:
         description:
             - Active Directory Authentication Status.
+        choices: ['enable', 'disable']
+        type: str
+    ssl_enable:
+        description:
+            - Active Directory SSL Status.
         choices: ['enable', 'disable']
         type: str
     name:
@@ -137,6 +146,7 @@ class AD(object):
 def main():
     argument_spec = dict(
         enable=dict(type='str', required=False, choices=['enable', 'disable']),
+        ssl_enable=dict(type='str', required=False, choices=['enable', 'disable']),
         name=dict(type='str', required=False),
         code=dict(type='str', required=False),
         timeout=dict(type='int', required=False),

@@ -17,6 +17,10 @@ author:
 short_description: Manage user.
 description:
    - Manage user on Inspur server.
+deprecated:
+   removed_in: 3.0.0
+   why: he Ansible collection M(inspur.sm) is deprecated. Use M(inspur.ispim) instead.
+   alternative: Use M(inspur.ispim.user) instead.
 options:
     state:
         description:
@@ -24,23 +28,32 @@ options:
         choices: ['present', 'absent']
         default: present
         type: str
+    uid:
+        description:
+            - User id,The range is 1 to 16.
+        type: int
     uname:
         description:
-            - User name.
+            - User name,Required when uid is None.
         type: str
-        required: true
     upass:
         description:
             - User password.
         type: str
     role_id:
         description:
-            - user group, default user group,'Administrator', 'Operator', 'Commonuser','OEM','NoAccess',
+            - user group.
+            - default user group 'Administrator', 'Operator', 'User'.
             - use command C(user_group_info) can get all group information.
+        type: str
+    access:
+        description:
+            - User access.
+        choices: ['enable', 'disable']
         type: str
     priv:
         description:
-            - User access, select one or more from None/KVM/VMM/SOL.
+            - Other user permissions, select one or more from None/KVM/VMM/SOL.
         choices: ['kvm', 'vmm', 'sol', 'none']
         type: list
         elements: str
@@ -137,9 +150,11 @@ class User(object):
 def main():
     argument_spec = dict(
         state=dict(type='str', choices=['present', 'absent'], default='present'),
-        uname=dict(type='str', required=True),
+        uid=dict(type='int', required=False),
+        uname=dict(type='str', required=False),
         upass=dict(type='str', required=False, no_log=True),
         role_id=dict(type='str', required=False),
+        access=dict(type='str', required=False, choices=['enable', 'disable']),
         priv=dict(type='list', elements='str', required=False, choices=['kvm', 'vmm', 'sol', 'none']),
         email=dict(type='str', required=False)
     )

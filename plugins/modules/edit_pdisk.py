@@ -17,6 +17,10 @@ author:
 short_description: Set physical disk.
 description:
    - Set physical disk on Inspur server.
+deprecated:
+   removed_in: 3.0.0
+   why: he Ansible collection M(inspur.sm) is deprecated. Use M(inspur.ispim) instead.
+   alternative: Use M(inspur.ispim.edit_pdisk) instead.
 options:
     info:
         description:
@@ -74,6 +78,12 @@ options:
             - Only the M5 model supports this parameter.
         type: list
         elements: int
+    duration:
+        description:
+            - duration range is 1-255,physical drive under PMC raid controller.
+            - Required when I(option=LOC).
+            - Only the M6 model supports this parameter.
+        type: int
 extends_documentation_fragment:
     - inspur.sm.ism
 '''
@@ -173,6 +183,7 @@ def main():
         revertible=dict(type='str', required=False, choices=['yes', 'no']),
         encl=dict(type='str', required=False, choices=['yes', 'no']),
         logical_drivers=dict(type='list', elements='int', required=False),
+        duration=dict(type='int', required=False),
     )
     argument_spec.update(ism_argument_spec)
     disk_obj = Disk(argument_spec)

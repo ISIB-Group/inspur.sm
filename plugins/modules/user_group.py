@@ -17,6 +17,10 @@ author:
 short_description: Manage user group.
 description:
    - Manage user group on Inspur server.
+deprecated:
+   removed_in: 3.0.0
+   why: he Ansible collection M(inspur.sm) is deprecated. Use M(inspur.ispim) instead.
+   alternative: Use M(inspur.ispim.user_group) instead.
 options:
     state:
         description:
@@ -27,13 +31,64 @@ options:
     name:
         description:
             - Group name.
+            - The range of group name  for M6 model is OEM1,OEM2,OEM3,OEM4.
         required: true
         type: str
     pri:
         description:
             - Group privilege.
             - Required when I(state=present).
+            - Only the M5 model supports this parameter.
         choices: ['administrator', 'operator', 'user', 'oem', 'none']
+        type: str
+    general:
+        description:
+            - General configuration privilege.
+            - Required when I(state=present).
+            - Only the M6 model supports this parameter.
+        choices: ['enable', 'disable']
+        type: str
+    power:
+        description:
+            - Power control privilege.
+            - Required when I(state=present).
+            - Only the M6 model supports this parameter.
+        choices: ['enable', 'disable']
+        type: str
+    media:
+        description:
+            - Remote media configuration privilege.
+            - Required when I(state=present).
+            - Only the M6 model supports this parameter.
+        choices: ['enable', 'disable']
+        type: str
+    kvm:
+        description:
+            - Remote KVM configuration privilege.
+            - Required when I(state=present).
+            - Only the M6 model supports this parameter.
+        choices: ['enable', 'disable']
+        type: str
+    security:
+        description:
+            - Security configuration privilege.
+            - Required when I(state=present).
+            - Only the M6 model supports this parameter.
+        choices: ['enable', 'disable']
+        type: str
+    debug:
+        description:
+            - Debug diagnose privilege.
+            - Required when I(state=present).
+            - Only the M6 model supports this parameter.
+        choices: ['enable', 'disable']
+        type: str
+    self:
+        description:
+            - Itself configuration privilege.
+            - Required when I(state=present).
+            - Only the M6 model supports this parameter.
+        choices: ['enable', 'disable']
         type: str
 extends_documentation_fragment:
     - inspur.sm.ism
@@ -64,6 +119,14 @@ EXAMPLES = '''
       state: "present"
       name: "test"
       pri: "user"
+      provider: "{{ ism }}"
+
+  - name: "Set m6 user group"
+    inspur.ispim.user_group:
+      state: "present"
+      name: "OEM1"
+      general: "enable"
+      kvm: "enable"
       provider: "{{ ism }}"
 
   - name: "Delete user group"
@@ -126,6 +189,13 @@ def main():
         state=dict(type='str', choices=['present', 'absent'], default='present'),
         name=dict(type='str', required=True),
         pri=dict(type='str', required=False, choices=['administrator', 'operator', 'user', 'oem', 'none']),
+        general=dict(type='str', required=False, choices=['enable', 'disable']),
+        power=dict(type='str', required=False, choices=['enable', 'disable']),
+        media=dict(type='str', required=False, choices=['enable', 'disable']),
+        kvm=dict(type='str', required=False, choices=['enable', 'disable']),
+        security=dict(type='str', required=False, choices=['enable', 'disable']),
+        debug=dict(type='str', required=False, choices=['enable', 'disable']),
+        self=dict(type='str', required=False, choices=['enable', 'disable']),
     )
     argument_spec.update(ism_argument_spec)
     usergroup_obj = UserGroup(argument_spec)

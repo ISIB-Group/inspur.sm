@@ -17,6 +17,10 @@ author:
 short_description: Start/Stop virtual media Image
 description:
    - Start/Stop virtual media Image on Inspur server.
+deprecated:
+   removed_in: 3.0.0
+   why: he Ansible collection M(inspur.sm) is deprecated. Use M(inspur.ispim) instead.
+   alternative: Use M(inspur.ispim.edit_connect_media) instead.
 options:
     image_type:
         description:

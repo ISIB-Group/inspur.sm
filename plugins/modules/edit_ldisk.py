@@ -17,6 +17,10 @@ author:
 short_description: Set logical disk.
 description:
    - Set logical disk on Inspur server.
+deprecated:
+   removed_in: 3.0.0
+   why: he Ansible collection M(inspur.sm) is deprecated. Use M(inspur.ispim) instead.
+   alternative: Use M(inspur.ispim.edit_ldisk) instead.
 options:
     info:
         description:
@@ -42,6 +46,12 @@ options:
             - Required when I(Info=None).
         choices: ['LOC', 'STL', 'FI', 'SFI', 'SI', 'DEL']
         type: str
+    duration:
+        description:
+            - duration range is 1-255,physical drive under PMC raid controller.
+            - Required when I(option=LOC).
+            - Only the M6 model supports this parameter.
+        type: 
 extends_documentation_fragment:
     - inspur.sm.ism
 '''
@@ -126,6 +136,7 @@ def main():
         ctrl_id=dict(type='int', required=False),
         ldisk_id=dict(type='int', required=False),
         option=dict(type='str', required=False, choices=['LOC', 'STL', 'FI', 'SFI', 'SI', 'DEL']),
+        duration=dict(type='int', required=False),
     )
     argument_spec.update(ism_argument_spec)
     disk_obj = Disk(argument_spec)

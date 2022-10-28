@@ -17,6 +17,10 @@ author:
 short_description: Set event log policy.
 description:
    - Set event log policy on Inspur server.
+deprecated:
+   removed_in: 3.0.0
+   why: he Ansible collection M(inspur.sm) is deprecated. Use M(inspur.ispim) instead.
+   alternative: Use M(inspur.ispim.edit_event_log_policy) instead.
 options:
     policy:
         description:

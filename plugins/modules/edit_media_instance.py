@@ -17,6 +17,10 @@ author:
 short_description: Set Virtual Media Instance
 description:
    - Set Virtual Media Instance on Inspur server.
+deprecated:
+   removed_in: 3.0.0
+   why: he Ansible collection M(inspur.sm) is deprecated. Use M(inspur.ispim) instead.
+   alternative: Use M(inspur.ispim.edit_media_instance) instead.
 options:
     num_fd:
         description:

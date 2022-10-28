@@ -17,6 +17,11 @@ author:
 short_description: Set bmc system and audit log setting.
 description:
    - Set bmc system and audit log setting on Inspur server.
+   - Only the M5 models support this feature.
+deprecated:
+   removed_in: 3.0.0
+   why: he Ansible collection M(inspur.sm) is deprecated. Use M(inspur.ispim) instead.
+   alternative: Use M(inspur.ispim.edit_log_setting) instead.
 options:
     status:
         description:

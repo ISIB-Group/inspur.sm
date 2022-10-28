@@ -17,6 +17,10 @@ author:
 short_description: Get bmc log setting information.
 description:
    - Get bmc log setting information on Inspur server.
+deprecated:
+   removed_in: 3.0.0
+   why: he Ansible collection M(inspur.sm) is deprecated. Use M(inspur.ispim) instead.
+   alternative: Use M(inspur.ispim.log_setting_info) instead.
 options: {}
 extends_documentation_fragment:
     - inspur.sm.ism

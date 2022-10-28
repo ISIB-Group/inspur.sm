@@ -17,21 +17,53 @@ author:
 short_description: Set snmp.
 description:
    - Set snmp on Inspur server.
+deprecated:
+   removed_in: 3.0.0
+   why: he Ansible collection M(inspur.sm) is deprecated. Use M(inspur.ispim) instead.
+   alternative: Use M(inspur.ispim.edit_snmp) instead.
 options:
     version:
         description:
             - SNMP trap version option, 0 - 'v1', 1 - 'v2c', 2 - 'v3', 3 - 'all', 4 - 'customize'.
+            - Only the M5 models support this feature.
         choices: [0, 1, 2, 3, 4]
         type: int
     snmp_status:
         description:
             - NMP read/write status of customize,
             - the input parameters are 'v1get', 'v1set', 'v2cget', 'v2cset', 'v3get', 'v3set',separated by commas,such as v1get,v1set,v2cget.
+            - Only the M5 models support this feature.
         type: list
         elements: str
     community:
         description:
             - Community of v1/v2c or v1get/v1set/v2cget/v2cset.
+            - Only the M5 models support this feature.
+        type: str
+    v1status:
+        description:
+            - SNMP V1 enable.
+        choices: ['enable', 'disable']
+        type: str
+    v2status:
+        description:
+            - SNMP V2 enable.
+        choices: ['enable', 'disable']
+        type: str
+    v3status:
+        description:
+            - SNMP V3 enable.
+        choices: ['enable', 'disable']
+        type: str
+    read_community:
+        description:
+            - Read Only Community,Community should between 1 and 16 characters.
+            - Only the M6 models support this feature.
+        type: str
+    read_write_community:
+        description:
+            - Read And Write Community,Community should between 1 and 16 characters.
+            - Only the M6 models support this feature.
         type: str
     v3username:
         description:
@@ -138,6 +170,11 @@ def main():
         version=dict(type='int', required=False, choices=[0, 1, 2, 3, 4]),
         snmp_status=dict(type='list', elements='str', required=False),
         community=dict(type='str', required=False),
+        v1status=dict(type='str', required=False, choices=['enable', 'disable']),
+        v2status=dict(type='str', required=False, choices=['enable', 'disable']),
+        v3status=dict(type='str', required=False, choices=['enable', 'disable']),
+        read_community=dict(type='str', required=False),
+        read_write_community=dict(type='str', required=False),
         v3username=dict(type='str', required=False),
         auth_protocol=dict(type='str', required=False, choices=['NONE', 'SHA', 'MD5']),
         auth_password=dict(type='str', required=False, no_log=True),

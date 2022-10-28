@@ -17,6 +17,10 @@ author:
 short_description: Collect logs.
 description:
    - Collect logs on Inspur server,it takes about 5 minutes.
+deprecated:
+   removed_in: 3.0.0
+   why: he Ansible collection M(inspur.sm) is deprecated. Use M(inspur.ispim) instead.
+   alternative: Use M(inspur.ispim.collect_log) instead.
 options:
     file_url:
         description:

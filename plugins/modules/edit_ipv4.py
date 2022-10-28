@@ -17,6 +17,10 @@ author:
 short_description: Set ipv4 information.
 description:
    - Set ipv4 information on Inspur server.
+deprecated:
+   removed_in: 3.0.0
+   why: he Ansible collection M(inspur.sm) is deprecated. Use M(inspur.ispim) instead.
+   alternative: Use M(inspur.ispim.edit_ipv4) instead.
 options:
     interface_name:
         description:

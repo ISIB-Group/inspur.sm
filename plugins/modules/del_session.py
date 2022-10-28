@@ -17,6 +17,10 @@ author:
 short_description: Delete session.
 description:
    - Delete session on Inspur server.
+deprecated:
+   removed_in: 3.0.0
+   why: he Ansible collection M(inspur.sm) is deprecated. Use M(inspur.ispim) instead.
+   alternative: Use M(inspur.ispim.del_session) instead.
 options:
     sid:
         description:

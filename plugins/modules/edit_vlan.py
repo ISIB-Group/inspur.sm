@@ -17,6 +17,10 @@ author:
 short_description: Set vlan information.
 description:
    - Set vlan information on Inspur server.
+deprecated:
+   removed_in: 3.0.0
+   why: he Ansible collection M(inspur.sm) is deprecated. Use M(inspur.ispim) instead.
+   alternative: Use M(inspur.ispim.edit_vlan) instead.
 options:
     interface_name:
         description:

@@ -18,6 +18,10 @@ short_description: Set SMTP information.
 description:
    - Set SMTP dest information on Inspur server.
    - Only the M6 models support this feature.
+deprecated:
+   removed_in: 3.0.0
+   why: he Ansible collection M(inspur.sm) is deprecated. Use M(inspur.ispim) instead.
+   alternative: Use M(inspur.ispim.edit_smtp_dest) instead.
 options:
     id:
         description:
