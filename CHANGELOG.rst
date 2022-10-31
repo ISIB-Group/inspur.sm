@@ -5,6 +5,29 @@ Inspur.sm Release Notes
 .. contents:: Topics
 
 
+v2.3.0
+======
+
+Minor Changes
+-------------
+
+- Modify the tags fields in Galaxy.yml.
+- edit_power_budget add 'domain' field.
+- edit_snmp module add 'v1status','v2status','v3status','read_community','read_write_community' fields.
+- edit_snmp_trap module modifies the version value.
+- eidt_ad module add 'ssl_enalbe' field, modify the timeout field description.
+- eidt_ldisk module add 'duration' field.
+- eidt_pdisk module add 'duration' field.
+- modify the edit_log_setting module description.
+- modify the edit_ncsi module description and parameter values.
+- user module add 'uid','access' fields.
+- user_group module add 'general','power','media','kvm','security','debug','self' fields.
+
+Bugfixes
+--------
+
+- edit_snmp_trap module modifies input parameter errors in the example.
+
 v2.2.0
 ======
 
