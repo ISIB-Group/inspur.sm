@@ -44,6 +44,7 @@ Synopsis
 
 - Get power consumption information on Inspur server.
 
+
 .. Aliases
 
 

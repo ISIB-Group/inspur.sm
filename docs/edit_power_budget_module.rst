@@ -44,6 +44,7 @@ Synopsis
 
 - Set power budget information on Inspur server.
 
+
 .. Aliases
 
 
@@ -82,6 +83,26 @@ Parameters
                                                                             </td>
                                                                 <td>
                                             <div>Type to action.</div>
+                                            <div>Required when <em>range=False</em>.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-domain"></div>
+                    <b>domain</b>
+                    <a class="ansibleOptionLink" href="#parameter-domain" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>system</li>
+                                                                                                                                                                                                <li>cpu</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Domain id.</div>
                                             <div>Required when <em>range=False</em>.</div>
                                                         </td>
             </tr>

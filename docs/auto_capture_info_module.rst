@@ -44,6 +44,7 @@ Synopsis
 
 - Get auto capture screen information on Inspur server.
 
+
 .. Aliases
 
 

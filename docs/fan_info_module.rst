@@ -44,6 +44,7 @@ Synopsis
 
 - Get fan information on Inspur server.
 
+
 .. Aliases
 
 

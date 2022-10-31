@@ -44,6 +44,7 @@ Synopsis
 
 - Get hard disk information on Inspur server.
 
+
 .. Aliases
 
 

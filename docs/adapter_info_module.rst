@@ -44,6 +44,7 @@ Synopsis
 
 - Get adapter information on Inspur server.
 
+
 .. Aliases
 
 

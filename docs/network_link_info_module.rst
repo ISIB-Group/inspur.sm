@@ -44,6 +44,7 @@ Synopsis
 
 - Get network link information on Inspur server.
 
+
 .. Aliases
 
 

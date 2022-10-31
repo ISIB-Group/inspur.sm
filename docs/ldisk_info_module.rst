@@ -44,6 +44,7 @@ Synopsis
 
 - Get logical disks information on Inspur server.
 
+
 .. Aliases
 
 

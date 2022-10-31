@@ -44,6 +44,7 @@ Synopsis
 
 - Get physical disks information on Inspur server.
 
+
 .. Aliases
 
 

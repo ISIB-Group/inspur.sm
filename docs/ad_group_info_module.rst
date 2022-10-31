@@ -44,6 +44,7 @@ Synopsis
 
 - Get active directory group information on Inspur server.
 
+
 .. Aliases
 
 

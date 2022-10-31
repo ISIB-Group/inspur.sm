@@ -42,6 +42,12 @@ options:
             - Required when I(Info=None).
         choices: ['LOC', 'STL', 'FI', 'SFI', 'SI', 'DEL']
         type: str
+    duration:
+        description:
+            - duration range is 1-255,physical drive under PMC raid controller.
+            - Required when I(option=LOC).
+            - Only the M6 model supports this parameter.
+        type: int
 extends_documentation_fragment:
     - inspur.sm.ism
 '''
@@ -126,6 +132,7 @@ def main():
         ctrl_id=dict(type='int', required=False),
         ldisk_id=dict(type='int', required=False),
         option=dict(type='str', required=False, choices=['LOC', 'STL', 'FI', 'SFI', 'SI', 'DEL']),
+        duration=dict(type='int', required=False),
     )
     argument_spec.update(ism_argument_spec)
     disk_obj = Disk(argument_spec)

@@ -44,6 +44,7 @@ Synopsis
 
 - Set bmc boot image on Inspur server.
 
+
 .. Aliases
 
 

@@ -44,6 +44,7 @@ Synopsis
 
 - Download manual screenshots on Inspur server.
 
+
 .. Aliases
 
 

@@ -44,6 +44,7 @@ Synopsis
 
 - Get netowrk information on Inspur server.
 
+
 .. Aliases
 
 

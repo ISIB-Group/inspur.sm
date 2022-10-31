@@ -44,6 +44,7 @@ Synopsis
 
 - Get temp information on Inspur server.
 
+
 .. Aliases
 
 

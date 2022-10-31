@@ -44,6 +44,7 @@ Synopsis
 
 - Get BMC information on Inspur server.
 
+
 .. Aliases
 
 

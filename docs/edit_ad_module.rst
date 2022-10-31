@@ -44,6 +44,7 @@ Synopsis
 
 - Set active directory information on Inspur server.
 
+
 .. Aliases
 
 
@@ -266,6 +267,25 @@ Parameters
                                                         </td>
             </tr>
                     
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-ssl_enable"></div>
+                    <b>ssl_enable</b>
+                    <a class="ansibleOptionLink" href="#parameter-ssl_enable" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Active Directory SSL Status.</div>
+                                                        </td>
+            </tr>
                                 <tr>
                                                                 <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-timeout"></div>

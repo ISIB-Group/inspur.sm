@@ -44,6 +44,7 @@ Synopsis
 
 - Get dns information on Inspur server.
 
+
 .. Aliases
 
 

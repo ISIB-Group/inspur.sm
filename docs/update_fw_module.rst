@@ -44,6 +44,7 @@ Synopsis
 
 - Update firmware on Inspur server.
 
+
 .. Aliases
 
 

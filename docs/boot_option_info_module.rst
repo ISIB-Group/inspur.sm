@@ -44,6 +44,7 @@ Synopsis
 
 - Get BIOS boot options on Inspur server.
 
+
 .. Aliases
 
 

@@ -44,6 +44,7 @@ Synopsis
 
 - Get bmc boot image information on Inspur server.
 
+
 .. Aliases
 
 

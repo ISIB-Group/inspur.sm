@@ -44,6 +44,7 @@ Synopsis
 
 - Set power restore information on Inspur server.
 
+
 .. Aliases
 
 

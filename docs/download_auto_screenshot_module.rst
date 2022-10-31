@@ -44,6 +44,7 @@ Synopsis
 
 - Download auto screenshots on Inspur server.
 
+
 .. Aliases
 
 

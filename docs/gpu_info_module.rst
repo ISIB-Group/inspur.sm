@@ -45,6 +45,7 @@ Synopsis
 - Get GPU information on Inspur server.
 - Only the M6 models support this feature.
 
+
 .. Aliases
 
 

@@ -44,6 +44,7 @@ Synopsis
 
 - Set psu peak information on Inspur server.
 
+
 .. Aliases
 
 

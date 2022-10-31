@@ -44,6 +44,7 @@ Synopsis
 
 - Set psu config information on Inspur server.
 
+
 .. Aliases
 
 

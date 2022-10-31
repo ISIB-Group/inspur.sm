@@ -44,6 +44,7 @@ Synopsis
 
 - Get volt information on Inspur server.
 
+
 .. Aliases
 
 

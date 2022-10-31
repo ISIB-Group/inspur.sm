@@ -44,6 +44,7 @@ Synopsis
 
 - Manage user on Inspur server.
 
+
 .. Aliases
 
 
@@ -64,6 +65,25 @@ Parameters
                         <th width="100%">Comments</th>
         </tr>
                     <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-access"></div>
+                    <b>access</b>
+                    <a class="ansibleOptionLink" href="#parameter-access" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>User access.</div>
+                                                        </td>
+            </tr>
+                                <tr>
                                                                 <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-email"></div>
                     <b>email</b>
@@ -126,7 +146,7 @@ Parameters
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
-                                            <div>User access, select one or more from None/KVM/VMM/SOL.</div>
+                                            <div>Other user permissions, select one or more from None/KVM/VMM/SOL.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -205,7 +225,8 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>user group, default user group,&#x27;Administrator&#x27;, &#x27;Operator&#x27;, &#x27;Commonuser&#x27;,&#x27;OEM&#x27;,&#x27;NoAccess&#x27;,</div>
+                                            <div>user group.</div>
+                                            <div>default user group &#x27;Administrator&#x27;, &#x27;Operator&#x27;, &#x27;User&#x27;.</div>
                                             <div>use command <code>user_group_info</code> can get all group information.</div>
                                                         </td>
             </tr>
@@ -230,17 +251,32 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-uid"></div>
+                    <b>uid</b>
+                    <a class="ansibleOptionLink" href="#parameter-uid" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">integer</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>User id,The range is 1 to 16.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-uname"></div>
                     <b>uname</b>
                     <a class="ansibleOptionLink" href="#parameter-uname" title="Permalink to this option"></a>
                     <div style="font-size: small">
                         <span style="color: purple">string</span>
-                                                 / <span style="color: red">required</span>                    </div>
+                                                                    </div>
                                                         </td>
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>User name.</div>
+                                            <div>User name,Required when uid is None.</div>
                                                         </td>
             </tr>
                                 <tr>

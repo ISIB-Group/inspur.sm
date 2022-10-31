@@ -44,6 +44,7 @@ Synopsis
 
 - Get BIOS setup on Inspur server.
 
+
 .. Aliases
 
 

@@ -44,6 +44,7 @@ Synopsis
 
 - Set bmc system and audit log setting on Inspur server.
 
+
 .. Aliases
 
 

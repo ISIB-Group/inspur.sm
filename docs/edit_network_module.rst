@@ -44,6 +44,7 @@ Synopsis
 
 - Set netowrk information on Inspur server.
 
+
 .. Aliases
 
 

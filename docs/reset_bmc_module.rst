@@ -44,6 +44,7 @@ Synopsis
 
 - BMC reset on Inspur server.
 
+
 .. Aliases
 
 

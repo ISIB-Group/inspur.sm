@@ -44,6 +44,7 @@ Synopsis
 
 - Get bmc log setting information on Inspur server.
 
+
 .. Aliases
 
 

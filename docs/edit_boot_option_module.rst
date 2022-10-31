@@ -44,6 +44,7 @@ Synopsis
 
 - Set BIOS boot options on Inspur server.
 
+
 .. Aliases
 
 

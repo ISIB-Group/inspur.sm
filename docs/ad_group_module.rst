@@ -44,6 +44,7 @@ Synopsis
 
 - Manage active directory group information on Inspur server.
 
+
 .. Aliases
 
 

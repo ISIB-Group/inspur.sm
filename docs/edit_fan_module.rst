@@ -44,6 +44,7 @@ Synopsis
 
 - Set fan information on Inspur server.
 
+
 .. Aliases
 
 

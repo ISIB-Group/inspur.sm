@@ -44,6 +44,7 @@ Synopsis
 
 - Get sensor information on Inspur server.
 
+
 .. Aliases
 
 

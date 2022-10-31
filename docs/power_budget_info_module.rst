@@ -44,6 +44,7 @@ Synopsis
 
 - Get power budget information on Inspur server.
 
+
 .. Aliases
 
 

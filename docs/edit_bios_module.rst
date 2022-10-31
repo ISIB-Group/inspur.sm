@@ -44,6 +44,7 @@ Synopsis
 
 - Set BIOS setup attributes on Inspur server.
 
+
 .. Aliases
 
 

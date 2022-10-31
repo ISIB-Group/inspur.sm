@@ -44,6 +44,7 @@ Synopsis
 
 - Set fru settings on Inspur server.
 
+
 .. Aliases
 
 

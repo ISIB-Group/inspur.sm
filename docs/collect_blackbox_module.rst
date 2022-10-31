@@ -44,6 +44,7 @@ Synopsis
 
 - Collect blackbox log on Inspur server.
 
+
 .. Aliases
 
 

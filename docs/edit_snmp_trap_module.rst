@@ -44,6 +44,7 @@ Synopsis
 
 - Set snmp trap on Inspur server.
 
+
 .. Aliases
 
 
@@ -432,18 +433,20 @@ Parameters
                     <b>version</b>
                     <a class="ansibleOptionLink" href="#parameter-version" title="Permalink to this option"></a>
                     <div style="font-size: small">
-                        <span style="color: purple">string</span>
+                        <span style="color: purple">integer</span>
                                                                     </div>
                                                         </td>
                                 <td>
                                                                                                                             <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>1</li>
-                                                                                                                                                                                                <li>2c</li>
+                                                                                                                                                                <li>0</li>
+                                                                                                                                                                                                <li>1</li>
+                                                                                                                                                                                                <li>2</li>
                                                                                                                                                                                                 <li>3</li>
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
                                             <div>SNMP trap version.</div>
+                                            <div>Only the M6 model supports <code>0</code> Settings.</div>
                                                         </td>
             </tr>
                         </table>
@@ -478,7 +481,7 @@ Examples
 
       - name: "Set snmp trap v2c"
         inspur.sm.edit_snmp_trap:
-          version: "2c"
+          version: 2
           event_severity: "warning"
           inspur: "test"
           system_name: "Inspur"
@@ -486,7 +489,7 @@ Examples
 
       - name: "Set snmp trap v3"
         inspur.sm.edit_snmp_trap:
-          version: "3"
+          version: 3
           event_severity: "all"
           v3username: "Inspur"
           engine_id: "1234567890"

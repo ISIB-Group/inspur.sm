@@ -44,6 +44,7 @@ Synopsis
 
 - Get BMC audit log information on Inspur server.
 
+
 .. Aliases
 
 

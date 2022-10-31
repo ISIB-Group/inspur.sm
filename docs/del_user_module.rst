@@ -49,6 +49,7 @@ Synopsis
 
 - Delete user on Inspur server.
 
+
 .. Aliases
 
 

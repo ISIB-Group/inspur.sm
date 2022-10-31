@@ -44,6 +44,7 @@ Synopsis
 
 - Set event log policy on Inspur server.
 
+
 .. Aliases
 
 

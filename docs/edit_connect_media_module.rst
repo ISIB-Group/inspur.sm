@@ -44,6 +44,7 @@ Synopsis
 
 - Start/Stop virtual media Image on Inspur server.
 
+
 .. Aliases
 
 

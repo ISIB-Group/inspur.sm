@@ -49,6 +49,7 @@ Synopsis
 
 - Delete ldap group information on Inspur server.
 
+
 .. Aliases
 
 

@@ -44,6 +44,7 @@ Synopsis
 
 - Get user group information on Inspur server.
 
+
 .. Aliases
 
 

@@ -44,6 +44,7 @@ Synopsis
 
 - Clear BMC system log on Inspur server.
 
+
 .. Aliases
 
 

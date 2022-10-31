@@ -44,6 +44,7 @@ Synopsis
 
 - Get remote images redirection information on Inspur server.
 
+
 .. Aliases
 
 

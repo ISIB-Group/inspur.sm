@@ -23,6 +23,11 @@ options:
             - Active Directory Authentication Status.
         choices: ['enable', 'disable']
         type: str
+    ssl_enable:
+        description:
+            - Active Directory SSL Status.
+        choices: ['enable', 'disable']
+        type: str
     name:
         description:
             - Secret Username.
@@ -137,6 +142,7 @@ class AD(object):
 def main():
     argument_spec = dict(
         enable=dict(type='str', required=False, choices=['enable', 'disable']),
+        ssl_enable=dict(type='str', required=False, choices=['enable', 'disable']),
         name=dict(type='str', required=False),
         code=dict(type='str', required=False),
         timeout=dict(type='int', required=False),

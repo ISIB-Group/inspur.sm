@@ -44,6 +44,7 @@ Synopsis
 
 - Set power status information on Inspur server.
 
+
 .. Aliases
 
 

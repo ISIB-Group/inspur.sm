@@ -44,6 +44,7 @@ Synopsis
 
 - Get KVM information on Inspur server.
 
+
 .. Aliases
 
 

@@ -44,6 +44,7 @@ Synopsis
 
 - Get Virtual Media information on Inspur server.
 
+
 .. Aliases
 
 

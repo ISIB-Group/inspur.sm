@@ -44,6 +44,7 @@ Synopsis
 
 - Set manual capture screen on Inspur server.
 
+
 .. Aliases
 
 

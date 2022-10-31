@@ -44,6 +44,7 @@ Synopsis
 
 - Set snmp on Inspur server.
 
+
 .. Aliases
 
 
@@ -113,6 +114,7 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Community of v1/v2c or v1get/v1set/v2cget/v2cset.</div>
+                                            <div>Only the M5 models support this feature.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -248,6 +250,38 @@ Parameters
                     
                                 <tr>
                                                                 <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-read_community"></div>
+                    <b>read_community</b>
+                    <a class="ansibleOptionLink" href="#parameter-read_community" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Read Only Community,Community should between 1 and 16 characters.</div>
+                                            <div>Only the M6 models support this feature.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-read_write_community"></div>
+                    <b>read_write_community</b>
+                    <a class="ansibleOptionLink" href="#parameter-read_write_community" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Read And Write Community,Community should between 1 and 16 characters.</div>
+                                            <div>Only the M6 models support this feature.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-snmp_status"></div>
                     <b>snmp_status</b>
                     <a class="ansibleOptionLink" href="#parameter-snmp_status" title="Permalink to this option"></a>
@@ -260,6 +294,7 @@ Parameters
                                                                 <td>
                                             <div>NMP read/write status of customize,</div>
                                             <div>the input parameters are &#x27;v1get&#x27;, &#x27;v1set&#x27;, &#x27;v2cget&#x27;, &#x27;v2cset&#x27;, &#x27;v3get&#x27;, &#x27;v3set&#x27;,separated by commas,such as v1get,v1set,v2cget.</div>
+                                            <div>Only the M5 models support this feature.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -275,6 +310,63 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Configures the username to use to authenticate the connection to the remote device. If the value is not specified in the task, the value of environment variable <code>ANSIBLE_NET_USERNAME</code> will be used instead.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-v1status"></div>
+                    <b>v1status</b>
+                    <a class="ansibleOptionLink" href="#parameter-v1status" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>SNMP V1 enable.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-v2status"></div>
+                    <b>v2status</b>
+                    <a class="ansibleOptionLink" href="#parameter-v2status" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>SNMP V2 enable.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-v3status"></div>
+                    <b>v3status</b>
+                    <a class="ansibleOptionLink" href="#parameter-v3status" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>SNMP V3 enable.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -312,6 +404,7 @@ Parameters
                                                                             </td>
                                                                 <td>
                                             <div>SNMP trap version option, 0 - &#x27;v1&#x27;, 1 - &#x27;v2c&#x27;, 2 - &#x27;v3&#x27;, 3 - &#x27;all&#x27;, 4 - &#x27;customize&#x27;.</div>
+                                            <div>Only the M5 models support this feature.</div>
                                                         </td>
             </tr>
                         </table>

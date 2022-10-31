@@ -44,6 +44,7 @@ Synopsis
 
 - Get server status information on Inspur server.
 
+
 .. Aliases
 
 

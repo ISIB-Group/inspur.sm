@@ -44,6 +44,7 @@ Synopsis
 
 - Set ncsi information on Inspur server.
 
+
 .. Aliases
 
 
@@ -73,9 +74,15 @@ Parameters
                                                                     </div>
                                                         </td>
                                 <td>
-                                                                                                                                                            </td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>0</li>
+                                                                                                                                                                                                <li>1</li>
+                                                                                                                                                                                                <li>2</li>
+                                                                                                                                                                                                <li>3</li>
+                                                                                    </ul>
+                                                                            </td>
                                                                 <td>
-                                            <div>Channel number, like 0,1,2...</div>
+                                            <div>Channel number.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -106,6 +113,7 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Interface name, for example eth0.</div>
+                                            <div>Only the M5 model supports this parameter.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -121,10 +129,12 @@ Parameters
                                                                                                                             <ul style="margin: 0; padding: 0"><b>Choices:</b>
                                                                                                                                                                 <li>auto</li>
                                                                                                                                                                                                 <li>manual</li>
+                                                                                                                                                                                                <li>Disable</li>
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
                                             <div>NCSI mode, auto-Auto Failover,  manual-Manual Switch.</div>
+                                            <div>Only M6 model supports <code>Disable</code> Settings</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -142,10 +152,13 @@ Parameters
                                                                                                                                                                                                 <li>OCP</li>
                                                                                                                                                                                                 <li>PCIE</li>
                                                                                                                                                                                                 <li>auto</li>
+                                                                                                                                                                                                <li>Disable</li>
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
                                             <div>Nic type.</div>
+                                            <div>Only NF3280A6 and NF3180A6 model supports <code>Disable</code> Settings, but not support <code>PHY</code> Settings.</div>
+                                            <div>M6 model only support <code>OCP</code>,<code>PCIE</code> settings.</div>
                                                         </td>
             </tr>
                                 <tr>

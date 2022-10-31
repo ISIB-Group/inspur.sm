@@ -44,6 +44,7 @@ Synopsis
 
 - Collect logs on Inspur server,it takes about 5 minutes.
 
+
 .. Aliases
 
 

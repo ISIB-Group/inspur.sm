@@ -44,6 +44,7 @@ Synopsis
 
 - Get NTP information on Inspur server.
 
+
 .. Aliases
 
 

@@ -44,6 +44,7 @@ Synopsis
 
 - Get CPU information on Inspur server.
 
+
 .. Aliases
 
 

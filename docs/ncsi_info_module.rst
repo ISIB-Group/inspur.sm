@@ -44,6 +44,7 @@ Synopsis
 
 - Get ncsi information on Inspur server.
 
+
 .. Aliases
 
 

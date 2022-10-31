@@ -44,6 +44,7 @@ Synopsis
 
 - Get psu information on Inspur server.
 
+
 .. Aliases
 
 

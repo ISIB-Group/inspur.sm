@@ -44,6 +44,7 @@ Synopsis
 
 - Get event log information on Inspur server.
 
+
 .. Aliases
 
 

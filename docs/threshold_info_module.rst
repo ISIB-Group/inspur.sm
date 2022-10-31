@@ -44,6 +44,7 @@ Synopsis
 
 - Get threshold information on Inspur server.
 
+
 .. Aliases
 
 

@@ -44,6 +44,7 @@ Synopsis
 
 - Set physical disk on Inspur server.
 
+
 .. Aliases
 
 
@@ -115,6 +116,23 @@ Parameters
                                                                 <td>
                                             <div>physical drive id.</div>
                                             <div>Required when <em>Info=None</em>.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-duration"></div>
+                    <b>duration</b>
+                    <a class="ansibleOptionLink" href="#parameter-duration" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">integer</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>duration range is 1-255,physical drive under PMC raid controller.</div>
+                                            <div>Required when <em>option=LOC</em>.</div>
+                                            <div>Only the M6 model supports this parameter.</div>
                                                         </td>
             </tr>
                                 <tr>

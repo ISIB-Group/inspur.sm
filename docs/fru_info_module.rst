@@ -44,6 +44,7 @@ Synopsis
 
 - Get fru information on Inspur server.
 
+
 .. Aliases
 
 

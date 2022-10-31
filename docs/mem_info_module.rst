@@ -44,6 +44,7 @@ Synopsis
 
 - Get memory information on Inspur server.
 
+
 .. Aliases
 
 

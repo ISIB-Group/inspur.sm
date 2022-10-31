@@ -44,6 +44,7 @@ Synopsis
 
 - Get alert policy on Inspur server.
 
+
 .. Aliases
 
 

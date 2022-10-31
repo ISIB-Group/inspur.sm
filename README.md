@@ -1,6 +1,7 @@
 # inspur sm Collection
 
 This repo contains the `inspur.sm` Ansible Collection. Inspur server supports ansible management device,Basic management of the server based on restful interface.
+Collections functionality will migrate to the [inspur.ispim](https://galaxy.ansible.com/inspur/ispim) collection, head over to the new collection.
 
 ## Tested with Ansible
 
@@ -20,7 +21,7 @@ Thes modules require the following to be installed on the control node:
 
 * Python 3.7 or later
 * [Ansible](http://www.ansible.com) 2.10 or later
-* [Inspur support] [inspursmsdk](https://github.com/ISIB-Group/inspursmsdk)
+* [Inspur support] [inspursmsdk](https://github.com/ISIB-Group/inspursmsdk) 1.5.0 or later
 
 ## Included content
 

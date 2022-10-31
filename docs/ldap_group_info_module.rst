@@ -44,6 +44,7 @@ Synopsis
 
 - Get ldap group information on Inspur server.
 
+
 .. Aliases
 
 

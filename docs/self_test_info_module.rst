@@ -44,6 +44,7 @@ Synopsis
 
 - Get self test information on Inspur server.
 
+
 .. Aliases
 
 

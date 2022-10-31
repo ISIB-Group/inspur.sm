@@ -44,6 +44,7 @@ Synopsis
 
 - Get firmware version information on Inspur server.
 
+
 .. Aliases
 
 

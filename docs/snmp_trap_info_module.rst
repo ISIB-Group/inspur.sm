@@ -44,6 +44,7 @@ Synopsis
 
 - Get snmp trap information on Inspur server.
 
+
 .. Aliases
 
 
