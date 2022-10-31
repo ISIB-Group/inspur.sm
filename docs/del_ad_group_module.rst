@@ -49,6 +49,7 @@ Synopsis
 
 - Delete active directory group information on Inspur server.
 
+
 .. Aliases
 
 

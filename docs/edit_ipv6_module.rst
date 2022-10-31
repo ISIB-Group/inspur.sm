@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_ipv6 -- Set ipv6 information.
-++++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.edit_ipv6 -- Set ipv6 information
++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.edit_ipv6 -- Set ipv6 information.
 
 .. version_added
 
-.. versionadded:: 0.1.0 of inspur.sm
+.. versionadded:: 1.0.0 of inspur.ispim
 
 .. contents::
    :local:
@@ -44,10 +44,18 @@ Synopsis
 
 - Set ipv6 information on Inspur server.
 
+
 .. Aliases
 
 
 .. Requirements
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- Python 3.7+
+- inspursmsdk
 
 
 .. Options
@@ -299,6 +307,11 @@ Parameters
 
 .. Notes
 
+Notes
+-----
+
+.. note::
+   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -324,20 +337,20 @@ Examples
       tasks:
 
       - name: "Set ipv6 information"
-        inspur.sm.edit_ipv6:
+        inspur.ispim.edit_ipv6:
           interface_name: "eth0"
           ipv6_status: "disable"
           provider: "{{ ism }}"
 
       - name: "Set ipv6 information"
-        inspur.sm.edit_ipv6:
+        inspur.ispim.edit_ipv6:
           interface_name: "eth0"
           ipv6_status: "enable"
           ipv6_dhcp_enable: "dhcp"
           provider: "{{ ism }}"
 
       - name: "Set ipv6 information"
-        inspur.sm.edit_ipv6:
+        inspur.ispim.edit_ipv6:
           interface_name: "eth0"
           ipv6_status: "enable"
           ipv6_dhcp_enable: "static"
@@ -423,7 +436,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ISIB-group)
+- WangBaoshan (@ispim)
 
 
 

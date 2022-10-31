@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.download_auto_screenshot -- Download auto screenshots.
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.download_auto_screenshot -- Download auto screenshots
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.download_auto_screenshot -- Download auto screenshots.
 
 .. version_added
 
-.. versionadded:: 0.1.0 of inspur.sm
+.. versionadded:: 1.0.0 of inspur.ispim
 
 .. contents::
    :local:
@@ -44,10 +44,18 @@ Synopsis
 
 - Download auto screenshots on Inspur server.
 
+
 .. Aliases
 
 
 .. Requirements
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- Python 3.7+
+- inspursmsdk
 
 
 .. Options
@@ -192,6 +200,11 @@ Parameters
 
 .. Notes
 
+Notes
+-----
+
+.. note::
+   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -217,7 +230,7 @@ Examples
       tasks:
 
       - name: "Download auto screenshots"
-        inspur.sm.download_auto_screenshot:
+        inspur.ispim.download_auto_screenshot:
           file_url: "/home/wbs/screen"
           provider: "{{ ism }}"
 
@@ -297,7 +310,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ISIB-group)
+- WangBaoshan (@ispim)
 
 
 

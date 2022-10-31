@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.clear_system_log -- Clear BMC system log.
-+++++++++++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.clear_system_log -- Clear BMC system log
+++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.clear_system_log -- Clear BMC system log.
 
 .. version_added
 
-.. versionadded:: 0.1.0 of inspur.sm
+.. versionadded:: 1.0.0 of inspur.ispim
 
 .. contents::
    :local:
@@ -44,10 +44,18 @@ Synopsis
 
 - Clear BMC system log on Inspur server.
 
+
 .. Aliases
 
 
 .. Requirements
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- Python 3.7+
+- inspursmsdk
 
 
 .. Options
@@ -203,6 +211,11 @@ Parameters
 
 .. Notes
 
+Notes
+-----
+
+.. note::
+   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -228,12 +241,12 @@ Examples
       tasks:
 
       - name: "Clear BMC system log"
-        inspur.sm.clear_system_log:
+        inspur.ispim.clear_system_log:
           level: "alert"
           provider: "{{ ism }}"
 
       - name: "Clear BMC system log"
-        inspur.sm.clear_system_log:
+        inspur.ispim.clear_system_log:
           level: "all"
           provider: "{{ ism }}"
 
@@ -313,7 +326,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ISIB-group)
+- WangBaoshan (@ispim)
 
 
 

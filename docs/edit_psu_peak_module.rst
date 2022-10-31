@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_psu_peak -- Set psu peak information.
-++++++++++++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.edit_psu_peak -- Set psu peak information
++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.edit_psu_peak -- Set psu peak information.
 
 .. version_added
 
-.. versionadded:: 0.1.0 of inspur.sm
+.. versionadded:: 1.0.0 of inspur.ispim
 
 .. contents::
    :local:
@@ -44,10 +44,18 @@ Synopsis
 
 - Set psu peak information on Inspur server.
 
+
 .. Aliases
 
 
 .. Requirements
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- Python 3.7+
+- inspursmsdk
 
 
 .. Options
@@ -211,6 +219,11 @@ Parameters
 
 .. Notes
 
+Notes
+-----
+
+.. note::
+   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -236,12 +249,12 @@ Examples
       tasks:
 
       - name: "Set psu peak information"
-        inspur.sm.edit_psu_peak:
+        inspur.ispim.edit_psu_peak:
           status: "disable"
           provider: "{{ ism }}"
 
       - name: "Set psu peak information"
-        inspur.sm.edit_psu_peak:
+        inspur.ispim.edit_psu_peak:
           status: "enable"
           time: 10
           provider: "{{ ism }}"
@@ -322,7 +335,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ISIB-group)
+- WangBaoshan (@ispim)
 
 
 

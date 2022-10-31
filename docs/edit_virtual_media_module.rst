@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_virtual_media -- Set virtual media.
-++++++++++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.edit_virtual_media -- Set virtual media
++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.edit_virtual_media -- Set virtual media.
 
 .. version_added
 
-.. versionadded:: 0.1.0 of inspur.sm
+.. versionadded:: 1.0.0 of inspur.ispim
 
 .. contents::
    :local:
@@ -44,10 +44,18 @@ Synopsis
 
 - Set virtual media on Inspur server.
 
+
 .. Aliases
 
 
 .. Requirements
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- Python 3.7+
+- inspursmsdk
 
 
 .. Options
@@ -115,6 +123,7 @@ Parameters
                                                                             </td>
                                                                 <td>
                                             <div>Whether to mount virtual media.</div>
+                                            <div>Only the M5 model supports this parameter.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -372,6 +381,11 @@ Parameters
 
 .. Notes
 
+Notes
+-----
+
+.. note::
+   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -398,14 +412,14 @@ Examples
       tasks:
 
       - name: "Set local media"
-        inspur.sm.edit_virtual_media:
+        inspur.ispim.edit_virtual_media:
           local_media_support: "Enable"
           provider: "{{ ism }}"
 
       - name: "Set remote media"
-        inspur.sm.edit_virtual_media:
+        inspur.ispim.edit_virtual_media:
           remote_media_support: "Enable"
-          mount_type: 0
+          mount_type: 'CD'
           same_settings: 0
           mount: "Enable"
           remote_server_address: "100.2.28.203"
@@ -489,7 +503,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ISIB-group)
+- WangBaoshan (@ispim)
 
 
 

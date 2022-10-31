@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_fru -- Set fru settings.
-+++++++++++++++++++++++++++++++++++++++
+inspur.sm.edit_fru -- Set fru settings
+++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.edit_fru -- Set fru settings.
 
 .. version_added
 
-.. versionadded:: 0.1.0 of inspur.sm
+.. versionadded:: 1.0.0 of inspur.ispim
 
 .. contents::
    :local:
@@ -44,10 +44,18 @@ Synopsis
 
 - Set fru settings on Inspur server.
 
+
 .. Aliases
 
 
 .. Requirements
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- Python 3.7+
+- inspursmsdk
 
 
 .. Options
@@ -224,6 +232,11 @@ Parameters
 
 .. Notes
 
+Notes
+-----
+
+.. note::
+   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -249,7 +262,7 @@ Examples
       tasks:
 
       - name: "Set Fru"
-        inspur.sm.edit_fru:
+        inspur.ispim.edit_fru:
           attribute: "CP"
           value: "Inspur"
           provider: "{{ ism }}"
@@ -331,7 +344,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ISIB-group)
+- WangBaoshan (@ispim)
 
 
 

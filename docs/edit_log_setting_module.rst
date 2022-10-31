@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_log_setting -- Set bmc system and audit log setting.
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.edit_log_setting -- Set bmc system and audit log setting
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.edit_log_setting -- Set bmc system and audit log setting.
 
 .. version_added
 
-.. versionadded:: 0.1.0 of inspur.sm
+.. versionadded:: 1.0.0 of inspur.ispim
 
 .. contents::
    :local:
@@ -43,11 +43,20 @@ Synopsis
 .. Description
 
 - Set bmc system and audit log setting on Inspur server.
+- Only the M5 models support this feature.
+
 
 .. Aliases
 
 
 .. Requirements
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- Python 3.7+
+- inspursmsdk
 
 
 .. Options
@@ -338,6 +347,11 @@ Parameters
 
 .. Notes
 
+Notes
+-----
+
+.. note::
+   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -363,13 +377,13 @@ Examples
       tasks:
 
       - name: "Edit bmc system log setting"
-        inspur.sm.edit_log_setting:
+        inspur.ispim.edit_log_setting:
           status: "enable"
           type: "both"
           provider: "{{ ism }}"
 
       - name: "Edit bmc audit log setting"
-        inspur.sm.edit_log_setting:
+        inspur.ispim.edit_log_setting:
           audit_status: "enable"
           audit_type: "remote"
           server_addr: "100.2.126.11"
@@ -452,7 +466,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ISIB-group)
+- WangBaoshan (@ispim)
 
 
 

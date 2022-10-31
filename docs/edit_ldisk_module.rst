@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_ldisk -- Set logical disk.
-+++++++++++++++++++++++++++++++++++++++++
+inspur.sm.edit_ldisk -- Set logical disk
+++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.edit_ldisk -- Set logical disk.
 
 .. version_added
 
-.. versionadded:: 0.1.0 of inspur.sm
+.. versionadded:: 1.0.0 of inspur.ispim
 
 .. contents::
    :local:
@@ -44,10 +44,18 @@ Synopsis
 
 - Set logical disk on Inspur server.
 
+
 .. Aliases
 
 
 .. Requirements
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- Python 3.7+
+- inspursmsdk
 
 
 .. Options
@@ -77,6 +85,23 @@ Parameters
                                                                 <td>
                                             <div>Raid controller ID.</div>
                                             <div>Required when <em>Info=None</em>.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-duration"></div>
+                    <b>duration</b>
+                    <a class="ansibleOptionLink" href="#parameter-duration" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">integer</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>duration range is 1-255,physical drive under PMC raid controller.</div>
+                                            <div>Required when <em>option=LOC</em>.</div>
+                                            <div>Only the M6 model supports this parameter.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -254,6 +279,11 @@ Parameters
 
 .. Notes
 
+Notes
+-----
+
+.. note::
+   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -279,12 +309,12 @@ Examples
       tasks:
 
       - name: "Show ldisk information"
-        inspur.sm.edit_ldisk:
+        inspur.ispim.edit_ldisk:
           info: "show"
           provider: "{{ ism }}"
 
       - name: "Edit ldisk"
-        inspur.sm.edit_ldisk:
+        inspur.ispim.edit_ldisk:
           ctrl_id: 0
           ldisk_id: 1
           option: "LOC"
@@ -366,7 +396,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ISIB-group)
+- WangBaoshan (@ispim)
 
 
 

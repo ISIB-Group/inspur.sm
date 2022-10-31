@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_smtp -- Set SMTP information.
-++++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.edit_smtp -- Set SMTP information
++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.edit_smtp -- Set SMTP information.
 
 .. version_added
 
-.. versionadded:: 0.1.0 of inspur.sm
+.. versionadded:: 1.0.0 of inspur.ispim
 
 .. contents::
    :local:
@@ -45,10 +45,18 @@ Synopsis
 - Set SMTP information on Inspur server.
 - Only the M5 models support this feature.
 
+
 .. Aliases
 
 
 .. Requirements
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- Python 3.7+
+- inspursmsdk
 
 
 .. Options
@@ -443,6 +451,11 @@ Parameters
 
 .. Notes
 
+Notes
+-----
+
+.. note::
+   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -469,7 +482,7 @@ Examples
       tasks:
 
       - name: "Set smtp information"
-        inspur.sm.edit_smtp:
+        inspur.ispim.edit_smtp:
           interface: "eth0"
           email: "inspur@Inspur.com"
           primary_status: "enable"
@@ -479,7 +492,7 @@ Examples
           provider: "{{ ism }}"
 
       - name: "Set smtp information"
-        inspur.sm.edit_smtp:
+        inspur.ispim.edit_smtp:
           interface: "eth0"
           email: "inspur@Inspur.com"
           primary_status: "enable"
@@ -566,7 +579,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ISIB-group)
+- WangBaoshan (@ispim)
 
 
 

@@ -53,3 +53,251 @@ plugin_routing:
             deprecation:
                 removal_version: 3.0.0
                 warning_text: Use inspur.sm.user.
+        ad_group:
+            redirect: inspur.ispim.ad_group
+        ad_group_info:
+            redirect: inspur.ispim.ad_group_info
+        ad_info:
+            redirect: inspur.ispim.ad_info
+        adapter_info:
+            redirect: inspur.ispim.adapter_info
+        add_ldisk:
+            redirect: inspur.ispim.add_ldisk
+        alert_policy_info:
+            redirect: inspur.ispim.alert_policy_info
+        audit_log_info:
+            redirect: inspur.ispim.audit_log_info
+        auto_capture_info:
+            redirect: inspur.ispim.auto_capture_info
+        backplane_info:
+            redirect: inspur.ispim.backplane_info
+        backup:
+            redirect: inspur.ispim.backup
+        bios_export:
+            redirect: inspur.ispim.bios_export
+        bios_import:
+            redirect: inspur.ispim.bios_import
+        bios_info:
+            redirect: inspur.ispim.bios_info
+        bmc_info:
+            redirect: inspur.ispim.bmc_info
+        boot_image_info:
+            redirect: inspur.ispim.boot_image_info
+        boot_option_info:
+            redirect: inspur.ispim.boot_option_info
+        clear_audit_log:
+            redirect: inspur.ispim.clear_audit_log
+        clear_event_log:
+            redirect: inspur.ispim.clear_event_log
+        clear_system_log:
+            redirect: inspur.ispim.clear_system_log
+        collect_blackbox:
+            redirect: inspur.ispim.collect_blackbox
+        collect_log:
+            redirect: inspur.ispim.collect_log
+        connect_media_info:
+            redirect: inspur.ispim.connect_media_info
+        cpu_info:
+            redirect: inspur.ispim.cpu_info
+        del_session:
+            redirect: inspur.ispim.del_session
+        dns_info:
+            redirect: inspur.ispim.dns_info
+        download_auto_screenshot:
+            redirect: inspur.ispim.download_auto_screenshot
+        download_manual_screenshot:
+            redirect: inspur.ispim.download_manual_screenshot
+        edit_ad:
+            redirect: inspur.ispim.edit_ad
+        edit_alert_policy:
+            redirect: inspur.ispim.edit_alert_policy
+        edit_auto_capture:
+            redirect: inspur.ispim.edit_auto_capture
+        edit_bios:
+            redirect: inspur.ispim.edit_bios
+        edit_boot_image:
+            redirect: inspur.ispim.edit_boot_image
+        edit_boot_option:
+            redirect: inspur.ispim.edit_boot_option
+        edit_connect_media:
+            redirect: inspur.ispim.edit_connect_media
+        edit_dns:
+            redirect: inspur.ispim.edit_dns
+        edit_event_log_policy:
+            redirect: inspur.ispim.edit_event_log_policy
+        edit_fan:
+            redirect: inspur.ispim.edit_fan
+        edit_fru:
+            redirect: inspur.ispim.edit_fru
+        edit_ipv4:
+            redirect: inspur.ispim.edit_ipv4
+        edit_ipv6:
+            redirect: inspur.ispim.edit_ipv6
+        edit_kvm:
+            redirect: inspur.ispim.edit_kvm
+        edit_ldap:
+            redirect: inspur.ispim.edit_ldap
+        edit_ldisk:
+            redirect: inspur.ispim.edit_ldisk
+        edit_log_setting:
+            redirect: inspur.ispim.edit_log_setting
+        edit_manual_capture:
+            redirect: inspur.ispim.edit_manual_capture
+        edit_media_instance:
+            redirect: inspur.ispim.edit_media_instance
+        edit_ncsi:
+            redirect: inspur.ispim.edit_ncsi
+        edit_network:
+            redirect: inspur.ispim.edit_network
+        edit_network_bond:
+            redirect: inspur.ispim.edit_network_bond
+        edit_network_link:
+            redirect: inspur.ispim.edit_network_link
+        edit_ntp:
+            redirect: inspur.ispim.edit_ntp
+        edit_pdisk:
+            redirect: inspur.ispim.edit_pdisk
+        edit_power_budget:
+            redirect: inspur.ispim.edit_power_budget
+        edit_power_restore:
+            redirect: inspur.ispim.edit_power_restore
+        edit_power_status:
+            redirect: inspur.ispim.edit_power_status
+        edit_preserve_config:
+            redirect: inspur.ispim.edit_preserve_config
+        edit_psu_config:
+            redirect: inspur.ispim.edit_psu_config
+        edit_psu_peak:
+            redirect: inspur.ispim.edit_psu_peak
+        edit_restore_factory_default:
+            redirect: inspur.ispim.edit_restore_factory_default
+        edit_service:
+            redirect: inspur.ispim.edit_service
+        edit_smtp:
+            redirect: inspur.ispim.edit_smtp
+        edit_smtp_com:
+            redirect: inspur.ispim.edit_smtp_com
+        edit_smtp_dest:
+            redirect: inspur.ispim.edit_smtp_dest
+        edit_snmp:
+            redirect: inspur.ispim.edit_snmp
+        edit_snmp_trap:
+            redirect: inspur.ispim.edit_snmp_trap
+        edit_threshold:
+            redirect: inspur.ispim.edit_threshold
+        edit_uid:
+            redirect: inspur.ispim.edit_uid
+        edit_virtual_media:
+            redirect: inspur.ispim.edit_virtual_media
+        edit_vlan:
+            redirect: inspur.ispim.edit_vlan
+        event_log_info:
+            redirect: inspur.ispim.event_log_info
+        event_log_policy_info:
+            redirect: inspur.ispim.event_log_policy_info
+        fan_info:
+            redirect: inspur.ispim.fan_info
+        fru_info:
+            redirect: inspur.ispim.fru_info
+        fw_version_info:
+            redirect: inspur.ispim.fw_version_info
+        gpu_info:
+            redirect: inspur.ispim.gpu_info
+        hard_disk_info:
+            redirect: inspur.ispim.hard_disk_info
+        kvm_info:
+            redirect: inspur.ispim.kvm_info
+        ldap_group:
+            redirect: inspur.ispim.ldap_group
+        ldap_group_info:
+            redirect: inspur.ispim.ldap_group_info
+        ldap_info:
+            redirect: inspur.ispim.ldap_info
+        ldisk_info:
+            redirect: inspur.ispim.ldisk_info
+        log_setting_info:
+            redirect: inspur.ispim.log_setting_info
+        media_instance_info:
+            redirect: inspur.ispim.media_instance_info
+        mem_info:
+            redirect: inspur.ispim.mem_info
+        ncsi_info:
+            redirect: inspur.ispim.ncsi_info
+        network_bond_info:
+            redirect: inspur.ispim.network_bond_info
+        network_info:
+            redirect: inspur.ispim.network_info
+        network_link_info:
+            redirect: inspur.ispim.network_link_info
+        ntp_info:
+            redirect: inspur.ispim.ntp_info
+        onboard_disk_info:
+            redirect: inspur.ispim.onboard_disk_info
+        pcie_info:
+            redirect: inspur.ispim.pcie_info
+        pdisk_info:
+            redirect: inspur.ispim.pdisk_info
+        power_budget_info:
+            redirect: inspur.ispim.power_budget_info
+        power_consumption_info:
+            redirect: inspur.ispim.power_consumption_info
+        power_restore_info:
+            redirect: inspur.ispim.power_restore_info
+        power_status_info:
+            redirect: inspur.ispim.power_status_info
+        preserve_config_info:
+            redirect: inspur.ispim.preserve_config_info
+        psu_config_info:
+            redirect: inspur.ispim.psu_config_info
+        psu_info:
+            redirect: inspur.ispim.psu_info
+        psu_peak_info:
+            redirect: inspur.ispim.psu_peak_info
+        raid_info:
+            redirect: inspur.ispim.raid_info
+        reset_bmc:
+            redirect: inspur.ispim.reset_bmc
+        reset_kvm:
+            redirect: inspur.ispim.reset_kvm
+        restore:
+            redirect: inspur.ispim.restore
+        self_test_info:
+            redirect: inspur.ispim.self_test_info
+        sensor_info:
+            redirect: inspur.ispim.sensor_info
+        server_info:
+            redirect: inspur.ispim.server_info
+        service_info:
+            redirect: inspur.ispim.service_info
+        session_info:
+            redirect: inspur.ispim.session_info
+        smtp_info:
+            redirect: inspur.ispim.smtp_info
+        snmp_info:
+            redirect: inspur.ispim.snmp_info
+        snmp_trap_info:
+            redirect: inspur.ispim.snmp_trap_info
+        system_log_info:
+            redirect: inspur.ispim.system_log_info
+        temp_info:
+            redirect: inspur.ispim.temp_info
+        threshold_info:
+            redirect: inspur.ispim.threshold_info
+        uid_info:
+            redirect: inspur.ispim.uid_info
+        update_cpld:
+            redirect: inspur.ispim.update_cpld
+        update_fw:
+            redirect: inspur.ispim.update_fw
+        user:
+            redirect: inspur.ispim.user
+        user_group:
+            redirect: inspur.ispim.user_group
+        user_group_info:
+            redirect: inspur.ispim.user_group_info
+        user_info:
+            redirect: inspur.ispim.user_info
+        virtual_media_info:
+            redirect: inspur.ispim.virtual_media_info
+        volt_info:
+            redirect: inspur.ispim.volt_info

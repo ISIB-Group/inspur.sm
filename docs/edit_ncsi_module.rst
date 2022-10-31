@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_ncsi -- Set ncsi information.
-++++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.edit_ncsi -- Set ncsi information
++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.edit_ncsi -- Set ncsi information.
 
 .. version_added
 
-.. versionadded:: 0.1.0 of inspur.sm
+.. versionadded:: 1.0.0 of inspur.ispim
 
 .. contents::
    :local:
@@ -44,10 +44,18 @@ Synopsis
 
 - Set ncsi information on Inspur server.
 
+
 .. Aliases
 
 
 .. Requirements
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- Python 3.7+
+- inspursmsdk
 
 
 .. Options
@@ -73,9 +81,15 @@ Parameters
                                                                     </div>
                                                         </td>
                                 <td>
-                                                                                                                                                            </td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>0</li>
+                                                                                                                                                                                                <li>1</li>
+                                                                                                                                                                                                <li>2</li>
+                                                                                                                                                                                                <li>3</li>
+                                                                                    </ul>
+                                                                            </td>
                                                                 <td>
-                                            <div>Channel number, like 0,1,2...</div>
+                                            <div>Channel number.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -106,6 +120,7 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Interface name, for example eth0.</div>
+                                            <div>Only the M5 model supports this parameter.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -121,10 +136,12 @@ Parameters
                                                                                                                             <ul style="margin: 0; padding: 0"><b>Choices:</b>
                                                                                                                                                                 <li>auto</li>
                                                                                                                                                                                                 <li>manual</li>
+                                                                                                                                                                                                <li>Disable</li>
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
                                             <div>NCSI mode, auto-Auto Failover,  manual-Manual Switch.</div>
+                                            <div>Only M6 model supports <code>Disable</code> Settings</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -142,10 +159,13 @@ Parameters
                                                                                                                                                                                                 <li>OCP</li>
                                                                                                                                                                                                 <li>PCIE</li>
                                                                                                                                                                                                 <li>auto</li>
+                                                                                                                                                                                                <li>Disable</li>
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
                                             <div>Nic type.</div>
+                                            <div>Only NF3280A6 and NF3180A6 model supports <code>Disable</code> Settings, but not support <code>PHY</code> Settings.</div>
+                                            <div>M6 model only support <code>OCP</code>,<code>PCIE</code> settings.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -247,6 +267,11 @@ Parameters
 
 .. Notes
 
+Notes
+-----
+
+.. note::
+   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -272,7 +297,7 @@ Examples
       tasks:
 
       - name: "Set ncsi information"
-        inspur.sm.edit_ncsi:
+        inspur.ispim.edit_ncsi:
           mode: "manual"
           nic_type: "PCIE"
           interface_name: "eth0"
@@ -355,7 +380,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ISIB-group)
+- WangBaoshan (@ispim)
 
 
 

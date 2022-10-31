@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_network_bond -- Set network bond.
-++++++++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.edit_network_bond -- Set network bond
++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.edit_network_bond -- Set network bond.
 
 .. version_added
 
-.. versionadded:: 0.1.0 of inspur.sm
+.. versionadded:: 1.0.0 of inspur.ispim
 
 .. contents::
    :local:
@@ -44,10 +44,18 @@ Synopsis
 
 - Set network bond on Inspur server.
 
+
 .. Aliases
 
 
 .. Requirements
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- Python 3.7+
+- inspursmsdk
 
 
 .. Options
@@ -235,6 +243,11 @@ Parameters
 
 .. Notes
 
+Notes
+-----
+
+.. note::
+   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -260,7 +273,7 @@ Examples
       tasks:
 
       - name: "Set network bond"
-        inspur.sm.edit_network_bond:
+        inspur.ispim.edit_network_bond:
           bond: "enable"
           interface: "dedicated"
           auto_config: "enable"
@@ -342,7 +355,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ISIB-group)
+- WangBaoshan (@ispim)
 
 
 

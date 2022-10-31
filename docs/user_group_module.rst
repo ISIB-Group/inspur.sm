@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.user_group -- Manage user group.
-++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.user_group -- Manage user group
++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.user_group -- Manage user group.
 
 .. version_added
 
-.. versionadded:: 1.1.0 of inspur.sm
+.. versionadded:: 1.0.0 of inspur.ispim
 
 .. contents::
    :local:
@@ -44,10 +44,18 @@ Synopsis
 
 - Manage user group on Inspur server.
 
+
 .. Aliases
 
 
 .. Requirements
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- Python 3.7+
+- inspursmsdk
 
 
 .. Options
@@ -65,6 +73,48 @@ Parameters
         </tr>
                     <tr>
                                                                 <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-debug"></div>
+                    <b>debug</b>
+                    <a class="ansibleOptionLink" href="#parameter-debug" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Debug diagnose privilege.</div>
+                                            <div>Required when <em>state=present</em>.</div>
+                                            <div>Only the M6 model supports this parameter.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-general"></div>
+                    <b>general</b>
+                    <a class="ansibleOptionLink" href="#parameter-general" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>General configuration privilege.</div>
+                                            <div>Required when <em>state=present</em>.</div>
+                                            <div>Only the M6 model supports this parameter.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-host"></div>
                     <b>host</b>
                     <a class="ansibleOptionLink" href="#parameter-host" title="Permalink to this option"></a>
@@ -80,6 +130,48 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-kvm"></div>
+                    <b>kvm</b>
+                    <a class="ansibleOptionLink" href="#parameter-kvm" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Remote KVM configuration privilege.</div>
+                                            <div>Required when <em>state=present</em>.</div>
+                                            <div>Only the M6 model supports this parameter.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-media"></div>
+                    <b>media</b>
+                    <a class="ansibleOptionLink" href="#parameter-media" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Remote media configuration privilege.</div>
+                                            <div>Required when <em>state=present</em>.</div>
+                                            <div>Only the M6 model supports this parameter.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-name"></div>
                     <b>name</b>
                     <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
@@ -91,6 +183,7 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Group name.</div>
+                                            <div>The range of group name  for M6 model is OEM1,OEM2,OEM3,OEM4.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -106,6 +199,27 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Specifies the password to use to authenticate the connection to the remote device. If the value is not specified in the task, the value of environment variable <code>ANSIBLE_NET_PASSWORD</code> will be used instead.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-power"></div>
+                    <b>power</b>
+                    <a class="ansibleOptionLink" href="#parameter-power" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Power control privilege.</div>
+                                            <div>Required when <em>state=present</em>.</div>
+                                            <div>Only the M6 model supports this parameter.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -129,6 +243,7 @@ Parameters
                                                                 <td>
                                             <div>Group privilege.</div>
                                             <div>Required when <em>state=present</em>.</div>
+                                            <div>Only the M5 model supports this parameter.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -197,6 +312,48 @@ Parameters
                     
                                 <tr>
                                                                 <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-security"></div>
+                    <b>security</b>
+                    <a class="ansibleOptionLink" href="#parameter-security" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Security configuration privilege.</div>
+                                            <div>Required when <em>state=present</em>.</div>
+                                            <div>Only the M6 model supports this parameter.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-self"></div>
+                    <b>self</b>
+                    <a class="ansibleOptionLink" href="#parameter-self" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Itself configuration privilege.</div>
+                                            <div>Required when <em>state=present</em>.</div>
+                                            <div>Only the M6 model supports this parameter.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-state"></div>
                     <b>state</b>
                     <a class="ansibleOptionLink" href="#parameter-state" title="Permalink to this option"></a>
@@ -234,6 +391,11 @@ Parameters
 
 .. Notes
 
+Notes
+-----
+
+.. note::
+   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -259,21 +421,29 @@ Examples
       tasks:
 
       - name: "Add user group"
-        inspur.sm.user_group:
+        inspur.ispim.user_group:
           state: "present"
           name: "test"
           pri: "administrator"
           provider: "{{ ism }}"
 
       - name: "Set user group"
-        inspur.sm.user_group:
+        inspur.ispim.user_group:
           state: "present"
           name: "test"
           pri: "user"
           provider: "{{ ism }}"
 
+      - name: "Set m6 user group"
+        inspur.ispim.user_group:
+          state: "present"
+          name: "OEM1"
+          general: "enable"
+          kvm: "enable"
+          provider: "{{ ism }}"
+
       - name: "Delete user group"
-        inspur.sm.user_group:
+        inspur.ispim.user_group:
           state: "absent"
           name: "test"
           provider: "{{ ism }}"
@@ -354,7 +524,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ISIB-group)
+- WangBaoshan (@ispim)
 
 
 

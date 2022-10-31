@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_ad -- Set active directory information.
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.edit_ad -- Set active directory information
++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.edit_ad -- Set active directory information.
 
 .. version_added
 
-.. versionadded:: 0.1.0 of inspur.sm
+.. versionadded:: 1.0.0 of inspur.ispim
 
 .. contents::
    :local:
@@ -44,10 +44,18 @@ Synopsis
 
 - Set active directory information on Inspur server.
 
+
 .. Aliases
 
 
 .. Requirements
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- Python 3.7+
+- inspursmsdk
 
 
 .. Options
@@ -268,6 +276,25 @@ Parameters
                     
                                 <tr>
                                                                 <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-ssl_enable"></div>
+                    <b>ssl_enable</b>
+                    <a class="ansibleOptionLink" href="#parameter-ssl_enable" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                            <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>enable</li>
+                                                                                                                                                                                                <li>disable</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Active Directory SSL Status.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-timeout"></div>
                     <b>timeout</b>
                     <a class="ansibleOptionLink" href="#parameter-timeout" title="Permalink to this option"></a>
@@ -279,6 +306,7 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>The Time Out configuration(15-300).</div>
+                                            <div>Only the M5 model supports this parameter.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -301,6 +329,11 @@ Parameters
 
 .. Notes
 
+Notes
+-----
+
+.. note::
+   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -326,12 +359,12 @@ Examples
       tasks:
 
       - name: "Set active directory information"
-        inspur.sm.edit_ad:
+        inspur.ispim.edit_ad:
           enable: "disable"
           provider: "{{ ism }}"
 
       - name: "Set active directory information"
-        inspur.sm.edit_ad:
+        inspur.ispim.edit_ad:
           enable: "enable"
           name: "inspur"
           code: "123456"
@@ -418,7 +451,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ISIB-group)
+- WangBaoshan (@ispim)
 
 
 

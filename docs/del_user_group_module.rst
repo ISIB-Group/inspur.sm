@@ -49,6 +49,7 @@ Synopsis
 
 - Delete user group on Inspur server.
 
+
 .. Aliases
 
 

@@ -21,20 +21,25 @@ options:
     nic_type:
         description:
             - Nic type.
-        choices: ['PHY', 'OCP', 'PCIE', 'auto']
+            - Only NF3280A6 and NF3180A6 model supports C(Disable) Settings, but not support C(PHY) Settings.
+            - M6 model only support C(OCP),C(PCIE) settings.
+        choices: ['PHY', 'OCP', 'PCIE', 'auto', 'Disable']
         type: str
     mode:
         description:
             - NCSI mode, auto-Auto Failover,  manual-Manual Switch.
-        choices: ['auto', 'manual']
+            - Only M6 model supports C(Disable) Settings
+        choices: ['auto', 'manual', 'Disable']
         type: str
     interface_name:
         description:
             - Interface name, for example eth0.
+            - Only the M5 model supports this parameter.
         type: str
     channel_number:
         description:
-            - Channel number, like 0,1,2...
+            - Channel number.
+        choices: [0, 1, 2, 3]
         type: int
 extends_documentation_fragment:
     - inspur.sm.ism
@@ -112,10 +117,10 @@ class NCSI(object):
 
 def main():
     argument_spec = dict(
-        nic_type=dict(type='str', required=False, choices=['PHY', 'OCP', 'PCIE', 'auto']),
-        mode=dict(type='str', required=False, choices=['auto', 'manual']),
+        nic_type=dict(type='str', required=False, choices=['PHY', 'OCP', 'PCIE', 'auto', 'Disable']),
+        mode=dict(type='str', required=False, choices=['auto', 'manual', 'Disable']),
         interface_name=dict(type='str', required=False),
-        channel_number=dict(type='int', required=False),
+        channel_number=dict(type='int', required=False, choices=[0, 1, 2, 3]),
     )
     argument_spec.update(ism_argument_spec)
     ncsi_obj = NCSI(argument_spec)

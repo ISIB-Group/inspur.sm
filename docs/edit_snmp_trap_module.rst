@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_snmp_trap -- Set snmp trap.
-++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.edit_snmp_trap -- Set snmp trap
++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.edit_snmp_trap -- Set snmp trap.
 
 .. version_added
 
-.. versionadded:: 0.1.0 of inspur.sm
+.. versionadded:: 1.0.0 of inspur.ispim
 
 .. contents::
    :local:
@@ -44,10 +44,18 @@ Synopsis
 
 - Set snmp trap on Inspur server.
 
+
 .. Aliases
 
 
 .. Requirements
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- Python 3.7+
+- inspursmsdk
 
 
 .. Options
@@ -432,18 +440,20 @@ Parameters
                     <b>version</b>
                     <a class="ansibleOptionLink" href="#parameter-version" title="Permalink to this option"></a>
                     <div style="font-size: small">
-                        <span style="color: purple">string</span>
+                        <span style="color: purple">integer</span>
                                                                     </div>
                                                         </td>
                                 <td>
                                                                                                                             <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>1</li>
-                                                                                                                                                                                                <li>2c</li>
+                                                                                                                                                                <li>0</li>
+                                                                                                                                                                                                <li>1</li>
+                                                                                                                                                                                                <li>2</li>
                                                                                                                                                                                                 <li>3</li>
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
                                             <div>SNMP trap version.</div>
+                                            <div>Only the M6 model supports <code>0</code> Settings.</div>
                                                         </td>
             </tr>
                         </table>
@@ -451,6 +461,11 @@ Parameters
 
 .. Notes
 
+Notes
+-----
+
+.. note::
+   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -477,16 +492,16 @@ Examples
       tasks:
 
       - name: "Set snmp trap v2c"
-        inspur.sm.edit_snmp_trap:
-          version: "2c"
+        inspur.ispim.edit_snmp_trap:
+          version: 2
           event_severity: "warning"
           inspur: "test"
           system_name: "Inspur"
           provider: "{{ ism }}"
 
       - name: "Set snmp trap v3"
-        inspur.sm.edit_snmp_trap:
-          version: "3"
+        inspur.ispim.edit_snmp_trap:
+          version: 3
           event_severity: "all"
           v3username: "Inspur"
           engine_id: "1234567890"
@@ -573,7 +588,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ISIB-group)
+- WangBaoshan (@ispim)
 
 
 

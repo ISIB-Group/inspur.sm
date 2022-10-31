@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.restore -- Restore server settings.
-+++++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.restore -- Restore server settings
+++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.restore -- Restore server settings.
 
 .. version_added
 
-.. versionadded:: 0.1.0 of inspur.sm
+.. versionadded:: 1.0.0 of inspur.ispim
 
 .. contents::
    :local:
@@ -44,10 +44,18 @@ Synopsis
 
 - Restore server settings on Inspur server.
 
+
 .. Aliases
 
 
 .. Requirements
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- Python 3.7+
+- inspursmsdk
 
 
 .. Options
@@ -221,6 +229,11 @@ Parameters
 
 .. Notes
 
+Notes
+-----
+
+.. note::
+   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -246,7 +259,7 @@ Examples
       tasks:
 
       - name: "Restore server settings"
-        inspur.sm.restore:
+        inspur.ispim.restore:
           bak_file: "/home/wbs/backfile"
           item: "all"
           provider: "{{ ism }}"
@@ -327,7 +340,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ISIB-group)
+- WangBaoshan (@ispim)
 
 
 
