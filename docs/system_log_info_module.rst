@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.system_log_info -- Get BMC system log information
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.system_log_info -- Get BMC system log information.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.system_log_info -- Get BMC system log information
 
 .. version_added
 
-.. versionadded:: 1.0.0 of inspur.ispim
+.. versionadded:: 0.1.0 of inspur.sm
 
 .. contents::
    :local:
@@ -49,13 +49,6 @@ Synopsis
 
 
 .. Requirements
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- Python 3.7+
-- inspursmsdk
 
 
 .. Options
@@ -255,11 +248,6 @@ Parameters
 
 .. Notes
 
-Notes
------
-
-.. note::
-   - Supports ``check_mode``.
 
 .. Seealso
 
@@ -285,18 +273,18 @@ Examples
       tasks:
 
       - name: "Get bmc system log information"
-        inspur.ispim.system_log_info:
+        inspur.sm.system_log_info:
           level: "alert"
           log_time: "2020-06-01T12:30+08:00"
           provider: "{{ ism }}"
 
       - name: "Get bmc system log information"
-        inspur.ispim.system_log_info:
+        inspur.sm.system_log_info:
           count: 30
           provider: "{{ ism }}"
 
       - name: "Get bmc system log information"
-        inspur.ispim.system_log_info:
+        inspur.sm.system_log_info:
           system_file: "/home/wbs/wbs.log"
           provider: "{{ ism }}"
 
@@ -376,7 +364,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ispim)
+- WangBaoshan (@ISIB-group)
 
 
 

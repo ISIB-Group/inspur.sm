@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.collect_log -- Collect logs
-+++++++++++++++++++++++++++++++++++++
+inspur.sm.collect_log -- Collect logs.
+++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.collect_log -- Collect logs
 
 .. version_added
 
-.. versionadded:: 1.0.0 of inspur.ispim
+.. versionadded:: 0.1.0 of inspur.sm
 
 .. contents::
    :local:
@@ -49,13 +49,6 @@ Synopsis
 
 
 .. Requirements
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- Python 3.7+
-- inspursmsdk
 
 
 .. Options
@@ -200,11 +193,6 @@ Parameters
 
 .. Notes
 
-Notes
------
-
-.. note::
-   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -230,7 +218,7 @@ Examples
       tasks:
 
       - name: "Collect logs"
-        inspur.ispim.collect_log:
+        inspur.sm.collect_log:
           file_url: "/home/wbs/test.tar"
           provider: "{{ ism }}"
 
@@ -310,7 +298,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ispim)
+- WangBaoshan (@ISIB-group)
 
 
 

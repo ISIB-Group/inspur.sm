@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_boot_option -- Set BIOS boot options
-+++++++++++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.edit_boot_option -- Set BIOS boot options.
+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.edit_boot_option -- Set BIOS boot options
 
 .. version_added
 
-.. versionadded:: 1.0.0 of inspur.ispim
+.. versionadded:: 0.1.0 of inspur.sm
 
 .. contents::
    :local:
@@ -49,13 +49,6 @@ Synopsis
 
 
 .. Requirements
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- Python 3.7+
-- inspursmsdk
 
 
 .. Options
@@ -245,11 +238,6 @@ Parameters
 
 .. Notes
 
-Notes
------
-
-.. note::
-   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -275,7 +263,7 @@ Examples
       tasks:
 
       - name: "Set bios boot option"
-        inspur.ispim.edit_boot_option:
+        inspur.sm.edit_boot_option:
           device: "PXE"
           effective: "Once"
           mode: "Legacy"
@@ -357,7 +345,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ispim)
+- WangBaoshan (@ISIB-group)
 
 
 

@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.update_cpld -- Update CPLD
-++++++++++++++++++++++++++++++++++++
+inspur.sm.update_cpld -- Update CPLD.
++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.update_cpld -- Update CPLD
 
 .. version_added
 
-.. versionadded:: 1.0.0 of inspur.ispim
+.. versionadded:: 0.1.0 of inspur.sm
 
 .. contents::
    :local:
@@ -49,13 +49,6 @@ Synopsis
 
 
 .. Requirements
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- Python 3.7+
-- inspursmsdk
 
 
 .. Options
@@ -238,11 +231,6 @@ Parameters
 
 .. Notes
 
-Notes
------
-
-.. note::
-   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -268,7 +256,7 @@ Examples
       tasks:
 
       - name: "Get cpld list"
-        inspur.ispim.update_cpld:
+        inspur.sm.update_cpld:
           list: True
           provider: "{{ ism }}"
 
@@ -354,7 +342,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ispim)
+- WangBaoshan (@ISIB-group)
 
 
 

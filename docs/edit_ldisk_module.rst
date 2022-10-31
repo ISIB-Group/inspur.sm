@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_ldisk -- Set logical disk
-++++++++++++++++++++++++++++++++++++++++
+inspur.sm.edit_ldisk -- Set logical disk.
++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.edit_ldisk -- Set logical disk
 
 .. version_added
 
-.. versionadded:: 1.0.0 of inspur.ispim
+.. versionadded:: 0.1.0 of inspur.sm
 
 .. contents::
    :local:
@@ -49,13 +49,6 @@ Synopsis
 
 
 .. Requirements
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- Python 3.7+
-- inspursmsdk
 
 
 .. Options
@@ -279,11 +272,6 @@ Parameters
 
 .. Notes
 
-Notes
------
-
-.. note::
-   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -309,12 +297,12 @@ Examples
       tasks:
 
       - name: "Show ldisk information"
-        inspur.ispim.edit_ldisk:
+        inspur.sm.edit_ldisk:
           info: "show"
           provider: "{{ ism }}"
 
       - name: "Edit ldisk"
-        inspur.ispim.edit_ldisk:
+        inspur.sm.edit_ldisk:
           ctrl_id: 0
           ldisk_id: 1
           option: "LOC"
@@ -396,7 +384,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ispim)
+- WangBaoshan (@ISIB-group)
 
 
 

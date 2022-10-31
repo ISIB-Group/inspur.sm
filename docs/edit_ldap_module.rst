@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_ldap -- Set ldap information
-+++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.edit_ldap -- Set ldap information.
+++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.edit_ldap -- Set ldap information
 
 .. version_added
 
-.. versionadded:: 1.0.0 of inspur.ispim
+.. versionadded:: 0.1.0 of inspur.sm
 
 .. contents::
    :local:
@@ -49,13 +49,6 @@ Synopsis
 
 
 .. Requirements
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- Python 3.7+
-- inspursmsdk
 
 
 .. Options
@@ -393,11 +386,6 @@ Parameters
 
 .. Notes
 
-Notes
------
-
-.. note::
-   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -423,12 +411,12 @@ Examples
       tasks:
 
       - name: "Set ldap information"
-        inspur.ispim.edit_ldap:
+        inspur.sm.edit_ldap:
           enable: "disable"
           provider: "{{ ism }}"
 
       - name: "Set ldap information"
-        inspur.ispim.edit_ldap:
+        inspur.sm.edit_ldap:
           enable: "enable"
           encry: "SSL"
           address: "100.2.2.2"
@@ -515,7 +503,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ispim)
+- WangBaoshan (@ISIB-group)
 
 
 

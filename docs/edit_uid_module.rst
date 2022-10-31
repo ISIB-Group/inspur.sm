@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_uid -- Set UID
-+++++++++++++++++++++++++++++
+inspur.sm.edit_uid -- Set UID.
+++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.edit_uid -- Set UID
 
 .. version_added
 
-.. versionadded:: 1.0.0 of inspur.ispim
+.. versionadded:: 0.1.0 of inspur.sm
 
 .. contents::
    :local:
@@ -49,13 +49,6 @@ Synopsis
 
 
 .. Requirements
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- Python 3.7+
-- inspursmsdk
 
 
 .. Options
@@ -219,11 +212,6 @@ Parameters
 
 .. Notes
 
-Notes
------
-
-.. note::
-   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -249,13 +237,13 @@ Examples
       tasks:
 
       - name: "Set uid"
-        inspur.ispim.edit_uid:
+        inspur.sm.edit_uid:
           led: "on"
           time: 10
           provider: "{{ ism }}"
 
       - name: "Set uid"
-        inspur.ispim.edit_uid:
+        inspur.sm.edit_uid:
           led: "off"
           provider: "{{ ism }}"
 
@@ -335,7 +323,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ispim)
+- WangBaoshan (@ISIB-group)
 
 
 

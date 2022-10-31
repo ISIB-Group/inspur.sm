@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_power_budget -- Set power budget information
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.edit_power_budget -- Set power budget information.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.edit_power_budget -- Set power budget information
 
 .. version_added
 
-.. versionadded:: 1.0.0 of inspur.ispim
+.. versionadded:: 0.1.0 of inspur.sm
 
 .. contents::
    :local:
@@ -49,13 +49,6 @@ Synopsis
 
 
 .. Requirements
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- Python 3.7+
-- inspursmsdk
 
 
 .. Options
@@ -509,11 +502,6 @@ Parameters
 
 .. Notes
 
-Notes
------
-
-.. note::
-   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -539,12 +527,12 @@ Examples
       tasks:
 
       - name: "Get power budget range"
-        inspur.ispim.edit_power_budget:
+        inspur.sm.edit_power_budget:
           range: True
           provider: "{{ ism }}"
 
       - name: "add power budget"
-        inspur.ispim.edit_power_budget:
+        inspur.sm.edit_power_budget:
           action: "add"
           id: 1
           watts: 1500
@@ -557,19 +545,19 @@ Examples
           provider: "{{ ism }}"
 
       - name: "Set power budget status to open"
-        inspur.ispim.edit_power_budget:
+        inspur.sm.edit_power_budget:
           action: "open"
           id: 1
           provider: "{{ ism }}"
 
       - name: "Set power budget status to close"
-        inspur.ispim.edit_power_budget:
+        inspur.sm.edit_power_budget:
           action: "close"
           id: 1
           provider: "{{ ism }}"
 
       - name: "Delete power budget"
-        inspur.ispim.edit_power_budget:
+        inspur.sm.edit_power_budget:
           action: "delete"
           id: 1
           provider: "{{ ism }}"
@@ -650,7 +638,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ispim)
+- WangBaoshan (@ISIB-group)
 
 
 

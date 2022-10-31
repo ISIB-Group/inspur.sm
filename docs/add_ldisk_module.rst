@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.add_ldisk -- Create logical disk
-++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.add_ldisk -- Create logical disk.
++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.add_ldisk -- Create logical disk
 
 .. version_added
 
-.. versionadded:: 1.0.0 of inspur.ispim
+.. versionadded:: 0.1.0 of inspur.sm
 
 .. contents::
    :local:
@@ -49,13 +49,6 @@ Synopsis
 
 
 .. Requirements
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- Python 3.7+
-- inspursmsdk
 
 
 .. Options
@@ -458,11 +451,6 @@ Parameters
 
 .. Notes
 
-Notes
------
-
-.. note::
-   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -488,12 +476,12 @@ Examples
       tasks:
 
       - name: "Show pdisk information"
-        inspur.ispim.add_ldisk:
+        inspur.sm.add_ldisk:
           info: "show"
           provider: "{{ ism }}"
 
       - name: "Add ldisk"
-        inspur.ispim.add_ldisk:
+        inspur.sm.add_ldisk:
           ctrl_id: 0
           level: 1
           size: 1
@@ -508,7 +496,7 @@ Examples
           provider: "{{ ism }}"
 
       - name: "Add PMC  ldisk"
-        inspur.ispim.add_ldisk:
+        inspur.sm.add_ldisk:
           ctrl_id: 0
           level: 1
           size: 1
@@ -592,7 +580,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ispim)
+- WangBaoshan (@ISIB-group)
 
 
 

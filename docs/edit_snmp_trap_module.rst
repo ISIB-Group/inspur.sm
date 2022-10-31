@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_snmp_trap -- Set snmp trap
-+++++++++++++++++++++++++++++++++++++++++
+inspur.sm.edit_snmp_trap -- Set snmp trap.
+++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.edit_snmp_trap -- Set snmp trap
 
 .. version_added
 
-.. versionadded:: 1.0.0 of inspur.ispim
+.. versionadded:: 0.1.0 of inspur.sm
 
 .. contents::
    :local:
@@ -49,13 +49,6 @@ Synopsis
 
 
 .. Requirements
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- Python 3.7+
-- inspursmsdk
 
 
 .. Options
@@ -461,11 +454,6 @@ Parameters
 
 .. Notes
 
-Notes
------
-
-.. note::
-   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -492,7 +480,7 @@ Examples
       tasks:
 
       - name: "Set snmp trap v2c"
-        inspur.ispim.edit_snmp_trap:
+        inspur.sm.edit_snmp_trap:
           version: 2
           event_severity: "warning"
           inspur: "test"
@@ -500,7 +488,7 @@ Examples
           provider: "{{ ism }}"
 
       - name: "Set snmp trap v3"
-        inspur.ispim.edit_snmp_trap:
+        inspur.sm.edit_snmp_trap:
           version: 3
           event_severity: "all"
           v3username: "Inspur"
@@ -588,7 +576,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ispim)
+- WangBaoshan (@ISIB-group)
 
 
 

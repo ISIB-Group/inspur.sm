@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.user -- Manage user
-+++++++++++++++++++++++++++++
+inspur.sm.user -- Manage user.
+++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.user -- Manage user
 
 .. version_added
 
-.. versionadded:: 1.0.0 of inspur.ispim
+.. versionadded:: 1.1.0 of inspur.sm
 
 .. contents::
    :local:
@@ -49,13 +49,6 @@ Synopsis
 
 
 .. Requirements
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- Python 3.7+
-- inspursmsdk
 
 
 .. Options
@@ -321,11 +314,6 @@ Parameters
 
 .. Notes
 
-Notes
------
-
-.. note::
-   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -352,7 +340,7 @@ Examples
       tasks:
 
       - name: "Add user"
-        inspur.ispim.user:
+        inspur.sm.user:
           state: "present"
           uname: "wbs"
           upass: "admin"
@@ -362,7 +350,7 @@ Examples
           provider: "{{ ism }}"
 
       - name: "Set user"
-        inspur.ispim.user:
+        inspur.sm.user:
           state: "present"
           uname: "wbs"
           upass: "12345678"
@@ -446,7 +434,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ispim)
+- WangBaoshan (@ISIB-group)
 
 
 

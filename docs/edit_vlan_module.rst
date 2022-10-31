@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_vlan -- Set vlan information
-+++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.edit_vlan -- Set vlan information.
+++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.edit_vlan -- Set vlan information
 
 .. version_added
 
-.. versionadded:: 1.0.0 of inspur.ispim
+.. versionadded:: 0.1.0 of inspur.sm
 
 .. contents::
    :local:
@@ -49,13 +49,6 @@ Synopsis
 
 
 .. Requirements
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- Python 3.7+
-- inspursmsdk
 
 
 .. Options
@@ -254,11 +247,6 @@ Parameters
 
 .. Notes
 
-Notes
------
-
-.. note::
-   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -284,13 +272,13 @@ Examples
       tasks:
 
       - name: "Set vlan information"
-        inspur.ispim.edit_vlan:
+        inspur.sm.edit_vlan:
           interface_name: "eth0"
           vlan_status: "disable"
           provider: "{{ ism }}"
 
       - name: "Set vlan information"
-        inspur.ispim.edit_vlan:
+        inspur.sm.edit_vlan:
           interface_name: "eth0"
           vlan_status: "enable"
           vlan_id: 2
@@ -373,7 +361,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ispim)
+- WangBaoshan (@ISIB-group)
 
 
 

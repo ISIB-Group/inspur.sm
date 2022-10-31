@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_virtual_media -- Set virtual media
-+++++++++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.edit_virtual_media -- Set virtual media.
+++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.edit_virtual_media -- Set virtual media
 
 .. version_added
 
-.. versionadded:: 1.0.0 of inspur.ispim
+.. versionadded:: 0.1.0 of inspur.sm
 
 .. contents::
    :local:
@@ -49,13 +49,6 @@ Synopsis
 
 
 .. Requirements
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- Python 3.7+
-- inspursmsdk
 
 
 .. Options
@@ -381,11 +374,6 @@ Parameters
 
 .. Notes
 
-Notes
------
-
-.. note::
-   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -412,14 +400,14 @@ Examples
       tasks:
 
       - name: "Set local media"
-        inspur.ispim.edit_virtual_media:
+        inspur.sm.edit_virtual_media:
           local_media_support: "Enable"
           provider: "{{ ism }}"
 
       - name: "Set remote media"
-        inspur.ispim.edit_virtual_media:
+        inspur.sm.edit_virtual_media:
           remote_media_support: "Enable"
-          mount_type: 'CD'
+          mount_type: "CD"
           same_settings: 0
           mount: "Enable"
           remote_server_address: "100.2.28.203"
@@ -503,7 +491,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ispim)
+- WangBaoshan (@ISIB-group)
 
 
 

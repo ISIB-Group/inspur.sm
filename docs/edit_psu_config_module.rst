@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.edit_psu_config -- Set psu config information
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.edit_psu_config -- Set psu config information.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.edit_psu_config -- Set psu config information
 
 .. version_added
 
-.. versionadded:: 1.0.0 of inspur.ispim
+.. versionadded:: 0.1.0 of inspur.sm
 
 .. contents::
    :local:
@@ -49,13 +49,6 @@ Synopsis
 
 
 .. Requirements
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- Python 3.7+
-- inspursmsdk
 
 
 .. Options
@@ -220,11 +213,6 @@ Parameters
 
 .. Notes
 
-Notes
------
-
-.. note::
-   - Does not support ``check_mode``.
 
 .. Seealso
 
@@ -250,7 +238,7 @@ Examples
       tasks:
 
       - name: "Set psu config information"
-        inspur.ispim.edit_psu_config:
+        inspur.sm.edit_psu_config:
           id: 1
           switch: "active"
           provider: "{{ ism }}"
@@ -331,7 +319,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ispim)
+- WangBaoshan (@ISIB-group)
 
 
 

@@ -14,8 +14,8 @@
 
 .. Title
 
-inspur.sm.temp_info -- Get temp information
-+++++++++++++++++++++++++++++++++++++++++++
+inspur.sm.temp_info -- Get temp information.
+++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -28,7 +28,7 @@ inspur.sm.temp_info -- Get temp information
 
 .. version_added
 
-.. versionadded:: 1.0.0 of inspur.ispim
+.. versionadded:: 0.1.0 of inspur.sm
 
 .. contents::
    :local:
@@ -49,13 +49,6 @@ Synopsis
 
 
 .. Requirements
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- Python 3.7+
-- inspursmsdk
 
 
 .. Options
@@ -185,11 +178,6 @@ Parameters
 
 .. Notes
 
-Notes
------
-
-.. note::
-   - Supports ``check_mode``.
 
 .. Seealso
 
@@ -215,7 +203,7 @@ Examples
       tasks:
 
       - name: "Get temp information"
-        inspur.ispim.temp_info:
+        inspur.sm.temp_info:
           provider: "{{ ism }}"
 
 
@@ -294,7 +282,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 Authors
 ~~~~~~~
 
-- WangBaoshan (@ispim)
+- WangBaoshan (@ISIB-group)
 
 
 
